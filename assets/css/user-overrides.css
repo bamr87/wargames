@@ -1,8 +1,0 @@
-/*
- * Wargames fork override styles — loaded after the zer0-mistakes theme when
- * `user_overrides: true` (see _config.yml). Kept intentionally light; the
- * games/levels sidebar can be tall, so give it comfortable line spacing.
- */
-.bd-sidebar .nav-tree-children .nav-tree-link {
-  font-size: 0.875rem;
-}
