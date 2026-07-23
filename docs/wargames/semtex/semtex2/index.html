@@ -1580,7 +1580,7 @@ document.addEventListener("DOMContentLoaded", function () {
     <div class="col-6">
       <div class="p-2 bg-body-tertiary rounded text-center">
         <small class="text-body-secondary d-block">Last Build</small>
-        <code class="small">Jul 23, 03:26</code>
+        <code class="small">Jul 23, 16:55</code>
       </div>
     </div>
 
@@ -1872,7 +1872,7 @@ function zer0CopyFeedback(btn, success) {
   <!-- ========================== -->
   <!-- Mobile-only header with close button -->
   <div class="offcanvas-header">
-    <h2 class="offcanvas-title h5 mb-0" id="bdSidebarOffcanvasLabel">Browse docs</h2>
+    <h2 class="offcanvas-title h5 mb-0" id="bdSidebarOffcanvasLabel">Wargames</h2>
     <div class="d-flex align-items-center gap-1">
       <button type="button"
               class="btn btn-sm btn-link text-body-secondary bd-sidebar-visibility-toggle d-lg-none px-2"
@@ -1895,7 +1895,7 @@ function zer0CopyFeedback(btn, success) {
     <div class="bd-sidebar-desktop-header mb-3 d-none d-lg-flex align-items-center justify-content-between gap-2 w-100">
       <strong class="d-flex align-items-center mb-0">
         <i class="bi bi-journal-bookmark me-2" aria-hidden="true"></i>
-        Browse docs
+        Wargames
       </strong>
       <button type="button"
               class="btn btn-sm btn-link text-body-secondary bd-sidebar-visibility-toggle d-none d-lg-inline-flex flex-shrink-0 px-1"
@@ -1910,516 +1910,1469 @@ function zer0CopyFeedback(btn, success) {
 
     <!-- Resolved navigation content (see navigation/sidebar-nav.html) -->
     <nav class="w-100 nav-tree" id="sidebar-content" data-nav-tree aria-label="Section navigation">
-  <!--
-  ===================================================================
-  NAV TREE - Flat YAML Navigation Renderer
-  ===================================================================
-  
-  File: nav-tree.html
-  Path: _includes/navigation/nav-tree.html
-  Purpose: Render hierarchical navigation from YAML data files
-  
-  Parameters:
-  - nav: Name of navigation file in _data/navigation/ (e.g., "docs", "main")
-  
-  Data Schema (expected in _data/navigation/*.yml):
-  - title: string (required) - Display text
-  - url: string (optional) - Link URL
-  - icon: string (optional) - Bootstrap Icons class (e.g., "bi-folder")
-  - expanded: boolean (optional) - Default expanded state (default: false)
-  - children: array (optional) - Nested navigation items (max 2 levels)
-  
-  Note: This implementation supports 2 levels of nesting to avoid Jekyll's
-  include depth limit. For deeper nesting, consider a plugin approach.
-  
-  Dependencies:
-  - site.data.navigation[nav]: Navigation YAML data
-  - Bootstrap 5 collapse component
-  - Bootstrap Icons for visual indicators
-  
-  Usage:
-  include navigation/nav-tree.html nav="docs"
-  ===================================================================
--->
-
-
-
-
-<ul class="list-unstyled fw-normal pb-2 small nav-tree-root">
-  
-    
-    
-    
-    
-    
-    <li class="mb-1 nav-tree-item" data-depth="0">
-      
-        <!-- Root level leaf item -->
-        
-          <a href="/wargames/docs/wargames/" 
-             class="nav-tree-link d-inline-flex align-items-center rounded py-1 px-2 text-decoration-none active">
-            <i class="bi-controller me-2"></i>
-            <span>All games</span>
+  <div class="sidebar-pagetree w-100">
+  <ul class="list-unstyled nav-tree-root mb-0"><li class="nav-tree-item" data-depth="0">
+      <a href="/wargames/docs/wargames/"
+         class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+        <i class="bi bi-collection me-2 flex-shrink-0" aria-hidden="true"></i>
+        <span>Wargames</span>
+      </a>
+    </li><li class="nav-tree-item sidebar-pagetree-group" data-depth="0"><a href="/wargames/docs/wargames/abraxas/"
+           class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+          <i class="bi bi-folder2 me-2 flex-shrink-0" aria-hidden="true"></i>
+          <span>Abraxas</span>
+        </a></li><li class="nav-tree-item sidebar-pagetree-group" data-depth="0"><div class="d-flex align-items-center"><a href="/wargames/docs/wargames/bandit/"
+             class="nav-tree-link flex-grow-1 d-inline-flex align-items-center rounded py-1 px-2 text-decoration-none">
+            <i class="bi bi-folder2 me-2" aria-hidden="true"></i>
+            <span>Bandit</span>
           </a>
-        
-      
-    </li>
-  
-    
-    
-    
-    
-    
-    <li class="mb-1 nav-tree-item" data-depth="0">
-      
-        <!-- Parent item with children - collapsible -->
-        <div class="d-flex align-items-center">
-          
-            <button class="btn btn-link nav-tree-toggle w-100 d-flex align-items-center text-start fw-semibold py-1 px-2"
-                    type="button"
-                    data-bs-toggle="collapse" 
-                    data-bs-target="#nav-beginner" 
-                    aria-expanded="true"
-                    aria-controls="nav-beginner">
-              <i class="bi-1-circle me-2"></i>
-              <span class="flex-grow-1">Beginner</span>
-              <i class="bi bi-chevron-down nav-tree-chevron"></i>
-            </button>
-          
-        </div>
-        
-        <!-- Children container (Level 1) -->
-        <div class="collapse show" id="nav-beginner">
-          <ul class="list-unstyled fw-normal ps-3 nav-tree-children">
-            
-              
-              
-              
-              
-              
-              <li class="mb-1 nav-tree-item" data-depth="1">
-                
-                  <!-- Level 1 leaf item -->
-                  
-                    <a href="/wargames/docs/wargames/bandit/" 
-                       class="nav-tree-link d-inline-flex align-items-center rounded py-1 px-2 text-decoration-none active">
-                      
-                      <span>Bandit</span>
-                    </a>
-                  
-                
-              </li>
-            
-              
-              
-              
-              
-              
-              <li class="mb-1 nav-tree-item" data-depth="1">
-                
-                  <!-- Level 1 leaf item -->
-                  
-                    <a href="/wargames/docs/wargames/leviathan/" 
-                       class="nav-tree-link d-inline-flex align-items-center rounded py-1 px-2 text-decoration-none active">
-                      
-                      <span>Leviathan</span>
-                    </a>
-                  
-                
-              </li>
-            
-              
-              
-              
-              
-              
-              <li class="mb-1 nav-tree-item" data-depth="1">
-                
-                  <!-- Level 1 leaf item -->
-                  
-                    <a href="/wargames/docs/wargames/krypton/" 
-                       class="nav-tree-link d-inline-flex align-items-center rounded py-1 px-2 text-decoration-none active">
-                      
-                      <span>Krypton</span>
-                    </a>
-                  
-                
-              </li>
-            
-              
-              
-              
-              
-              
-              <li class="mb-1 nav-tree-item" data-depth="1">
-                
-                  <!-- Level 1 leaf item -->
-                  
-                    <a href="/wargames/docs/wargames/natas/" 
-                       class="nav-tree-link d-inline-flex align-items-center rounded py-1 px-2 text-decoration-none active">
-                      
-                      <span>Natas</span>
-                    </a>
-                  
-                
-              </li>
-            
-          </ul>
-        </div>
-      
-    </li>
-  
-    
-    
-    
-    
-    
-    <li class="mb-1 nav-tree-item" data-depth="0">
-      
-        <!-- Parent item with children - collapsible -->
-        <div class="d-flex align-items-center">
-          
-            <button class="btn btn-link nav-tree-toggle w-100 d-flex align-items-center text-start fw-semibold py-1 px-2 collapsed"
-                    type="button"
-                    data-bs-toggle="collapse" 
-                    data-bs-target="#nav-intermediate" 
-                    aria-expanded="false"
-                    aria-controls="nav-intermediate">
-              <i class="bi-2-circle me-2"></i>
-              <span class="flex-grow-1">Intermediate</span>
-              <i class="bi bi-chevron-down nav-tree-chevron"></i>
-            </button>
-          
-        </div>
-        
-        <!-- Children container (Level 1) -->
-        <div class="collapse" id="nav-intermediate">
-          <ul class="list-unstyled fw-normal ps-3 nav-tree-children">
-            
-              
-              
-              
-              
-              
-              <li class="mb-1 nav-tree-item" data-depth="1">
-                
-                  <!-- Level 1 leaf item -->
-                  
-                    <a href="/wargames/docs/wargames/narnia/" 
-                       class="nav-tree-link d-inline-flex align-items-center rounded py-1 px-2 text-decoration-none active">
-                      
-                      <span>Narnia</span>
-                    </a>
-                  
-                
-              </li>
-            
-              
-              
-              
-              
-              
-              <li class="mb-1 nav-tree-item" data-depth="1">
-                
-                  <!-- Level 1 leaf item -->
-                  
-                    <a href="/wargames/docs/wargames/behemoth/" 
-                       class="nav-tree-link d-inline-flex align-items-center rounded py-1 px-2 text-decoration-none active">
-                      
-                      <span>Behemoth</span>
-                    </a>
-                  
-                
-              </li>
-            
-              
-              
-              
-              
-              
-              <li class="mb-1 nav-tree-item" data-depth="1">
-                
-                  <!-- Level 1 leaf item -->
-                  
-                    <a href="/wargames/docs/wargames/utumno/" 
-                       class="nav-tree-link d-inline-flex align-items-center rounded py-1 px-2 text-decoration-none active">
-                      
-                      <span>Utumno</span>
-                    </a>
-                  
-                
-              </li>
-            
-              
-              
-              
-              
-              
-              <li class="mb-1 nav-tree-item" data-depth="1">
-                
-                  <!-- Level 1 leaf item -->
-                  
-                    <a href="/wargames/docs/wargames/maze/" 
-                       class="nav-tree-link d-inline-flex align-items-center rounded py-1 px-2 text-decoration-none active">
-                      
-                      <span>Maze</span>
-                    </a>
-                  
-                
-              </li>
-            
-          </ul>
-        </div>
-      
-    </li>
-  
-    
-    
-    
-    
-    
-    <li class="mb-1 nav-tree-item" data-depth="0">
-      
-        <!-- Parent item with children - collapsible -->
-        <div class="d-flex align-items-center">
-          
-            <button class="btn btn-link nav-tree-toggle w-100 d-flex align-items-center text-start fw-semibold py-1 px-2 collapsed"
-                    type="button"
-                    data-bs-toggle="collapse" 
-                    data-bs-target="#nav-advanced" 
-                    aria-expanded="false"
-                    aria-controls="nav-advanced">
-              <i class="bi-3-circle me-2"></i>
-              <span class="flex-grow-1">Advanced</span>
-              <i class="bi bi-chevron-down nav-tree-chevron"></i>
-            </button>
-          
-        </div>
-        
-        <!-- Children container (Level 1) -->
-        <div class="collapse" id="nav-advanced">
-          <ul class="list-unstyled fw-normal ps-3 nav-tree-children">
-            
-              
-              
-              
-              
-              
-              <li class="mb-1 nav-tree-item" data-depth="1">
-                
-                  <!-- Level 1 leaf item -->
-                  
-                    <a href="/wargames/docs/wargames/vortex/" 
-                       class="nav-tree-link d-inline-flex align-items-center rounded py-1 px-2 text-decoration-none active">
-                      
-                      <span>Vortex</span>
-                    </a>
-                  
-                
-              </li>
-            
-              
-              
-              
-              
-              
-              <li class="mb-1 nav-tree-item" data-depth="1">
-                
-                  <!-- Level 1 leaf item -->
-                  
-                    <a href="/wargames/docs/wargames/manpage/" 
-                       class="nav-tree-link d-inline-flex align-items-center rounded py-1 px-2 text-decoration-none active">
-                      
-                      <span>Manpage</span>
-                    </a>
-                  
-                
-              </li>
-            
-              
-              
-              
-              
-              
-              <li class="mb-1 nav-tree-item" data-depth="1">
-                
-                  <!-- Level 1 leaf item -->
-                  
-                    <a href="/wargames/docs/wargames/semtex/" 
-                       class="nav-tree-link d-inline-flex align-items-center rounded py-1 px-2 text-decoration-none active">
-                      
-                      <span>Semtex</span>
-                    </a>
-                  
-                
-              </li>
-            
-              
-              
-              
-              
-              
-              <li class="mb-1 nav-tree-item" data-depth="1">
-                
-                  <!-- Level 1 leaf item -->
-                  
-                    <a href="/wargames/docs/wargames/drifter/" 
-                       class="nav-tree-link d-inline-flex align-items-center rounded py-1 px-2 text-decoration-none active">
-                      
-                      <span>Drifter</span>
-                    </a>
-                  
-                
-              </li>
-            
-          </ul>
-        </div>
-      
-    </li>
-  
-    
-    
-    
-    
-    
-    <li class="mb-1 nav-tree-item" data-depth="0">
-      
-        <!-- Parent item with children - collapsible -->
-        <div class="d-flex align-items-center">
-          
-            <button class="btn btn-link nav-tree-toggle w-100 d-flex align-items-center text-start fw-semibold py-1 px-2 collapsed"
-                    type="button"
-                    data-bs-toggle="collapse" 
-                    data-bs-target="#nav-more-challenges" 
-                    aria-expanded="false"
-                    aria-controls="nav-more-challenges">
-              <i class="bi-collection me-2"></i>
-              <span class="flex-grow-1">More challenges</span>
-              <i class="bi bi-chevron-down nav-tree-chevron"></i>
-            </button>
-          
-        </div>
-        
-        <!-- Children container (Level 1) -->
-        <div class="collapse" id="nav-more-challenges">
-          <ul class="list-unstyled fw-normal ps-3 nav-tree-children">
-            
-              
-              
-              
-              
-              
-              <li class="mb-1 nav-tree-item" data-depth="1">
-                
-                  <!-- Level 1 leaf item -->
-                  
-                    <a href="/wargames/docs/wargames/abraxas/" 
-                       class="nav-tree-link d-inline-flex align-items-center rounded py-1 px-2 text-decoration-none active">
-                      
-                      <span>Abraxas</span>
-                    </a>
-                  
-                
-              </li>
-            
-              
-              
-              
-              
-              
-              <li class="mb-1 nav-tree-item" data-depth="1">
-                
-                  <!-- Level 1 leaf item -->
-                  
-                    <a href="/wargames/docs/wargames/blacksun/" 
-                       class="nav-tree-link d-inline-flex align-items-center rounded py-1 px-2 text-decoration-none active">
-                      
-                      <span>Blacksun</span>
-                    </a>
-                  
-                
-              </li>
-            
-              
-              
-              
-              
-              
-              <li class="mb-1 nav-tree-item" data-depth="1">
-                
-                  <!-- Level 1 leaf item -->
-                  
-                    <a href="/wargames/docs/wargames/formulaone/" 
-                       class="nav-tree-link d-inline-flex align-items-center rounded py-1 px-2 text-decoration-none active">
-                      
-                      <span>Formulaone</span>
-                    </a>
-                  
-                
-              </li>
-            
-              
-              
-              
-              
-              
-              <li class="mb-1 nav-tree-item" data-depth="1">
-                
-                  <!-- Level 1 leaf item -->
-                  
-                    <a href="/wargames/docs/wargames/kishi/" 
-                       class="nav-tree-link d-inline-flex align-items-center rounded py-1 px-2 text-decoration-none active">
-                      
-                      <span>Kishi</span>
-                    </a>
-                  
-                
-              </li>
-            
-              
-              
-              
-              
-              
-              <li class="mb-1 nav-tree-item" data-depth="1">
-                
-                  <!-- Level 1 leaf item -->
-                  
-                    <a href="/wargames/docs/wargames/monxla/" 
-                       class="nav-tree-link d-inline-flex align-items-center rounded py-1 px-2 text-decoration-none active">
-                      
-                      <span>Monxla</span>
-                    </a>
-                  
-                
-              </li>
-            
-              
-              
-              
-              
-              
-              <li class="mb-1 nav-tree-item" data-depth="1">
-                
-                  <!-- Level 1 leaf item -->
-                  
-                    <a href="/wargames/docs/wargames/hes2010/" 
-                       class="nav-tree-link d-inline-flex align-items-center rounded py-1 px-2 text-decoration-none active">
-                      
-                      <span>HES 2010</span>
-                    </a>
-                  
-                
-              </li>
-            
-          </ul>
-        </div>
-      
-    </li>
-  
-</ul>
+          <button class="btn btn-sm btn-link nav-tree-toggle p-1 collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#sidebar-pt-bandit"
+                  aria-expanded="false"
+                  aria-controls="sidebar-pt-bandit"
+                  aria-label="Toggle Bandit section">
+            <i class="bi bi-chevron-down nav-tree-chevron" aria-hidden="true"></i>
+          </button></div>
 
+        <div class="collapse" id="sidebar-pt-bandit">
+          <ul class="list-unstyled nav-tree-children mb-0"><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/bandit/bandit0/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 0</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/bandit/bandit1/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 1</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/bandit/bandit2/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 2</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/bandit/bandit3/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 3</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/bandit/bandit4/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 4</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/bandit/bandit5/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 5</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/bandit/bandit6/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 6</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/bandit/bandit7/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 7</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/bandit/bandit8/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 8</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/bandit/bandit9/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 9</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/bandit/bandit10/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 10</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/bandit/bandit11/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 11</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/bandit/bandit12/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 12</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/bandit/bandit13/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 13</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/bandit/bandit14/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 14</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/bandit/bandit15/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 15</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/bandit/bandit16/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 16</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/bandit/bandit17/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 17</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/bandit/bandit18/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 18</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/bandit/bandit19/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 19</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/bandit/bandit20/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 20</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/bandit/bandit21/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 21</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/bandit/bandit22/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 22</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/bandit/bandit23/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 23</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/bandit/bandit24/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 24</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/bandit/bandit25/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 25</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/bandit/bandit26/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 26</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/bandit/bandit27/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 27</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/bandit/bandit28/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 28</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/bandit/bandit29/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 29</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/bandit/bandit30/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 30</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/bandit/bandit31/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 31</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/bandit/bandit32/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 32</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/bandit/bandit33/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 33</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/bandit/bandit34/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 34</span>
+                </a>
+              </li></ul>
+        </div></li><li class="nav-tree-item sidebar-pagetree-group" data-depth="0"><div class="d-flex align-items-center"><a href="/wargames/docs/wargames/behemoth/"
+             class="nav-tree-link flex-grow-1 d-inline-flex align-items-center rounded py-1 px-2 text-decoration-none">
+            <i class="bi bi-folder2 me-2" aria-hidden="true"></i>
+            <span>Behemoth</span>
+          </a>
+          <button class="btn btn-sm btn-link nav-tree-toggle p-1 collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#sidebar-pt-behemoth"
+                  aria-expanded="false"
+                  aria-controls="sidebar-pt-behemoth"
+                  aria-label="Toggle Behemoth section">
+            <i class="bi bi-chevron-down nav-tree-chevron" aria-hidden="true"></i>
+          </button></div>
 
+        <div class="collapse" id="sidebar-pt-behemoth">
+          <ul class="list-unstyled nav-tree-children mb-0"><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/behemoth/behemoth0/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 0</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/behemoth/behemoth1/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 1</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/behemoth/behemoth2/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 2</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/behemoth/behemoth3/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 3</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/behemoth/behemoth4/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 4</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/behemoth/behemoth5/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 5</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/behemoth/behemoth6/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 6</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/behemoth/behemoth7/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 7</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/behemoth/behemoth8/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 8</span>
+                </a>
+              </li></ul>
+        </div></li><li class="nav-tree-item sidebar-pagetree-group" data-depth="0"><div class="d-flex align-items-center"><a href="/wargames/docs/wargames/blacksun/"
+             class="nav-tree-link flex-grow-1 d-inline-flex align-items-center rounded py-1 px-2 text-decoration-none">
+            <i class="bi bi-folder2 me-2" aria-hidden="true"></i>
+            <span>Blacksun</span>
+          </a>
+          <button class="btn btn-sm btn-link nav-tree-toggle p-1 collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#sidebar-pt-blacksun"
+                  aria-expanded="false"
+                  aria-controls="sidebar-pt-blacksun"
+                  aria-label="Toggle Blacksun section">
+            <i class="bi bi-chevron-down nav-tree-chevron" aria-hidden="true"></i>
+          </button></div>
+
+        <div class="collapse" id="sidebar-pt-blacksun">
+          <ul class="list-unstyled nav-tree-children mb-0"><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/blacksun/reading_material/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Reading material</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/blacksun/blacksun0/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 0</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/blacksun/blacksun1/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 1</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/blacksun/blacksun2/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 2</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/blacksun/blacksun3/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 3</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/blacksun/blacksun4/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 4</span>
+                </a>
+              </li></ul>
+        </div></li><li class="nav-tree-item sidebar-pagetree-group" data-depth="0"><div class="d-flex align-items-center"><a href="/wargames/docs/wargames/drifter/"
+             class="nav-tree-link flex-grow-1 d-inline-flex align-items-center rounded py-1 px-2 text-decoration-none">
+            <i class="bi bi-folder2 me-2" aria-hidden="true"></i>
+            <span>Drifter</span>
+          </a>
+          <button class="btn btn-sm btn-link nav-tree-toggle p-1 collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#sidebar-pt-drifter"
+                  aria-expanded="false"
+                  aria-controls="sidebar-pt-drifter"
+                  aria-label="Toggle Drifter section">
+            <i class="bi bi-chevron-down nav-tree-chevron" aria-hidden="true"></i>
+          </button></div>
+
+        <div class="collapse" id="sidebar-pt-drifter">
+          <ul class="list-unstyled nav-tree-children mb-0"><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/drifter/drifter0/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 0</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/drifter/drifter1/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 1</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/drifter/drifter2/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 2</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/drifter/drifter3/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 3</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/drifter/drifter4/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 4</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/drifter/drifter5/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 5</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/drifter/drifter6/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 6</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/drifter/drifter7/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 7</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/drifter/drifter8/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 8</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/drifter/drifter9/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 9</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/drifter/drifter10/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 10</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/drifter/drifter11/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 11</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/drifter/drifter12/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 12</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/drifter/drifter13/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 13</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/drifter/drifter14/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 14</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/drifter/drifter15/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 15</span>
+                </a>
+              </li></ul>
+        </div></li><li class="nav-tree-item sidebar-pagetree-group" data-depth="0"><div class="d-flex align-items-center"><a href="/wargames/docs/wargames/formulaone/"
+             class="nav-tree-link flex-grow-1 d-inline-flex align-items-center rounded py-1 px-2 text-decoration-none">
+            <i class="bi bi-folder2 me-2" aria-hidden="true"></i>
+            <span>Formulaone</span>
+          </a>
+          <button class="btn btn-sm btn-link nav-tree-toggle p-1 collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#sidebar-pt-formulaone"
+                  aria-expanded="false"
+                  aria-controls="sidebar-pt-formulaone"
+                  aria-label="Toggle Formulaone section">
+            <i class="bi bi-chevron-down nav-tree-chevron" aria-hidden="true"></i>
+          </button></div>
+
+        <div class="collapse" id="sidebar-pt-formulaone">
+          <ul class="list-unstyled nav-tree-children mb-0"><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/formulaone/formulaone0/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 0</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/formulaone/formulaone1/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 1</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/formulaone/formulaone2/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 2</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/formulaone/formulaone3/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 3</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/formulaone/formulaone4/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 4</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/formulaone/formulaone5/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 5</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/formulaone/formulaone6/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 6</span>
+                </a>
+              </li></ul>
+        </div></li><li class="nav-tree-item sidebar-pagetree-group" data-depth="0"><a href="/wargames/docs/wargames/hes2010/"
+           class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+          <i class="bi bi-folder2 me-2 flex-shrink-0" aria-hidden="true"></i>
+          <span>Hes2010</span>
+        </a></li><li class="nav-tree-item sidebar-pagetree-group" data-depth="0"><a href="/wargames/docs/wargames/kishi/"
+           class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+          <i class="bi bi-folder2 me-2 flex-shrink-0" aria-hidden="true"></i>
+          <span>Kishi</span>
+        </a></li><li class="nav-tree-item sidebar-pagetree-group" data-depth="0"><div class="d-flex align-items-center"><a href="/wargames/docs/wargames/krypton/"
+             class="nav-tree-link flex-grow-1 d-inline-flex align-items-center rounded py-1 px-2 text-decoration-none">
+            <i class="bi bi-folder2 me-2" aria-hidden="true"></i>
+            <span>Krypton</span>
+          </a>
+          <button class="btn btn-sm btn-link nav-tree-toggle p-1 collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#sidebar-pt-krypton"
+                  aria-expanded="false"
+                  aria-controls="sidebar-pt-krypton"
+                  aria-label="Toggle Krypton section">
+            <i class="bi bi-chevron-down nav-tree-chevron" aria-hidden="true"></i>
+          </button></div>
+
+        <div class="collapse" id="sidebar-pt-krypton">
+          <ul class="list-unstyled nav-tree-children mb-0"><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/krypton/krypton0/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 0</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/krypton/krypton1/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 1</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/krypton/krypton2/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 2</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/krypton/krypton3/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 3</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/krypton/krypton4/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 4</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/krypton/krypton5/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 5</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/krypton/krypton6/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 6</span>
+                </a>
+              </li></ul>
+        </div></li><li class="nav-tree-item sidebar-pagetree-group" data-depth="0"><div class="d-flex align-items-center"><a href="/wargames/docs/wargames/leviathan/"
+             class="nav-tree-link flex-grow-1 d-inline-flex align-items-center rounded py-1 px-2 text-decoration-none">
+            <i class="bi bi-folder2 me-2" aria-hidden="true"></i>
+            <span>Leviathan</span>
+          </a>
+          <button class="btn btn-sm btn-link nav-tree-toggle p-1 collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#sidebar-pt-leviathan"
+                  aria-expanded="false"
+                  aria-controls="sidebar-pt-leviathan"
+                  aria-label="Toggle Leviathan section">
+            <i class="bi bi-chevron-down nav-tree-chevron" aria-hidden="true"></i>
+          </button></div>
+
+        <div class="collapse" id="sidebar-pt-leviathan">
+          <ul class="list-unstyled nav-tree-children mb-0"><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/leviathan/leviathan0/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 0</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/leviathan/leviathan1/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 1</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/leviathan/leviathan2/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 2</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/leviathan/leviathan3/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 3</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/leviathan/leviathan4/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 4</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/leviathan/leviathan5/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 5</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/leviathan/leviathan6/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 6</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/leviathan/leviathan7/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 7</span>
+                </a>
+              </li></ul>
+        </div></li><li class="nav-tree-item sidebar-pagetree-group" data-depth="0"><div class="d-flex align-items-center"><a href="/wargames/docs/wargames/manpage/"
+             class="nav-tree-link flex-grow-1 d-inline-flex align-items-center rounded py-1 px-2 text-decoration-none">
+            <i class="bi bi-folder2 me-2" aria-hidden="true"></i>
+            <span>Manpage</span>
+          </a>
+          <button class="btn btn-sm btn-link nav-tree-toggle p-1 collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#sidebar-pt-manpage"
+                  aria-expanded="false"
+                  aria-controls="sidebar-pt-manpage"
+                  aria-label="Toggle Manpage section">
+            <i class="bi bi-chevron-down nav-tree-chevron" aria-hidden="true"></i>
+          </button></div>
+
+        <div class="collapse" id="sidebar-pt-manpage">
+          <ul class="list-unstyled nav-tree-children mb-0"><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/manpage/manpage0/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 0</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/manpage/manpage1/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 1</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/manpage/manpage2/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 2</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/manpage/manpage3/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 3</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/manpage/manpage4/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 4</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/manpage/manpage5/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 5</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/manpage/manpage6/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 6</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/manpage/manpage7/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 7</span>
+                </a>
+              </li></ul>
+        </div></li><li class="nav-tree-item sidebar-pagetree-group" data-depth="0"><div class="d-flex align-items-center"><a href="/wargames/docs/wargames/maze/"
+             class="nav-tree-link flex-grow-1 d-inline-flex align-items-center rounded py-1 px-2 text-decoration-none">
+            <i class="bi bi-folder2 me-2" aria-hidden="true"></i>
+            <span>Maze</span>
+          </a>
+          <button class="btn btn-sm btn-link nav-tree-toggle p-1 collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#sidebar-pt-maze"
+                  aria-expanded="false"
+                  aria-controls="sidebar-pt-maze"
+                  aria-label="Toggle Maze section">
+            <i class="bi bi-chevron-down nav-tree-chevron" aria-hidden="true"></i>
+          </button></div>
+
+        <div class="collapse" id="sidebar-pt-maze">
+          <ul class="list-unstyled nav-tree-children mb-0"><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/maze/maze0/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 0</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/maze/maze1/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 1</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/maze/maze2/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 2</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/maze/maze3/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 3</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/maze/maze4/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 4</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/maze/maze5/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 5</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/maze/maze6/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 6</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/maze/maze7/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 7</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/maze/maze8/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 8</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/maze/maze9/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 9</span>
+                </a>
+              </li></ul>
+        </div></li><li class="nav-tree-item sidebar-pagetree-group" data-depth="0"><a href="/wargames/docs/wargames/monxla/"
+           class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+          <i class="bi bi-folder2 me-2 flex-shrink-0" aria-hidden="true"></i>
+          <span>Monxla</span>
+        </a></li><li class="nav-tree-item sidebar-pagetree-group" data-depth="0"><div class="d-flex align-items-center"><a href="/wargames/docs/wargames/narnia/"
+             class="nav-tree-link flex-grow-1 d-inline-flex align-items-center rounded py-1 px-2 text-decoration-none">
+            <i class="bi bi-folder2 me-2" aria-hidden="true"></i>
+            <span>Narnia</span>
+          </a>
+          <button class="btn btn-sm btn-link nav-tree-toggle p-1 collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#sidebar-pt-narnia"
+                  aria-expanded="false"
+                  aria-controls="sidebar-pt-narnia"
+                  aria-label="Toggle Narnia section">
+            <i class="bi bi-chevron-down nav-tree-chevron" aria-hidden="true"></i>
+          </button></div>
+
+        <div class="collapse" id="sidebar-pt-narnia">
+          <ul class="list-unstyled nav-tree-children mb-0"><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/narnia/narnia0/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 0</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/narnia/narnia1/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 1</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/narnia/narnia2/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 2</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/narnia/narnia3/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 3</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/narnia/narnia4/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 4</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/narnia/narnia5/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 5</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/narnia/narnia6/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 6</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/narnia/narnia7/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 7</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/narnia/narnia8/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 8</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/narnia/narnia9/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 9</span>
+                </a>
+              </li></ul>
+        </div></li><li class="nav-tree-item sidebar-pagetree-group" data-depth="0"><div class="d-flex align-items-center"><a href="/wargames/docs/wargames/natas/"
+             class="nav-tree-link flex-grow-1 d-inline-flex align-items-center rounded py-1 px-2 text-decoration-none">
+            <i class="bi bi-folder2 me-2" aria-hidden="true"></i>
+            <span>Natas</span>
+          </a>
+          <button class="btn btn-sm btn-link nav-tree-toggle p-1 collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#sidebar-pt-natas"
+                  aria-expanded="false"
+                  aria-controls="sidebar-pt-natas"
+                  aria-label="Toggle Natas section">
+            <i class="bi bi-chevron-down nav-tree-chevron" aria-hidden="true"></i>
+          </button></div>
+
+        <div class="collapse" id="sidebar-pt-natas">
+          <ul class="list-unstyled nav-tree-children mb-0"><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/natas/natas0/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 0</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/natas/natas1/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 1</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/natas/natas2/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 2</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/natas/natas3/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 3</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/natas/natas4/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 4</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/natas/natas5/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 5</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/natas/natas6/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 6</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/natas/natas7/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 7</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/natas/natas8/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 8</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/natas/natas9/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 9</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/natas/natas10/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 10</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/natas/natas11/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 11</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/natas/natas12/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 12</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/natas/natas13/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 13</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/natas/natas14/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 14</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/natas/natas15/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 15</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/natas/natas16/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 16</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/natas/natas17/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 17</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/natas/natas18/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 18</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/natas/natas19/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 19</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/natas/natas20/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 20</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/natas/natas21/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 21</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/natas/natas22/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 22</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/natas/natas23/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 23</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/natas/natas24/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 24</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/natas/natas25/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 25</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/natas/natas26/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 26</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/natas/natas27/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 27</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/natas/natas28/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 28</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/natas/natas29/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 29</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/natas/natas30/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 30</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/natas/natas31/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 31</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/natas/natas32/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 32</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/natas/natas33/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 33</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/natas/natas34/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 34</span>
+                </a>
+              </li></ul>
+        </div></li><li class="nav-tree-item sidebar-pagetree-group" data-depth="0"><div class="d-flex align-items-center"><a href="/wargames/docs/wargames/semtex/"
+             class="nav-tree-link flex-grow-1 d-inline-flex align-items-center rounded py-1 px-2 text-decoration-none">
+            <i class="bi bi-folder2 me-2" aria-hidden="true"></i>
+            <span>Semtex</span>
+          </a>
+          <button class="btn btn-sm btn-link nav-tree-toggle p-1"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#sidebar-pt-semtex"
+                  aria-expanded="true"
+                  aria-controls="sidebar-pt-semtex"
+                  aria-label="Toggle Semtex section">
+            <i class="bi bi-chevron-down nav-tree-chevron" aria-hidden="true"></i>
+          </button></div>
+
+        <div class="collapse show" id="sidebar-pt-semtex">
+          <ul class="list-unstyled nav-tree-children mb-0"><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/semtex/semtex0/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 0</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/semtex/semtex1/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 1</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/semtex/semtex2/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none active" aria-current="page">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 2</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/semtex/semtex3/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 3</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/semtex/semtex4/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 4</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/semtex/semtex5/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 5</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/semtex/semtex6/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 6</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/semtex/semtex7/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 7</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/semtex/semtex8/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 8</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/semtex/semtex9/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 9</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/semtex/semtex10/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 10</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/semtex/semtex11/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 11</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/semtex/semtex12/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 12</span>
+                </a>
+              </li></ul>
+        </div></li><li class="nav-tree-item sidebar-pagetree-group" data-depth="0"><div class="d-flex align-items-center"><a href="/wargames/docs/wargames/utumno/"
+             class="nav-tree-link flex-grow-1 d-inline-flex align-items-center rounded py-1 px-2 text-decoration-none">
+            <i class="bi bi-folder2 me-2" aria-hidden="true"></i>
+            <span>Utumno</span>
+          </a>
+          <button class="btn btn-sm btn-link nav-tree-toggle p-1 collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#sidebar-pt-utumno"
+                  aria-expanded="false"
+                  aria-controls="sidebar-pt-utumno"
+                  aria-label="Toggle Utumno section">
+            <i class="bi bi-chevron-down nav-tree-chevron" aria-hidden="true"></i>
+          </button></div>
+
+        <div class="collapse" id="sidebar-pt-utumno">
+          <ul class="list-unstyled nav-tree-children mb-0"><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/utumno/utumno0/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 0</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/utumno/utumno1/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 1</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/utumno/utumno2/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 2</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/utumno/utumno3/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 3</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/utumno/utumno4/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 4</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/utumno/utumno5/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 5</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/utumno/utumno6/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 6</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/utumno/utumno7/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 7</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/utumno/utumno8/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 8</span>
+                </a>
+              </li></ul>
+        </div></li><li class="nav-tree-item sidebar-pagetree-group" data-depth="0"><div class="d-flex align-items-center"><a href="/wargames/docs/wargames/vortex/"
+             class="nav-tree-link flex-grow-1 d-inline-flex align-items-center rounded py-1 px-2 text-decoration-none">
+            <i class="bi bi-folder2 me-2" aria-hidden="true"></i>
+            <span>Vortex</span>
+          </a>
+          <button class="btn btn-sm btn-link nav-tree-toggle p-1 collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#sidebar-pt-vortex"
+                  aria-expanded="false"
+                  aria-controls="sidebar-pt-vortex"
+                  aria-label="Toggle Vortex section">
+            <i class="bi bi-chevron-down nav-tree-chevron" aria-hidden="true"></i>
+          </button></div>
+
+        <div class="collapse" id="sidebar-pt-vortex">
+          <ul class="list-unstyled nav-tree-children mb-0"><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/vortex/vortex0/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 0</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/vortex/vortex1/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 1</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/vortex/vortex2/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 2</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/vortex/vortex3/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 3</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/vortex/vortex4/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 4</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/vortex/vortex5/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 5</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/vortex/vortex6/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 6</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/vortex/vortex7/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 7</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/vortex/vortex8/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 8</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/vortex/vortex9/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 9</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/vortex/vortex10/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 10</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/vortex/vortex11/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 11</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/vortex/vortex12/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 12</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/vortex/vortex13/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 13</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/vortex/vortex14/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 14</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/vortex/vortex15/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 15</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/vortex/vortex16/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 16</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/vortex/vortex17/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 17</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/vortex/vortex18/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 18</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/vortex/vortex19/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 19</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/vortex/vortex20/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 20</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/vortex/vortex21/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 21</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/vortex/vortex22/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 22</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/vortex/vortex23/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 23</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/vortex/vortex24/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 24</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/vortex/vortex25/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 25</span>
+                </a>
+              </li><li class="nav-tree-item" data-depth="1">
+                <a href="/wargames/docs/wargames/vortex/vortex26/"
+                   class="nav-tree-link d-flex align-items-start rounded py-1 px-2 text-decoration-none">
+                  <i class="bi bi-file-earmark-text me-2 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Level 26</span>
+                </a>
+              </li></ul>
+        </div></li></ul>
+</div>
 </nav>
 
   </div>
@@ -3118,7 +4071,7 @@ Think dynamically.</p>
     </div>
   </div>
 </aside>
-<script src="/wargames/assets/js/obsidian-local-graph.js?v=1784777163" defer></script><!-- Privacy-compliant cookie consent banner — page-invariant. -->
+<script src="/wargames/assets/js/obsidian-local-graph.js?v=1784825759" defer></script><!-- Privacy-compliant cookie consent banner — page-invariant. -->
 <!--
   ===================================================================
   COOKIE CONSENT - GDPR/CCPA Compliant Privacy Management
@@ -3531,7 +4484,7 @@ Think dynamically.</p>
 <!-- Navigation ES Modules — orchestrator for sidebar, scroll spy, keyboard
      shortcuts, gestures, focus, AND the navbar dropdowns/mobile menu that
      formerly lived in /assets/js/navigation.js (now deprecated). -->
-<script type="module" src="/wargames/assets/js/modules/navigation/index.js?v=1784777163"></script>
+<script type="module" src="/wargames/assets/js/modules/navigation/index.js?v=1784825759"></script>
 
 <!-- Generic UI helpers (toast, copy-to-clipboard, image fade-in) -->
 <script defer src="/wargames/assets/js/ui-helpers.js"></script>
@@ -3564,7 +4517,7 @@ Think dynamically.</p>
   window.OBSIDIAN_CONFIG.attachmentsPath = "/wargames/assets/images/notes";
   window.OBSIDIAN_CONFIG.tagBase = "/wargames/tags/";
   window.OBSIDIAN_CONFIG.cytoscapeUrl = "/wargames/assets/vendor/cytoscape/cytoscape.min.js";
-</script><script defer src="/wargames/assets/js/obsidian-wiki-links.js?v=1784777163"></script><!-- Optional fork overrides: opt-in via `site.user_overrides: true` in _config.yml. -->
+</script><script defer src="/wargames/assets/js/obsidian-wiki-links.js?v=1784825759"></script><!-- Optional fork overrides: opt-in via `site.user_overrides: true` in _config.yml. -->
 
 
         </div>
