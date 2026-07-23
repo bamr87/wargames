@@ -19,7 +19,8 @@ Wargames is a **content-only Jekyll site**: a vendored markdown mirror of the [O
 - `_config.yml` — `remote_theme: bamr87/zer0-mistakes`; `defaults` attach theme layouts to the root-level content (no Jekyll collections); `exclude` keeps tooling out of the build.
 - `index.md` — homepage (`layout: home`, `permalink: /`).
 - `overthewire/**` — vendored challenge pages at `/docs/wargames/…` (`layout: default` + games sidebar).
-- `_data/navigation/` — `main.yml` (navbar) and `wargames.yml` (games sidebar).
+- `_data/navigation/` — `main.yml` (navbar) and `wargames.yml` (games→levels sidebar, **generated** by `scripts/gen-nav.py` — re-run after content sync, don't hand-edit).
+- `assets/js/user-overrides.js` — loaded via `user_overrides: true`; expands the current game's levels in the sidebar and marks the active page.
 - `zer0.install.yml` — declarative installer config; re-scaffold with the theme's `scripts/bin/install --config zer0.install.yml`.
 
 ## Conventions

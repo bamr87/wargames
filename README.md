@@ -33,6 +33,16 @@ scripts/bin/install init /path/to/wargames --config /path/to/wargames/zer0.insta
 - `overthewire/**` → the challenge pages, served at their `permalink` (`/docs/wargames/…`) with the theme's `default` layout and the games sidebar (`_data/navigation/wargames.yml`). The `overthewire/index.md` is the games index at `/docs/wargames/`.
 - `_config.yml` `defaults` attach layouts to the root-level content (there are no Jekyll collections), and `exclude` keeps tooling/docs out of the build.
 
+### Sidebar navigation
+
+The left sidebar is a two-level tree — one collapsible group per game, its individual levels as children — so every challenge page is reachable. It is **generated** from the content by `scripts/gen-nav.py` (re-run it after syncing content):
+
+```bash
+python3 scripts/gen-nav.py   # regenerates _data/navigation/wargames.yml
+```
+
+`user_overrides: true` in `_config.yml` loads `assets/js/user-overrides.js`, which expands the current game's levels and marks the active page on load.
+
 ### Local development
 
 GitHub Pages renders the theme remotely; for a local preview, load the theme as a gem instead of `remote_theme`:

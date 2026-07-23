@@ -142,6 +142,26 @@ def rewrite_relative_links(body: str, repo_url: str, branch: str, content_base: 
     return re.sub(r"\[([^\]]*)\]\(([^)]+)\)", _rewrite, body)
 
 
+def normalize_overthewire_links(body: str) -> str:
+    """Fix OverTheWire self-referential links to this site's permalinks.
+
+    Upstream serves challenge pages at ``/wargames/<game>/<page>.html``; here
+    they live at ``/docs/wargames/<game>/<page>/``. Reference-style links
+    (``[text]: /path``) are not matched by ``rewrite_relative_links`` (which
+    only handles inline ``[text](url)``), so they arrive verbatim and 404.
+    Also point the community chat link (which has no local page) back to
+    overthewire.org. The ``(?<!/docs)`` / ``(?<!overthewire\\.org)`` guards keep
+    the pass idempotent.
+    """
+    body = re.sub(r"(?<!/docs)/wargames/([a-z0-9]+)/([a-z0-9]+)\.html",
+                  r"/docs/wargames/\1/\2/", body)
+    body = re.sub(r"(?<!/docs)/wargames/([a-z0-9]+)/",
+                  r"/docs/wargames/\1/", body)
+    body = re.sub(r"(?<!overthewire\.org)/information/chat\.html",
+                  "https://overthewire.org/information/chat.html", body)
+    return body
+
+
 def strip_jekyll_includes(body: str) -> str:
     """Remove Jekyll {% include ... %} tags that won't work outside the source site."""
     return re.sub(r"\{%\s*include\s+[^%]+%\}", "", body)
@@ -185,6 +205,8 @@ def transform_file(
     content_base = source_meta.get("content_paths", [""])[0] if "content_paths" in source_meta else ""
     body = strip_jekyll_includes(body)
     body = rewrite_relative_links(body, source_meta["repo"], branch, content_base)
+    if source_meta.get("category") == "wargames" or source_meta.get("name") == "overthewire":
+        body = normalize_overthewire_links(body)
     body = add_source_attribution(body, source_meta)
 
     # Serialize

@@ -49,6 +49,10 @@ markdown                 : kramdown
 highlighter              : rouge
 pages_dir                : pages
 
+# Load assets/js/user-overrides.js (+ .css) after the theme bundle. Used to
+# auto-expand the current game's levels in the left sidebar on page load.
+user_overrides           : true
+
 # ── Collections ───────────────────────────────────────────────────────────────
 collections:
   posts:
