@@ -28,7 +28,7 @@
   ===================================================================
 -->
 
-<!doctype html><html lang="en" class="no-js" data-bs-theme="dark" data-color-mode-default="auto" data-theme-skin="dark" data-zer0-bg="true">
+<!doctype html><html lang="en" class="no-js" data-bs-theme="dark" data-color-mode-default="auto" data-color-mode-lock="false" data-theme-skin="air" data-zer0-bg="true">
     <head>
         <!-- =============================================== -->
         <!-- HEAD SECTION: Meta tags, styles, and SEO setup -->
@@ -339,7 +339,7 @@
       "installUrl": "https://github.com/bamr87/zer0-mistakes#-quick-start",
       "softwareVersion": "0.21.2",
       "datePublished": "2024-02-10",
-      "dateModified": "2026-07-23",
+      "dateModified": "2026-08-06",
       "license": "https://opensource.org/licenses/MIT",
       "isAccessibleForFree": true,
       "offers": {
@@ -453,8 +453,12 @@
   try {
     var root = document.documentElement;
     var configDefault = root.getAttribute('data-color-mode-default') || 'auto';
-    var stored = window.localStorage.getItem('theme');
+    var locked = root.getAttribute('data-color-mode-lock') === 'true';
+    var stored = locked ? null : window.localStorage.getItem('theme');
     var mode = stored || configDefault;
+    if (mode === 'auto' && locked) {
+      mode = 'dark';
+    }
     if (mode === 'auto') {
       root.setAttribute('data-bs-theme',
         window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
@@ -509,6 +513,11 @@
 
 
 <!-- Statistics page specific styles -->
+
+
+<!-- Consumer hook: end of <head>. Inject JSON-LD, font preloads, verification
+     tags, or extra meta by shadowing _includes/custom/head.html in your site —
+     no fork of this file needed. The theme ships the stub empty. -->
 
 
 <!-- ========================== -->
@@ -592,7 +601,11 @@
         <!-- ============================================== -->
         <!-- BODY SECTION: Site structure and content area -->
         <!-- ============================================== -->
+
+        <!-- Consumer hook: first thing inside <body> (e.g. GTM noscript).
+             Empty stub shipped by the theme; shadow _includes/custom/body-start.html to use. -->
         
+
         <!-- Inline SVG symbols for consistent iconography throughout the site -->
         <!-- Page-invariant: cached once per build via jekyll-include-cache. -->
         <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
@@ -1256,6 +1269,9 @@
                page (settings offcanvas + theme-controls-bar).
   params:      class (string, optional, default "") — extra btn-group classes,
                e.g. "w-100" to fill the parent.
+  config:      site.color_mode_lock: true removes the control entirely — the
+               site pins one mode and visitor switching is disabled
+               (halfmoon.js + core/color-mode-init.html enforce the same).
  -->
 
 <div class="btn-group bd-theme-switch w-100" role="group" aria-label="Color mode">
@@ -1272,6 +1288,7 @@
     <span>Auto</span>
   </button>
 </div>
+
 
         </div>
 
@@ -1663,7 +1680,7 @@ document.addEventListener("DOMContentLoaded", function () {
     <div class="col-6">
       <div class="p-2 bg-body-tertiary rounded text-center">
         <small class="text-body-secondary d-block">Last Build</small>
-        <code class="small">Jul 23, 16:55</code>
+        <code class="small">Aug 06, 04:27</code>
       </div>
     </div>
 
@@ -1881,8 +1898,11 @@ function zer0CopyFeedback(btn, success) {
   - title:           displayed as <h1> (and used for SEO) when present
   - hide_title:true  keep `title` for SEO but suppress the visible <h1>
                      (useful when a custom hero provides its own heading)
+  - hide_intro:true  accepted as an alias of hide_title — other layouts use
+                     `hide_intro` for "suppress the generated page header",
+                     and consumers reasonably reach for it here too
   - rss_subscribe:false  hide the RSS subscribe link on landing/showcase homepages
-  Both default to the original behavior, so existing homepages are unaffected.
+  All default to the original behavior, so existing homepages are unaffected.
   
   Design Philosophy:
   - Minimal structure allows for maximum content flexibility
@@ -2348,7 +2368,10 @@ function zer0CopyFeedback(btn, success) {
     <span class="visually-hidden">Back to top</span>
   </a>
 </footer>
-<!-- Privacy-compliant cookie consent banner — page-invariant. -->
+<!-- Consumer hook: after the theme footer, before the consent banner.
+             Empty stub shipped by the theme; shadow _includes/custom/footer.html to use.
+             Deliberately OUTSIDE the cached footer include so page-dependent
+             consumer markup renders per page. --><!-- Privacy-compliant cookie consent banner — page-invariant. -->
 <!--
   ===================================================================
   COOKIE CONSENT - GDPR/CCPA Compliant Privacy Management
@@ -2761,7 +2784,7 @@ function zer0CopyFeedback(btn, success) {
 <!-- Navigation ES Modules — orchestrator for sidebar, scroll spy, keyboard
      shortcuts, gestures, focus, AND the navbar dropdowns/mobile menu that
      formerly lived in /assets/js/navigation.js (now deprecated). -->
-<script type="module" src="/wargames/assets/js/modules/navigation/index.js?v=1784825759"></script>
+<script type="module" src="/wargames/assets/js/modules/navigation/index.js?v=1785990420"></script>
 
 <!-- Generic UI helpers (toast, copy-to-clipboard, image fade-in) -->
 <script defer src="/wargames/assets/js/ui-helpers.js"></script>
@@ -2794,7 +2817,7 @@ function zer0CopyFeedback(btn, success) {
   window.OBSIDIAN_CONFIG.attachmentsPath = "/wargames/assets/images/notes";
   window.OBSIDIAN_CONFIG.tagBase = "/wargames/tags/";
   window.OBSIDIAN_CONFIG.cytoscapeUrl = "/wargames/assets/vendor/cytoscape/cytoscape.min.js";
-</script><script defer src="/wargames/assets/js/obsidian-wiki-links.js?v=1784825759"></script><!-- Optional fork overrides: opt-in via `site.user_overrides: true` in _config.yml. -->
+</script><script defer src="/wargames/assets/js/obsidian-wiki-links.js?v=1785990420"></script><!-- Optional fork overrides: opt-in via `site.user_overrides: true` in _config.yml. -->
 
 
         </div>
@@ -2856,5 +2879,6 @@ function zer0CopyFeedback(btn, success) {
     }
   };
 </script>
-</body>
+<!-- Consumer hook: last thing before </body> (site scripts, widgets).
+             Empty stub shipped by the theme; shadow _includes/custom/body-end.html to use. --></body>
 </html>
