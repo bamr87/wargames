@@ -15,6 +15,10 @@
   --zer0-color-ink-muted: var(--bs-secondary-color, #6c757d);
   --zer0-color-border: var(--bs-border-color, #dee2e6);
   --zer0-color-border-translucent: color-mix(in srgb, var(--zer0-color-border) 42%, transparent);
+  --zer0-logo-red: #a11111;
+  --zer0-logo-yellow: #ffe900;
+  --zer0-logo-teal: #376986;
+  --zer0-logo-blue: #007bff;
   --zer0-color-code-bg: var(--bd-pre-bg, var(--bs-tertiary-bg));
   --zer0-color-code-ink: var(--bd-callout-code-color, #ab296a);
   --zer0-color-link: var(--bs-link-color, var(--bd-violet, #712cf9));
@@ -40,6 +44,15 @@
 }
 
 :root {
+  --zer0-radius-sm: 0.25rem;
+  --zer0-radius: 0.375rem;
+  --zer0-radius-lg: 0.5rem;
+  --zer0-radius-xl: 0.75rem;
+  --zer0-radius-pill: 50rem;
+  --zer0-radius-circle: 50%;
+}
+
+:root {
   --zer0-font-sans: var(--bs-body-font-family, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif);
   --zer0-font-mono: var(--bs-font-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace);
   --zer0-font-weight-regular: 400;
@@ -55,6 +68,8 @@
   --zer0-text-h4: clamp(1.125rem, 1vw + 1rem, 1.4rem);
   --zer0-text-h5: 1.125rem;
   --zer0-text-h6: 1rem;
+  --zer0-text-display-4: clamp(2.5rem, 6vw, 3.5rem);
+  --zer0-text-display-5: clamp(2rem, 5vw, 3rem);
   --zer0-leading-tight: 1.2;
   --zer0-leading-normal: 1.55;
   --zer0-leading-loose: 1.75;
@@ -2386,7 +2401,7 @@ summary:focus-visible {
   padding: var(--zer0-space-3) var(--zer0-space-4);
   background: var(--zer0-color-bg-elevated);
   border-left: 0.25rem solid var(--zer0-callout-color, var(--zer0-color-primary));
-  border-radius: 0.375rem;
+  border-radius: var(--zer0-radius);
   color: var(--zer0-color-ink);
 }
 
@@ -4525,7 +4540,7 @@ summary:focus-visible {
 .landing-feature-card {
   height: 100%;
   border: 1px solid var(--zer0-color-border);
-  border-radius: 0.75rem;
+  border-radius: var(--zer0-radius-xl);
   background: var(--zer0-color-bg);
   transition: transform var(--zer0-motion-duration-base) var(--zer0-motion-ease-standard), box-shadow var(--zer0-motion-duration-base) var(--zer0-motion-ease-standard);
 }
@@ -4539,7 +4554,7 @@ summary:focus-visible {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: 50%;
+  border-radius: var(--zer0-radius-circle);
   background-color: rgba(var(--zer0-color-primary-rgb), 0.12);
   color: var(--zer0-color-primary);
   margin-bottom: var(--zer0-space-3);
@@ -5965,6 +5980,18 @@ summary:focus-visible {
   gap: 0.25rem;
 }
 
+#navbar .nav-search-kbd {
+  align-items: center;
+  margin-left: 0.1rem;
+  padding: 0.05rem 0.35rem;
+  font-family: var(--zer0-font-mono);
+  font-size: 0.7rem;
+  line-height: 1.4;
+  color: var(--zer0-color-ink-muted);
+  background: var(--zer0-color-bg-muted);
+  border-radius: var(--zer0-radius-sm);
+}
+
 @media (min-width: 992px) {
   #navbar .navbar-main {
     display: grid !important;
@@ -6326,6 +6353,232 @@ summary:focus-visible {
   margin-top: 0.2rem;
 }
 
+.obsidian-graph-shell {
+  position: relative;
+}
+.obsidian-graph-shell #obsidian-graph {
+  width: 100%;
+  height: 82vh;
+  min-height: 620px;
+  border: 1px solid rgba(var(--bs-border-color-rgb, 222, 226, 230), 0.55);
+  border-radius: var(--bs-border-radius-lg, 0.5rem);
+  background: rgba(var(--bs-body-bg-rgb, 255, 255, 255), 0.45);
+  -webkit-backdrop-filter: blur(14px) saturate(1.15);
+  backdrop-filter: blur(14px) saturate(1.15);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03), 0 8px 24px rgba(0, 0, 0, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  position: relative;
+  overflow: hidden;
+}
+[data-bs-theme=dark] .obsidian-graph-shell #obsidian-graph {
+  background: rgba(var(--bs-body-bg-rgb, 33, 37, 41), 0.38);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12), 0 8px 28px rgba(0, 0, 0, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.03);
+}
+
+.obsidian-graph-shell-expanded {
+  position: fixed;
+  inset: 0;
+  z-index: var(--zer0-layer-offcanvas, 1045);
+  background: var(--bs-body-bg, #fff);
+  padding: 0.75rem;
+}
+
+.obsidian-graph-shell-expanded #obsidian-graph,
+.obsidian-graph-shell:fullscreen #obsidian-graph {
+  height: 100%;
+  min-height: 0;
+}
+
+.obsidian-graph-shell:fullscreen {
+  background: var(--bs-body-bg, #fff);
+  padding: 0.75rem;
+}
+
+.obsidian-graph-controls {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  z-index: 20;
+  width: min(17.5rem, 100% - 1.5rem);
+  max-height: calc(100% - 1.5rem);
+  display: flex;
+  flex-direction: column;
+  background: rgba(var(--bs-body-bg-rgb, 255, 255, 255), 0.86);
+  -webkit-backdrop-filter: blur(10px) saturate(1.1);
+  backdrop-filter: blur(10px) saturate(1.1);
+  border: 1px solid var(--bs-border-color, #dee2e6);
+  border-radius: var(--bs-border-radius, 0.375rem);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+.obsidian-graph-controls .obsidian-graph-controls-toggle {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  text-align: left;
+  font-weight: 600;
+  color: var(--bs-body-color, #212529);
+  border: 0;
+  border-radius: 0;
+}
+.obsidian-graph-controls .obsidian-graph-controls-toggle:focus-visible {
+  outline: 2px solid var(--bs-primary);
+  outline-offset: -2px;
+}
+.obsidian-graph-controls .obsidian-graph-controls-chevron {
+  transition: transform 0.2s ease;
+}
+.obsidian-graph-controls .obsidian-graph-controls-toggle[aria-expanded=true] .obsidian-graph-controls-chevron {
+  transform: rotate(180deg);
+}
+.obsidian-graph-controls .obsidian-graph-controls-body {
+  overflow-y: auto;
+  border-top: 1px solid var(--bs-border-color, #dee2e6);
+}
+.obsidian-graph-controls .accordion {
+  --bs-accordion-bg: transparent;
+  font-size: 0.875rem;
+}
+.obsidian-graph-controls .accordion-button {
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+.obsidian-graph-controls .form-label {
+  margin-bottom: 0.125rem;
+  color: var(--bs-secondary-color, #6c757d);
+}
+.obsidian-graph-controls .form-range {
+  margin-bottom: 0.375rem;
+}
+
+.obsidian-graph-collections {
+  max-height: 12.5rem;
+  overflow-y: auto;
+}
+.obsidian-graph-collections .obsidian-graph-collection-filter {
+  margin-bottom: 0.125rem;
+}
+.obsidian-graph-collections .obsidian-graph-collection-filter .form-check-label {
+  width: 100%;
+  cursor: pointer;
+}
+.obsidian-graph-collections .obsidian-graph-collection-filter .swatch {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.12);
+}
+.obsidian-graph-collections .obsidian-graph-collection-filter .badge {
+  font-size: 0.7rem;
+}
+
+.obsidian-graph-zoombar {
+  position: absolute;
+  right: 0.75rem;
+  bottom: 0.75rem;
+  z-index: 20;
+  border-radius: var(--bs-border-radius, 0.375rem);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+.obsidian-graph-zoombar > .btn {
+  background: rgba(var(--bs-body-bg-rgb, 255, 255, 255), 0.88);
+  color: var(--bs-body-color, #212529);
+  border: 1px solid var(--bs-border-color, #dee2e6);
+  line-height: 1;
+}
+.obsidian-graph-zoombar > .btn:hover, .obsidian-graph-zoombar > .btn:focus-visible {
+  background: var(--bs-tertiary-bg, #f8f9fa);
+}
+.obsidian-graph-zoombar > .btn[aria-pressed=true] {
+  background: rgba(var(--bs-primary-rgb), 0.12);
+  color: var(--bs-primary);
+}
+
+.obsidian-graph-preview {
+  position: absolute;
+  z-index: 30;
+  width: min(17rem, 100% - 1.5rem);
+  pointer-events: none;
+  background: rgba(var(--bs-body-bg-rgb, 255, 255, 255), 0.94);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--bs-border-color, #dee2e6);
+}
+.obsidian-graph-preview[hidden] {
+  display: none;
+}
+.obsidian-graph-preview .obsidian-graph-preview-swatch {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 0.65rem;
+  height: 0.65rem;
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.12);
+}
+.obsidian-graph-preview .obsidian-graph-preview-excerpt {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  color: var(--bs-secondary-color, #6c757d);
+}
+
+#obsidian-graph-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.375rem;
+}
+#obsidian-graph-stats .badge {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  padding: 0.35rem 0.6rem;
+}
+
+.obsidian-graph-status {
+  font-size: 0.8125rem;
+  color: var(--bs-secondary-color, #6c757d);
+  min-height: 1.25rem;
+  margin: 0.5rem 0 0;
+}
+
+.obsidian-graph-tips {
+  margin-top: 0.75rem;
+  padding: 0.625rem 0.75rem;
+  font-size: 0.8125rem;
+  color: var(--bs-secondary-color, #6c757d);
+  background: var(--bs-tertiary-bg, #f8f9fa);
+  border-left: 3px solid var(--bs-primary, #0d6efd);
+  border-radius: 0.25rem;
+}
+.obsidian-graph-tips strong {
+  color: var(--bs-body-color, #212529);
+}
+
+@media (max-width: 767.98px) {
+  .obsidian-graph-shell {
+    display: flex;
+    flex-direction: column;
+  }
+  .obsidian-graph-shell #obsidian-graph {
+    height: 62vh;
+    min-height: 420px;
+  }
+  .obsidian-graph-controls {
+    position: static;
+    order: -1;
+    width: 100%;
+    max-height: none;
+    margin-bottom: 0.5rem;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background: var(--bs-body-bg, #fff);
+  }
+  .obsidian-graph-controls .obsidian-graph-controls-body {
+    max-height: 45vh;
+  }
+}
 #obsidianLocalGraphFab.obsidian-local-graph-fab {
   position: fixed;
   left: var(--zer0-space-fab-offset, 1rem);
@@ -6616,7 +6869,7 @@ img {
   left: 50%;
   width: 0;
   height: 0;
-  border-radius: 50%;
+  border-radius: var(--zer0-radius-circle);
   background: rgba(255, 255, 255, 0.2);
   transform: translate(-50%, -50%);
   transition: width 0.6s, height 0.6s;
@@ -6872,7 +7125,7 @@ a:not(.btn):hover {
 
 .btn .ripple {
   position: absolute;
-  border-radius: 50%;
+  border-radius: var(--zer0-radius-circle);
   background: rgba(255, 255, 255, 0.6);
   transform: scale(0);
   animation: ripple-animation 0.6s ease-out;
@@ -6888,14 +7141,14 @@ a:not(.btn):hover {
 @media (max-width: 991.98px) {
   .navbar-collapse {
     background-color: var(--bs-body-bg);
-    border-radius: 0.5rem;
+    border-radius: var(--zer0-radius-lg);
     margin-top: 1rem;
     padding: 1rem;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   }
   .navbar-nav .nav-link {
     padding: 0.75rem 1rem;
-    border-radius: 0.375rem;
+    border-radius: var(--zer0-radius);
     transition: all 0.2s ease;
   }
   .navbar-nav .nav-link:hover {
@@ -6950,7 +7203,7 @@ a:not(.btn):hover {
 *:focus-visible {
   outline: 2px solid var(--bs-primary);
   outline-offset: 2px;
-  border-radius: 0.25rem;
+  border-radius: var(--zer0-radius-sm);
 }
 
 .nav-link.active,
@@ -6972,7 +7225,7 @@ a:not(.btn):hover {
 
 @media (max-width: 768px) {
   .table-responsive {
-    border-radius: 0.5rem;
+    border-radius: var(--zer0-radius-lg);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   }
   .table {

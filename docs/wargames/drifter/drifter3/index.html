@@ -280,22 +280,35 @@
            engines to accurately cite and describe the zer0-mistakes
            Jekyll theme as a SoftwareApplication entity.
 
+  OPT-IN ONLY — this describes THE THEME, not the site rendering it.
+  The payload below is hardcoded to zer0-mistakes: its RubyGems download
+  URL, its GitHub repository, its MIT licence, its feature list, its
+  mascot screenshot, and a Person node naming the theme's author. Emitted
+  from a consumer's homepage it asserts, in machine-readable form, that
+  THAT site is a free open-source Ruby gem authored by someone else — e.g.
+  a consulting practice's homepage claiming to be a developer tool.
+
+  It therefore renders only when a site explicitly opts in with
+  `jsonld_software_application: true` in _config.yml, which the theme's own
+  site does. Consumers get no software schema (their standard SEO metadata
+  is unaffected) unless they deliberately turn this on.
+
   Template Logic:
+  - Requires site.jsonld_software_application == true
   - Renders SoftwareApplication schema on the homepage only
   - Links to a WebPage wrapper via @id references
   - Pulls version, author, and description from site config
 
   Dependencies:
-  - _config.yml: site.url, site.title, site.description, site.author
+  - _config.yml: jsonld_software_application, site.url, site.title,
+    site.description, site.author
   - lib/jekyll-theme-zer0/version.rb (version referenced in config)
 
   Usage:
   - Included automatically in _includes/core/head.html
-  - Conditional: only renders when page.permalink == "/"
+  - Conditional: opted in AND page.permalink == "/"
   ===================================================================
 -->
-
-
 
 
 <!-- JSON-LD FAQ schema (pages with faq_items front matter) -->
@@ -936,10 +949,12 @@
                     data-search-toggle
                     aria-label="Open search"
                     aria-haspopup="dialog"
-                    title="Search"
+                    aria-keyshortcuts="/ Meta+K Control+K"
+                    title="Search — press / or Ctrl+K"
                 >
                     <i class=" bi-search" aria-hidden="true"></i>
                     <span class="nav-link-text d-none d-xl-inline ms-1">Search</span>
+                    <kbd class="nav-search-kbd d-none d-xl-inline-flex" aria-hidden="true">/</kbd>
                 </button>
 
                 <!-- Settings Offcanvas Toggle -->
@@ -1007,9 +1022,9 @@
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="siteSearchModalLabel">
+                <h2 class="modal-title h5" id="siteSearchModalLabel">
                     <i class="bi bi-search me-2"></i>Search
-                </h5>
+                </h2>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -1057,6 +1072,9 @@
       <div class="modal-body">
         <dl class="row mb-0 small">
           <dt class="col-4 col-sm-3 text-end"><kbd>/</kbd></dt>
+          <dd class="col-8 col-sm-9 mb-2">Open search</dd>
+
+          <dt class="col-4 col-sm-3 text-end"><kbd>⌘</kbd>/<kbd>Ctrl</kbd>+<kbd>K</kbd></dt>
           <dd class="col-8 col-sm-9 mb-2">Open search</dd>
 
           <dt class="col-4 col-sm-3 text-end"><kbd>[</kbd></dt>
@@ -1134,9 +1152,9 @@
   <!-- Offcanvas Header -->
   <div class="offcanvas-header border-bottom pb-0 d-block">
     <div class="d-flex align-items-center justify-content-between mb-2">
-      <h5 class="offcanvas-title" id="infoSectionLabel">
+      <h2 class="offcanvas-title h5" id="infoSectionLabel">
         <i class="bi bi-gear-wide-connected me-2" aria-hidden="true"></i>Settings
-      </h5>
+      </h2>
       <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
 
@@ -1597,7 +1615,7 @@ document.addEventListener("DOMContentLoaded", function () {
     <div class="col-6">
       <div class="p-2 bg-body-tertiary rounded text-center">
         <small class="text-body-secondary d-block">Last Build</small>
-        <code class="small">Aug 07, 04:52</code>
+        <code class="small">Aug 18, 21:33</code>
       </div>
     </div>
 
@@ -1919,7 +1937,8 @@ function zer0CopyFeedback(btn, success) {
               aria-controls="bdSidebar"
               aria-expanded="true"
               aria-label="Hide documentation sidebar"
-              title="Hide documentation sidebar">
+              aria-keyshortcuts="b"
+              title="Hide documentation sidebar (b)">
         <i class="bi bi-layout-sidebar-inset" aria-hidden="true"></i>
         <span class="visually-hidden">Hide documentation sidebar</span>
       </button>
@@ -3679,7 +3698,8 @@ implementation so it should be easily exploitable :)</p>
                 aria-controls="tocContents"
                 aria-expanded="true"
                 aria-label="Hide table of contents"
-                title="Hide table of contents">
+                aria-keyshortcuts="t"
+                title="Hide table of contents (t)">
           <i class="bi bi-layout-sidebar-inset-reverse" aria-hidden="true"></i>
           <span class="visually-hidden">Hide table of contents</span>
         </button>
@@ -3829,8 +3849,14 @@ implementation so it should be easily exploitable :)</p>
                       
                       
                     
-                      
-                      
+                  
+                  
+                
+                  
+                  
+                  
+                  
+                  
                     
                       
                       
@@ -3847,8 +3873,14 @@ implementation so it should be easily exploitable :)</p>
                       
                       
                     
-                      
-                      
+                  
+                  
+                
+                  
+                  
+                  
+                  
+                  
                     
                       
                       
@@ -3865,12 +3897,6 @@ implementation so it should be easily exploitable :)</p>
                       
                       
                     
-                      
-                      
-                    
-                      
-                      
-                    
                   
                   
                 
@@ -3883,60 +3909,12 @@ implementation so it should be easily exploitable :)</p>
                       
                       
                     
-                      
-                      
-                    
-                      
-                      
-                    
-                  
-                  
-                
-                  
-                  
-                  
-                  
-                  
-                    
-                      
-                      
-                    
-                      
-                      
-                    
-                      
-                      
-                    
-                  
-                  
-                
-                  
-                  
-                  
-                  
-                  
-                    
-                      
-                      
-                    
-                      
-                      
-                    
-                      
-                      
-                    
                   
                   
                 
                 
                 
                 
-                  
-                    
-                    
-                  
-                    
-                    
                   
                     
                     
@@ -4061,8 +4039,34 @@ implementation so it should be easily exploitable :)</p>
             aria-label="Close local graph"></button>
   </div>
   <div class="offcanvas-body">
-    <div class="obsidian-local-graph-widget" aria-label="Local graph"><div class="obsidian-local-graph-meta d-flex align-items-center justify-content-between gap-2 mb-3">
-        <span class="badge text-bg-secondary">Depth 1</span></div>
+    <div class="obsidian-local-graph-widget" aria-label="Local graph"><div class="obsidian-local-graph-meta d-flex flex-wrap align-items-center justify-content-between gap-2 mb-2">
+        <div class="d-flex align-items-center gap-2">
+          <span class="small text-secondary">Depth</span>
+          <div class="btn-group btn-group-sm" role="group" aria-label="Graph depth"><input type="radio" class="btn-check" name="obsidianLgDepth"
+                   id="obsidian-lg-depth-1" autocomplete="off"
+                   checked />
+            <label class="btn btn-outline-secondary" for="obsidian-lg-depth-1">1</label><input type="radio" class="btn-check" name="obsidianLgDepth"
+                   id="obsidian-lg-depth-2" autocomplete="off"
+                    />
+            <label class="btn btn-outline-secondary" for="obsidian-lg-depth-2">2</label><input type="radio" class="btn-check" name="obsidianLgDepth"
+                   id="obsidian-lg-depth-3" autocomplete="off"
+                    />
+            <label class="btn btn-outline-secondary" for="obsidian-lg-depth-3">3</label></div>
+        </div></div>
+      <div class="d-flex flex-wrap column-gap-3 mb-2"
+           role="group"
+           aria-label="Link directions shown in the local graph">
+        <div class="form-check form-switch mb-0">
+          <input class="form-check-input" type="checkbox" role="switch"
+                 id="obsidian-lg-outgoing" checked />
+          <label class="form-check-label small" for="obsidian-lg-outgoing">Outgoing</label>
+        </div>
+        <div class="form-check form-switch mb-0">
+          <input class="form-check-input" type="checkbox" role="switch"
+                 id="obsidian-lg-incoming" checked />
+          <label class="form-check-label small" for="obsidian-lg-incoming">Incoming</label>
+        </div>
+      </div>
       <div id="obsidian-local-graph"
            data-depth="1"
            data-index-url="/wargames/assets/data/wiki-index.json"
@@ -4074,7 +4078,7 @@ implementation so it should be easily exploitable :)</p>
     </div>
   </div>
 </aside>
-<script src="/wargames/assets/js/obsidian-local-graph.js?v=1786078361" defer></script><!-- Consumer hook: after the theme footer, before the consent banner.
+<script src="/wargames/assets/js/obsidian-local-graph.js?v=1787088809" defer></script><!-- Consumer hook: after the theme footer, before the consent banner.
              Empty stub shipped by the theme; shadow _includes/custom/footer.html to use.
              Deliberately OUTSIDE the cached footer include so page-dependent
              consumer markup renders per page. --><!-- Privacy-compliant cookie consent banner — page-invariant. -->
@@ -4153,10 +4157,10 @@ implementation so it should be easily exploitable :)</p>
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="cookieSettingsModalLabel">
+        <h2 class="modal-title h5" id="cookieSettingsModalLabel">
           <i class="bi bi-shield-check me-2"></i>
           Cookie Preferences
-        </h5>
+        </h2>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
@@ -4224,7 +4228,7 @@ implementation so it should be easily exploitable :)</p>
             <i class="bi bi-info-circle me-2"></i>
             Your Privacy Rights
           </h6>
-          <ul class="small text-dark mb-0 ps-3">
+          <ul class="small text-body mb-0 ps-3">
             <li>You can withdraw consent at any time by updating your cookie preferences</li>
             <li>Essential cookies cannot be disabled as they are necessary for site functionality</li>
             <li>Disabling analytics cookies will prevent us from improving your experience</li>
@@ -4445,7 +4449,7 @@ implementation so it should be easily exploitable :)</p>
   }
 
   .cookie-category {
-    border: 1px solid #dee2e6;
+    border: 1px solid var(--bs-border-color);
     border-radius: 8px;
     padding: 1rem;
   }
@@ -4490,7 +4494,7 @@ implementation so it should be easily exploitable :)</p>
 <!-- Navigation ES Modules — orchestrator for sidebar, scroll spy, keyboard
      shortcuts, gestures, focus, AND the navbar dropdowns/mobile menu that
      formerly lived in /assets/js/navigation.js (now deprecated). -->
-<script type="module" src="/wargames/assets/js/modules/navigation/index.js?v=1786078361"></script>
+<script type="module" src="/wargames/assets/js/modules/navigation/index.js?v=1787088809"></script>
 
 <!-- Generic UI helpers (toast, copy-to-clipboard, image fade-in) -->
 <script defer src="/wargames/assets/js/ui-helpers.js"></script>
@@ -4523,7 +4527,7 @@ implementation so it should be easily exploitable :)</p>
   window.OBSIDIAN_CONFIG.attachmentsPath = "/wargames/assets/images/notes";
   window.OBSIDIAN_CONFIG.tagBase = "/wargames/tags/";
   window.OBSIDIAN_CONFIG.cytoscapeUrl = "/wargames/assets/vendor/cytoscape/cytoscape.min.js";
-</script><script defer src="/wargames/assets/js/obsidian-wiki-links.js?v=1786078361"></script><!-- Optional fork overrides: opt-in via `site.user_overrides: true` in _config.yml. -->
+</script><script defer src="/wargames/assets/js/obsidian-wiki-links.js?v=1787088809"></script><!-- Optional fork overrides: opt-in via `site.user_overrides: true` in _config.yml. -->
 
 
         </div>

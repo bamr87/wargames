@@ -280,116 +280,35 @@
            engines to accurately cite and describe the zer0-mistakes
            Jekyll theme as a SoftwareApplication entity.
 
+  OPT-IN ONLY — this describes THE THEME, not the site rendering it.
+  The payload below is hardcoded to zer0-mistakes: its RubyGems download
+  URL, its GitHub repository, its MIT licence, its feature list, its
+  mascot screenshot, and a Person node naming the theme's author. Emitted
+  from a consumer's homepage it asserts, in machine-readable form, that
+  THAT site is a free open-source Ruby gem authored by someone else — e.g.
+  a consulting practice's homepage claiming to be a developer tool.
+
+  It therefore renders only when a site explicitly opts in with
+  `jsonld_software_application: true` in _config.yml, which the theme's own
+  site does. Consumers get no software schema (their standard SEO metadata
+  is unaffected) unless they deliberately turn this on.
+
   Template Logic:
+  - Requires site.jsonld_software_application == true
   - Renders SoftwareApplication schema on the homepage only
   - Links to a WebPage wrapper via @id references
   - Pulls version, author, and description from site config
 
   Dependencies:
-  - _config.yml: site.url, site.title, site.description, site.author
+  - _config.yml: jsonld_software_application, site.url, site.title,
+    site.description, site.author
   - lib/jekyll-theme-zer0/version.rb (version referenced in config)
 
   Usage:
   - Included automatically in _includes/core/head.html
-  - Conditional: only renders when page.permalink == "/"
+  - Conditional: opted in AND page.permalink == "/"
   ===================================================================
 -->
-
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "WebPage",
-      "@id": "https://bamr87.github.io/#webpage",
-      "url": "https://bamr87.github.io/",
-      "name": "Wargames — Curated security wargames from the OverTheWire community. Learn and practice security concepts through gamified challenges.",
-      "isPartOf": {
-        "@id": "https://bamr87.github.io/#website"
-      },
-      "about": {
-        "@id": "https://bamr87.github.io/#software"
-      },
-      "datePublished": "2024-02-10",
-      "dateModified": "2026-04-07",
-      "description": "Curated security wargames from the OverTheWire community. Learn and practice security concepts through gamified challenges.",
-      "inLanguage": "en-US"
-    },
-    {
-      "@type": "WebSite",
-      "@id": "https://bamr87.github.io/#website",
-      "url": "https://bamr87.github.io/",
-      "name": "Wargames",
-      "publisher": {
-        "@id": "https://bamr87.github.io/#author"
-      },
-      "inLanguage": "en-US"
-    },
-    {
-      "@type": "SoftwareApplication",
-      "@id": "https://bamr87.github.io/#software",
-      "name": "Wargames",
-      "alternateName": "jekyll-theme-zer0",
-      "description": "GitHub Pages compatible Jekyll theme with Bootstrap 5.3, featuring Docker-first development, automated installation, and comprehensive documentation.",
-      "applicationCategory": "DeveloperApplication",
-      "operatingSystem": "Cross-platform (macOS, Linux, Windows via Docker)",
-      "url": "https://bamr87.github.io/",
-      "downloadUrl": "https://rubygems.org/gems/jekyll-theme-zer0",
-      "installUrl": "https://github.com/bamr87/zer0-mistakes#-quick-start",
-      "softwareVersion": "0.21.2",
-      "datePublished": "2024-02-10",
-      "dateModified": "2026-08-07",
-      "license": "https://opensource.org/licenses/MIT",
-      "isAccessibleForFree": true,
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD"
-      },
-      "author": {
-        "@id": "https://bamr87.github.io/#author"
-      },
-      "publisher": {
-        "@id": "https://bamr87.github.io/#author"
-      },
-      "codeRepository": "https://github.com/bamr87/zer0-mistakes",
-      "programmingLanguage": ["Ruby", "Liquid", "HTML", "SCSS", "JavaScript"],
-      "runtimePlatform": "Jekyll",
-      "featureList": [
-        "Bootstrap 5.3.3 responsive UI framework",
-        "Docker-first cross-platform development",
-        "AI-powered self-healing installation",
-        "GitHub Pages native compatibility",
-        "Privacy-compliant PostHog analytics",
-        "Mermaid diagram rendering",
-        "MathJax mathematical notation",
-        "Automated semantic versioning and release pipeline",
-        "Client-side search functionality",
-        "Cookie consent (GDPR/CCPA compliant)",
-        "Progressive Web App support",
-        "43 documented features with comprehensive tests"
-      ],
-      "screenshot": "https://bamr87.github.io/assets/images/wizard-on-journey.png",
-      "softwareRequirements": "Docker Desktop or Ruby >= 2.7 with Bundler"
-    },
-    {
-      "@type": "Person",
-      "@id": "https://bamr87.github.io/#author",
-      "name": "bamr87",
-      "alternateName": "bamr87",
-      "url": "https://github.com/bamr87",
-      "sameAs": [
-        "https://github.com/bamr87",
-        "https://x.com/bamr87"
-      ],
-      "jobTitle": "Software Developer",
-      "knowsAbout": ["Jekyll", "Docker", "Bootstrap", "GitHub Pages", "Static Site Generation"]
-    }
-  ]
-}
-</script>
-
 
 
 <!-- JSON-LD FAQ schema (pages with faq_items front matter) -->
@@ -1019,10 +938,12 @@
                     data-search-toggle
                     aria-label="Open search"
                     aria-haspopup="dialog"
-                    title="Search"
+                    aria-keyshortcuts="/ Meta+K Control+K"
+                    title="Search — press / or Ctrl+K"
                 >
                     <i class=" bi-search" aria-hidden="true"></i>
                     <span class="nav-link-text d-none d-xl-inline ms-1">Search</span>
+                    <kbd class="nav-search-kbd d-none d-xl-inline-flex" aria-hidden="true">/</kbd>
                 </button>
 
                 <!-- Settings Offcanvas Toggle -->
@@ -1090,9 +1011,9 @@
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="siteSearchModalLabel">
+                <h2 class="modal-title h5" id="siteSearchModalLabel">
                     <i class="bi bi-search me-2"></i>Search
-                </h5>
+                </h2>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -1140,6 +1061,9 @@
       <div class="modal-body">
         <dl class="row mb-0 small">
           <dt class="col-4 col-sm-3 text-end"><kbd>/</kbd></dt>
+          <dd class="col-8 col-sm-9 mb-2">Open search</dd>
+
+          <dt class="col-4 col-sm-3 text-end"><kbd>⌘</kbd>/<kbd>Ctrl</kbd>+<kbd>K</kbd></dt>
           <dd class="col-8 col-sm-9 mb-2">Open search</dd>
 
           <dt class="col-4 col-sm-3 text-end"><kbd>[</kbd></dt>
@@ -1217,9 +1141,9 @@
   <!-- Offcanvas Header -->
   <div class="offcanvas-header border-bottom pb-0 d-block">
     <div class="d-flex align-items-center justify-content-between mb-2">
-      <h5 class="offcanvas-title" id="infoSectionLabel">
+      <h2 class="offcanvas-title h5" id="infoSectionLabel">
         <i class="bi bi-gear-wide-connected me-2" aria-hidden="true"></i>Settings
-      </h5>
+      </h2>
       <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
 
@@ -1680,7 +1604,7 @@ document.addEventListener("DOMContentLoaded", function () {
     <div class="col-6">
       <div class="p-2 bg-body-tertiary rounded text-center">
         <small class="text-body-secondary d-block">Last Build</small>
-        <code class="small">Aug 07, 04:52</code>
+        <code class="small">Aug 18, 21:33</code>
       </div>
     </div>
 
@@ -2174,8 +2098,14 @@ function zer0CopyFeedback(btn, success) {
                       
                       
                     
-                      
-                      
+                  
+                  
+                
+                  
+                  
+                  
+                  
+                  
                     
                       
                       
@@ -2192,8 +2122,14 @@ function zer0CopyFeedback(btn, success) {
                       
                       
                     
-                      
-                      
+                  
+                  
+                
+                  
+                  
+                  
+                  
+                  
                     
                       
                       
@@ -2210,12 +2146,6 @@ function zer0CopyFeedback(btn, success) {
                       
                       
                     
-                      
-                      
-                    
-                      
-                      
-                    
                   
                   
                 
@@ -2228,60 +2158,12 @@ function zer0CopyFeedback(btn, success) {
                       
                       
                     
-                      
-                      
-                    
-                      
-                      
-                    
-                  
-                  
-                
-                  
-                  
-                  
-                  
-                  
-                    
-                      
-                      
-                    
-                      
-                      
-                    
-                      
-                      
-                    
-                  
-                  
-                
-                  
-                  
-                  
-                  
-                  
-                    
-                      
-                      
-                    
-                      
-                      
-                    
-                      
-                      
-                    
                   
                   
                 
                 
                 
                 
-                  
-                    
-                    
-                  
-                    
-                    
                   
                     
                     
@@ -2447,10 +2329,10 @@ function zer0CopyFeedback(btn, success) {
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="cookieSettingsModalLabel">
+        <h2 class="modal-title h5" id="cookieSettingsModalLabel">
           <i class="bi bi-shield-check me-2"></i>
           Cookie Preferences
-        </h5>
+        </h2>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
@@ -2518,7 +2400,7 @@ function zer0CopyFeedback(btn, success) {
             <i class="bi bi-info-circle me-2"></i>
             Your Privacy Rights
           </h6>
-          <ul class="small text-dark mb-0 ps-3">
+          <ul class="small text-body mb-0 ps-3">
             <li>You can withdraw consent at any time by updating your cookie preferences</li>
             <li>Essential cookies cannot be disabled as they are necessary for site functionality</li>
             <li>Disabling analytics cookies will prevent us from improving your experience</li>
@@ -2739,7 +2621,7 @@ function zer0CopyFeedback(btn, success) {
   }
 
   .cookie-category {
-    border: 1px solid #dee2e6;
+    border: 1px solid var(--bs-border-color);
     border-radius: 8px;
     padding: 1rem;
   }
@@ -2784,7 +2666,7 @@ function zer0CopyFeedback(btn, success) {
 <!-- Navigation ES Modules — orchestrator for sidebar, scroll spy, keyboard
      shortcuts, gestures, focus, AND the navbar dropdowns/mobile menu that
      formerly lived in /assets/js/navigation.js (now deprecated). -->
-<script type="module" src="/wargames/assets/js/modules/navigation/index.js?v=1786078361"></script>
+<script type="module" src="/wargames/assets/js/modules/navigation/index.js?v=1787088809"></script>
 
 <!-- Generic UI helpers (toast, copy-to-clipboard, image fade-in) -->
 <script defer src="/wargames/assets/js/ui-helpers.js"></script>
@@ -2817,7 +2699,7 @@ function zer0CopyFeedback(btn, success) {
   window.OBSIDIAN_CONFIG.attachmentsPath = "/wargames/assets/images/notes";
   window.OBSIDIAN_CONFIG.tagBase = "/wargames/tags/";
   window.OBSIDIAN_CONFIG.cytoscapeUrl = "/wargames/assets/vendor/cytoscape/cytoscape.min.js";
-</script><script defer src="/wargames/assets/js/obsidian-wiki-links.js?v=1786078361"></script><!-- Optional fork overrides: opt-in via `site.user_overrides: true` in _config.yml. -->
+</script><script defer src="/wargames/assets/js/obsidian-wiki-links.js?v=1787088809"></script><!-- Optional fork overrides: opt-in via `site.user_overrides: true` in _config.yml. -->
 
 
         </div>
