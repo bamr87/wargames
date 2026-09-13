@@ -1,85 +1,33 @@
-<!--
-  ===================================================================
-  ROOT LAYOUT - Base template for the Zer0 Mistakes Jekyll Theme
-  ===================================================================
-  
-  File: root.html
-  Path: _layouts/root.html
-  Purpose: Base HTML structure that all other layouts inherit from
-  
-  Template Logic:
-  - Sets up the HTML document structure with Bootstrap 5 dark theme
-  - Includes essential meta tags and SEO optimization
-  - Loads external dependencies (CSS, JS, fonts)
-  - Provides the main content wrapper for child layouts
-  - Implements scroll spy for table of contents navigation
-  
-  Dependencies:
-  - head.html: Meta tags, stylesheets, and external resources
-  - svg.html: Inline SVG symbols for icons
-  - header.html: Main navigation and site branding
-  - info-section.html: Settings offcanvas (Appearance / Site / Developer)
-  - footer.html: Site footer with links and copyright
-  - js-cdn.html: JavaScript dependencies and custom scripts
-  
-  Theme: Zer0 Mistakes Jekyll Theme v0.1
-  Author: Amr Abdel-Motaleb
-  Copyright: 2024 - it-journey.com | @bamr87
-  ===================================================================
--->
+
 
 <!doctype html><html lang="en" class="no-js" data-bs-theme="dark" data-color-mode-default="auto" data-color-mode-lock="false" data-theme-skin="air" data-zer0-bg="true">
-    <head>
-        <!-- =============================================== -->
-        <!-- HEAD SECTION: Meta tags, styles, and SEO setup -->
-        <!-- =============================================== -->
+    <head><meta charset="utf-8">
+
         
-        <!-- Core site metadata, stylesheets, and external dependencies -->
+        <script>document.documentElement.classList.replace("no-js", "js");</script>
+
         
-<!--
-  ===================================================================
-  HEAD - HTML Document Head Section
-  ===================================================================
-  
-  File: head.html
-  Path: _includes/head.html
-  Purpose: Complete HTML document head section with meta tags, styles, 
-           and essential JavaScript libraries
-  
-  Template Logic:
-  - Loads critical JavaScript libraries before page render
-  - Includes SEO optimization and social media meta tags
-  - Configures third-party integrations (Analytics, MathJax)
-  - Sets up progress bar via components/nanobar.html include
-  
-  Dependencies:
-  - seo.html: SEO meta tags and Open Graph data
-  - google-analytics.html: Google Analytics tracking
-  - google-tag-manager-head.html: GTM head section
-  - posthog.html: PostHog product analytics (opt-in via site.posthog.enabled)
-  
-  Performance Notes:
-  - Scripts loaded in head for immediate availability
-  - MathJax loaded asynchronously to prevent render blocking
-  - Nanobar provides visual loading feedback (see components/nanobar.html)
-  ===================================================================
--->
+        
+        
 
-<!-- ================================ -->
-<!-- ANALYTICS AND TRACKING          -->
-<!-- ================================ -->
-<!-- Google Tag Manager - Must be in head section for proper tracking -->
-<!-- Only load in production builds (JEKYLL_ENV=production); the include also guards against dev hostnames -->
+        
+        
 
 
-<!-- Page-feedback: early console/error capture — must run before the theme
-     scripts below so a report can include the logs that led up to it. -->
 
 
-<!-- ================================ -->
-<!-- JAVASCRIPT LIBRARIES            -->
-<!-- ================================ -->
-<!-- Custom theme JavaScript - Deferred for performance -->
+
+
+
+
+
+
+
+
+
+
+
+
 <script defer src="/wargames/assets/js/auto-hide-nav.js"></script>
 <script defer src="/wargames/assets/js/back-to-top.js"></script>
 <script defer src="/wargames/assets/js/halfmoon.js"></script>
@@ -88,59 +36,22 @@
 <script defer src="/wargames/assets/js/table-copy.js"></script>
 <script defer src="/wargames/assets/js/ui-enhancements.js"></script>
 
-<!-- ================================ -->
-<!-- THIRD PARTY INTEGRATIONS        -->
-<!-- ================================ -->
-
-<!-- Mermaid Diagrams - Conditional loading based on page front matter -->
 
 
-<!-- Nano Progress Bar - Visual loading indicator (config-driven) — page-invariant, cached. -->
 
-<!--
-  ===================================================================
-  NANOBAR - Config-Driven Page Loading Progress Bar
-  ===================================================================
 
-  File: nanobar.html
-  Path: _includes/components/nanobar.html
-  Purpose: Visual loading indicator shown on every page load,
-           fully configurable via site.nanobar in _config.yml
 
-  Template Logic:
-  - Conditionally renders only when site.nanobar.enabled != false
-  - Injects CSS custom properties from _config.yml values
-  - Loads nanobar.min.js (library) and nanobar-init.js (initializer)
-  - Passes config to JS via window.zer0Nanobar object
 
-  Dependencies:
-  - assets/js/nanobar.min.js  — third-party Nanobar library
-  - assets/js/nanobar-init.js — theme initializer script
-  - _includes/core/header.html — #top-progress-target mount point
-    (rendered only when position == "navbar")
 
-  Configuration (_config.yml → nanobar):
-    enabled       : true | false          # master switch
-    color         : CSS color value       # bar fill colour
-    background    : CSS color value       # track background
-    height        : CSS length            # bar thickness
-    position      : top | bottom | navbar # placement mode
-    z_index       : integer               # stacking order
-    steps         : [int, …]              # progress percentages
-    step_delay_ms : integer               # ms between steps
-    classname     : string                # CSS class on wrapper
-    id            : string                # DOM id
-    target        : CSS selector | ""     # explicit mount target
 
-  Performance Notes:
-  - Both scripts loaded with `defer` to avoid blocking rendering
-  - CSS custom properties keep the inline <style> minimal
-  - Library injects its own baseline CSS; theme overrides via
-    specificity and !important where needed
 
-  Library: https://github.com/jacoborus/nanobar
-  ===================================================================
---><!-- ── Nanobar theme CSS (config-driven custom properties) ── -->
+
+
+
+
+
+
+
 <style id="nanobar-theme">
   :root {
     --nanobar-color:  var(--bs-primary);
@@ -177,11 +88,11 @@
   }
 </style>
 
-<!-- ── Nanobar scripts ── -->
+
 <script defer src="/wargames/assets/js/nanobar.min.js"></script>
 <script defer src="/wargames/assets/js/nanobar-init.js"></script>
 
-<!-- ── Bridge _config.yml values to JS ── -->
+
 <script>
   window.zer0Nanobar = {
     classname: "nanobar",
@@ -193,68 +104,43 @@
   };
 </script>
 
-<!-- MathJax - Conditional loading based on page front matter (like Mermaid) -->
 
 
-<!-- ================================ -->
-<!-- HTML DOCUMENT META DATA         -->
-<!-- ================================ -->
-<!-- Essential meta tags for proper document rendering and mobile support -->
-<meta charset="utf-8">
+
+
+
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<!-- Favicon + browser identity (config-driven via `favicon:`; explicit
-     /favicon.ico fallback so baseurl deployments resolve) — page-invariant, cached. -->
+
 <link rel="icon" href="/wargames/favicon.ico" sizes="32x32">
-
-
-<!-- ================================ -->
-<!-- SEO SUPPLEMENT                  -->
-<!-- ================================ -->
-<!-- Additional SEO tags not covered by jekyll-seo-tag plugin ( in root.html).
-     Outputs custom og:image with assets_prefix normalisation and non-Google site verification. -->
-
-<!--
-  ===================================================================
-  SEO SUPPLEMENT - Additional meta tags not covered by jekyll-seo-tag
-  ===================================================================
-
-  File: seo.html
-  Path: _includes/content/seo.html
-  Purpose: Outputs ONLY meta tags that the jekyll-seo-tag plugin does
-           not generate. The bulk of SEO (title, description, og:*,
-           twitter:*, canonical, JSON-LD) is handled by seo tags in
-           _layouts/root.html.
-
-  What this file adds:
-  - Custom og:image with preview_images.assets_prefix path normalisation
-    for the theme-specific page.preview and page.header.og_image keys.
-    When page.image is set, jekyll-seo-tag handles og:image and this
-    file skips its own og:image output to avoid duplicate tags.
-  - Non-Google site verification tags (Bing, Yandex, Naver, Baidu)
-
-  Dependencies:
-  - jekyll-seo-tag plugin (loaded in _layouts/root.html via seo tags)
-  - site.preview_images config in _config.yml
-  ===================================================================
---><!-- Site verification (non-Google; Google is handled by jekyll-seo-tag) -->
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#212529">
+<link rel="alternate" type="application/atom+xml"
+      title="Wargames"
+      href="/wargames/feed.xml">
 
 
 
 
 
-<!-- end _includes/content/seo.html -->
 
 
-<!-- hreflang alternates for machine-generated translations (no-op when the
-     page has none) — see _data/i18n/manifest.yml + scripts/translate.rb -->
 
 
-<!-- ========================== -->
-<!-- STRUCTURED DATA MARKUP    -->
-<!-- ========================== -->
-<!-- Enhanced meta data for rich snippets and social media -->
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     <meta itemprop="headline" content="Natas24">
 
@@ -268,104 +154,37 @@
     <meta itemprop="dateModified" content="2026-04-07T01:41:09+00:00">
 
 
-<!-- JSON-LD SoftwareApplication schema (homepage only) -->
-<!--
-  ===================================================================
-  JSON-LD STRUCTURED DATA - SoftwareApplication + WebPage Schema
-  ===================================================================
-
-  File: jsonld-software.html
-  Path: _includes/content/jsonld-software.html
-  Purpose: Provides rich structured data for AI engines and search
-           engines to accurately cite and describe the zer0-mistakes
-           Jekyll theme as a SoftwareApplication entity.
-
-  OPT-IN ONLY — this describes THE THEME, not the site rendering it.
-  The payload below is hardcoded to zer0-mistakes: its RubyGems download
-  URL, its GitHub repository, its MIT licence, its feature list, its
-  mascot screenshot, and a Person node naming the theme's author. Emitted
-  from a consumer's homepage it asserts, in machine-readable form, that
-  THAT site is a free open-source Ruby gem authored by someone else — e.g.
-  a consulting practice's homepage claiming to be a developer tool.
-
-  It therefore renders only when a site explicitly opts in with
-  `jsonld_software_application: true` in _config.yml, which the theme's own
-  site does. Consumers get no software schema (their standard SEO metadata
-  is unaffected) unless they deliberately turn this on.
-
-  Template Logic:
-  - Requires site.jsonld_software_application == true
-  - Renders SoftwareApplication schema on the homepage only
-  - Links to a WebPage wrapper via @id references
-  - Pulls version, author, and description from site config
-
-  Dependencies:
-  - _config.yml: jsonld_software_application, site.url, site.title,
-    site.description, site.author
-  - lib/jekyll-theme-zer0/version.rb (version referenced in config)
-
-  Usage:
-  - Included automatically in _includes/core/head.html
-  - Conditional: opted in AND page.permalink == "/"
-  ===================================================================
--->
-
-
-<!-- JSON-LD FAQ schema (pages with faq_items front matter) -->
-
-<!--
-  ===================================================================
-  JSON-LD FAQ SCHEMA - FAQPage Structured Data
-  ===================================================================
-
-  File: jsonld-faq.html
-  Path: _includes/content/jsonld-faq.html
-  Purpose: Renders FAQPage schema from page.faq_items front matter
-           for rich search results and AI citation injection.
-
-  Parameters:
-  - Reads page.faq_items array from front matter
-  - Each item needs: question, answer
-
-  Usage:
-    In page front matter:
-      faq_items:
-        - question: "What is zer0-mistakes?"
-          answer: "A Jekyll theme..."
-    In layout/page:
-      include content/jsonld-faq.html
-
-  Dependencies:
-  - Page front matter with faq_items array
-  ===================================================================
--->
 
 
 
 
-<!-- ========================== -->
-<!-- ANALYTICS INTEGRATION     -->
-<!-- ========================== -->
-<!-- Google Analytics tracking - Configured in _config.yml -->
-<!-- Only load in production AND when an ID is configured; the include also guards against dev hostnames -->
-
-
-<!-- PostHog analytics - Configured via the `posthog:` block in _config.yml -->
-<!-- Only load in production AND when explicitly enabled; the include itself also respects Do Not Track -->
 
 
 
-<!-- ================================ -->
-<!-- CSS FRAMEWORKS AND LIBRARIES   -->
-<!-- ================================ -->
 
-<!-- ========================== -->
-<!-- COLOR MODE INIT (FOUC FIX) -->
-<!-- ========================== -->
-<!-- Must run BEFORE Bootstrap CSS so the correct data-bs-theme is applied
-     when [data-bs-theme=dark/light] selectors are first evaluated.
-     Reads site.color_mode_default (via data-color-mode-default attr on <html>)
-     and falls back to localStorage["theme"] for the user's explicit preference. -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <script>
 (function () {
   'use strict';
@@ -389,29 +208,28 @@
 </script>
 
 
-<!-- ========================== -->
-<!-- BOOTSTRAP 5 FRAMEWORK     -->
-<!-- ========================== -->
-<!-- Bootstrap 5.3.3 - bundled locally (GitHub Pages–safe; refresh via scripts/vendor-install.sh) -->
+
+
+
+
 <link href="/wargames/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-<!-- ========================== -->
-<!-- ICON LIBRARIES             -->
-<!-- ========================== -->
-<!-- Bootstrap Icons (bundled with theme; fonts use relative paths in CSS) -->
+
+
+
+
 <link rel="stylesheet" href="/wargames/assets/vendor/bootstrap-icons/font/bootstrap-icons.css">
 
-<!-- ========================== -->
-<!-- CUSTOM THEME STYLES       -->
-<!-- ========================== -->
-<!-- Primary theme stylesheet - Core styling and layout (SCSS pipeline) -->
+
+
+
+
 <link rel="stylesheet" href="/wargames/assets/css/main.css">
 
-<!-- ========================== -->
-<!-- DESIGN TOKEN OVERRIDES     -->
-<!-- ========================== -->
-<!-- Inline <style> block emitted AFTER main.css so site-config `theme_color` keys
-     and any per-user Appearance overrides win over compiled defaults. -->
+
+
+
+
 <script>
 (function () {
   try {
@@ -427,31 +245,28 @@
 </script>
 
 
-<!-- Optional fork overrides: opt-in via `site.user_overrides: true` in _config.yml.
-     Loaded LAST so consumer rules win over both main.css and tokens-inline. -->
 
 
-<!-- Statistics page specific styles -->
 
 
-<!-- Consumer hook: end of <head>. Inject JSON-LD, font preloads, verification
-     tags, or extra meta by shadowing _includes/custom/head.html in your site —
-     no fork of this file needed. The theme ships the stub empty. -->
 
 
-<!-- ========================== -->
-<!-- EXPERIMENTAL FRAMEWORKS   -->
-<!-- ========================== -->
-<!-- Tailwind CSS - Currently disabled, enable for utility-first styling -->
-<!-- <script src="https://cdn.tailwindcss.com"></script> -->
-
-<!-- Docs CSS - Alternative stylesheet, currently disabled due to scroll spy issues -->
-<!-- TODO: Replace with compiled Sass when scroll spy functionality is fixed -->
-<!-- Optional docs.css link removed; use _sass/core/_docs-layout.scss → main.css -->
 
 
-        <!-- Jekyll SEO plugin for enhanced search engine optimization -->
-        <!-- Documentation: https://github.com/jekyll/jekyll-seo-tag -->
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
         <!-- Begin Jekyll SEO tag v2.9.0 -->
 <title>Natas24 | Wargames</title>
 <meta name="generator" content="Jekyll v4.4.1" />
@@ -473,30 +288,8 @@
 <!-- End Jekyll SEO tag -->
 
 
-        <!-- fffuel-style SVG background config overrides -->
-        <!--
-  ===================================================================
-  SVG-BACKGROUND — Apply fffuel-style SVG background to a zone
-  ===================================================================
-  
-  File: svg-background.html
-  Path: _includes/components/svg-background.html
-  Purpose: Adds a CSS class for the background zone and injects
-           per-skin CSS custom-property overrides from _config.yml.
-  
-  Parameters:
-    zone  — "hero" | "body" | "surface" | "footer" (default: "body")
-  
-  Usage:
-    include components/svg-background.html zone="hero"
-    <div class="zer0-bg-hero"> ... </div>
-  
-  Dependencies:
-    - _sass/theme/_backgrounds.scss  (utility classes)
-    - _data/theme_backgrounds.yml    (asset paths)
-    - _config.yml theme_background   (opacity / blend settings)
-  ===================================================================
--->
+        
+        
 
 
 
@@ -516,17 +309,17 @@
 
     </head>
     
-    <body class="zer0-bg-body" data-bs-spy="scroll" data-bs-target="#TableOfContents">
-        <!-- ============================================== -->
-        <!-- BODY SECTION: Site structure and content area -->
-        <!-- ============================================== -->
-
-        <!-- Consumer hook: first thing inside <body> (e.g. GTM noscript).
-             Empty stub shipped by the theme; shadow _includes/custom/body-start.html to use. -->
+    
+    <body class="zer0-bg-body">
+        
+        
         
 
-        <!-- Inline SVG symbols for consistent iconography throughout the site -->
-        <!-- Page-invariant: cached once per build via jekyll-include-cache. -->
+        
+        
+
+        
+        
         <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
     <symbol id="arrow-right" viewBox="0 0 16 16">
       <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
@@ -609,82 +402,42 @@
     </symbol>
   </svg>
 
-        <!-- Google Tag Manager body code for analytics (if configured) -->
-        <!-- Note: Currently commented out - uncomment when GTM is needed -->
-
-        <!-- Main site header with navigation, branding, and search functionality -->
         
-<!--
-  ===================================================================
-  HEADER - Main Navigation and Site Header
-  ===================================================================
-  
-  File: header.html
-  Path: _includes/header.html
-  Purpose: Primary site navigation with responsive design and 
-           offcanvas mobile menu integration
-  
-  Template Logic:
-  - Responsive navigation bar with Bootstrap 5 components
-  - Offcanvas sidebars for mobile navigation
-  - Brand logo and home navigation integration
-  - Settings modal and navigation toggles
-  - Skip-to-content link for accessibility
-  
-  Dependencies:
-  - branding.html: Site title and logo display
-  - navbar.html: Main navigation menu items
-  - Bootstrap 5 offcanvas and navbar components
-  
-  Responsive Behavior:
-  - Desktop: Full horizontal navigation bar
-  - Mobile: Collapsed navigation with hamburger menu
-  - Offcanvas panels for sidebar and navigation
-  
-  Accessibility:
-  - Skip-to-content link for keyboard navigation
-  - ARIA labels for screen readers
-  - Focus management for offcanvas
-  
-  Nanobar:
-  - Configured via `site.nanobar.*` in _config.yml
-  - When `position: navbar`, the bar mounts inside `#top-progress-target` below
-  - Otherwise it floats fixed to the viewport (top or bottom)
-  ===================================================================
--->
+        
 
-<!-- ================================ -->
-<!-- SKIP TO CONTENT LINK            -->
-<!-- ================================ -->
-<!-- UI strings resolve per page language (core/i18n.html sets `ui`) --><!-- Accessibility: allows keyboard users to skip navigation -->
+        
+        
+
+
+
+
+
+
 <a href="#main-content" class="visually-hidden-focusable position-absolute top-0 start-0 z-3 m-3 btn btn-primary">
   Skip to main content
 </a>
 
 <header id="navbar" class="container-fluid text-center fixed-top" role="banner">
 
-    <!-- ================================ -->
-    <!-- TOP NAVIGATION BAR              -->
-    <!-- ================================ -->
+    
+    
+    
     <div class="navbar navbar-expand-lg bg-body-tertiary flex-nowrap w-100 bottom-shadow">
 
-        <!-- ========================== -->
-        <!-- MAIN NAVIGATION CONTAINER -->
-        <!-- ========================== -->
-        <nav class="container-xl order-2 order-lg-1 d-flex align-items-center gap-1 flex-nowrap navbar-main w-100" aria-label="Primary navigation">
+        
+        
+        
+        <nav class="container-fluid order-2 order-lg-1 d-flex align-items-center gap-1 flex-nowrap navbar-main w-100" aria-label="Primary navigation">
 
-            <!-- Leading cluster: sidebar toggle + brand + titles (grid column 1 on lg+) -->
+            
             <div class="navbar-main-start d-flex align-items-center gap-1 gap-lg-2 min-w-0 flex-shrink-1 flex-grow-1">
 
-            <!-- ========================== -->
-            <!-- MOBILE MENU CONTROLS      -->
-            <!-- ========================== -->
             
-            <!-- Left Sidebar Toggle - Mobile view only. Uses the shared
-                 resolver (navigation/sidebar-config.html) so this gate can
-                 never drift from the default layout's aside. -->
             
-
+            
+            
+            
+            
             <div class="bd-navbar-toggle">
                 <button class="navbar-toggler p-2"
                         type="button"
@@ -698,11 +451,11 @@
             </div>
             
 
-            <!-- ========================== -->
-            <!-- BRAND AND HOME NAVIGATION -->
-            <!-- ========================== -->
+            
+            
+            
             <div class="navbar-brand-group d-inline-flex align-items-center gap-2">
-                <!-- Home Navigation Button (Desktop only) -->
+                
                 <div class="navbar-home-links d-none" role="navigation" aria-label="Quick navigation"><a class="btn" href="/wargames/" aria-label="Home" title="Home">
                           <i class=" bi-house"></i>
                       </a><a class="btn" href="/wargames/sitemap/" aria-label="Discover" title="Discover">
@@ -711,51 +464,22 @@
                           <i class=" bi-envelope"></i>
                       </a></div>
                 
-                <!-- Brand Logo Link to Root -->
-                <!-- Logo path configured in _config.yml -->
+                
+                
                 
                 <a class="navbar-brand" href="/wargames/" aria-label="Home - Wargames" >
                     <img src="/wargames" alt="Wargames logo" width="30" height="30">
                 </a>
             </div>
             
-            <!-- ========================== -->
-            <!-- SITE BRANDING SECTION     -->
-            <!-- ========================== -->
-            <!-- Site title and subtitle display -->
-            <!--
-  ===================================================================
-  BRANDING - Site Title and Subtitle Display
-  ===================================================================
-  
-  File: branding.html
-  Path: _includes/core/branding.html
-  Purpose: Display site title and optional subtitle in navbar
-  
-  Dependencies:
-  - site.title: Main site title from _config.yml
-  - site.subtitle: Optional subtitle from _config.yml
-  - site.default_icon: Icon framework class (e.g., 'bi')
-  - site.title_icon: Icon for title display
-  - site.subtitle_icon: Icon for subtitle display
-  ===================================================================
--->
-<!-- Color Schema Override 
-    TODO: Add a poline plug-in to generate color scheme
-    https://meodai.github.io/poline/
+            
+            
+            
+            
+            
 
-    primary: #a11111
-    main: #007bff
-    secondary: #6c757d
 
-    ## Logo
-        Red - #a11111
-        Yellow - #ffe900
-        Teal - #376986
-        Blue - #007bff
- -->
 
-<!-- Title Section  -->
 
 <div class="navbar-brand site-title mb-0 py-0 me-0 min-w-0 flex-grow-1">
     <a
@@ -768,7 +492,7 @@
     </a>
 </div>
 
-<!-- If a subtitle exists --><div class="navbar-brand site-subtitle d-none d-lg-inline">
+<div class="navbar-brand site-subtitle d-none d-lg-inline">
     <a class="nav-link" href="/wargames/" aria-label="OverTheWire security challenges — Wargames home">
         <span class="site-subtitle-text">
             OverTheWire security challenges
@@ -800,30 +524,24 @@
     </li></ul>
 </nav>
     
-            <!-- ========================== -->
-            <!-- MAIN NAVIGATION MENU      -->
-            <!-- ========================== -->
-            <!-- Primary navigation items from _data/navigation.yml -->
             
-<!-- 
-    file: navbar.html
-    path: /includes/navbar.html
-    includes:
-    purpose: Offcanvas main navigation following Bootstrap 5 best practices
-             with hover-activated dropdowns for desktop and accessible interactions
- -->
+            
+            
+            
+            
 
-<!-- Navigation Links - Responsive Offcanvas (inline at lg+, offcanvas below) --><div class="offcanvas-lg offcanvas-end" tabindex="-1" id="bdNavbar" aria-labelledby="mainNavOffcanvasLabel">
 
-    <!-- Main Navigation Header - Offcanvas -->
+<div class="offcanvas-lg offcanvas-end" tabindex="-1" id="bdNavbar" aria-labelledby="mainNavOffcanvasLabel">
+
+    
     <div class="offcanvas-header border-bottom">
         <h2 class="offcanvas-title h5 mb-0" id="mainNavOffcanvasLabel">Main Navigation</h2>
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close navigation menu" data-bs-target="#bdNavbar"></button>
     </div>
 
-    <!-- Main Navigation Body - Offcanvas -->
+    
     <div class="offcanvas-body">
-        <!-- Desktop: width is the grid middle track; labels ellipsis or icon-only via container query -->
+        
         <div class="bd-navbar-nav-viewport">
         <ul class="navbar-nav justify-content-lg-center text-start flex-grow-1">
             <li class="nav-item d-lg-none">
@@ -835,21 +553,24 @@
                         <a
                             class="nav-link"
                             href="/wargames/"
-                            aria-label="Home"title="Home"
+                            aria-label="Home"
+                            
+                            title="Home"
                         ><i class=" bi-house" aria-hidden="true"></i><span class="nav-link-text">Home</span>
                         </a>
                     </li><li class="nav-item dropdown d-flex align-items-center nav-hover-dropdown">
-                        <!-- Parent link navigates directly -->
+                        
                         <a
                             class="nav-link"
                             href="/wargames/docs/wargames/"
-                            aria-label="Wargames"title="Wargames"
+                            aria-label="Wargames"
+                            
+                            title="Wargames"
                         ><i class=" bi-controller" aria-hidden="true"></i><span class="nav-link-text">Wargames</span>
                         </a>
 
-                        <!-- Split toggle opens the dropdown (click on mobile, hover on desktop) -->
-                        <!-- Note: No data-bs-toggle="dropdown" — custom JS handles all interactions
-                             to avoid Bootstrap's native handler conflicting with our toggle logic -->
+                        
+                        
                         <button
                             class="nav-link dropdown-toggle dropdown-toggle-split ms-1"
                             type="button"
@@ -864,39 +585,53 @@
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdown-wargames"><li>
                                     <a
                                         class="dropdown-item"
-                                        href="/wargames/docs/wargames/">All games
+                                        href="/wargames/docs/wargames/"
+                                        
+                                    >All games
                                     </a>
                                 </li><li>
                                     <a
                                         class="dropdown-item"
-                                        href="/wargames/docs/wargames/bandit/">Bandit — Linux basics
+                                        href="/wargames/docs/wargames/bandit/"
+                                        
+                                    >Bandit — Linux basics
                                     </a>
                                 </li><li>
                                     <a
                                         class="dropdown-item"
-                                        href="/wargames/docs/wargames/natas/">Natas — Web security
+                                        href="/wargames/docs/wargames/natas/"
+                                        
+                                    >Natas — Web security
                                     </a>
                                 </li><li>
                                     <a
                                         class="dropdown-item"
-                                        href="/wargames/docs/wargames/krypton/">Krypton — Cryptography
+                                        href="/wargames/docs/wargames/krypton/"
+                                        
+                                    >Krypton — Cryptography
                                     </a>
                                 </li><li>
                                     <a
                                         class="dropdown-item"
-                                        href="/wargames/docs/wargames/leviathan/">Leviathan — Reversing
+                                        href="/wargames/docs/wargames/leviathan/"
+                                        
+                                    >Leviathan — Reversing
                                     </a>
                                 </li><li>
                                     <a
                                         class="dropdown-item"
-                                        href="/wargames/docs/wargames/narnia/">Narnia — Exploitation
+                                        href="/wargames/docs/wargames/narnia/"
+                                        
+                                    >Narnia — Exploitation
                                     </a>
                                 </li></ul>
                     </li><li class="nav-item">
                         <a
                             class="nav-link"
                             href="https://github.com/bamr87/wargames"
-                            aria-label="Source"title="Source"
+                            aria-label="Source"
+                            
+                            title="Source"
                         ><i class=" bi-github" aria-hidden="true"></i><span class="nav-link-text">Source</span>
                         </a>
                     </li><li class="nav-item d-lg-none">
@@ -929,20 +664,15 @@
     </div>
 </div>
 
-<!-- 
-  Navigation styles are now in _sass/core/_navbar.scss
-  Navigation scripts are now in assets/js/navigation.js
-  These are loaded automatically via the theme's asset pipeline
--->
 
-            <!-- ========================== -->
-            <!-- UTILITY CONTROLS          -->
-            <!-- ========================== -->
+
+            
+            
+            
             <div class="navbar-utility-controls d-flex align-items-center flex-shrink-0" role="group" aria-label="Utility controls">
-                <!-- Language Toggle (renders only when translation.languages is set) -->
                 
 
-                <!-- Search Modal Toggle -->
+                
                 <button
                     class="btn nav-search-button"
                     type="button"
@@ -957,7 +687,7 @@
                     <kbd class="nav-search-kbd d-none d-xl-inline-flex" aria-hidden="true">/</kbd>
                 </button>
 
-                <!-- Settings Offcanvas Toggle -->
+                
                 <button
                     class="btn nav-settings-button d-none d-lg-inline-flex"
                     type="button"
@@ -970,7 +700,7 @@
                     <i class=" bi-gear" aria-hidden="true"></i>
                 </button>
 
-                <!-- Navigation Menu Toggle - Mobile view --><div class="bd-navbar-toggle d-lg-none">
+                <div class="bd-navbar-toggle d-lg-none">
                     <button class="navbar-toggler p-2"
                             type="button"
                             data-bs-toggle="offcanvas"
@@ -985,40 +715,18 @@
         </nav>
     </div>
 
-    <!-- ========================== -->
-    <!-- PROGRESS BAR MOUNT POINT  -->
-    <!-- ========================== -->
-    <!-- Nanobar mounts here when site.nanobar.position == "navbar" so the bar
-         renders as a thin strip directly under the header. For "top" / "bottom"
-         the bar floats fixed to the viewport and no mount is needed. --></header>
+    
+    
+    
+    </header>
 
-        <!-- Optional unified mobile drawer (Browse / Menu / Settings tabs).
-             Enable with `navigation.unified_mobile_drawer: true` in _config.yml. -->
+        
         
 
 
-        <!-- Search modal (site-wide) — cached once per build PER LANGUAGE
-             (the lang param keys the include-cache entry; page.lang is nil
-             on English pages, so they all still share a single render). -->
         
-<!--
-  ===================================================================
-  SEARCH MODAL - Site-wide Search Popup
-  ===================================================================
-
-  File: search-modal.html
-  Path: _includes/components/search-modal.html
-  Purpose: Provide a modal search experience with keyboard shortcut support
-
-  Notes:
-  - Form action targets /sitemap/ when that page exists in the build;
-    falls back to /sitemap.xml if available, otherwise '#' (safe no-op).
-    JS (search-modal.js) always intercepts submit and keeps results
-    in-modal, so the action is only a no-JS fallback.  The gate here
-    prevents a dead link on remote-theme Pages builds that lack /sitemap/.
-  - Keyboard shortcut handled by navigation keyboard module ("/")
-  ===================================================================
---><div class="modal fade search-modal" id="siteSearchModal" tabindex="-1" aria-labelledby="siteSearchModalLabel" aria-hidden="true">
+        
+<div class="modal fade search-modal" id="siteSearchModal" tabindex="-1" aria-labelledby="siteSearchModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
@@ -1048,7 +756,11 @@
                     <div class="form-text mt-2">
                         Press <kbd>/</kbd> or <kbd>⌘</kbd>/<kbd>Ctrl</kbd>+<kbd>K</kbd> to open search, <kbd>Esc</kbd> to close.
                     </div>
-                </form>
+                </form><div class="visually-hidden"
+                     role="status"
+                     aria-live="polite"
+                     aria-atomic="true"
+                     data-search-status></div>
                 <div class="search-results mt-3" data-search-results>
                     <div class="text-muted small" data-search-empty>Start typing to see results.</div>
                 </div>
@@ -1058,7 +770,7 @@
 </div>
 
 
-        <!-- Keyboard shortcuts help modal (triggered by `?`) — cached per language. -->
+        
         <div class="modal fade" id="zer0-shortcuts-modal" tabindex="-1"
      aria-labelledby="zer0-shortcuts-modal-title" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
@@ -1098,44 +810,8 @@
 </div>
 
 
-        <!-- Settings offcanvas (Appearance / Site / Developer tabs) -->
         
-<!--
-  ===================================================================
-  INFO SECTION - Settings Offcanvas with Tabbed Interface
-  ===================================================================
-
-  File: info-section.html
-  Path: _includes/components/info-section.html
-  Purpose: Unified settings offcanvas panel with three tabs —
-           Appearance (color mode, skin, backgrounds, primary color),
-           Site (environment, theme & build info, admin links) and
-           Developer (page location, metadata, source shortcuts).
-
-  Dependencies:
-  - Bootstrap 5 Offcanvas, Tabs
-  - _includes/components/env-detect.html (sets is_production/build_env)
-  - _includes/components/halfmoon.html (color-mode segmented control)
-  - _includes/components/background-settings.html (skin + backgrounds)
-  - _includes/components/env-switcher.html
-  - _includes/components/theme-info.html
-  - _includes/components/admin-links.html (cached admin quick links)
-  - _includes/components/dev-shortcuts.html
-  - _includes/navigation/breadcrumbs.html
-  - assets/js/modules/theme/appearance.js mounts the primary-color
-    picker into #zer0AppearanceSlot when site.appearance_panel is on
-
-  Notes:
-  - #info-section and the three pane ids are a public surface: the
-    header, navbar, footer, unified drawer and Playwright suites all
-    target them. Rename with care.
-  - Appearance preferences persist in localStorage only (no cookies).
-
-  References:
-  - https://getbootstrap.com/docs/5.3/components/offcanvas/
-  - https://getbootstrap.com/docs/5.3/components/navs-tabs/
-  ===================================================================
--->
+        
 
 
 
@@ -1146,10 +822,11 @@
 
 
 
-<!-- Settings Offcanvas -->
+
+
 <div class="offcanvas offcanvas-end" tabindex="-1" id="info-section" aria-labelledby="infoSectionLabel">
 
-  <!-- Offcanvas Header -->
+  
   <div class="offcanvas-header border-bottom pb-0 d-block">
     <div class="d-flex align-items-center justify-content-between mb-2">
       <h2 class="offcanvas-title h5" id="infoSectionLabel">
@@ -1158,7 +835,7 @@
       <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
 
-    <!-- Tab Navigation -->
+    
     <ul class="nav nav-tabs nav-fill" id="infoTabs" role="tablist">
       <li class="nav-item" role="presentation">
         <button class="nav-link active" id="appearance-tab" data-bs-toggle="tab" data-bs-target="#appearance-pane" type="button" role="tab" aria-controls="appearance-pane" aria-selected="true">
@@ -1181,33 +858,23 @@
     </ul>
   </div>
 
-  <!-- Offcanvas Body with Tab Content -->
+  
   <div class="offcanvas-body">
     <div class="tab-content" id="infoTabContent">
 
-      <!-- Appearance Tab — everything that changes how the site looks -->
+      
       <div class="tab-pane fade show active" id="appearance-pane" role="tabpanel" aria-labelledby="appearance-tab" tabindex="0">
 
-        <!-- Color Mode -->
+        
+        
+
+        
         <div class="mb-4">
-          <h6 class="text-body-secondary small text-uppercase fw-semibold mb-2">
+          <h3 class="h6 text-body-secondary small text-uppercase fw-semibold mb-2">
             <i class="bi bi-moon-stars me-1" aria-hidden="true"></i>Color Mode
-          </h6>
+          </h3>
           
-<!--
-  file: halfmoon.html
-  path: _includes/components/halfmoon.html
-  description: Dark / light / auto color-mode switcher (segmented control).
-               Buttons carry data-bs-theme-value; assets/js/halfmoon.js wires
-               clicks, persistence (localStorage "theme") and active state.
-               No ids on purpose — the control may render more than once per
-               page (settings offcanvas + theme-controls-bar).
-  params:      class (string, optional, default "") — extra btn-group classes,
-               e.g. "w-100" to fill the parent.
-  config:      site.color_mode_lock: true removes the control entirely — the
-               site pins one mode and visitor switching is disabled
-               (halfmoon.js + core/color-mode-init.html enforce the same).
- -->
+
 
 <div class="btn-group bd-theme-switch w-100" role="group" aria-label="Color mode">
   <button type="button" class="btn btn-outline-secondary btn-sm d-flex align-items-center justify-content-center gap-1" data-bs-theme-value="light" aria-pressed="false">
@@ -1227,100 +894,91 @@
 
         </div>
 
-        <!-- Theme skin + SVG backgrounds (skin buttons, toggle, opacity) -->
         
-<!--
-  ===================================================================
-  BACKGROUND SETTINGS — fffuel-style background controls (tab content)
-  ===================================================================
-
-  File: background-settings.html
-  Path: _includes/components/background-settings.html
-  Purpose: Theme-skin selector and SVG-background controls, rendered
-           inside the Settings offcanvas Appearance tab.
-
-  Dependencies:
-    - assets/js/background-customizer.js (zer0Bg API)
-    - _sass/theme/_backgrounds.scss (CSS custom properties)
-    - Bootstrap 5 form components
-
-  Section headings match the h6 pattern used by the parent
-  info-section.html so the Appearance tab reads as one surface.
-  ===================================================================
--->
+        
 
 
 
 
-<!-- Skin selector -->
+
+
 <div class="mb-4">
-  <h6 class="text-body-secondary small text-uppercase fw-semibold mb-2">
+  <h3 class="h6 text-body-secondary small text-uppercase fw-semibold mb-2">
     <i class="bi bi-palette2 me-1" aria-hidden="true"></i>Theme Skin
-  </h6>
+  </h3>
   <div class="d-flex flex-wrap gap-2" id="zer0SkinButtons" role="group" aria-label="Theme skin">
     
     <button class="btn btn-sm btn-outline-primary"
             data-skin="air"
-            type="button">
+            type="button"
+            aria-pressed="false">
       Air
     </button>
     
     <button class="btn btn-sm btn-outline-primary"
             data-skin="aqua"
-            type="button">
+            type="button"
+            aria-pressed="false">
       Aqua
     </button>
     
     <button class="btn btn-sm btn-outline-primary"
             data-skin="contrast"
-            type="button">
+            type="button"
+            aria-pressed="false">
       Contrast
     </button>
     
     <button class="btn btn-sm btn-outline-primary active"
             data-skin="dark"
-            type="button">
+            type="button"
+            aria-pressed="true">
       Dark
     </button>
     
     <button class="btn btn-sm btn-outline-primary"
             data-skin="dirt"
-            type="button">
+            type="button"
+            aria-pressed="false">
       Dirt
     </button>
     
     <button class="btn btn-sm btn-outline-primary"
             data-skin="neon"
-            type="button">
+            type="button"
+            aria-pressed="false">
       Neon
     </button>
     
     <button class="btn btn-sm btn-outline-primary"
             data-skin="mint"
-            type="button">
+            type="button"
+            aria-pressed="false">
       Mint
     </button>
     
     <button class="btn btn-sm btn-outline-primary"
             data-skin="plum"
-            type="button">
+            type="button"
+            aria-pressed="false">
       Plum
     </button>
     
     <button class="btn btn-sm btn-outline-primary"
             data-skin="sunrise"
-            type="button">
+            type="button"
+            aria-pressed="false">
       Sunrise
     </button>
     
   </div>
 </div>
 
-<!-- SVG background toggle + layer opacity -->
+
 <div class="mb-4">
-  <h6 class="text-body-secondary small text-uppercase fw-semibold mb-2">
+  <h3 class="h6 text-body-secondary small text-uppercase fw-semibold mb-2">
     <i class="bi bi-image me-1" aria-hidden="true"></i>Background
-  </h6>
+  </h3>
 
   <div class="d-flex align-items-center justify-content-between p-3 bg-body-tertiary rounded mb-3">
     <label class="form-check-label" for="zer0BgToggle">SVG backgrounds</label>
@@ -1361,18 +1019,32 @@
   </button>
 </div>
 
-<!-- Customizer interaction logic -->
+
 <script>
 document.addEventListener("DOMContentLoaded", function () {
   if (typeof zer0Bg === "undefined") return;
 
   // Skin buttons
+  // `.active` is a Bootstrap visual class and carries no accessibility
+  // semantics, so selection is also exposed via aria-pressed (WCAG 4.1.2),
+  // matching the sibling color-mode group. Both are set in one place so no
+  // code path can leave them disagreeing.
+  function markActiveSkinButton(btn) {
+    document.querySelectorAll("#zer0SkinButtons .btn").forEach(function (b) {
+      b.classList.remove("active");
+      b.setAttribute("aria-pressed", "false");
+    });
+    if (btn) {
+      btn.classList.add("active");
+      btn.setAttribute("aria-pressed", "true");
+    }
+  }
+
   document.querySelectorAll("#zer0SkinButtons [data-skin]").forEach(function (btn) {
     btn.addEventListener("click", function () {
       var skin = this.getAttribute("data-skin");
       zer0Bg.setSkin(skin);
-      document.querySelectorAll("#zer0SkinButtons .btn").forEach(function (b) { b.classList.remove("active"); });
-      this.classList.add("active");
+      markActiveSkinButton(this);
     });
   });
 
@@ -1406,15 +1078,13 @@ document.addEventListener("DOMContentLoaded", function () {
       document.getElementById(id + "Val").textContent = defaults[id];
     });
     toggle.checked = true;
-    document.querySelectorAll("#zer0SkinButtons .btn").forEach(function (b) { b.classList.remove("active"); });
-    var active = document.querySelector('#zer0SkinButtons [data-skin="dark"]');
-    if (active) active.classList.add("active");
+    markActiveSkinButton(document.querySelector('#zer0SkinButtons [data-skin="dark"]'));
   });
 });
 </script>
 
 
-        <!-- Primary color picker mounts here (appearance.js, optional) -->
+        
         <div id="zer0AppearanceSlot"></div>
 
         <p class="text-body-secondary small mb-0 mt-4">
@@ -1423,42 +1093,15 @@ document.addEventListener("DOMContentLoaded", function () {
         </p>
       </div>
 
-      <!-- Site Tab — where the site runs and what it is built from -->
+      
       <div class="tab-pane fade" id="site-pane" role="tabpanel" aria-labelledby="site-tab" tabindex="0">
 
-        <!-- Environment -->
+        
         <div class="mb-4">
-          <h6 class="text-body-secondary small text-uppercase fw-semibold mb-2">
+          <h3 class="h6 text-body-secondary small text-uppercase fw-semibold mb-2">
             <i class="bi bi-hdd-network me-1" aria-hidden="true"></i>Environment
-          </h6>
+          </h3>
           
-<!--
-  ===================================================================
-  ENVIRONMENT SWITCHER - Dev/Prod URL Display and Toggle
-  ===================================================================
-
-  File: env-switcher.html
-  Path: _includes/components/env-switcher.html
-  Purpose: Display current environment and provide URL switching
-
-  Dependencies:
-  - is_production / build_env / is_local_url: set by env-detect.html
-    in info-section.html (the parent renders the section heading)
-  - site.domain_url: Canonical production origin (YAML array joined in Liquid); not overridden by jekyll serve
-  - site.url: Overwritten during jekyll serve — do not use alone for “Prod” quick links
-  - site.port: Development port (default 4000)
-  - Copy buttons use data-zer0-copy / data-zer0-copy-target, handled by
-    the delegated listener in info-section.html (no inline handlers)
-  - Bootstrap 5 components
-
-  Note: Docker / JEKYLL_ENV=production on localhost would show "Production"
-  while you are clearly on a dev machine. We treat localhost / 127.0.0.1 / 0.0.0.0
-  in site.url as development context for the badge and card styling.
-
-  Build time / Jekyll version live in theme-info.html (Theme & Build
-  section) — not duplicated here.
-  ===================================================================
--->
 
 
 
@@ -1466,7 +1109,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-<!-- Environment Status Card -->
+
+
 <div class="card mb-3 border-success">
   <div class="card-header d-flex align-items-center justify-content-between py-2 bg-success bg-opacity-10">
     <span class="fw-semibold">
@@ -1480,7 +1124,7 @@ document.addEventListener("DOMContentLoaded", function () {
     
   </div>
   <div class="card-body">
-    <!-- Active URL Display -->
+    
     <label class="form-label small text-body-secondary mb-1" for="currentUrlInput">
       <i class="bi bi-link-45deg me-1" aria-hidden="true"></i>Current Page URL
     </label>
@@ -1502,7 +1146,7 @@ document.addEventListener("DOMContentLoaded", function () {
       </button>
     </div>
 
-    <!-- Build context -->
+    
     <p class="small text-body-secondary mb-0 mt-3">
       Built with <code>JEKYLL_ENV=production</code>.
       
@@ -1512,7 +1156,7 @@ document.addEventListener("DOMContentLoaded", function () {
   </div>
 </div>
 
-<!-- Quick URL Links -->
+
 <div class="card border-secondary">
   <div class="card-header py-2 bg-body-tertiary">
     <span class="fw-semibold small">
@@ -1520,7 +1164,7 @@ document.addEventListener("DOMContentLoaded", function () {
     </span>
   </div>
   <ul class="list-group list-group-flush">
-    <!-- Production URL -->
+    
     <li class="list-group-item d-flex justify-content-between align-items-center gap-2">
       <div class="d-flex align-items-center min-w-0">
         <span class="badge bg-success me-2">Prod</span>
@@ -1559,34 +1203,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
         </div>
 
-        <!-- Theme & Build -->
+        
         <div class="mb-4">
-          <h6 class="text-body-secondary small text-uppercase fw-semibold mb-2">
+          <h3 class="h6 text-body-secondary small text-uppercase fw-semibold mb-2">
             <i class="bi bi-info-circle me-1" aria-hidden="true"></i>Theme &amp; Build
-          </h6>
+          </h3>
           
-<!--
-  ===================================================================
-  THEME INFO - Compact Theme and Build Information
-  ===================================================================
 
-  File: theme-info.html
-  Path: _includes/components/theme-info.html
-  Purpose: Display compact theme version and system information
-
-  Dependencies:
-  - site.remote_theme or site.theme configuration
-  - Jekyll's site.github metadata
-
-  Note: environment (Prod/Dev) is shown by env-switcher.html in the
-  same Site tab — not duplicated here.
-  ===================================================================
--->
 
 <div class="theme-info-compact">
   <div class="row g-2">
 
-    <!-- Theme -->
+    
     <div class="col-12">
       <div class="d-flex align-items-center justify-content-between p-2 bg-body-tertiary rounded">
         <div class="d-flex align-items-center">
@@ -1605,7 +1233,7 @@ document.addEventListener("DOMContentLoaded", function () {
       </div>
     </div>
 
-    <!-- Jekyll & Last Build -->
+    
     <div class="col-6">
       <div class="p-2 bg-body-tertiary rounded text-center">
         <small class="text-body-secondary d-block">Jekyll</small>
@@ -1614,14 +1242,13 @@ document.addEventListener("DOMContentLoaded", function () {
     </div>
     <div class="col-6">
       <div class="p-2 bg-body-tertiary rounded text-center">
-        <small class="text-body-secondary d-block">Last Build</small>
-        <code class="small">Aug 18, 21:33</code>
+        <small class="text-body-secondary d-block">Last Build</small><code class="small" data-testid="theme-build-stamp">Sep 13, 02:02</code>
       </div>
     </div>
 
     
 
-    <!-- Quick Links -->
+    
     <div class="col-12 mt-2">
       <div class="d-flex flex-wrap gap-2 justify-content-center">
         
@@ -1643,24 +1270,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
         </div>
 
-        <!-- Admin quick links — cached include; renders only links to pages
-             that exist in the build (see components/admin-links.html) -->
+        
         
 
       </div>
 
-      <!-- Developer Tab — tools scoped to the current page -->
+      
       <div class="tab-pane fade" id="developer-pane" role="tabpanel" aria-labelledby="developer-tab" tabindex="0">
 
-        <!-- Page Location — breadcrumbs render nothing on the homepage or
-             when site.breadcrumbs is off, so the section mirrors that gate -->
+        
         
 
-        <!-- Page Metadata -->
+        
         <div class="mb-4">
-          <h6 class="text-body-secondary small text-uppercase fw-semibold mb-2">
+          <h3 class="h6 text-body-secondary small text-uppercase fw-semibold mb-2">
             <i class="bi bi-file-earmark-code me-1" aria-hidden="true"></i>Page Info
-          </h6>
+          </h3>
           <div class="table-responsive">
             <table class="table table-sm table-hover mb-0 small">
               <tbody>
@@ -1691,27 +1316,13 @@ document.addEventListener("DOMContentLoaded", function () {
           </div>
         </div>
 
-        <!-- Source Code Shortcuts -->
+        
         <div class="mb-3">
-          <h6 class="text-body-secondary small text-uppercase fw-semibold mb-2">
+          <h3 class="h6 text-body-secondary small text-uppercase fw-semibold mb-2">
             <i class="bi bi-code-square me-1" aria-hidden="true"></i>Source Code
-          </h6>
+          </h3>
           
-<!--
-  ===================================================================
-  DEV SHORTCUTS - Source Code Quick Access Links
-  ===================================================================
-  
-  File: dev-shortcuts.html
-  Path: _includes/components/dev-shortcuts.html
-  Purpose: Provide quick access to source code editing in various IDEs
-  
-  Dependencies:
-  - site.repository, site.branch, site.collections_dir, site.local_git, site.repository_name
-  - page.collection, page.path
-  - is_production (from env-detect.html in info-section.html) — vscode:// link only when not production
-  ===================================================================
--->
+
 
 
 
@@ -1746,9 +1357,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 </div>
 
-<!-- Copy-to-clipboard for the panel's URL fields (event delegation; no
-     inline handlers). Buttons declare data-zer0-copy="<text>" or
-     data-zer0-copy-target="#input-id". -->
+
 <script>
 document.addEventListener("click", function (e) {
   var btn = e.target.closest("[data-zer0-copy], [data-zer0-copy-target]");
@@ -1787,112 +1396,38 @@ function zer0CopyFeedback(btn, success) {
 </script>
 
 
-        <!-- Setup banner for unconfigured sites — page-invariant. -->
+        
         
 
 
-        <!-- ======================== -->
-        <!-- MAIN CONTENT AREA        -->
-        <!-- ======================== -->
-        <!-- Skip-link target: keep a single, consistent #main-content anchor site-wide.
-             This is the ONE <main> landmark per page — child layouts (default/section/
-             news) must use non-landmark wrappers (<div>) inside it (issue #299) — so
-             assistive tech, search engines, and AI content extractors can isolate the
-             primary content from the surrounding header/nav/footer chrome. -->
-        <main id="main-content">
-            <!-- Machine-translation disclosure — renders only on generated
-                 translations (page.machine_translated); no-op elsewhere. --><!--
-  ===================================================================
-  DEFAULT LAYOUT - Standard content layout with sidebars
-  ===================================================================
+        
+        
+        
+        
+        <main id="main-content" tabindex="-1">
+            
 
-  File: default.html
-  Path: _layouts/default.html
-  Inherits: root.html
-  Purpose: Primary content layout with sidebar navigation and table of contents
 
-  Template Logic:
-  - Creates a responsive three-column layout using Bootstrap grid
-  - Left sidebar: Site navigation and content outline (collapsible on mobile)
-  - Local graph: Obsidian side panel (rendered at body level via footer.html)
-  - Center: Main content area with page title and body content
-  - Right sidebar: Table of contents and page shortcuts (hidden on mobile)
-  - Implements scroll spy for navigation highlighting
-  - Responsive design that stacks vertically on mobile devices
 
-  Layout Structure:
-  1. Container wrapper with Bootstrap responsive classes
-  2. Left sidebar (bd-sidebar) - Navigation and outline
-  3. Main content area (bd-main) with:
-     - Intro section (page title, metadata)
-     - Right sidebar (bd-toc) - Table of contents
-     - Content area (bd-content) - Main page content
 
-  Dependencies:
-  - sidebar-left.html: Site navigation and content outline
-  - intro.html: Page title, breadcrumbs, and metadata
-  - sidebar-right.html: Table of contents and page shortcuts
 
-  Bootstrap Classes Used:
-  - container-xxl: Extra large responsive container
-  - bd-gutter: Custom Bootstrap spacing
-  - bd-layout: Custom layout utility class
-  - bd-sidebar: Custom sidebar styling
-  - bd-main: Main content area
-  - bd-toc: Table of contents styling
-  - bd-content: Content area styling
-  ===================================================================
--->
-
-<!-- ================================================ -->
-<!-- MAIN LAYOUT CONTAINER                           -->
-<!-- Bootstrap responsive container with custom grid -->
-<!-- ================================================ -->
 <div class="container-xxl bd-gutter mt-3 my-md-4 bd-layout">
 
-    <!-- ================================ -->
-    <!-- LEFT SIDEBAR - Navigation       -->
-    <!-- ================================ -->
-    <!-- Site navigation, content outline, and offcanvas menu for mobile -->
+    
+    
+    
+    
     
     <aside class="bd-sidebar">
         
-<!--
-  ===================================================================
-  SIDEBAR LEFT - Dynamic Navigation Sidebar
-  ===================================================================
-
-  File: sidebar-left.html
-  Path: _includes/navigation/sidebar-left.html
-  Purpose: Left sidebar panel (responsive offcanvas) around the resolved
-           sidebar navigation content
-
-  Template Logic:
-  - Responsive offcanvas sidebar for mobile devices
-  - Mode resolution + rendering are delegated to shared includes:
-    * navigation/sidebar-config.html — resolves sidebar_nav / title / icon
-      from page.sidebar → collection `sidebar:` metadata → site.sidebar
-    * navigation/sidebar-nav.html — renders the resolved mode
-
-  Navigation modes (page.sidebar.nav — see sidebar-config.html):
-  - "auto": best mode for the page's collection (curated data file →
-    collection folder tree → post categories)
-  - "collection": live folder tree of the page's (or a named) collection
-  - "categories" / "tags": posts grouped by taxonomy term
-  - any other value: _data/navigation/<value>.yml rendered by nav-tree.html
-
-  Configuration:
-  - Heading text/icon: page.sidebar.title/icon → collection metadata →
-    site.sidebar.title/icon → "Browse docs"
-  ===================================================================
--->
 
 
 
-<!-- ================================ -->
-<!-- SIDEBAR NAVIGATION CONTAINER   -->
-<!-- ================================ -->
-<!-- Responsive offcanvas sidebar - full-width on mobile, fixed on desktop -->
+
+
+
+
+
 <script>
   try {
     if (localStorage.getItem('zer0-nav-sidebar-visible') === 'false') {
@@ -1902,10 +1437,10 @@ function zer0CopyFeedback(btn, success) {
 </script>
 <div class="offcanvas-lg offcanvas-start" tabindex="-1" id="bdSidebar" aria-labelledby="bdSidebarOffcanvasLabel">
 
-  <!-- ========================== -->
-  <!-- SIDEBAR HEADER            -->
-  <!-- ========================== -->
-  <!-- Mobile-only header with close button -->
+  
+  
+  
+  
   <div class="offcanvas-header">
     <h2 class="offcanvas-title h5 mb-0" id="bdSidebarOffcanvasLabel">Wargames</h2>
     <div class="d-flex align-items-center gap-1">
@@ -1921,10 +1456,10 @@ function zer0CopyFeedback(btn, success) {
     </div>
   </div>
 
-  <!-- ========================== -->
-  <!-- SIDEBAR CONTENT AREA      -->
-  <!-- ========================== -->
-  <!-- Scrollable content area with dynamic navigation options -->
+  
+  
+  
+  
   <div class="offcanvas-body overflow-auto">
 
     <div class="bd-sidebar-desktop-header mb-3 d-none d-lg-flex align-items-center justify-content-between gap-2 w-100">
@@ -1944,7 +1479,7 @@ function zer0CopyFeedback(btn, success) {
       </button>
     </div>
 
-    <!-- Resolved navigation content (see navigation/sidebar-nav.html) -->
+    
     <nav class="w-100 nav-tree" id="sidebar-content" data-nav-tree aria-label="Section navigation">
   <div class="sidebar-pagetree w-100">
   <ul class="list-unstyled nav-tree-root mb-0"><li class="nav-tree-item" data-depth="0">
@@ -3426,32 +2961,16 @@ function zer0CopyFeedback(btn, success) {
     </div>
     
 
-    <!-- ================================ -->
-    <!-- MAIN CONTENT AREA               -->
-    <!-- ================================ -->
-    <!-- Primary content section with scroll spy for table of contents navigation.
-         Not a <main>: root.html already provides the single <main id="main-content">
-         landmark; a nested <main> here would duplicate it (issue #299). -->
-    <div class="bd-main order-1" data-bs-spy="scroll" data-bs-target="#TableOfContents" data-bs-offset="100" data-bs-smooth-scroll="true">
+    
+    
+    
+    
+    <div class="bd-main order-1">
         
         
-          <!--
-  file: _includes/content/intro.html
-  description: Enhanced intro section with share, edit, and improve/report buttons
-  path: _includes/content/intro.html
-  features:
-    - Responsive share dropdown with multiple social platforms
-    - Edit on GitHub quick link
-    - "Improve" button — opens the page-feedback widget (capture type + description
-      + live page context + console logs → GitHub issue). Progressive enhancement:
-      it is a real link to the issue form, upgraded by assets/js/page-feedback.js.
-      See _includes/components/page-feedback.html.
-    - Responsive flex layout: full-width content block, frosted metadata footer with reading time and action buttons
-    - Balanced padding and typography hierarchy via bd-intro-* classes
-    - Metadata row: author, dates, category, difficulty, tags, view source
--->
+          
 
-<!-- Intro Section -->
+
 
 
 
@@ -3586,9 +3105,9 @@ function zer0CopyFeedback(btn, success) {
           
         </p>
 
-        <!-- Action Buttons Group -->
+        
         <div class="bd-intro-actions">
-    <!-- Share Button -->
+    
     <div class="dropdown">
       <button class="btn btn-sm btn-info dropdown-toggle" type="button" id="shareDropdownBottom" data-bs-toggle="dropdown" aria-expanded="false">
         <i class="bi bi-share" aria-hidden="true"></i>
@@ -3625,13 +3144,10 @@ function zer0CopyFeedback(btn, success) {
       </ul>
     </div>
 
-    <!-- Improve / Report — opens the page-feedback widget (assets/js/page-feedback.js).
-         Progressive enhancement: this is a real link to the issue form, so it
-         works without JavaScript; page-feedback.js intercepts [data-pf-open]
-         clicks and opens the richer capture modal (context + logs + AI) instead. -->
+    
     
 
-    <!-- Edit on GitHub Button -->
+    
     <a href="https://github.com//blob/main//overthewire/natas/natas24.md"
        class="btn btn-sm btn-dark bd-intro-action-link"
        target="_blank"
@@ -3647,18 +3163,14 @@ function zer0CopyFeedback(btn, success) {
 
         
 
-        <!-- =============================== -->
-        <!-- RIGHT SIDEBAR - Table of Contents -->
-        <!-- =============================== -->
-        <!-- Page outline, shortcuts, and related links (hidden on mobile) -->
+        
+        
+        
+        
         
         <div class="bd-toc text-body-secondary">
             
-<!-- 
-  file: sidebar-right.html 
-  path: _includes/sidebar-right.html
-  includes: nav_list.html, content/toc.html
---><!-- FOUC guard: apply hidden TOC preference before paint -->
+
 <script>
   try {
     if (localStorage.getItem('zer0-nav-toc-visible') === 'false') {
@@ -3667,7 +3179,7 @@ function zer0CopyFeedback(btn, success) {
   } catch (e) {}
 </script>
 
-<!-- Right sidebar container -->
+
 <div class="offcanvas-lg offcanvas-end" tabindex="-1" id="tocContents" aria-labelledby="tocLabel">
   <div class="offcanvas-header">
     <h2 class="offcanvas-title h5 mb-0" id="tocLabel">Table of Contents</h2>
@@ -3684,9 +3196,9 @@ function zer0CopyFeedback(btn, success) {
     </div>
   </div>
   <div class="offcanvas-body">
-    <!-- Table of contents -->
+    
     <nav id="TableOfContents" role="navigation" aria-label="Table of Contents">
-      <!-- TOC title -->
+      
       <div class="mb-3 d-flex align-items-center justify-content-between gap-2">
         <strong class="d-flex align-items-center mb-0">
           <i class="bi bi-file-text me-2" aria-hidden="true"></i>
@@ -3717,10 +3229,10 @@ function zer0CopyFeedback(btn, success) {
         </div>
         
 
-        <!-- =============================== -->
-        <!-- MAIN CONTENT BODY              -->
-        <!-- =============================== -->
-        <!-- Where the actual page content is rendered -->
+        
+        
+        
+        
         <div class="bd-content ps-lg-2">
             <blockquote>
   <p><strong>Source:</strong> This content is aggregated from <a href="https://github.com/OverTheWireOrg/OverTheWire-website">overthewire</a> (<a href="https://github.com/OverTheWireOrg/OverTheWire-website/blob/gh-pages/LICENSE">MIT</a>). Visit the original repository for the latest version.</p>
@@ -3735,54 +3247,14 @@ URL:      http://natas24.natas.labs.overthewire.org
     </div>
         </main>
 
-        <!-- ======================== -->
-        <!-- FOOTER AND SCRIPTS       -->
-        <!-- ======================== -->
         
-        <!-- Site footer with links, copyright, and additional navigation.
-             Page-invariant chrome is cached once per build; the page-dependent
-             FAB/local-graph tail renders fresh per page (see core/footer-fabs.html).
-             Build-time values inside (e.g. the copyright year from site.time) stay
-             fresh: jekyll-include-cache stores in memory only (Jekyll 3.x has no
-             Jekyll::Cache) and clears on every build's :pre_render hook — it never
-             persists to .jekyll-cache. -->
-<!--
-  ===================================================================
-  FOOTER - Comprehensive Site Footer with Branding & Navigation
-  ===================================================================
+        
+        
+        
+        
+<footer class="bd-footer border-top" role="contentinfo">
   
-  File: footer.html
-  Path: _includes/footer.html
-  Purpose: Rich footer inspired by bashconsultants with Powered-by row,
-           branding/contact, quick links, social/RSS, subscribe form, and
-           policy links. Fully responsive with Bootstrap 5 utilities.
   
-  Template Logic:
-  - Top row: "Powered by" credits from site.powered_by
-  - Branding block: Site title, optional address/phone/email
-  - Quick links: Common pages (adjust as needed)
-  - Social links: site.links with icons + RSS feed
-  - Subscribe form: Non-functional placeholder endpoint (/subscribe)
-  - Bottom bar: Dynamic copyright year
-  
-  Dependencies:
-  - site.powered_by: Framework and service credits
-  - site.links: Social media and affiliate links
-  - site.default_icon: Icon framework (Bootstrap Icons)
-  - core/i18n.html: UI strings (per-page language via the `lang` param)
-  - Bootstrap 5 classes provided by the theme
-
-  Params:
-  - lang (optional): page language. Root layout renders this include via
-    include_cached, so it MUST pass lang=page.lang for per-language caching.
-
-  Notes:
-  - Guard optional fields (address/phone/email) to avoid empty output
-  - Use relative_url for internal links to respect baseurl
-  ===================================================================
---><footer class="bd-footer border-top" role="contentinfo">
-  
-  <!-- Powered by Row -->
   <div class="container-xl footer-powered-by">
     <p class="footer-powered-by-copyright text-center mb-0">
       &copy; 2026 Wargames
@@ -3797,27 +3269,28 @@ URL:      http://natas24.natas.labs.overthewire.org
         
         
           <li>
-            <a href="#"
-               class="powered-by-link"
-               data-bs-toggle="offcanvas"
-               data-bs-target="#info-section"
-               aria-label="View theme information and system details"
-               title="Theme Info">
+            <button type="button"
+                    class="powered-by-link"
+                    data-bs-toggle="offcanvas"
+                    data-bs-target="#info-section"
+                    aria-haspopup="dialog"
+                    aria-label="View theme information and system details"
+                    title="Theme Info">
               <i class=" bi-info-circle" aria-hidden="true"></i>
               <span class="powered-by-link-text">Info</span>
-            </a>
+            </button>
           </li>
         
       </ul>
     </div>
   </div>
 
-  <!-- Branding and Navigation Block — full-width dark background -->
+  
   <div class="bg-dark text-light footer-dark-block">
     <div class="container-xl">
-        <!-- Top: Site info + Quick Links + Social -->
+        
         <div class="row mb-3 mb-lg-4 g-2 g-lg-3 footer-nav-columns justify-content-center">
-          <!-- Site Info -->
+          
           <div class="col-12 col-md-3 col-lg-3 mb-2 mb-lg-3 order-0 order-md-1 order-lg-1">
             <h2 class="footer-section-title text-uppercase h6 mb-0">Wargames</h2>
             
@@ -3825,12 +3298,7 @@ URL:      http://natas24.natas.labs.overthewire.org
             <p class="mb-0"><a href="mailto:" class="text-light text-decoration-none"></a></p>
           </div>
 
-          <!-- Quick Links
-               Resolution order:
-                 1. site.footer_quick_links  (array of {label, url}) — explicit override
-                 2. Auto-detection: only render links whose target pages
-                    actually exist in the build. Prevents 404s on bare-minimum
-                    sites that haven't created /about/, /services/, etc. -->
+          
           <div class="col-6 col-md-3 col-lg-3 mb-2 mb-lg-3 order-2 order-md-2 order-lg-2">
             <h2 class="footer-section-title text-uppercase h6 mb-0">Quick Links</h2>
             <ul class="list-unstyled" aria-label="Footer quick links">
@@ -3925,17 +3393,17 @@ URL:      http://natas24.natas.labs.overthewire.org
             </ul>
           </div>
 
-          <!-- Latest Posts (dynamic) -->
+          
           
           
 
-          <!-- Social & RSS -->
+          
           <div class="col-6 col-md-3 col-lg-3 mb-2 mb-lg-3 order-3 order-md-4 order-lg-4">
             <h2 class="footer-section-title text-uppercase h6 mb-0">Follow Us</h2>
             <ul class="list-inline mb-0" aria-label="Social links">
               
-              <li class="list-inline-item">
-                <a class="text-light text-decoration-none" href="/wargames/feed.xml">
+              <li class="list-inline-item"><a class="text-light text-decoration-none" href="/wargames/feed.xml"
+                   aria-label="Feed">
                   <i class=" bi-rss" aria-hidden="true"></i>
                   <span class="d-none d-md-inline">Feed</span>
                 </a>
@@ -3944,7 +3412,7 @@ URL:      http://natas24.natas.labs.overthewire.org
           </div>
         </div>
 
-        <!-- Middle: Subscribe + Policies -->
+        
         <div class="row mb-3 mb-lg-4 align-items-center justify-content-center g-2 footer-subscribe-row">
           <div class="col-12 col-md-8 col-lg-8">
             <form class="row g-2 footer-subscribe-form" aria-label="Newsletter signup" onsubmit="return false;">
@@ -3970,22 +3438,21 @@ URL:      http://natas24.natas.labs.overthewire.org
               
               
               <li class="list-inline-item">
-                <a href="#" class="text-light text-decoration-none" data-bs-toggle="modal" data-bs-target="#cookieSettingsModal">
+                <button type="button" class="footer-inline-button text-light text-decoration-none" data-bs-toggle="modal" data-bs-target="#cookieSettingsModal">
                   Cookie Preferences
-                </a>
+                </button>
               </li>
             </ul>
           </div>
         </div>
 
-      <!-- Bottom: Copyright -->
+      
       <div class="text-center">
         <p class="mb-0">&copy; 2026 Wargames. All Rights Reserved.</p>
       </div>
     </div>
-  </div><!-- Back to Top Button (controlled by assets/js/back-to-top.js) -->
-  <!-- Positioning/stacking handled by _sass/components/_back-to-top.scss
-       via the FAB tokens (bottom-up: back-to-top → chat toggle → TOC FAB) -->
+  </div>
+  
   <a
     id="backToTopBtn"
     href="#"
@@ -4076,45 +3543,8 @@ URL:      http://natas24.natas.labs.overthewire.org
     </div>
   </div>
 </aside>
-<script src="/wargames/assets/js/obsidian-local-graph.js?v=1787088809" defer></script><!-- Consumer hook: after the theme footer, before the consent banner.
-             Empty stub shipped by the theme; shadow _includes/custom/footer.html to use.
-             Deliberately OUTSIDE the cached footer include so page-dependent
-             consumer markup renders per page. --><!-- Privacy-compliant cookie consent banner — page-invariant. -->
-<!--
-  ===================================================================
-  COOKIE CONSENT - GDPR/CCPA Compliant Privacy Management
-  ===================================================================
-  
-  File: cookie-consent.html
-  Path: _includes/components/cookie-consent.html
-  Purpose: Privacy-compliant cookie consent banner and management modal
-           with granular user permission controls
-  
-  Template Logic:
-  - Displays consent banner for new visitors after 1-second delay
-  - Provides granular consent options (Essential, Analytics, Marketing)
-  - Stores user preferences in localStorage with 365-day expiry
-  - Integrates with PostHog analytics for consent-based tracking
-  
-  Dependencies:
-  - PostHog analytics integration
-  - Bootstrap 5 modal and form components
-  - Bootstrap Icons for UI elements
-  - site.posthog configuration from _config.yml
-  
-  Privacy Features:
-  - GDPR/CCPA compliance with explicit user consent
-  - Granular permission controls with persistent storage
-  - Automatic consent expiry and re-consent after 365 days
-  - Integration with PostHog opt-in/opt-out mechanisms
-  
-  Accessibility:
-  - ARIA labels for screen readers
-  - Keyboard navigation support
-  - High contrast design for visibility
-  - Semantic HTML structure
-  ===================================================================
--->
+<script src="/wargames/assets/js/obsidian-local-graph.js?v=1789264952" defer></script>
+
 
 
 
@@ -4150,7 +3580,7 @@ URL:      http://natas24.natas.labs.overthewire.org
   </div>
 </div>
 
-<!-- Cookie Settings Modal -->
+
 <div class="modal fade" id="cookieSettingsModal" tabindex="-1" aria-labelledby="cookieSettingsModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
@@ -4168,10 +3598,10 @@ URL:      http://natas24.natas.labs.overthewire.org
         
         <div class="cookie-category mb-4">
           <div class="d-flex justify-content-between align-items-center mb-2">
-            <h6 class="mb-0">
+            <h3 class="h6 mb-0">
               <i class="bi bi-shield-fill-check text-success me-2"></i>
               Essential Cookies
-            </h6>
+            </h3>
             <span class="badge bg-success">Always Active</span>
           </div>
           <p class="small text-muted mb-0">
@@ -4181,10 +3611,10 @@ URL:      http://natas24.natas.labs.overthewire.org
 
         <div class="cookie-category mb-4">
           <div class="d-flex justify-content-between align-items-center mb-2">
-            <h6 class="mb-0">
+            <h3 class="h6 mb-0">
               <i class="bi bi-graph-up me-2"></i>
               Analytics Cookies
-            </h6>
+            </h3>
             <div class="form-check form-switch">
               <input class="form-check-input" type="checkbox" id="analyticsCookies" checked>
               <label class="form-check-label" for="analyticsCookies">Enable</label>
@@ -4204,10 +3634,10 @@ URL:      http://natas24.natas.labs.overthewire.org
 
         <div class="cookie-category mb-4">
           <div class="d-flex justify-content-between align-items-center mb-2">
-            <h6 class="mb-0">
+            <h3 class="h6 mb-0">
               <i class="bi bi-megaphone me-2"></i>
               Marketing Cookies
-            </h6>
+            </h3>
             <div class="form-check form-switch">
               <input class="form-check-input" type="checkbox" id="marketingCookies">
               <label class="form-check-label" for="marketingCookies">Enable</label>
@@ -4222,10 +3652,10 @@ URL:      http://natas24.natas.labs.overthewire.org
         </div>
 
         <div class="bg-body p-3 rounded">
-          <h6 class="text-body mb-2">
+          <h3 class="h6 text-body mb-2">
             <i class="bi bi-info-circle me-2"></i>
             Your Privacy Rights
-          </h6>
+          </h3>
           <ul class="small text-body mb-0 ps-3">
             <li>You can withdraw consent at any time by updating your cookie preferences</li>
             <li>Essential cookies cannot be disabled as they are necessary for site functionality</li>
@@ -4456,118 +3886,57 @@ URL:      http://natas24.natas.labs.overthewire.org
     background-color: var(--bs-success);
     border-color: var(--bs-success);
   }
-</style><!-- AI Chat Assistant -->
+</style>
 
 
 
 
-<!-- Page-feedback capture widget ("Improve this page" → GitHub issue) --><!-- JavaScript dependencies and custom scripts -->
+
         <div>
-            <!-- Search functionality -->
-            <!-- Note: Currently commented out - uncomment when search is implemented -->
+            
+            
 
-            <!-- External JavaScript libraries and custom scripts — page-invariant.
-                 The "?v=" cache-buster (site.time) in js-cdn.html stays correct:
-                 the include cache is in-memory and reset every build (see footer
-                 note above), so v= advances on each build, never frozen across deploys. -->
-            <!--
-  ===================================================================
-  JAVASCRIPT - Local vendor libraries
-  ===================================================================
-  
-  File: js-cdn.html
-  Path: _includes/components/js-cdn.html
-  Purpose: Load Bootstrap from assets/vendor (no runtime CDN).
-  
-  Libraries:
-  - Bootstrap 5.3.3 bundle (includes Popper.js)
-  
-  Refresh: ./scripts/vendor-install.sh (see vendor-manifest.json)
-  ===================================================================
--->
+            
+            
 
-<!-- Bootstrap 5.3.3 Bundle (includes Popper.js) -->
+
 <script src="/wargames/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-<!-- Navigation ES Modules — orchestrator for sidebar, scroll spy, keyboard
-     shortcuts, gestures, focus, AND the navbar dropdowns/mobile menu that
-     formerly lived in /assets/js/navigation.js (now deprecated). -->
-<script type="module" src="/wargames/assets/js/modules/navigation/index.js?v=1787088809"></script>
 
-<!-- Generic UI helpers (toast, copy-to-clipboard, image fade-in) -->
+<script type="module" src="/wargames/assets/js/modules/navigation/index.js?v=1789264952"></script>
+
+
 <script defer src="/wargames/assets/js/ui-helpers.js"></script>
 
-<!-- Posts-archive pagination (auto-activates only on pages with a
-     [data-posts-archive] container; safe to load globally). -->
+
 <script defer src="/wargames/assets/js/posts-pagination.js"></script>
 
-<!-- Search modal controller -->
+
 <script src="/wargames/assets/js/search-modal.js"></script>
 
-<!-- Share helpers -->
+
 <script src="/wargames/assets/js/share-actions.js"></script>
 
-<!-- fffuel-style background customizer (skin switching, toggle, opacity) -->
+
 <script src="/wargames/assets/js/background-customizer.js"></script>
 
-<!-- Optional runtime Appearance panel (enabled via site.appearance_panel) -->
 
 
-<!-- Obsidian wiki-link / embed / tag client-side resolver (fallback for the
-     remote_theme GH Pages build, where _plugins/obsidian_links.rb cannot run).
-     Honours `obsidian: { enabled: false }` in _config.yml — when disabled the
-     resolver script is not loaded and the flag self-disables any fork that
-     loads it another way. Note: `| default: true` would flip `false` back to
-     true (Liquid treats false as falsy), so test enabled == false explicitly. --><script>
+
+<script>
   window.OBSIDIAN_CONFIG = window.OBSIDIAN_CONFIG || {};
   window.OBSIDIAN_CONFIG.enabled = true;
   window.OBSIDIAN_CONFIG.wikiIndexUrl = "/wargames/assets/data/wiki-index.json";
   window.OBSIDIAN_CONFIG.attachmentsPath = "/wargames/assets/images/notes";
   window.OBSIDIAN_CONFIG.tagBase = "/wargames/tags/";
   window.OBSIDIAN_CONFIG.cytoscapeUrl = "/wargames/assets/vendor/cytoscape/cytoscape.min.js";
-</script><script defer src="/wargames/assets/js/obsidian-wiki-links.js?v=1787088809"></script><!-- Optional fork overrides: opt-in via `site.user_overrides: true` in _config.yml. -->
+</script><script defer src="/wargames/assets/js/obsidian-wiki-links.js?v=1789264952"></script>
 
 
         </div>
 
-        <!-- Analytics Integration -->
-<!--
-  ===================================================================
-  POSTHOG ANALYTICS - Privacy-First Web Analytics Integration
-  ===================================================================
-  
-  File: posthog.html
-  Path: _includes/analytics/posthog.html
-  Purpose: Configurable PostHog analytics implementation with comprehensive
-           privacy controls and GDPR/CCPA compliance
-  
-  Template Logic:
-  - Conditionally loads only in production environment
-  - Respects Do Not Track (DNT) browser settings
-  - Integrates with cookie consent management system
-  - Provides Jekyll-specific event tracking and page properties
-  
-  Dependencies:
-  - site.posthog configuration from _config.yml
-  - Cookie consent system for user permission management
-  - Jekyll environment detection for production loading
-  - PostHog CDN and JavaScript library
-  
-  Privacy Features:
-  - Environment-specific loading (production only by default)
-  - Cookie consent integration with opt-in/opt-out mechanisms
-  - Do Not Track respect with automatic analytics disabling
-  - Session recording controls with input masking
-  - IP anonymization options for enhanced privacy
-  
-  Custom Event Tracking:
-  - File downloads (PDFs, documents, archives)
-  - External link clicks and referral tracking
-  - Search queries and site navigation patterns
-  - Scroll depth analysis and reading engagement
-  - Jekyll-specific interactions (TOC, sidebar, code blocks)
-  ===================================================================
--->
+        
+
 
 
 
@@ -4587,6 +3956,5 @@ URL:      http://natas24.natas.labs.overthewire.org
     }
   };
 </script>
-<!-- Consumer hook: last thing before </body> (site scripts, widgets).
-             Empty stub shipped by the theme; shadow _includes/custom/body-end.html to use. --></body>
+</body>
 </html>
