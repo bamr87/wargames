@@ -142,20 +142,6 @@
 
 
 
-    <meta itemprop="headline" content="Manpage">
-
-
-    <meta itemprop="description" content="Manpage is a wargame that has been rescued from the demise ofintruded.net, previously hosted on manpage.intruded.net. Bigthanks to adc, morla and reth for their help in resurrecting thisgame!">
-
-
-    <meta itemprop="datePublished" content="2026-04-07T01:41:09+00:00">
-
-
-    <meta itemprop="dateModified" content="2026-04-07T01:41:09+00:00">
-
-
-
-
 
 
 
@@ -267,7 +253,7 @@
 
         
         
-        <!-- Begin Jekyll SEO tag v2.9.0 -->
+        <!-- Begin Jekyll SEO tag v2.9.1 -->
 <title>Manpage | Wargames</title>
 <meta name="generator" content="Jekyll v4.4.1" />
 <meta property="og:title" content="Manpage" />
@@ -492,13 +478,6 @@
     </a>
 </div>
 
-<div class="navbar-brand site-subtitle d-none d-lg-inline">
-    <a class="nav-link" href="/wargames/" aria-label="OverTheWire security challenges — Wargames home">
-        <span class="site-subtitle-text">
-            OverTheWire security challenges
-        </span>
-    </a>
-</div>
 
 
             </div><nav class="navbar-mobile-quicklinks d-none d-md-flex d-lg-none align-items-center flex-grow-1 min-w-0"
@@ -571,8 +550,9 @@
 
                         
                         
+                        
                         <button
-                            class="nav-link dropdown-toggle dropdown-toggle-split ms-1"
+                            class="nav-link dropdown-toggle dropdown-toggle-split"
                             type="button"
                             id="dropdown-wargames"
                             aria-expanded="false"
@@ -701,14 +681,15 @@
                 </button>
 
                 <div class="bd-navbar-toggle d-lg-none">
-                    <button class="navbar-toggler p-2"
+                    <button class="navbar-toggler navbar-toggler-labeled p-2"
                             type="button"
                             data-bs-toggle="offcanvas"
                             data-bs-target="#bdNavbar"
                             aria-controls="bdNavbar"
-                            aria-label="Toggle main navigation"
+                            aria-label="Menu"
                             aria-expanded="false">
                         <span class="bi bi-three-dots" aria-hidden="true"></span>
+                        <span class="navbar-toggler-text">Menu</span>
                     </button>
                 </div>
             </div>
@@ -1242,7 +1223,7 @@ document.addEventListener("DOMContentLoaded", function () {
     </div>
     <div class="col-6">
       <div class="p-2 bg-body-tertiary rounded text-center">
-        <small class="text-body-secondary d-block">Last Build</small><code class="small" data-testid="theme-build-stamp">Sep 13, 02:02</code>
+        <small class="text-body-secondary d-block">Last Build</small><code class="small" data-testid="theme-build-stamp">Oct 14, 20:19</code>
       </div>
     </div>
 
@@ -3006,6 +2987,10 @@ function zer0CopyFeedback(btn, success) {
 
 
 
+
+
+
+
   
   
     
@@ -3110,8 +3095,7 @@ game!</p>
         
         <div class="bd-intro-actions">
     
-    <div class="dropdown">
-      <button class="btn btn-sm btn-info dropdown-toggle" type="button" id="shareDropdownBottom" data-bs-toggle="dropdown" aria-expanded="false">
+    <div class="dropdown"><button class="btn btn-sm btn-info dropdown-toggle" type="button" id="shareDropdownBottom" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Share">
         <i class="bi bi-share" aria-hidden="true"></i>
         <span class="d-none d-sm-inline ms-1">Share</span>
       </button>
@@ -3150,10 +3134,11 @@ game!</p>
     
 
     
-    <a href="https://github.com//blob/main//overthewire/manpage/index.md"
+    <a href="https://github.com//blob/main/overthewire/manpage/index.md"
        class="btn btn-sm btn-dark bd-intro-action-link"
        target="_blank"
-       rel="noopener noreferrer">
+       rel="noopener noreferrer"
+       aria-label="Edit on GitHub">
       <i class="bi bi-github" aria-hidden="true"></i>
       <span class="d-none d-sm-inline ms-1">Edit on GitHub</span>
     </a>
@@ -3577,39 +3562,33 @@ Password: manpage0
     </div>
   </div>
 </aside>
-<script src="/wargames/assets/js/obsidian-local-graph.js?v=1789264952" defer></script>
+<script src="/wargames/assets/js/obsidian-local-graph.js?v=1792009165" defer></script>
 
 
 
 
-<div id="cookieConsent" class="cookie-consent-banner position-fixed bottom-0 start-0 end-0 py-3 px-3 shadow-lg" hidden>
-  <div class="container-xl px-3 px-md-4">
-    <div class="row align-items-center g-2">
-      <div class="col-12 col-lg-8">
-        <p class="h6 fw-semibold mb-2 mb-lg-0">
-          <i class="bi bi-shield-check me-2" aria-hidden="true"></i>
-          We value your privacy
-        </p>
-        <p class="mb-2 mb-lg-0 small text-body-secondary">
-          This website uses cookies and similar technologies to enhance your browsing experience, analyze traffic, and provide personalized content.
-          
-          
-        </p>
-      </div>
-      <div class="col-12 col-lg-4">
-        <div class="d-flex flex-wrap gap-2 justify-content-lg-end">
-          <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#cookieSettingsModal">
-            <i class="bi bi-gear me-1"></i>
-            Manage Cookies
-          </button>
-          <button type="button" class="btn btn-sm btn-secondary" id="rejectAllCookies">
-            Reject All
-          </button>
-          <button type="button" class="btn btn-sm btn-primary" id="acceptAllCookies">
-            Accept All
-          </button>
-        </div>
-      </div>
+
+<div id="cookieConsent" class="cookie-consent-banner position-fixed bottom-0 start-0 end-0 shadow-lg" role="region" aria-label="Cookie consent" hidden>
+  <div class="container-xl cookie-consent-banner__inner">
+    <p class="cookie-consent-banner__text small mb-0">
+      <i class="bi bi-shield-check me-1" aria-hidden="true"></i>
+      <strong class="fw-semibold">We value your privacy.</strong>
+      <span class="text-body-secondary">
+        We use cookies to analyze traffic and improve the site.
+        
+        
+      </span>
+    </p>
+    <div class="cookie-consent-banner__actions">
+      <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#cookieSettingsModal">
+        <i class="bi bi-gear me-1" aria-hidden="true"></i>Manage<span class="d-none d-sm-inline"> Cookies</span>
+      </button>
+      <button type="button" class="btn btn-sm btn-secondary" id="rejectAllCookies">
+        Reject All
+      </button>
+      <button type="button" class="btn btn-sm btn-primary" id="acceptAllCookies">
+        Accept All
+      </button>
     </div>
   </div>
 </div>
@@ -3937,7 +3916,7 @@ Password: manpage0
 <script src="/wargames/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 
-<script type="module" src="/wargames/assets/js/modules/navigation/index.js?v=1789264952"></script>
+<script type="module" src="/wargames/assets/js/modules/navigation/index.js?v=1792009165"></script>
 
 
 <script defer src="/wargames/assets/js/ui-helpers.js"></script>
@@ -3964,7 +3943,7 @@ Password: manpage0
   window.OBSIDIAN_CONFIG.attachmentsPath = "/wargames/assets/images/notes";
   window.OBSIDIAN_CONFIG.tagBase = "/wargames/tags/";
   window.OBSIDIAN_CONFIG.cytoscapeUrl = "/wargames/assets/vendor/cytoscape/cytoscape.min.js";
-</script><script defer src="/wargames/assets/js/obsidian-wiki-links.js?v=1789264952"></script>
+</script><script defer src="/wargames/assets/js/obsidian-wiki-links.js?v=1792009165"></script>
 
 
         </div>
