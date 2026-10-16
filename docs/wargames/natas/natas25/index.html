@@ -259,8 +259,8 @@
 <meta property="og:title" content="Natas25" />
 <meta name="author" content="Amr Abdel-Motaleb" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Username: natas25 URL: http://natas25.natas.labs.overthewire.org" />
-<meta name="twitter:description" property="og:description" content="Username: natas25 URL: http://natas25.natas.labs.overthewire.org" />
+<meta name="description" content="Natas Level 25 — a weak path filter and a logged User-Agent combine into log poisoning; learn how reading a log file can execute attacker-supplied code." />
+<meta name="twitter:description" property="og:description" content="Natas Level 25 — a weak path filter and a logged User-Agent combine into log poisoning; learn how reading a log file can execute attacker-supplied code." />
 <link rel="canonical" href="https://bamr87.github.io/wargames/docs/wargames/natas/natas25/" />
 <meta property="og:url" content="https://bamr87.github.io/wargames/docs/wargames/natas/natas25/" />
 <meta property="og:site_name" content="Wargames" />
@@ -270,7 +270,7 @@
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="Natas25" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Amr Abdel-Motaleb"},"dateModified":"2026-04-07T01:41:09+00:00","datePublished":"2026-04-07T01:41:09+00:00","description":"Username: natas25 URL: http://natas25.natas.labs.overthewire.org","headline":"Natas25","mainEntityOfPage":{"@type":"WebPage","@id":"https://bamr87.github.io/wargames/docs/wargames/natas/natas25/"},"url":"https://bamr87.github.io/wargames/docs/wargames/natas/natas25/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Amr Abdel-Motaleb"},"dateModified":"2026-04-07T01:41:09+00:00","datePublished":"2026-04-07T01:41:09+00:00","description":"Natas Level 25 — a weak path filter and a logged User-Agent combine into log poisoning; learn how reading a log file can execute attacker-supplied code.","headline":"Natas25","mainEntityOfPage":{"@type":"WebPage","@id":"https://bamr87.github.io/wargames/docs/wargames/natas/natas25/"},"url":"https://bamr87.github.io/wargames/docs/wargames/natas/natas25/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -1223,7 +1223,7 @@ document.addEventListener("DOMContentLoaded", function () {
     </div>
     <div class="col-6">
       <div class="p-2 bg-body-tertiary rounded text-center">
-        <small class="text-body-secondary d-block">Last Build</small><code class="small" data-testid="theme-build-stamp">Oct 14, 20:19</code>
+        <small class="text-body-secondary d-block">Last Build</small><code class="small" data-testid="theme-build-stamp">Oct 16, 22:05</code>
       </div>
     </div>
 
@@ -3018,8 +3018,7 @@ function zer0CopyFeedback(btn, success) {
       <h1 class="bd-intro-title">Natas25</h1>
       
       
-      <p class="bd-intro-description">Username: natas25
-    URL:      http://natas25.natas.labs.overthewire.org</p>
+      <p class="bd-intro-description">Natas Level 25 — a weak path filter and a logged User-Agent combine into log poisoning; learn how reading a log file can execute attacker-supplied code.</p>
       
     </div>
 
@@ -3111,7 +3110,7 @@ function zer0CopyFeedback(btn, success) {
              title="Copies a cleaned article summary to your clipboard, then opens LinkedIn sharing"
              data-share-url="https://bamr87.github.io/wargames/docs/wargames/natas/natas25/"
              data-share-title="Natas25"
-             data-share-description="Username: natas25    URL:      http://natas25.natas.labs.overthewire.org">
+             data-share-description="Natas Level 25 — a weak path filter and a logged User-Agent combine into log poisoning; learn how reading a log file can execute attacker-supplied code.">
             <i class="bi bi-linkedin me-2"></i>Share on LinkedIn
           </a>
         </li>
@@ -3203,7 +3202,9 @@ function zer0CopyFeedback(btn, success) {
 
       
       
-        <p class="text-body-secondary small fst-italic">No sections on this page.</p>
+        
+<ul class="list-group-flush"><li class="list-group-item"><a href="#study-guide" class="">Study guide</a><ul><li class="list-group-item"><a href="#what-this-level-teaches" class="">What this level teaches</a></li><li class="list-group-item"><a href="#key-ideas" class="">Key ideas</a></li><li class="list-group-item"><a href="#how-to-approach-it" class="">How to approach it</a></li><li class="list-group-item"><a href="#how-developers-prevent-it" class="">How developers prevent it</a></li></ul></li></ul>
+
       
     </nav>
   </div>
@@ -3226,6 +3227,38 @@ function zer0CopyFeedback(btn, success) {
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Username: natas25
 URL:      http://natas25.natas.labs.overthewire.org
 </code></pre></div></div>
+
+<!-- study-guide:start -->
+
+<h2 id="study-guide">Study guide</h2>
+
+<p><strong>Level map:</strong> sign in as <code class="language-plaintext highlighter-rouge">natas25</code> and find the password for <code class="language-plaintext highlighter-rouge">natas26</code>.</p>
+
+<h3 id="what-this-level-teaches">What this level teaches</h3>
+
+<p>Chaining two small weaknesses into a much bigger one.</p>
+
+<h3 id="key-ideas">Key ideas</h3>
+
+<ul>
+  <li><strong>Naive filtering.</strong> A filter that removes <code class="language-plaintext highlighter-rouge">../</code> once may be defeated by input that reconstitutes the sequence after removal.</li>
+  <li><strong>Local file inclusion.</strong> If the application includes a file whose path you can influence, it will run any PHP it contains.</li>
+  <li><strong>Log poisoning.</strong> Applications log request details such as the User-Agent header. If you can include the log file, anything you put in that header becomes code.</li>
+  <li><strong>Request headers again.</strong> You control them, as in Level 4.</li>
+</ul>
+
+<h3 id="how-to-approach-it">How to approach it</h3>
+
+<ol>
+  <li>Read how the language parameter is filtered and how the log filename is chosen.</li>
+  <li>Plan the sequence: get your own text into the log, then include the log.</li>
+</ol>
+
+<h3 id="how-developers-prevent-it">How developers prevent it</h3>
+
+<p>Resolve and validate paths against an allow-list, never include files by user-supplied name, and store logs where the web application cannot execute them.</p>
+
+<!-- study-guide:end -->
 
         </div>
       </div>
@@ -3528,7 +3561,7 @@ URL:      http://natas25.natas.labs.overthewire.org
     </div>
   </div>
 </aside>
-<script src="/wargames/assets/js/obsidian-local-graph.js?v=1792009165" defer></script>
+<script src="/wargames/assets/js/obsidian-local-graph.js?v=1792188318" defer></script>
 
 
 
@@ -3882,7 +3915,7 @@ URL:      http://natas25.natas.labs.overthewire.org
 <script src="/wargames/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 
-<script type="module" src="/wargames/assets/js/modules/navigation/index.js?v=1792009165"></script>
+<script type="module" src="/wargames/assets/js/modules/navigation/index.js?v=1792188318"></script>
 
 
 <script defer src="/wargames/assets/js/ui-helpers.js"></script>
@@ -3909,7 +3942,7 @@ URL:      http://natas25.natas.labs.overthewire.org
   window.OBSIDIAN_CONFIG.attachmentsPath = "/wargames/assets/images/notes";
   window.OBSIDIAN_CONFIG.tagBase = "/wargames/tags/";
   window.OBSIDIAN_CONFIG.cytoscapeUrl = "/wargames/assets/vendor/cytoscape/cytoscape.min.js";
-</script><script defer src="/wargames/assets/js/obsidian-wiki-links.js?v=1792009165"></script>
+</script><script defer src="/wargames/assets/js/obsidian-wiki-links.js?v=1792188318"></script>
 
 
         </div>

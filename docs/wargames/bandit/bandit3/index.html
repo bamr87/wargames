@@ -259,8 +259,8 @@
 <meta property="og:title" content="Bandit3" />
 <meta name="author" content="Amr Abdel-Motaleb" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Level Goal The password for the next level is stored in a file called –spaces in this filename– located in the home directory" />
-<meta name="twitter:description" property="og:description" content="Level Goal The password for the next level is stored in a file called –spaces in this filename– located in the home directory" />
+<meta name="description" content="Bandit Level 3 — read a file whose name contains spaces by using quoting, escaping or tab completion." />
+<meta name="twitter:description" property="og:description" content="Bandit Level 3 — read a file whose name contains spaces by using quoting, escaping or tab completion." />
 <link rel="canonical" href="https://bamr87.github.io/wargames/docs/wargames/bandit/bandit3/" />
 <meta property="og:url" content="https://bamr87.github.io/wargames/docs/wargames/bandit/bandit3/" />
 <meta property="og:site_name" content="Wargames" />
@@ -270,7 +270,7 @@
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="Bandit3" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Amr Abdel-Motaleb"},"dateModified":"2026-04-07T01:41:08+00:00","datePublished":"2026-04-07T01:41:08+00:00","description":"Level Goal The password for the next level is stored in a file called –spaces in this filename– located in the home directory","headline":"Bandit3","mainEntityOfPage":{"@type":"WebPage","@id":"https://bamr87.github.io/wargames/docs/wargames/bandit/bandit3/"},"url":"https://bamr87.github.io/wargames/docs/wargames/bandit/bandit3/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Amr Abdel-Motaleb"},"dateModified":"2026-04-07T01:41:08+00:00","datePublished":"2026-04-07T01:41:08+00:00","description":"Bandit Level 3 — read a file whose name contains spaces by using quoting, escaping or tab completion.","headline":"Bandit3","mainEntityOfPage":{"@type":"WebPage","@id":"https://bamr87.github.io/wargames/docs/wargames/bandit/bandit3/"},"url":"https://bamr87.github.io/wargames/docs/wargames/bandit/bandit3/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -1223,7 +1223,7 @@ document.addEventListener("DOMContentLoaded", function () {
     </div>
     <div class="col-6">
       <div class="p-2 bg-body-tertiary rounded text-center">
-        <small class="text-body-secondary d-block">Last Build</small><code class="small" data-testid="theme-build-stamp">Oct 14, 20:19</code>
+        <small class="text-body-secondary d-block">Last Build</small><code class="small" data-testid="theme-build-stamp">Oct 16, 22:05</code>
       </div>
     </div>
 
@@ -3018,10 +3018,7 @@ function zer0CopyFeedback(btn, success) {
       <h1 class="bd-intro-title">Bandit3</h1>
       
       
-      <p class="bd-intro-description">Level Goal
-----------
-The password for the next level is stored in a file called --spaces
-in this filename-- located in the home directory</p>
+      <p class="bd-intro-description">Bandit Level 3 — read a file whose name contains spaces by using quoting, escaping or tab completion.</p>
       
     </div>
 
@@ -3113,7 +3110,7 @@ in this filename-- located in the home directory</p>
              title="Copies a cleaned article summary to your clipboard, then opens LinkedIn sharing"
              data-share-url="https://bamr87.github.io/wargames/docs/wargames/bandit/bandit3/"
              data-share-title="Bandit3"
-             data-share-description="Level Goal----------The password for the next level is stored in a file called --spacesin this filename-- located in the home directory">
+             data-share-description="Bandit Level 3 — read a file whose name contains spaces by using quoting, escaping or tab completion.">
             <i class="bi bi-linkedin me-2"></i>Share on LinkedIn
           </a>
         </li>
@@ -3206,7 +3203,7 @@ in this filename-- located in the home directory</p>
       
       
         
-<ul class="list-group-flush"><li class="list-group-item"><a href="#level-goal" class="">Level Goal</a></li><li class="list-group-item"><a href="#commands-you-may-need-to-solve-this-level" class="">Commands you may need to solve this level</a></li><li class="list-group-item"><a href="#helpful-reading-material" class="">Helpful Reading Material</a></li></ul>
+<ul class="list-group-flush"><li class="list-group-item"><a href="#level-goal" class="">Level Goal</a></li><li class="list-group-item"><a href="#commands-you-may-need-to-solve-this-level" class="">Commands you may need to solve this level</a></li><li class="list-group-item"><a href="#helpful-reading-material" class="">Helpful Reading Material</a></li><li class="list-group-item"><a href="#study-guide" class="">Study guide</a><ul><li class="list-group-item"><a href="#what-this-level-teaches" class="">What this level teaches</a></li><li class="list-group-item"><a href="#key-ideas" class="">Key ideas</a></li><li class="list-group-item"><a href="#how-to-approach-it" class="">How to approach it</a></li><li class="list-group-item"><a href="#why-it-matters" class="">Why it matters</a></li></ul></li></ul>
 
       
     </nav>
@@ -3238,6 +3235,37 @@ in this filename-- located in the home directory</p>
   <li><a href="https://www.google.com/search?q=spaces+in+filename">Google Search for “spaces in filename”</a></li>
 </ul>
 
+<!-- study-guide:start -->
+
+<h2 id="study-guide">Study guide</h2>
+
+<p><strong>Level map:</strong> logged in as <code class="language-plaintext highlighter-rouge">bandit2</code>, find the password for <code class="language-plaintext highlighter-rouge">bandit3</code>.</p>
+
+<h3 id="what-this-level-teaches">What this level teaches</h3>
+
+<p>How the shell splits a command line into words, and how to keep a filename with spaces together.</p>
+
+<h3 id="key-ideas">Key ideas</h3>
+
+<ul>
+  <li><strong>Word splitting.</strong> The shell breaks a command at every space, so <code class="language-plaintext highlighter-rouge">cat my file</code> is read as two arguments, <code class="language-plaintext highlighter-rouge">my</code> and <code class="language-plaintext highlighter-rouge">file</code>.</li>
+  <li><strong>Quoting</strong> (single or double quotes) and <strong>backslash escaping</strong> both tell the shell “treat this as one word”.</li>
+  <li><strong>Tab completion</strong> has the shell finish a name for you, inserting the correct escapes automatically.</li>
+</ul>
+
+<h3 id="how-to-approach-it">How to approach it</h3>
+
+<ol>
+  <li><code class="language-plaintext highlighter-rouge">ls</code> shows the file. Note how its name appears.</li>
+  <li>Try the three techniques above on a harmless file first, for example one you create yourself in a <code class="language-plaintext highlighter-rouge">mktemp -d</code> directory.</li>
+  <li>Start typing the name and press Tab. Seeing the escapes the shell inserts is the quickest way to understand them.</li>
+</ol>
+
+<h3 id="why-it-matters">Why it matters</h3>
+
+<p>Spaces and special characters in filenames cause the classic scripting bugs. Always quoting variables in scripts (<code class="language-plaintext highlighter-rouge">"$file"</code>) comes directly from this lesson.</p>
+
+<!-- study-guide:end -->
 
         </div>
       </div>
@@ -3540,7 +3568,7 @@ in this filename-- located in the home directory</p>
     </div>
   </div>
 </aside>
-<script src="/wargames/assets/js/obsidian-local-graph.js?v=1792009165" defer></script>
+<script src="/wargames/assets/js/obsidian-local-graph.js?v=1792188318" defer></script>
 
 
 
@@ -3894,7 +3922,7 @@ in this filename-- located in the home directory</p>
 <script src="/wargames/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 
-<script type="module" src="/wargames/assets/js/modules/navigation/index.js?v=1792009165"></script>
+<script type="module" src="/wargames/assets/js/modules/navigation/index.js?v=1792188318"></script>
 
 
 <script defer src="/wargames/assets/js/ui-helpers.js"></script>
@@ -3921,7 +3949,7 @@ in this filename-- located in the home directory</p>
   window.OBSIDIAN_CONFIG.attachmentsPath = "/wargames/assets/images/notes";
   window.OBSIDIAN_CONFIG.tagBase = "/wargames/tags/";
   window.OBSIDIAN_CONFIG.cytoscapeUrl = "/wargames/assets/vendor/cytoscape/cytoscape.min.js";
-</script><script defer src="/wargames/assets/js/obsidian-wiki-links.js?v=1792009165"></script>
+</script><script defer src="/wargames/assets/js/obsidian-wiki-links.js?v=1792188318"></script>
 
 
         </div>

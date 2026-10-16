@@ -259,8 +259,8 @@
 <meta property="og:title" content="Drifter" />
 <meta name="author" content="Amr Abdel-Motaleb" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Drifter is a wargame along the lines of Vortex." />
-<meta name="twitter:description" property="og:description" content="Drifter is a wargame along the lines of Vortex." />
+<meta name="description" content="Drifter is a 16-level advanced wargame in the style of Vortex, mixing remote services, heap bugs, format strings, reversing and ASLR bypass." />
+<meta name="twitter:description" property="og:description" content="Drifter is a 16-level advanced wargame in the style of Vortex, mixing remote services, heap bugs, format strings, reversing and ASLR bypass." />
 <link rel="canonical" href="https://bamr87.github.io/wargames/docs/wargames/drifter/" />
 <meta property="og:url" content="https://bamr87.github.io/wargames/docs/wargames/drifter/" />
 <meta property="og:site_name" content="Wargames" />
@@ -270,7 +270,7 @@
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="Drifter" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Amr Abdel-Motaleb"},"dateModified":"2026-04-07T01:41:09+00:00","datePublished":"2026-04-07T01:41:09+00:00","description":"Drifter is a wargame along the lines of Vortex.","headline":"Drifter","mainEntityOfPage":{"@type":"WebPage","@id":"https://bamr87.github.io/wargames/docs/wargames/drifter/"},"url":"https://bamr87.github.io/wargames/docs/wargames/drifter/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Amr Abdel-Motaleb"},"dateModified":"2026-04-07T01:41:09+00:00","datePublished":"2026-04-07T01:41:09+00:00","description":"Drifter is a 16-level advanced wargame in the style of Vortex, mixing remote services, heap bugs, format strings, reversing and ASLR bypass.","headline":"Drifter","mainEntityOfPage":{"@type":"WebPage","@id":"https://bamr87.github.io/wargames/docs/wargames/drifter/"},"url":"https://bamr87.github.io/wargames/docs/wargames/drifter/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -1223,7 +1223,7 @@ document.addEventListener("DOMContentLoaded", function () {
     </div>
     <div class="col-6">
       <div class="p-2 bg-body-tertiary rounded text-center">
-        <small class="text-body-secondary d-block">Last Build</small><code class="small" data-testid="theme-build-stamp">Oct 14, 20:19</code>
+        <small class="text-body-secondary d-block">Last Build</small><code class="small" data-testid="theme-build-stamp">Oct 16, 22:05</code>
       </div>
     </div>
 
@@ -3018,7 +3018,7 @@ function zer0CopyFeedback(btn, success) {
       <h1 class="bd-intro-title">Drifter</h1>
       
       
-      <p class="bd-intro-description">Drifter is a wargame along the lines of Vortex.</p>
+      <p class="bd-intro-description">Drifter is a 16-level advanced wargame in the style of Vortex, mixing remote services, heap bugs, format strings, reversing and ASLR bypass.</p>
       
     </div>
 
@@ -3110,7 +3110,7 @@ function zer0CopyFeedback(btn, success) {
              title="Copies a cleaned article summary to your clipboard, then opens LinkedIn sharing"
              data-share-url="https://bamr87.github.io/wargames/docs/wargames/drifter/"
              data-share-title="Drifter"
-             data-share-description="Drifter is a wargame along the lines of Vortex.">
+             data-share-description="Drifter is a 16-level advanced wargame in the style of Vortex, mixing remote services, heap bugs, format strings, reversing and ASLR bypass.">
             <i class="bi bi-linkedin me-2"></i>Share on LinkedIn
           </a>
         </li>
@@ -3202,7 +3202,9 @@ function zer0CopyFeedback(btn, success) {
 
       
       
-        <p class="text-body-secondary small fst-italic">No sections on this page.</p>
+        
+<ul class="list-group-flush"><li class="list-group-item"><a href="#drifter" class="">Drifter</a><ul><li class="list-group-item"><a href="#study-guide" class="">Study guide</a><ul><li class="list-group-item"><a href="#what-drifter-teaches" class="">What Drifter teaches</a></li><li class="list-group-item"><a href="#connecting" class="">Connecting</a></li><li class="list-group-item"><a href="#prerequisites" class="">Prerequisites</a></li><li class="list-group-item"><a href="#the-skills-ladder" class="">The skills ladder</a></li><li class="list-group-item"><a href="#tools" class="">Tools</a></li><li class="list-group-item"><a href="#habits-that-help" class="">Habits that help</a></li></ul></li></ul></li></ul>
+
       
     </nav>
   </div>
@@ -3226,6 +3228,86 @@ function zer0CopyFeedback(btn, success) {
 
 <p>Drifter is a wargame along the lines of Vortex.</p>
 
+<!-- study-guide:start -->
+
+<h2 id="study-guide">Study guide</h2>
+
+<p>This guide explains what each Drifter level asks for, based on the level pages, without passwords or finished exploits.</p>
+
+<h3 id="what-drifter-teaches">What Drifter teaches</h3>
+
+<p>The upstream description is one sentence: Drifter is a wargame along the lines of Vortex. Its levels use the same toolkit — network clients, stack and heap exploitation, format strings, reverse engineering and cryptanalysis — but on a different mix of targets, including remote daemons, C++ code, third-party libraries and ASLR-protected binaries.</p>
+
+<h3 id="connecting">Connecting</h3>
+
+<p>Drifter is reached with SSH at <code class="language-plaintext highlighter-rouge">drifter.labs.overthewire.org</code> on port 2230. Level 0 is a network service that listens on port 1111. Source code for several levels is provided under <code class="language-plaintext highlighter-rouge">/drifter/</code> (for example <code class="language-plaintext highlighter-rouge">drifter0_src</code>, <code class="language-plaintext highlighter-rouge">drifter3_src</code> and <code class="language-plaintext highlighter-rouge">drifter14_src</code>).</p>
+
+<h3 id="prerequisites">Prerequisites</h3>
+
+<p>Finish Bandit, Narnia and Behemoth, and ideally the early Vortex levels. The Drifter Level 0 page even suggests doing Vortex Level 0 first, to have a stable machine to work from if you are behind NAT.</p>
+
+<h3 id="the-skills-ladder">The skills ladder</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Levels</th>
+      <th>Theme</th>
+      <th>Core skills</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0</td>
+      <td>Remote system-call proxy</td>
+      <td>RC4, raw syscalls, a custom client</td>
+    </tr>
+    <tr>
+      <td>1–3</td>
+      <td>Memory corruption</td>
+      <td>C++ vtables, stack overflow quirks, old heap allocators</td>
+    </tr>
+    <tr>
+      <td>4–5</td>
+      <td>Analysis and logic</td>
+      <td>reverse engineering, resource limits, game logic</td>
+    </tr>
+    <tr>
+      <td>6–8</td>
+      <td>Remote daemons</td>
+      <td>format strings, disassembly, custom shellcode</td>
+    </tr>
+    <tr>
+      <td>9–10</td>
+      <td>Privileges and practice</td>
+      <td>file formats, non-executable stacks</td>
+    </tr>
+    <tr>
+      <td>11–12</td>
+      <td>Randomisation and reversing</td>
+      <td>ASLR, RPC-style protocols</td>
+    </tr>
+    <tr>
+      <td>13–15</td>
+      <td>Open-ended</td>
+      <td>unexpected approaches, third-party library bugs, decompression</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="tools">Tools</h3>
+
+<p><code class="language-plaintext highlighter-rouge">gdb</code>, <code class="language-plaintext highlighter-rouge">objdump</code>, <code class="language-plaintext highlighter-rouge">ltrace</code>/<code class="language-plaintext highlighter-rouge">strace</code>, a disassembler (the Level 7 page mentions IDA Free), <code class="language-plaintext highlighter-rouge">gcc</code>, <code class="language-plaintext highlighter-rouge">pwntools</code>, Python and C for network clients.</p>
+
+<h3 id="habits-that-help">Habits that help</h3>
+
+<ul>
+  <li>Read the source where it is given before touching the binary.</li>
+  <li>Script everything; remote exploits need many attempts.</li>
+  <li>Keep a record of addresses and offsets, as they differ between levels and sometimes between runs.</li>
+</ul>
+
+<!-- study-guide:end -->
 
         </div>
       </div>
@@ -3528,7 +3610,7 @@ function zer0CopyFeedback(btn, success) {
     </div>
   </div>
 </aside>
-<script src="/wargames/assets/js/obsidian-local-graph.js?v=1792009165" defer></script>
+<script src="/wargames/assets/js/obsidian-local-graph.js?v=1792188318" defer></script>
 
 
 
@@ -3882,7 +3964,7 @@ function zer0CopyFeedback(btn, success) {
 <script src="/wargames/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 
-<script type="module" src="/wargames/assets/js/modules/navigation/index.js?v=1792009165"></script>
+<script type="module" src="/wargames/assets/js/modules/navigation/index.js?v=1792188318"></script>
 
 
 <script defer src="/wargames/assets/js/ui-helpers.js"></script>
@@ -3909,7 +3991,7 @@ function zer0CopyFeedback(btn, success) {
   window.OBSIDIAN_CONFIG.attachmentsPath = "/wargames/assets/images/notes";
   window.OBSIDIAN_CONFIG.tagBase = "/wargames/tags/";
   window.OBSIDIAN_CONFIG.cytoscapeUrl = "/wargames/assets/vendor/cytoscape/cytoscape.min.js";
-</script><script defer src="/wargames/assets/js/obsidian-wiki-links.js?v=1792009165"></script>
+</script><script defer src="/wargames/assets/js/obsidian-wiki-links.js?v=1792188318"></script>
 
 
         </div>

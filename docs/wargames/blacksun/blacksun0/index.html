@@ -259,8 +259,8 @@
 <meta property="og:title" content="Blacksun0" />
 <meta name="author" content="Amr Abdel-Motaleb" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Level0 is a remote format string intended to get you started with blacksun. It is a remote format string bug with you being able to see the reply, with address space randomisation enabled. You’ll need to use the direct parameter access method to anal…" />
-<meta name="twitter:description" property="og:description" content="Level0 is a remote format string intended to get you started with blacksun. It is a remote format string bug with you being able to see the reply, with address space randomisation enabled. You’ll need to use the direct parameter access method to anal…" />
+<meta name="description" content="Blacksun Level 0 — exploit a remote format-string bug in a binary with ASLR, PIE and stack protection by using direct parameter access to study the stack." />
+<meta name="twitter:description" property="og:description" content="Blacksun Level 0 — exploit a remote format-string bug in a binary with ASLR, PIE and stack protection by using direct parameter access to study the stack." />
 <link rel="canonical" href="https://bamr87.github.io/wargames/docs/wargames/blacksun/blacksun0/" />
 <meta property="og:url" content="https://bamr87.github.io/wargames/docs/wargames/blacksun/blacksun0/" />
 <meta property="og:site_name" content="Wargames" />
@@ -270,7 +270,7 @@
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="Blacksun0" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Amr Abdel-Motaleb"},"dateModified":"2026-04-07T01:41:09+00:00","datePublished":"2026-04-07T01:41:09+00:00","description":"Level0 is a remote format string intended to get you started with blacksun. It is a remote format string bug with you being able to see the reply, with address space randomisation enabled. You’ll need to use the direct parameter access method to anal…","headline":"Blacksun0","mainEntityOfPage":{"@type":"WebPage","@id":"https://bamr87.github.io/wargames/docs/wargames/blacksun/blacksun0/"},"url":"https://bamr87.github.io/wargames/docs/wargames/blacksun/blacksun0/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Amr Abdel-Motaleb"},"dateModified":"2026-04-07T01:41:09+00:00","datePublished":"2026-04-07T01:41:09+00:00","description":"Blacksun Level 0 — exploit a remote format-string bug in a binary with ASLR, PIE and stack protection by using direct parameter access to study the stack.","headline":"Blacksun0","mainEntityOfPage":{"@type":"WebPage","@id":"https://bamr87.github.io/wargames/docs/wargames/blacksun/blacksun0/"},"url":"https://bamr87.github.io/wargames/docs/wargames/blacksun/blacksun0/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -1223,7 +1223,7 @@ document.addEventListener("DOMContentLoaded", function () {
     </div>
     <div class="col-6">
       <div class="p-2 bg-body-tertiary rounded text-center">
-        <small class="text-body-secondary d-block">Last Build</small><code class="small" data-testid="theme-build-stamp">Oct 14, 20:19</code>
+        <small class="text-body-secondary d-block">Last Build</small><code class="small" data-testid="theme-build-stamp">Oct 16, 22:05</code>
       </div>
     </div>
 
@@ -3018,10 +3018,7 @@ function zer0CopyFeedback(btn, success) {
       <h1 class="bd-intro-title">Blacksun0</h1>
       
       
-      <p class="bd-intro-description">Level0 is a remote format string intended to get you started with
-blacksun. It is a remote format string bug with you being able to see
-the reply, with address space randomisation enabled. You'll need to use
-the direct parameter access method to anal...</p>
+      <p class="bd-intro-description">Blacksun Level 0 — exploit a remote format-string bug in a binary with ASLR, PIE and stack protection by using direct parameter access to study the stack.</p>
       
     </div>
 
@@ -3113,7 +3110,7 @@ the direct parameter access method to anal...</p>
              title="Copies a cleaned article summary to your clipboard, then opens LinkedIn sharing"
              data-share-url="https://bamr87.github.io/wargames/docs/wargames/blacksun/blacksun0/"
              data-share-title="Blacksun0"
-             data-share-description="Level0 is a remote format string intended to get you started withblacksun. It is a remote format string bug with you being able to seethe reply, with address space randomisation enabled. You&#39;ll need to usethe direct parameter access method to anal...">
+             data-share-description="Blacksun Level 0 — exploit a remote format-string bug in a binary with ASLR, PIE and stack protection by using direct parameter access to study the stack.">
             <i class="bi bi-linkedin me-2"></i>Share on LinkedIn
           </a>
         </li>
@@ -3206,7 +3203,7 @@ the direct parameter access method to anal...</p>
       
       
         
-<ul class="list-group-flush"><li class="list-group-item"><a href="#binary-information" class="">Binary information</a></li></ul>
+<ul class="list-group-flush"><li class="list-group-item"><a href="#binary-information" class="">Binary information</a></li><li class="list-group-item"><a href="#what-this-level-teaches" class="">What this level teaches</a></li><li class="list-group-item"><a href="#key-ideas" class="">Key ideas</a></li><li class="list-group-item"><a href="#how-to-approach-it" class="">How to approach it</a></li><li class="list-group-item"><a href="#why-it-matters" class="">Why it matters</a></li></ul>
 
       
     </nav>
@@ -3262,6 +3259,39 @@ the direct parameter access method to anal...</p>
 
 <p>Alternatively, there is a debug version on port 78 if you need help understanding what you’re seeing</p>
 
+<!-- study-guide:start -->
+
+<h2 id="study-guide">Study guide</h2>
+
+<p><strong>Level map:</strong> you attack a network service (port 79, with a debug version on port 78) to get a shell, then read <code class="language-plaintext highlighter-rouge">/etc/motd</code> for more information.</p>
+
+<h3 id="what-this-level-teaches">What this level teaches</h3>
+
+<p>How to exploit a format-string vulnerability remotely when the layout of memory is randomised.</p>
+
+<h3 id="key-ideas">Key ideas</h3>
+
+<ul>
+  <li><strong>You can see the reply.</strong> That is what makes a leak possible: format specifiers print stack values back to you.</li>
+  <li><strong>Direct parameter access.</strong> The <code class="language-plaintext highlighter-rouge">%N$x</code> syntax reads the Nth argument directly, so you can scan the stack without writing hundreds of specifiers.</li>
+  <li><strong>Defeating ASLR with a leak.</strong> If you can read a pointer from the stack, you can compute where other things are for that particular run.</li>
+  <li><strong>Protections table.</strong> The page lists SSP, PIE and ASLR as on, and non-executable pages as off, so injected shellcode on the stack is still allowed.</li>
+  <li><strong>Debug version.</strong> Port 78 serves a version that explains what you are seeing.</li>
+</ul>
+
+<h3 id="how-to-approach-it">How to approach it</h3>
+
+<ol>
+  <li>Use the debug service to understand the stack layout, then repeat on the real one.</li>
+  <li>Leak the values you need, compute addresses, and design the write.</li>
+  <li>Script the exploit so you can rerun it against a fresh address space.</li>
+</ol>
+
+<h3 id="why-it-matters">Why it matters</h3>
+
+<p>Info leaks plus a write primitive are the building blocks of nearly every modern exploit chain.</p>
+
+<!-- study-guide:end -->
 
         </div>
       </div>
@@ -3564,7 +3594,7 @@ the direct parameter access method to anal...</p>
     </div>
   </div>
 </aside>
-<script src="/wargames/assets/js/obsidian-local-graph.js?v=1792009165" defer></script>
+<script src="/wargames/assets/js/obsidian-local-graph.js?v=1792188318" defer></script>
 
 
 
@@ -3918,7 +3948,7 @@ the direct parameter access method to anal...</p>
 <script src="/wargames/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 
-<script type="module" src="/wargames/assets/js/modules/navigation/index.js?v=1792009165"></script>
+<script type="module" src="/wargames/assets/js/modules/navigation/index.js?v=1792188318"></script>
 
 
 <script defer src="/wargames/assets/js/ui-helpers.js"></script>
@@ -3945,7 +3975,7 @@ the direct parameter access method to anal...</p>
   window.OBSIDIAN_CONFIG.attachmentsPath = "/wargames/assets/images/notes";
   window.OBSIDIAN_CONFIG.tagBase = "/wargames/tags/";
   window.OBSIDIAN_CONFIG.cytoscapeUrl = "/wargames/assets/vendor/cytoscape/cytoscape.min.js";
-</script><script defer src="/wargames/assets/js/obsidian-wiki-links.js?v=1792009165"></script>
+</script><script defer src="/wargames/assets/js/obsidian-wiki-links.js?v=1792188318"></script>
 
 
         </div>

@@ -259,8 +259,8 @@
 <meta property="og:title" content="Vortex16" />
 <meta name="author" content="Amr Abdel-Motaleb" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="The BOFH This level requires finding 100 bits out of a 128 bit randomly generated hashed key. You must login to [vortex.labs.overthewire.org][] to complete this level." />
-<meta name="twitter:description" property="og:description" content="The BOFH This level requires finding 100 bits out of a 128 bit randomly generated hashed key. You must login to [vortex.labs.overthewire.org][] to complete this level." />
+<meta name="description" content="Vortex Level 16 — find 100 bits out of a 128-bit randomly generated hashed key, a partial hash-matching problem." />
+<meta name="twitter:description" property="og:description" content="Vortex Level 16 — find 100 bits out of a 128-bit randomly generated hashed key, a partial hash-matching problem." />
 <link rel="canonical" href="https://bamr87.github.io/wargames/docs/wargames/vortex/vortex16/" />
 <meta property="og:url" content="https://bamr87.github.io/wargames/docs/wargames/vortex/vortex16/" />
 <meta property="og:site_name" content="Wargames" />
@@ -270,7 +270,7 @@
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="Vortex16" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Amr Abdel-Motaleb"},"dateModified":"2026-04-07T01:41:09+00:00","datePublished":"2026-04-07T01:41:09+00:00","description":"The BOFH This level requires finding 100 bits out of a 128 bit randomly generated hashed key. You must login to [vortex.labs.overthewire.org][] to complete this level.","headline":"Vortex16","mainEntityOfPage":{"@type":"WebPage","@id":"https://bamr87.github.io/wargames/docs/wargames/vortex/vortex16/"},"url":"https://bamr87.github.io/wargames/docs/wargames/vortex/vortex16/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Amr Abdel-Motaleb"},"dateModified":"2026-04-07T01:41:09+00:00","datePublished":"2026-04-07T01:41:09+00:00","description":"Vortex Level 16 — find 100 bits out of a 128-bit randomly generated hashed key, a partial hash-matching problem.","headline":"Vortex16","mainEntityOfPage":{"@type":"WebPage","@id":"https://bamr87.github.io/wargames/docs/wargames/vortex/vortex16/"},"url":"https://bamr87.github.io/wargames/docs/wargames/vortex/vortex16/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -1223,7 +1223,7 @@ document.addEventListener("DOMContentLoaded", function () {
     </div>
     <div class="col-6">
       <div class="p-2 bg-body-tertiary rounded text-center">
-        <small class="text-body-secondary d-block">Last Build</small><code class="small" data-testid="theme-build-stamp">Oct 14, 20:19</code>
+        <small class="text-body-secondary d-block">Last Build</small><code class="small" data-testid="theme-build-stamp">Oct 16, 22:05</code>
       </div>
     </div>
 
@@ -3018,11 +3018,7 @@ function zer0CopyFeedback(btn, success) {
       <h1 class="bd-intro-title">Vortex16</h1>
       
       
-      <p class="bd-intro-description">The BOFH
---------
-This level requires finding 100 bits out of a 128 bit randomly
-generated hashed key. You must login to
-[vortex.labs.overthewire.org][] to complete this level.</p>
+      <p class="bd-intro-description">Vortex Level 16 — find 100 bits out of a 128-bit randomly generated hashed key, a partial hash-matching problem.</p>
       
     </div>
 
@@ -3114,7 +3110,7 @@ generated hashed key. You must login to
              title="Copies a cleaned article summary to your clipboard, then opens LinkedIn sharing"
              data-share-url="https://bamr87.github.io/wargames/docs/wargames/vortex/vortex16/"
              data-share-title="Vortex16"
-             data-share-description="The BOFH--------This level requires finding 100 bits out of a 128 bit randomlygenerated hashed key. You must login to[vortex.labs.overthewire.org][] to complete this level.">
+             data-share-description="Vortex Level 16 — find 100 bits out of a 128-bit randomly generated hashed key, a partial hash-matching problem.">
             <i class="bi bi-linkedin me-2"></i>Share on LinkedIn
           </a>
         </li>
@@ -3207,7 +3203,7 @@ generated hashed key. You must login to
       
       
         
-<ul class="list-group-flush"><li class="list-group-item"><a href="#the-bofh" class="">The BOFH</a></li></ul>
+<ul class="list-group-flush"><li class="list-group-item"><a href="#the-bofh" class="">The BOFH</a></li><li class="list-group-item"><a href="#study-guide" class="">Study guide</a><ul><li class="list-group-item"><a href="#what-this-level-teaches" class="">What this level teaches</a></li><li class="list-group-item"><a href="#key-ideas" class="">Key ideas</a></li><li class="list-group-item"><a href="#how-to-approach-it" class="">How to approach it</a></li><li class="list-group-item"><a href="#why-it-matters" class="">Why it matters</a></li></ul></li></ul>
 
       
     </nav>
@@ -3231,6 +3227,37 @@ generated hashed key. You must login to
 <h2 id="the-bofh">The BOFH</h2>
 <p>This level requires finding 100 bits out of a 128 bit randomly generated hashed key. You must login to <a href="ssh://vortex.labs.overthewire.org:2228">vortex.labs.overthewire.org</a> to complete this level.</p>
 
+<!-- study-guide:start -->
+
+<h2 id="study-guide">Study guide</h2>
+
+<p><strong>Level map:</strong> logged in as <code class="language-plaintext highlighter-rouge">vortex16</code>, obtain access to <code class="language-plaintext highlighter-rouge">vortex17</code>.</p>
+
+<h3 id="what-this-level-teaches">What this level teaches</h3>
+
+<p>The cost and structure of partial hash search.</p>
+
+<h3 id="key-ideas">Key ideas</h3>
+
+<ul>
+  <li><strong>The task as stated.</strong> The page describes it as finding 100 bits out of a randomly generated, hashed 128-bit key. Read the level’s code to see exactly which bits must match and what you control.</li>
+  <li><strong>Cost estimation.</strong> Matching fewer bits is exponentially cheaper than matching all of them: each extra required bit roughly doubles the expected work.</li>
+  <li><strong>Speed.</strong> Efficient C and parallel search make the difference between hours and years.</li>
+</ul>
+
+<h3 id="how-to-approach-it">How to approach it</h3>
+
+<ol>
+  <li>Read exactly what must match, and how many bits.</li>
+  <li>Estimate expected work for the plan you choose.</li>
+  <li>Implement and benchmark on smaller bit counts first.</li>
+</ol>
+
+<h3 id="why-it-matters">Why it matters</h3>
+
+<p>It illustrates truncated hashes and why a short checksum gives only weak assurance.</p>
+
+<!-- study-guide:end -->
 
         </div>
       </div>
@@ -3533,7 +3560,7 @@ generated hashed key. You must login to
     </div>
   </div>
 </aside>
-<script src="/wargames/assets/js/obsidian-local-graph.js?v=1792009165" defer></script>
+<script src="/wargames/assets/js/obsidian-local-graph.js?v=1792188318" defer></script>
 
 
 
@@ -3887,7 +3914,7 @@ generated hashed key. You must login to
 <script src="/wargames/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 
-<script type="module" src="/wargames/assets/js/modules/navigation/index.js?v=1792009165"></script>
+<script type="module" src="/wargames/assets/js/modules/navigation/index.js?v=1792188318"></script>
 
 
 <script defer src="/wargames/assets/js/ui-helpers.js"></script>
@@ -3914,7 +3941,7 @@ generated hashed key. You must login to
   window.OBSIDIAN_CONFIG.attachmentsPath = "/wargames/assets/images/notes";
   window.OBSIDIAN_CONFIG.tagBase = "/wargames/tags/";
   window.OBSIDIAN_CONFIG.cytoscapeUrl = "/wargames/assets/vendor/cytoscape/cytoscape.min.js";
-</script><script defer src="/wargames/assets/js/obsidian-wiki-links.js?v=1792009165"></script>
+</script><script defer src="/wargames/assets/js/obsidian-wiki-links.js?v=1792188318"></script>
 
 
         </div>

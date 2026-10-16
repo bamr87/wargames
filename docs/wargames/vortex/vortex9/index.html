@@ -259,8 +259,8 @@
 <meta property="og:title" content="Vortex9" />
 <meta name="author" content="Amr Abdel-Motaleb" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="BlackBox There is no information available for this level. Login to [vortex.labs.overthewire.org][] and check it out." />
-<meta name="twitter:description" property="og:description" content="BlackBox There is no information available for this level. Login to [vortex.labs.overthewire.org][] and check it out." />
+<meta name="description" content="Vortex Level 9 — “BlackBox”: the page gives no information, so log in and investigate the level yourself." />
+<meta name="twitter:description" property="og:description" content="Vortex Level 9 — “BlackBox”: the page gives no information, so log in and investigate the level yourself." />
 <link rel="canonical" href="https://bamr87.github.io/wargames/docs/wargames/vortex/vortex9/" />
 <meta property="og:url" content="https://bamr87.github.io/wargames/docs/wargames/vortex/vortex9/" />
 <meta property="og:site_name" content="Wargames" />
@@ -270,7 +270,7 @@
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="Vortex9" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Amr Abdel-Motaleb"},"dateModified":"2026-04-07T01:41:09+00:00","datePublished":"2026-04-07T01:41:09+00:00","description":"BlackBox There is no information available for this level. Login to [vortex.labs.overthewire.org][] and check it out.","headline":"Vortex9","mainEntityOfPage":{"@type":"WebPage","@id":"https://bamr87.github.io/wargames/docs/wargames/vortex/vortex9/"},"url":"https://bamr87.github.io/wargames/docs/wargames/vortex/vortex9/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Amr Abdel-Motaleb"},"dateModified":"2026-04-07T01:41:09+00:00","datePublished":"2026-04-07T01:41:09+00:00","description":"Vortex Level 9 — “BlackBox”: the page gives no information, so log in and investigate the level yourself.","headline":"Vortex9","mainEntityOfPage":{"@type":"WebPage","@id":"https://bamr87.github.io/wargames/docs/wargames/vortex/vortex9/"},"url":"https://bamr87.github.io/wargames/docs/wargames/vortex/vortex9/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -1223,7 +1223,7 @@ document.addEventListener("DOMContentLoaded", function () {
     </div>
     <div class="col-6">
       <div class="p-2 bg-body-tertiary rounded text-center">
-        <small class="text-body-secondary d-block">Last Build</small><code class="small" data-testid="theme-build-stamp">Oct 14, 20:19</code>
+        <small class="text-body-secondary d-block">Last Build</small><code class="small" data-testid="theme-build-stamp">Oct 16, 22:05</code>
       </div>
     </div>
 
@@ -3018,10 +3018,7 @@ function zer0CopyFeedback(btn, success) {
       <h1 class="bd-intro-title">Vortex9</h1>
       
       
-      <p class="bd-intro-description">BlackBox
---------
-There is no information available for this level. Login to
-[vortex.labs.overthewire.org][] and check it out.</p>
+      <p class="bd-intro-description">Vortex Level 9 — "BlackBox": the page gives no information, so log in and investigate the level yourself.</p>
       
     </div>
 
@@ -3113,7 +3110,7 @@ There is no information available for this level. Login to
              title="Copies a cleaned article summary to your clipboard, then opens LinkedIn sharing"
              data-share-url="https://bamr87.github.io/wargames/docs/wargames/vortex/vortex9/"
              data-share-title="Vortex9"
-             data-share-description="BlackBox--------There is no information available for this level. Login to[vortex.labs.overthewire.org][] and check it out.">
+             data-share-description="Vortex Level 9 — &quot;BlackBox&quot;: the page gives no information, so log in and investigate the level yourself.">
             <i class="bi bi-linkedin me-2"></i>Share on LinkedIn
           </a>
         </li>
@@ -3206,7 +3203,7 @@ There is no information available for this level. Login to
       
       
         
-<ul class="list-group-flush"><li class="list-group-item"><a href="#blackbox" class="">BlackBox</a></li></ul>
+<ul class="list-group-flush"><li class="list-group-item"><a href="#blackbox" class="">BlackBox</a></li><li class="list-group-item"><a href="#study-guide" class="">Study guide</a><ul><li class="list-group-item"><a href="#what-this-level-teaches" class="">What this level teaches</a></li><li class="list-group-item"><a href="#key-ideas" class="">Key ideas</a></li><li class="list-group-item"><a href="#how-to-approach-it" class="">How to approach it</a></li><li class="list-group-item"><a href="#why-it-matters" class="">Why it matters</a></li></ul></li></ul>
 
       
     </nav>
@@ -3230,6 +3227,37 @@ There is no information available for this level. Login to
 <h2 id="blackbox">BlackBox</h2>
 <p>There is no information available for this level. Login to <a href="ssh://vortex.labs.overthewire.org:2228">vortex.labs.overthewire.org</a> and check it out.</p>
 
+<!-- study-guide:start -->
+
+<h2 id="study-guide">Study guide</h2>
+
+<p><strong>Level map:</strong> logged in as <code class="language-plaintext highlighter-rouge">vortex9</code>, obtain access to <code class="language-plaintext highlighter-rouge">vortex10</code>.</p>
+
+<h3 id="what-this-level-teaches">What this level teaches</h3>
+
+<p>Exploring an unknown level with nothing but your own reconnaissance.</p>
+
+<h3 id="key-ideas">Key ideas</h3>
+
+<ul>
+  <li><strong>Black-box testing.</strong> You see inputs and outputs but not the design.</li>
+  <li><strong>Recon checklist.</strong> Look at the home directory, <code class="language-plaintext highlighter-rouge">/vortex/</code>, file types and permissions, any setuid binary, and run the program with various inputs.</li>
+  <li><strong>Make hypotheses.</strong> State what you think it does, and design a test that could prove you wrong.</li>
+</ul>
+
+<h3 id="how-to-approach-it">How to approach it</h3>
+
+<ol>
+  <li>Log in to <code class="language-plaintext highlighter-rouge">vortex.labs.overthewire.org</code> as the level’s user and list everything relevant.</li>
+  <li>Use <code class="language-plaintext highlighter-rouge">file</code>, <code class="language-plaintext highlighter-rouge">strings</code> and <code class="language-plaintext highlighter-rouge">ltrace</code>.</li>
+  <li>Keep detailed notes of observed behaviour.</li>
+</ol>
+
+<h3 id="why-it-matters">Why it matters</h3>
+
+<p>Penetration testers frequently begin with exactly this: no documentation and a deadline.</p>
+
+<!-- study-guide:end -->
 
         </div>
       </div>
@@ -3532,7 +3560,7 @@ There is no information available for this level. Login to
     </div>
   </div>
 </aside>
-<script src="/wargames/assets/js/obsidian-local-graph.js?v=1792009165" defer></script>
+<script src="/wargames/assets/js/obsidian-local-graph.js?v=1792188318" defer></script>
 
 
 
@@ -3886,7 +3914,7 @@ There is no information available for this level. Login to
 <script src="/wargames/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 
-<script type="module" src="/wargames/assets/js/modules/navigation/index.js?v=1792009165"></script>
+<script type="module" src="/wargames/assets/js/modules/navigation/index.js?v=1792188318"></script>
 
 
 <script defer src="/wargames/assets/js/ui-helpers.js"></script>
@@ -3913,7 +3941,7 @@ There is no information available for this level. Login to
   window.OBSIDIAN_CONFIG.attachmentsPath = "/wargames/assets/images/notes";
   window.OBSIDIAN_CONFIG.tagBase = "/wargames/tags/";
   window.OBSIDIAN_CONFIG.cytoscapeUrl = "/wargames/assets/vendor/cytoscape/cytoscape.min.js";
-</script><script defer src="/wargames/assets/js/obsidian-wiki-links.js?v=1792009165"></script>
+</script><script defer src="/wargames/assets/js/obsidian-wiki-links.js?v=1792188318"></script>
 
 
         </div>

@@ -259,8 +259,8 @@
 <meta property="og:title" content="Krypton6" />
 <meta name="author" content="Amr Abdel-Motaleb" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Level Info Hopefully by now its obvious that encryption using repeating keys is a bad idea. Frequency analysis can destroy repeating/fixed key substitution crypto." />
-<meta name="twitter:description" property="og:description" content="Level Info Hopefully by now its obvious that encryption using repeating keys is a bad idea. Frequency analysis can destroy repeating/fixed key substitution crypto." />
+<meta name="description" content="Krypton Level 6 — move from classical ciphers to stream ciphers and exploit a weak pseudo-random keystream using a known-plaintext attack." />
+<meta name="twitter:description" property="og:description" content="Krypton Level 6 — move from classical ciphers to stream ciphers and exploit a weak pseudo-random keystream using a known-plaintext attack." />
 <link rel="canonical" href="https://bamr87.github.io/wargames/docs/wargames/krypton/krypton6/" />
 <meta property="og:url" content="https://bamr87.github.io/wargames/docs/wargames/krypton/krypton6/" />
 <meta property="og:site_name" content="Wargames" />
@@ -270,7 +270,7 @@
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="Krypton6" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Amr Abdel-Motaleb"},"dateModified":"2026-04-07T01:41:09+00:00","datePublished":"2026-04-07T01:41:09+00:00","description":"Level Info Hopefully by now its obvious that encryption using repeating keys is a bad idea. Frequency analysis can destroy repeating/fixed key substitution crypto.","headline":"Krypton6","mainEntityOfPage":{"@type":"WebPage","@id":"https://bamr87.github.io/wargames/docs/wargames/krypton/krypton6/"},"url":"https://bamr87.github.io/wargames/docs/wargames/krypton/krypton6/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Amr Abdel-Motaleb"},"dateModified":"2026-04-07T01:41:09+00:00","datePublished":"2026-04-07T01:41:09+00:00","description":"Krypton Level 6 — move from classical ciphers to stream ciphers and exploit a weak pseudo-random keystream using a known-plaintext attack.","headline":"Krypton6","mainEntityOfPage":{"@type":"WebPage","@id":"https://bamr87.github.io/wargames/docs/wargames/krypton/krypton6/"},"url":"https://bamr87.github.io/wargames/docs/wargames/krypton/krypton6/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -1223,7 +1223,7 @@ document.addEventListener("DOMContentLoaded", function () {
     </div>
     <div class="col-6">
       <div class="p-2 bg-body-tertiary rounded text-center">
-        <small class="text-body-secondary d-block">Last Build</small><code class="small" data-testid="theme-build-stamp">Oct 14, 20:19</code>
+        <small class="text-body-secondary d-block">Last Build</small><code class="small" data-testid="theme-build-stamp">Oct 16, 22:05</code>
       </div>
     </div>
 
@@ -3018,11 +3018,7 @@ function zer0CopyFeedback(btn, success) {
       <h1 class="bd-intro-title">Krypton6</h1>
       
       
-      <p class="bd-intro-description">Level Info
-----------
-Hopefully by now its obvious that encryption using repeating keys is
-a bad idea. Frequency analysis can destroy repeating/fixed key
-substitution crypto.</p>
+      <p class="bd-intro-description">Krypton Level 6 — move from classical ciphers to stream ciphers and exploit a weak pseudo-random keystream using a known-plaintext attack.</p>
       
     </div>
 
@@ -3089,7 +3085,7 @@ substitution crypto.</p>
         <p class="bd-intro-meta">
           <i class="bi bi-clock me-1" aria-hidden="true"></i>
           
-          Estimated reading time: 3 minutes
+          Estimated reading time: 5 minutes
           
         </p>
 
@@ -3114,7 +3110,7 @@ substitution crypto.</p>
              title="Copies a cleaned article summary to your clipboard, then opens LinkedIn sharing"
              data-share-url="https://bamr87.github.io/wargames/docs/wargames/krypton/krypton6/"
              data-share-title="Krypton6"
-             data-share-description="Level Info----------Hopefully by now its obvious that encryption using repeating keys isa bad idea. Frequency analysis can destroy repeating/fixed keysubstitution crypto.">
+             data-share-description="Krypton Level 6 — move from classical ciphers to stream ciphers and exploit a weak pseudo-random keystream using a known-plaintext attack.">
             <i class="bi bi-linkedin me-2"></i>Share on LinkedIn
           </a>
         </li>
@@ -3207,7 +3203,7 @@ substitution crypto.</p>
       
       
         
-<ul class="list-group-flush"><li class="list-group-item"><a href="#level-info" class="">Level Info</a></li></ul>
+<ul class="list-group-flush"><li class="list-group-item"><a href="#level-info" class="">Level Info</a></li><li class="list-group-item"><a href="#study-guide" class="">Study guide</a><ul><li class="list-group-item"><a href="#what-this-level-teaches" class="">What this level teaches</a></li><li class="list-group-item"><a href="#key-ideas" class="">Key ideas</a></li><li class="list-group-item"><a href="#how-to-approach-it" class="">How to approach it</a></li><li class="list-group-item"><a href="#why-it-matters" class="">Why it matters</a></li></ul></li></ul>
 
       
     </nav>
@@ -3269,6 +3265,40 @@ substitution crypto.</p>
 
 <p>Good Luck!</p>
 
+<!-- study-guide:start -->
+
+<h2 id="study-guide">Study guide</h2>
+
+<p><strong>Level map:</strong> logged in as <code class="language-plaintext highlighter-rouge">krypton6</code>, decrypt the file that holds the password for <code class="language-plaintext highlighter-rouge">krypton7</code>.</p>
+
+<h3 id="what-this-level-teaches">What this level teaches</h3>
+
+<p>The ideas behind modern cryptography: one-time pads, block and stream ciphers, and what happens when the keystream is not truly random.</p>
+
+<h3 id="key-ideas">Key ideas</h3>
+
+<ul>
+  <li><strong>One-time pad.</strong> A key as long as the message, truly random and never reused, gives perfect secrecy. The page’s example uses a book as a key, which shows why that is not random enough in practice.</li>
+  <li><strong>Block ciphers vs stream ciphers.</strong> Block ciphers work on fixed-size chunks; stream ciphers generate a keystream combined byte by byte, typically by XOR.</li>
+  <li><strong>XOR.</strong> <code class="language-plaintext highlighter-rouge">plaintext XOR keystream = ciphertext</code>, and XOR-ing again with the same keystream restores the plaintext.</li>
+  <li><strong>Weak generator.</strong> The program mixes the key with a “random” number that is not strong enough, so the keystream has structure you can exploit.</li>
+  <li><strong>Work with bytes, not text.</strong> Use <code class="language-plaintext highlighter-rouge">hexdump</code> or <code class="language-plaintext highlighter-rouge">xxd</code>, and tools like CrypTool.</li>
+  <li><strong>Hints.</strong> The level directory contains hint files if you need a push, labelled <code class="language-plaintext highlighter-rouge">HINT1</code> and <code class="language-plaintext highlighter-rouge">HINT2</code>.</li>
+</ul>
+
+<h3 id="how-to-approach-it">How to approach it</h3>
+
+<ol>
+  <li>Read all of the page, including the explanation of keys and streams.</li>
+  <li>Use the provided <code class="language-plaintext highlighter-rouge">encrypt6</code> program on plaintext you choose, and compare the output carefully across runs.</li>
+  <li>Look for repetition or predictability in the keystream, and use it on the password file.</li>
+</ol>
+
+<h3 id="why-it-matters">Why it matters</h3>
+
+<p>Real stream ciphers fail catastrophically when a keystream repeats or is predictable, and many protocols have been broken that way. Never reuse a nonce or write your own cipher.</p>
+
+<!-- study-guide:end -->
 
         </div>
       </div>
@@ -3571,7 +3601,7 @@ substitution crypto.</p>
     </div>
   </div>
 </aside>
-<script src="/wargames/assets/js/obsidian-local-graph.js?v=1792009165" defer></script>
+<script src="/wargames/assets/js/obsidian-local-graph.js?v=1792188318" defer></script>
 
 
 
@@ -3925,7 +3955,7 @@ substitution crypto.</p>
 <script src="/wargames/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 
-<script type="module" src="/wargames/assets/js/modules/navigation/index.js?v=1792009165"></script>
+<script type="module" src="/wargames/assets/js/modules/navigation/index.js?v=1792188318"></script>
 
 
 <script defer src="/wargames/assets/js/ui-helpers.js"></script>
@@ -3952,7 +3982,7 @@ substitution crypto.</p>
   window.OBSIDIAN_CONFIG.attachmentsPath = "/wargames/assets/images/notes";
   window.OBSIDIAN_CONFIG.tagBase = "/wargames/tags/";
   window.OBSIDIAN_CONFIG.cytoscapeUrl = "/wargames/assets/vendor/cytoscape/cytoscape.min.js";
-</script><script defer src="/wargames/assets/js/obsidian-wiki-links.js?v=1792009165"></script>
+</script><script defer src="/wargames/assets/js/obsidian-wiki-links.js?v=1792188318"></script>
 
 
         </div>

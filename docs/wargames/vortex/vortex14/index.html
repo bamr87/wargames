@@ -259,8 +259,8 @@
 <meta property="og:title" content="Vortex14" />
 <meta name="author" content="Amr Abdel-Motaleb" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Bad Encryption Based on something seen in the “real world”, it has weak encryption usage, used over a TCP/IP connection. This level requires you to apply some logic to the challenge at hand. You must login to [vortex.labs.overthewire.o…" />
-<meta name="twitter:description" property="og:description" content="Bad Encryption Based on something seen in the “real world”, it has weak encryption usage, used over a TCP/IP connection. This level requires you to apply some logic to the challenge at hand. You must login to [vortex.labs.overthewire.o…" />
+<meta name="description" content="Vortex Level 14 — analyse a captured network exchange that uses weak encryption and recover the secret by classifying and dividing the problem." />
+<meta name="twitter:description" property="og:description" content="Vortex Level 14 — analyse a captured network exchange that uses weak encryption and recover the secret by classifying and dividing the problem." />
 <link rel="canonical" href="https://bamr87.github.io/wargames/docs/wargames/vortex/vortex14/" />
 <meta property="og:url" content="https://bamr87.github.io/wargames/docs/wargames/vortex/vortex14/" />
 <meta property="og:site_name" content="Wargames" />
@@ -270,7 +270,7 @@
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="Vortex14" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Amr Abdel-Motaleb"},"dateModified":"2026-04-07T01:41:09+00:00","datePublished":"2026-04-07T01:41:09+00:00","description":"Bad Encryption Based on something seen in the “real world”, it has weak encryption usage, used over a TCP/IP connection. This level requires you to apply some logic to the challenge at hand. You must login to [vortex.labs.overthewire.o…","headline":"Vortex14","mainEntityOfPage":{"@type":"WebPage","@id":"https://bamr87.github.io/wargames/docs/wargames/vortex/vortex14/"},"url":"https://bamr87.github.io/wargames/docs/wargames/vortex/vortex14/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Amr Abdel-Motaleb"},"dateModified":"2026-04-07T01:41:09+00:00","datePublished":"2026-04-07T01:41:09+00:00","description":"Vortex Level 14 — analyse a captured network exchange that uses weak encryption and recover the secret by classifying and dividing the problem.","headline":"Vortex14","mainEntityOfPage":{"@type":"WebPage","@id":"https://bamr87.github.io/wargames/docs/wargames/vortex/vortex14/"},"url":"https://bamr87.github.io/wargames/docs/wargames/vortex/vortex14/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -1223,7 +1223,7 @@ document.addEventListener("DOMContentLoaded", function () {
     </div>
     <div class="col-6">
       <div class="p-2 bg-body-tertiary rounded text-center">
-        <small class="text-body-secondary d-block">Last Build</small><code class="small" data-testid="theme-build-stamp">Oct 14, 20:19</code>
+        <small class="text-body-secondary d-block">Last Build</small><code class="small" data-testid="theme-build-stamp">Oct 16, 22:05</code>
       </div>
     </div>
 
@@ -3018,12 +3018,7 @@ function zer0CopyFeedback(btn, success) {
       <h1 class="bd-intro-title">Vortex14</h1>
       
       
-      <p class="bd-intro-description">Bad Encryption
---------------
-Based on something seen in the "real world", it has weak encryption
-usage, used over a TCP/IP connection. This level requires you to
-apply some logic to the challenge at hand. You must login to
-[vortex.labs.overthewire.o...</p>
+      <p class="bd-intro-description">Vortex Level 14 — analyse a captured network exchange that uses weak encryption and recover the secret by classifying and dividing the problem.</p>
       
     </div>
 
@@ -3115,7 +3110,7 @@ apply some logic to the challenge at hand. You must login to
              title="Copies a cleaned article summary to your clipboard, then opens LinkedIn sharing"
              data-share-url="https://bamr87.github.io/wargames/docs/wargames/vortex/vortex14/"
              data-share-title="Vortex14"
-             data-share-description="Bad Encryption--------------Based on something seen in the &quot;real world&quot;, it has weak encryptionusage, used over a TCP/IP connection. This level requires you toapply some logic to the challenge at hand. You must login to[vortex.labs.overthewire.o...">
+             data-share-description="Vortex Level 14 — analyse a captured network exchange that uses weak encryption and recover the secret by classifying and dividing the problem.">
             <i class="bi bi-linkedin me-2"></i>Share on LinkedIn
           </a>
         </li>
@@ -3208,7 +3203,7 @@ apply some logic to the challenge at hand. You must login to
       
       
         
-<ul class="list-group-flush"><li class="list-group-item"><a href="#bad-encryption" class="">Bad Encryption</a></li></ul>
+<ul class="list-group-flush"><li class="list-group-item"><a href="#bad-encryption" class="">Bad Encryption</a></li><li class="list-group-item"><a href="#study-guide" class="">Study guide</a><ul><li class="list-group-item"><a href="#what-this-level-teaches" class="">What this level teaches</a></li><li class="list-group-item"><a href="#key-ideas" class="">Key ideas</a></li><li class="list-group-item"><a href="#how-to-approach-it" class="">How to approach it</a></li><li class="list-group-item"><a href="#why-it-matters" class="">Why it matters</a></li></ul></li></ul>
 
       
     </nav>
@@ -3236,6 +3231,38 @@ apply some logic to the challenge at hand. You must login to
 
 <p>If you need some hints, consider how you can divide and conquer the problem. For example, does it look like symmetric encryption, or asymmetric encryption? How can you further classify them?</p>
 
+<!-- study-guide:start -->
+
+<h2 id="study-guide">Study guide</h2>
+
+<p><strong>Level map:</strong> logged in as <code class="language-plaintext highlighter-rouge">vortex14</code>, obtain access to <code class="language-plaintext highlighter-rouge">vortex15</code>.</p>
+
+<h3 id="what-this-level-teaches">What this level teaches</h3>
+
+<p>Analysing an unknown protocol and breaking weak encryption.</p>
+
+<h3 id="key-ideas">Key ideas</h3>
+
+<ul>
+  <li><strong>Real-world flaw.</strong> The level is based on something seen in the wild: weak encryption used over TCP/IP.</li>
+  <li><strong>Notation.</strong> In the traffic shown, one marker means data from the server to the client and the other means client to server.</li>
+  <li><strong>Classify first.</strong> The page suggests asking whether it looks like symmetric or asymmetric encryption, and then narrowing further.</li>
+  <li><strong>Divide and conquer.</strong> Break the message into parts and identify what each part does.</li>
+</ul>
+
+<h3 id="how-to-approach-it">How to approach it</h3>
+
+<ol>
+  <li>Study the captured exchange: lengths, repeated patterns and structure.</li>
+  <li>Form a hypothesis about the algorithm and test it on pieces of the data.</li>
+  <li>Build a decryptor or a forged message.</li>
+</ol>
+
+<h3 id="why-it-matters">Why it matters</h3>
+
+<p>Home-made protocols and weak ciphers are still found in devices and legacy software.</p>
+
+<!-- study-guide:end -->
 
         </div>
       </div>
@@ -3538,7 +3565,7 @@ apply some logic to the challenge at hand. You must login to
     </div>
   </div>
 </aside>
-<script src="/wargames/assets/js/obsidian-local-graph.js?v=1792009165" defer></script>
+<script src="/wargames/assets/js/obsidian-local-graph.js?v=1792188318" defer></script>
 
 
 
@@ -3892,7 +3919,7 @@ apply some logic to the challenge at hand. You must login to
 <script src="/wargames/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 
-<script type="module" src="/wargames/assets/js/modules/navigation/index.js?v=1792009165"></script>
+<script type="module" src="/wargames/assets/js/modules/navigation/index.js?v=1792188318"></script>
 
 
 <script defer src="/wargames/assets/js/ui-helpers.js"></script>
@@ -3919,7 +3946,7 @@ apply some logic to the challenge at hand. You must login to
   window.OBSIDIAN_CONFIG.attachmentsPath = "/wargames/assets/images/notes";
   window.OBSIDIAN_CONFIG.tagBase = "/wargames/tags/";
   window.OBSIDIAN_CONFIG.cytoscapeUrl = "/wargames/assets/vendor/cytoscape/cytoscape.min.js";
-</script><script defer src="/wargames/assets/js/obsidian-wiki-links.js?v=1792009165"></script>
+</script><script defer src="/wargames/assets/js/obsidian-wiki-links.js?v=1792188318"></script>
 
 
         </div>

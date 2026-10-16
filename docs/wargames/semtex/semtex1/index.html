@@ -259,8 +259,8 @@
 <meta property="og:title" content="Semtex1" />
 <meta name="author" content="Amr Abdel-Motaleb" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Simple encryption A password has been crypted using the /semtex/semtex1 tool. The crypted password is HRXDZNWEAWWCP. You have to reverse engineer the algorithm and decrypt the password. You might try the -v switch for encrypt." />
-<meta name="twitter:description" property="og:description" content="Simple encryption A password has been crypted using the /semtex/semtex1 tool. The crypted password is HRXDZNWEAWWCP. You have to reverse engineer the algorithm and decrypt the password. You might try the -v switch for encrypt." />
+<meta name="description" content="Semtex Level 1 — reverse engineer a simple encryption tool and decrypt a given ciphertext." />
+<meta name="twitter:description" property="og:description" content="Semtex Level 1 — reverse engineer a simple encryption tool and decrypt a given ciphertext." />
 <link rel="canonical" href="https://bamr87.github.io/wargames/docs/wargames/semtex/semtex1/" />
 <meta property="og:url" content="https://bamr87.github.io/wargames/docs/wargames/semtex/semtex1/" />
 <meta property="og:site_name" content="Wargames" />
@@ -270,7 +270,7 @@
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="Semtex1" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Amr Abdel-Motaleb"},"dateModified":"2026-04-07T01:41:09+00:00","datePublished":"2026-04-07T01:41:09+00:00","description":"Simple encryption A password has been crypted using the /semtex/semtex1 tool. The crypted password is HRXDZNWEAWWCP. You have to reverse engineer the algorithm and decrypt the password. You might try the -v switch for encrypt.","headline":"Semtex1","mainEntityOfPage":{"@type":"WebPage","@id":"https://bamr87.github.io/wargames/docs/wargames/semtex/semtex1/"},"url":"https://bamr87.github.io/wargames/docs/wargames/semtex/semtex1/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Amr Abdel-Motaleb"},"dateModified":"2026-04-07T01:41:09+00:00","datePublished":"2026-04-07T01:41:09+00:00","description":"Semtex Level 1 — reverse engineer a simple encryption tool and decrypt a given ciphertext.","headline":"Semtex1","mainEntityOfPage":{"@type":"WebPage","@id":"https://bamr87.github.io/wargames/docs/wargames/semtex/semtex1/"},"url":"https://bamr87.github.io/wargames/docs/wargames/semtex/semtex1/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -1223,7 +1223,7 @@ document.addEventListener("DOMContentLoaded", function () {
     </div>
     <div class="col-6">
       <div class="p-2 bg-body-tertiary rounded text-center">
-        <small class="text-body-secondary d-block">Last Build</small><code class="small" data-testid="theme-build-stamp">Oct 14, 20:19</code>
+        <small class="text-body-secondary d-block">Last Build</small><code class="small" data-testid="theme-build-stamp">Oct 16, 22:05</code>
       </div>
     </div>
 
@@ -3018,12 +3018,7 @@ function zer0CopyFeedback(btn, success) {
       <h1 class="bd-intro-title">Semtex1</h1>
       
       
-      <p class="bd-intro-description">Simple encryption
------------------
-A password has been crypted using the /semtex/semtex1 tool.
-The crypted password is HRXDZNWEAWWCP.
-You have to reverse engineer the algorithm and decrypt the password.
-You might try the -v switch for encrypt.</p>
+      <p class="bd-intro-description">Semtex Level 1 — reverse engineer a simple encryption tool and decrypt a given ciphertext.</p>
       
     </div>
 
@@ -3115,7 +3110,7 @@ You might try the -v switch for encrypt.</p>
              title="Copies a cleaned article summary to your clipboard, then opens LinkedIn sharing"
              data-share-url="https://bamr87.github.io/wargames/docs/wargames/semtex/semtex1/"
              data-share-title="Semtex1"
-             data-share-description="Simple encryption-----------------A password has been crypted using the /semtex/semtex1 tool.The crypted password is HRXDZNWEAWWCP.You have to reverse engineer the algorithm and decrypt the password.You might try the -v switch for encrypt.">
+             data-share-description="Semtex Level 1 — reverse engineer a simple encryption tool and decrypt a given ciphertext.">
             <i class="bi bi-linkedin me-2"></i>Share on LinkedIn
           </a>
         </li>
@@ -3208,7 +3203,7 @@ You might try the -v switch for encrypt.</p>
       
       
         
-<ul class="list-group-flush"><li class="list-group-item"><a href="#simple-encryption" class="">Simple encryption</a></li></ul>
+<ul class="list-group-flush"><li class="list-group-item"><a href="#simple-encryption" class="">Simple encryption</a></li><li class="list-group-item"><a href="#study-guide" class="">Study guide</a><ul><li class="list-group-item"><a href="#what-this-level-teaches" class="">What this level teaches</a></li><li class="list-group-item"><a href="#key-ideas" class="">Key ideas</a></li><li class="list-group-item"><a href="#how-to-approach-it" class="">How to approach it</a></li><li class="list-group-item"><a href="#why-it-matters" class="">Why it matters</a></li></ul></li></ul>
 
       
     </nav>
@@ -3232,6 +3227,38 @@ You might try the -v switch for encrypt.</p>
 <h2 id="simple-encryption">Simple encryption</h2>
 <p>A password has been crypted using the /semtex/semtex1 tool. The crypted password is HRXDZNWEAWWCP. You have to reverse engineer the algorithm and decrypt the password. You might try the -v switch for encrypt.</p>
 
+<!-- study-guide:start -->
+
+<h2 id="study-guide">Study guide</h2>
+
+<p><strong>Level map:</strong> the goal is to decrypt the password shown on the page, which was produced by <code class="language-plaintext highlighter-rouge">/semtex/semtex1</code>.</p>
+
+<h3 id="what-this-level-teaches">What this level teaches</h3>
+
+<p>Working out an encryption algorithm by experiment and by reading the program.</p>
+
+<h3 id="key-ideas">Key ideas</h3>
+
+<ul>
+  <li><strong>Black-box analysis.</strong> The page notes the tool has a <code class="language-plaintext highlighter-rouge">-v</code> switch for encryption. Feed it simple inputs and watch the output.</li>
+  <li><strong>Look for structure.</strong> Does the same letter always encrypt the same way? Does position matter? Does the output length match?</li>
+  <li><strong>Invert it.</strong> Once you understand the transformation you can write the reverse.</li>
+  <li><strong>Reading code.</strong> Disassembly can confirm your hypothesis.</li>
+</ul>
+
+<h3 id="how-to-approach-it">How to approach it</h3>
+
+<ol>
+  <li>Run the tool with inputs like all <code class="language-plaintext highlighter-rouge">A</code>s, a single changed letter and different lengths.</li>
+  <li>Formulate a rule and test predictions.</li>
+  <li>Apply the inverse to the ciphertext on the page.</li>
+</ol>
+
+<h3 id="why-it-matters">Why it matters</h3>
+
+<p>It is the same method used to break many home-made ciphers.</p>
+
+<!-- study-guide:end -->
 
         </div>
       </div>
@@ -3534,7 +3561,7 @@ You might try the -v switch for encrypt.</p>
     </div>
   </div>
 </aside>
-<script src="/wargames/assets/js/obsidian-local-graph.js?v=1792009165" defer></script>
+<script src="/wargames/assets/js/obsidian-local-graph.js?v=1792188318" defer></script>
 
 
 
@@ -3888,7 +3915,7 @@ You might try the -v switch for encrypt.</p>
 <script src="/wargames/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 
-<script type="module" src="/wargames/assets/js/modules/navigation/index.js?v=1792009165"></script>
+<script type="module" src="/wargames/assets/js/modules/navigation/index.js?v=1792188318"></script>
 
 
 <script defer src="/wargames/assets/js/ui-helpers.js"></script>
@@ -3915,7 +3942,7 @@ You might try the -v switch for encrypt.</p>
   window.OBSIDIAN_CONFIG.attachmentsPath = "/wargames/assets/images/notes";
   window.OBSIDIAN_CONFIG.tagBase = "/wargames/tags/";
   window.OBSIDIAN_CONFIG.cytoscapeUrl = "/wargames/assets/vendor/cytoscape/cytoscape.min.js";
-</script><script defer src="/wargames/assets/js/obsidian-wiki-links.js?v=1792009165"></script>
+</script><script defer src="/wargames/assets/js/obsidian-wiki-links.js?v=1792188318"></script>
 
 
         </div>

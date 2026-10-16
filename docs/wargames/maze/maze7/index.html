@@ -259,8 +259,8 @@
 <meta property="og:title" content="Maze7" />
 <meta name="author" content="Amr Abdel-Motaleb" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="There is no information for this level, intentionally." />
-<meta name="twitter:description" property="og:description" content="There is no information for this level, intentionally." />
+<meta name="description" content="Maze Level 7 — an intentionally undocumented later level, with a method for investigating it." />
+<meta name="twitter:description" property="og:description" content="Maze Level 7 — an intentionally undocumented later level, with a method for investigating it." />
 <link rel="canonical" href="https://bamr87.github.io/wargames/docs/wargames/maze/maze7/" />
 <meta property="og:url" content="https://bamr87.github.io/wargames/docs/wargames/maze/maze7/" />
 <meta property="og:site_name" content="Wargames" />
@@ -270,7 +270,7 @@
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="Maze7" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Amr Abdel-Motaleb"},"dateModified":"2026-04-07T01:41:09+00:00","datePublished":"2026-04-07T01:41:09+00:00","description":"There is no information for this level, intentionally.","headline":"Maze7","mainEntityOfPage":{"@type":"WebPage","@id":"https://bamr87.github.io/wargames/docs/wargames/maze/maze7/"},"url":"https://bamr87.github.io/wargames/docs/wargames/maze/maze7/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Amr Abdel-Motaleb"},"dateModified":"2026-04-07T01:41:09+00:00","datePublished":"2026-04-07T01:41:09+00:00","description":"Maze Level 7 — an intentionally undocumented later level, with a method for investigating it.","headline":"Maze7","mainEntityOfPage":{"@type":"WebPage","@id":"https://bamr87.github.io/wargames/docs/wargames/maze/maze7/"},"url":"https://bamr87.github.io/wargames/docs/wargames/maze/maze7/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -1223,7 +1223,7 @@ document.addEventListener("DOMContentLoaded", function () {
     </div>
     <div class="col-6">
       <div class="p-2 bg-body-tertiary rounded text-center">
-        <small class="text-body-secondary d-block">Last Build</small><code class="small" data-testid="theme-build-stamp">Oct 14, 20:19</code>
+        <small class="text-body-secondary d-block">Last Build</small><code class="small" data-testid="theme-build-stamp">Oct 16, 22:05</code>
       </div>
     </div>
 
@@ -3018,7 +3018,7 @@ function zer0CopyFeedback(btn, success) {
       <h1 class="bd-intro-title">Maze7</h1>
       
       
-      <p class="bd-intro-description">There is no information for this level, intentionally.</p>
+      <p class="bd-intro-description">Maze Level 7 — an intentionally undocumented later level, with a method for investigating it.</p>
       
     </div>
 
@@ -3110,7 +3110,7 @@ function zer0CopyFeedback(btn, success) {
              title="Copies a cleaned article summary to your clipboard, then opens LinkedIn sharing"
              data-share-url="https://bamr87.github.io/wargames/docs/wargames/maze/maze7/"
              data-share-title="Maze7"
-             data-share-description="There is no information for this level, intentionally.">
+             data-share-description="Maze Level 7 — an intentionally undocumented later level, with a method for investigating it.">
             <i class="bi bi-linkedin me-2"></i>Share on LinkedIn
           </a>
         </li>
@@ -3202,7 +3202,9 @@ function zer0CopyFeedback(btn, success) {
 
       
       
-        <p class="text-body-secondary small fst-italic">No sections on this page.</p>
+        
+<ul class="list-group-flush"><li class="list-group-item"><a href="#study-guide" class="">Study guide</a><ul><li class="list-group-item"><a href="#what-to-expect" class="">What to expect</a></li><li class="list-group-item"><a href="#where-it-fits" class="">Where it fits</a></li><li class="list-group-item"><a href="#how-to-approach-it" class="">How to approach it</a></li><li class="list-group-item"><a href="#why-it-matters" class="">Why it matters</a></li></ul></li></ul>
+
       
     </nav>
   </div>
@@ -3223,6 +3225,35 @@ function zer0CopyFeedback(btn, success) {
 </blockquote>
 
 <p>There is no information for this level, intentionally.</p>
+
+<!-- study-guide:start -->
+
+<h2 id="study-guide">Study guide</h2>
+
+<p><strong>Level map:</strong> logged in as <code class="language-plaintext highlighter-rouge">maze7</code>, find the password for <code class="language-plaintext highlighter-rouge">maze8</code>.</p>
+
+<h3 id="what-to-expect">What to expect</h3>
+
+<p>Upstream states “There is no information for this level, intentionally.” That is part of the game: you discover what the level does by investigating it. Maze is a harder binary-exploitation wargame. Its authors say it needs knowledge of exploitation techniques, programming and reverse engineering, and that the levels are deliberately tricky and sometimes strange.</p>
+
+<h3 id="where-it-fits">Where it fits</h3>
+
+<p>Maze is rated 5/10 by its original authors, and lives under <code class="language-plaintext highlighter-rouge">/maze/</code> on the game server (SSH port 2225). This is page 8 of 10 in this mirror. Later levels tend to combine ideas from earlier ones, so reread your notes on previous levels for tools you can reuse.</p>
+
+<h3 id="how-to-approach-it">How to approach it</h3>
+
+<ol>
+  <li>List what the program trusts: input length, file names, the environment, the current directory, the time.</li>
+  <li>Look through the game’s data directory for source code, helper files and anything readable that explains the setup.</li>
+  <li>The authors’ advice is to get ready to use <code class="language-plaintext highlighter-rouge">gdb</code>; step through the program rather than guessing.</li>
+  <li>Write down the one thing the program assumes about its input, then test what happens when that assumption is false.</li>
+</ol>
+
+<h3 id="why-it-matters">Why it matters</h3>
+
+<p>Each level is a miniature version of a real bug class. Working it out yourself without hints builds the investigative habits that no walkthrough can give you.</p>
+
+<!-- study-guide:end -->
 
         </div>
       </div>
@@ -3525,7 +3556,7 @@ function zer0CopyFeedback(btn, success) {
     </div>
   </div>
 </aside>
-<script src="/wargames/assets/js/obsidian-local-graph.js?v=1792009165" defer></script>
+<script src="/wargames/assets/js/obsidian-local-graph.js?v=1792188318" defer></script>
 
 
 
@@ -3879,7 +3910,7 @@ function zer0CopyFeedback(btn, success) {
 <script src="/wargames/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 
-<script type="module" src="/wargames/assets/js/modules/navigation/index.js?v=1792009165"></script>
+<script type="module" src="/wargames/assets/js/modules/navigation/index.js?v=1792188318"></script>
 
 
 <script defer src="/wargames/assets/js/ui-helpers.js"></script>
@@ -3906,7 +3937,7 @@ function zer0CopyFeedback(btn, success) {
   window.OBSIDIAN_CONFIG.attachmentsPath = "/wargames/assets/images/notes";
   window.OBSIDIAN_CONFIG.tagBase = "/wargames/tags/";
   window.OBSIDIAN_CONFIG.cytoscapeUrl = "/wargames/assets/vendor/cytoscape/cytoscape.min.js";
-</script><script defer src="/wargames/assets/js/obsidian-wiki-links.js?v=1792009165"></script>
+</script><script defer src="/wargames/assets/js/obsidian-wiki-links.js?v=1792188318"></script>
 
 
         </div>

@@ -259,8 +259,8 @@
 <meta property="og:title" content="Natas" />
 <meta name="author" content="Amr Abdel-Motaleb" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Natas teaches the basics of serverside web-security." />
-<meta name="twitter:description" property="og:description" content="Natas teaches the basics of serverside web-security." />
+<meta name="description" content="Natas teaches server-side web security through 35 browser-based levels, from reading page source to SQL injection, session attacks and cryptographic oracles." />
+<meta name="twitter:description" property="og:description" content="Natas teaches server-side web security through 35 browser-based levels, from reading page source to SQL injection, session attacks and cryptographic oracles." />
 <link rel="canonical" href="https://bamr87.github.io/wargames/docs/wargames/natas/" />
 <meta property="og:url" content="https://bamr87.github.io/wargames/docs/wargames/natas/" />
 <meta property="og:site_name" content="Wargames" />
@@ -270,7 +270,7 @@
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="Natas" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Amr Abdel-Motaleb"},"dateModified":"2026-04-07T01:41:09+00:00","datePublished":"2026-04-07T01:41:09+00:00","description":"Natas teaches the basics of serverside web-security.","headline":"Natas","mainEntityOfPage":{"@type":"WebPage","@id":"https://bamr87.github.io/wargames/docs/wargames/natas/"},"url":"https://bamr87.github.io/wargames/docs/wargames/natas/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Amr Abdel-Motaleb"},"dateModified":"2026-04-07T01:41:09+00:00","datePublished":"2026-04-07T01:41:09+00:00","description":"Natas teaches server-side web security through 35 browser-based levels, from reading page source to SQL injection, session attacks and cryptographic oracles.","headline":"Natas","mainEntityOfPage":{"@type":"WebPage","@id":"https://bamr87.github.io/wargames/docs/wargames/natas/"},"url":"https://bamr87.github.io/wargames/docs/wargames/natas/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -1223,7 +1223,7 @@ document.addEventListener("DOMContentLoaded", function () {
     </div>
     <div class="col-6">
       <div class="p-2 bg-body-tertiary rounded text-center">
-        <small class="text-body-secondary d-block">Last Build</small><code class="small" data-testid="theme-build-stamp">Oct 14, 20:19</code>
+        <small class="text-body-secondary d-block">Last Build</small><code class="small" data-testid="theme-build-stamp">Oct 16, 22:05</code>
       </div>
     </div>
 
@@ -3018,7 +3018,7 @@ function zer0CopyFeedback(btn, success) {
       <h1 class="bd-intro-title">Natas</h1>
       
       
-      <p class="bd-intro-description">Natas teaches the basics of serverside web-security.</p>
+      <p class="bd-intro-description">Natas teaches server-side web security through 35 browser-based levels, from reading page source to SQL injection, session attacks and cryptographic oracles.</p>
       
     </div>
 
@@ -3085,7 +3085,7 @@ function zer0CopyFeedback(btn, success) {
         <p class="bd-intro-meta">
           <i class="bi bi-clock me-1" aria-hidden="true"></i>
           
-          Estimated reading time: 1 minute
+          Estimated reading time: 3 minutes
           
         </p>
 
@@ -3110,7 +3110,7 @@ function zer0CopyFeedback(btn, success) {
              title="Copies a cleaned article summary to your clipboard, then opens LinkedIn sharing"
              data-share-url="https://bamr87.github.io/wargames/docs/wargames/natas/"
              data-share-title="Natas"
-             data-share-description="Natas teaches the basics of serverside web-security.">
+             data-share-description="Natas teaches server-side web security through 35 browser-based levels, from reading page source to SQL injection, session attacks and cryptographic oracles.">
             <i class="bi bi-linkedin me-2"></i>Share on LinkedIn
           </a>
         </li>
@@ -3203,7 +3203,7 @@ function zer0CopyFeedback(btn, success) {
       
       
         
-<ul class="list-group-flush"><li class="list-group-item"><a href="#natas" class="">Natas</a><ul><li class="list-group-item"><a href="#tools-you-may-find-useful-to-solve-this-wargame" class="">Tools you may find useful to solve this wargame</a></li></ul></li></ul>
+<ul class="list-group-flush"><li class="list-group-item"><a href="#natas" class="">Natas</a><ul><li class="list-group-item"><a href="#tools-you-may-find-useful-to-solve-this-wargame" class="">Tools you may find useful to solve this wargame</a></li><li class="list-group-item"><a href="#study-guide" class="">Study guide</a><ul><li class="list-group-item"><a href="#what-natas-teaches" class="">What Natas teaches</a></li><li class="list-group-item"><a href="#how-the-levels-are-numbered" class="">How the levels are numbered</a></li><li class="list-group-item"><a href="#the-learning-path" class="">The learning path</a></li><li class="list-group-item"><a href="#tools-you-need" class="">Tools you need</a></li><li class="list-group-item"><a href="#how-to-approach-any-web-level" class="">How to approach any web level</a></li><li class="list-group-item"><a href="#staying-on-the-right-side-of-the-line" class="">Staying on the right side of the line</a></li></ul></li></ul></li></ul>
 
       
     </nav>
@@ -3248,6 +3248,107 @@ URL:      http://natas0.natas.labs.overthewire.org
 developed in association with<br /> the <a href="http://www.nessos-project.eu/">NESSoS FP7 project</a>
 </div>
 
+<!-- study-guide:start -->
+
+<h2 id="study-guide">Study guide</h2>
+
+<p>This guide is spoiler-free: it names the concept each level exercises so you know what to study, but it never gives passwords, payloads or finished solutions.</p>
+
+<h3 id="what-natas-teaches">What Natas teaches</h3>
+
+<p>Natas is a tour of how web applications fail. There is no SSH login. Each level is its own website at <code class="language-plaintext highlighter-rouge">natasN.natas.labs.overthewire.org</code>, protected by HTTP Basic authentication (a browser pop-up asking for a username and password). Your job is to make the site disclose the password for the next level. Along the way you meet most of the classic web vulnerabilities, always from the server side: the flaws are in how the <em>server</em> trusts what the browser sends.</p>
+
+<h3 id="how-the-levels-are-numbered">How the levels are numbered</h3>
+
+<p>Unlike Bandit, the page for Level N is the level you are <em>in</em>: sign in as <code class="language-plaintext highlighter-rouge">natasN</code> and look for the password to <code class="language-plaintext highlighter-rouge">natasN+1</code>. Every level’s password is also stored on the server in <code class="language-plaintext highlighter-rouge">/etc/natas_webpass/</code>, readable only by that level’s user and the previous one, which is the file the vulnerabilities in later levels aim to read.</p>
+
+<h3 id="the-learning-path">The learning path</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Levels</th>
+      <th>Theme</th>
+      <th>Core ideas</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0–3</td>
+      <td>Information disclosure</td>
+      <td>page source, hidden resources, directory listings, <code class="language-plaintext highlighter-rouge">robots.txt</code></td>
+    </tr>
+    <tr>
+      <td>4–7</td>
+      <td>Trusting the client</td>
+      <td>request headers, cookies, source disclosure, file inclusion</td>
+    </tr>
+    <tr>
+      <td>8–11</td>
+      <td>Encodings and weak crypto</td>
+      <td>reversing an encoding, command injection, XOR</td>
+    </tr>
+    <tr>
+      <td>12–13</td>
+      <td>File upload</td>
+      <td>trusting filenames and file signatures</td>
+    </tr>
+    <tr>
+      <td>14–17</td>
+      <td>SQL injection</td>
+      <td>authentication bypass, blind and time-based extraction</td>
+    </tr>
+    <tr>
+      <td>18–21</td>
+      <td>Sessions</td>
+      <td>predictable IDs, custom session handling, shared state</td>
+    </tr>
+    <tr>
+      <td>22–25</td>
+      <td>PHP behaviour</td>
+      <td>redirects, loose comparison, filters and log files</td>
+    </tr>
+    <tr>
+      <td>26–28</td>
+      <td>Deeper flaws</td>
+      <td>object deserialization, truncation, block-cipher misuse</td>
+    </tr>
+    <tr>
+      <td>29–33</td>
+      <td>Perl and PHP internals</td>
+      <td>injection through language features, uploads, phar</td>
+    </tr>
+    <tr>
+      <td>34</td>
+      <td>The end (for now)</td>
+      <td>consolidate and move on</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="tools-you-need">Tools you need</h3>
+
+<ul>
+  <li><strong>A browser with developer tools.</strong> View source, the Network tab (to see requests, headers and cookies) and the cookie viewer cover the first third of the game.</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">curl</code>.</strong> Sends exactly the request you specify, which is how you control headers, cookies and methods. Run <code class="language-plaintext highlighter-rouge">curl -u natasN:PASSWORD URL</code>.</li>
+  <li><strong>An intercepting proxy</strong> such as OWASP ZAP or Burp Suite for editing requests in flight.</li>
+  <li><strong>A scripting language.</strong> Python with <code class="language-plaintext highlighter-rouge">requests</code> is ideal from the blind-injection levels onward, where you automate hundreds of requests.</li>
+</ul>
+
+<h3 id="how-to-approach-any-web-level">How to approach any web level</h3>
+
+<ol>
+  <li>Use the app as a normal user and note every input: form fields, URL parameters, cookies, headers, uploaded files.</li>
+  <li>Read all the client-side code and the page source, and follow every link and referenced resource.</li>
+  <li>When source code is offered, read it as a defender: what does the server assume about each input?</li>
+  <li>Form a hypothesis, test it with the smallest possible request, and read the response closely.</li>
+</ol>
+
+<h3 id="staying-on-the-right-side-of-the-line">Staying on the right side of the line</h3>
+
+<p>Everything here is meant to be attacked, but only the Natas servers. Never apply these techniques to websites you do not own or have written permission to test.</p>
+
+<!-- study-guide:end -->
 
         </div>
       </div>
@@ -3550,7 +3651,7 @@ developed in association with<br /> the <a href="http://www.nessos-project.eu/">
     </div>
   </div>
 </aside>
-<script src="/wargames/assets/js/obsidian-local-graph.js?v=1792009165" defer></script>
+<script src="/wargames/assets/js/obsidian-local-graph.js?v=1792188318" defer></script>
 
 
 
@@ -3904,7 +4005,7 @@ developed in association with<br /> the <a href="http://www.nessos-project.eu/">
 <script src="/wargames/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 
-<script type="module" src="/wargames/assets/js/modules/navigation/index.js?v=1792009165"></script>
+<script type="module" src="/wargames/assets/js/modules/navigation/index.js?v=1792188318"></script>
 
 
 <script defer src="/wargames/assets/js/ui-helpers.js"></script>
@@ -3931,7 +4032,7 @@ developed in association with<br /> the <a href="http://www.nessos-project.eu/">
   window.OBSIDIAN_CONFIG.attachmentsPath = "/wargames/assets/images/notes";
   window.OBSIDIAN_CONFIG.tagBase = "/wargames/tags/";
   window.OBSIDIAN_CONFIG.cytoscapeUrl = "/wargames/assets/vendor/cytoscape/cytoscape.min.js";
-</script><script defer src="/wargames/assets/js/obsidian-wiki-links.js?v=1792009165"></script>
+</script><script defer src="/wargames/assets/js/obsidian-wiki-links.js?v=1792188318"></script>
 
 
         </div>

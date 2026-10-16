@@ -259,8 +259,8 @@
 <meta property="og:title" content="Vortex0" />
 <meta name="author" content="Amr Abdel-Motaleb" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Level Goal Your goal is to connect to port 5842 on vortex.labs.overthewire.org and read in 4 unsigned integers in host byte order. Add these integers together and send back the results to get a username and password for vortex1. This infor…" />
-<meta name="twitter:description" property="og:description" content="Level Goal Your goal is to connect to port 5842 on vortex.labs.overthewire.org and read in 4 unsigned integers in host byte order. Add these integers together and send back the results to get a username and password for vortex1. This infor…" />
+<meta name="description" content="Vortex Level 0 — write a small TCP client that reads four unsigned integers in host byte order, adds them, and sends back the result." />
+<meta name="twitter:description" property="og:description" content="Vortex Level 0 — write a small TCP client that reads four unsigned integers in host byte order, adds them, and sends back the result." />
 <link rel="canonical" href="https://bamr87.github.io/wargames/docs/wargames/vortex/vortex0/" />
 <meta property="og:url" content="https://bamr87.github.io/wargames/docs/wargames/vortex/vortex0/" />
 <meta property="og:site_name" content="Wargames" />
@@ -270,7 +270,7 @@
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="Vortex0" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Amr Abdel-Motaleb"},"dateModified":"2026-04-07T01:41:09+00:00","datePublished":"2026-04-07T01:41:09+00:00","description":"Level Goal Your goal is to connect to port 5842 on vortex.labs.overthewire.org and read in 4 unsigned integers in host byte order. Add these integers together and send back the results to get a username and password for vortex1. This infor…","headline":"Vortex0","mainEntityOfPage":{"@type":"WebPage","@id":"https://bamr87.github.io/wargames/docs/wargames/vortex/vortex0/"},"url":"https://bamr87.github.io/wargames/docs/wargames/vortex/vortex0/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Amr Abdel-Motaleb"},"dateModified":"2026-04-07T01:41:09+00:00","datePublished":"2026-04-07T01:41:09+00:00","description":"Vortex Level 0 — write a small TCP client that reads four unsigned integers in host byte order, adds them, and sends back the result.","headline":"Vortex0","mainEntityOfPage":{"@type":"WebPage","@id":"https://bamr87.github.io/wargames/docs/wargames/vortex/vortex0/"},"url":"https://bamr87.github.io/wargames/docs/wargames/vortex/vortex0/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -1223,7 +1223,7 @@ document.addEventListener("DOMContentLoaded", function () {
     </div>
     <div class="col-6">
       <div class="p-2 bg-body-tertiary rounded text-center">
-        <small class="text-body-secondary d-block">Last Build</small><code class="small" data-testid="theme-build-stamp">Oct 14, 20:19</code>
+        <small class="text-body-secondary d-block">Last Build</small><code class="small" data-testid="theme-build-stamp">Oct 16, 22:05</code>
       </div>
     </div>
 
@@ -3018,12 +3018,7 @@ function zer0CopyFeedback(btn, success) {
       <h1 class="bd-intro-title">Vortex0</h1>
       
       
-      <p class="bd-intro-description">Level Goal
-----------
-Your goal is to connect to port 5842 on vortex.labs.overthewire.org
-and read in 4 unsigned integers in host byte order. Add these
-integers together and send back the results to get a username and
-password for vortex1. This infor...</p>
+      <p class="bd-intro-description">Vortex Level 0 — write a small TCP client that reads four unsigned integers in host byte order, adds them, and sends back the result.</p>
       
     </div>
 
@@ -3115,7 +3110,7 @@ password for vortex1. This infor...</p>
              title="Copies a cleaned article summary to your clipboard, then opens LinkedIn sharing"
              data-share-url="https://bamr87.github.io/wargames/docs/wargames/vortex/vortex0/"
              data-share-title="Vortex0"
-             data-share-description="Level Goal----------Your goal is to connect to port 5842 on vortex.labs.overthewire.organd read in 4 unsigned integers in host byte order. Add theseintegers together and send back the results to get a username andpassword for vortex1. This infor...">
+             data-share-description="Vortex Level 0 — write a small TCP client that reads four unsigned integers in host byte order, adds them, and sends back the result.">
             <i class="bi bi-linkedin me-2"></i>Share on LinkedIn
           </a>
         </li>
@@ -3208,7 +3203,7 @@ password for vortex1. This infor...</p>
       
       
         
-<ul class="list-group-flush"><li class="list-group-item"><a href="#level-goal" class="">Level Goal</a></li><li class="list-group-item"><a href="#helpful-reading-material" class="">Helpful Reading Material</a></li></ul>
+<ul class="list-group-flush"><li class="list-group-item"><a href="#level-goal" class="">Level Goal</a></li><li class="list-group-item"><a href="#helpful-reading-material" class="">Helpful Reading Material</a></li><li class="list-group-item"><a href="#study-guide" class="">Study guide</a><ul><li class="list-group-item"><a href="#what-this-level-teaches" class="">What this level teaches</a></li><li class="list-group-item"><a href="#key-ideas" class="">Key ideas</a></li><li class="list-group-item"><a href="#how-to-approach-it" class="">How to approach it</a></li><li class="list-group-item"><a href="#why-it-matters" class="">Why it matters</a></li></ul></li></ul>
 
       
     </nav>
@@ -3242,6 +3237,38 @@ password for vortex1. This infor...</p>
 
   </li>
 </ul>
+
+<!-- study-guide:start -->
+
+<h2 id="study-guide">Study guide</h2>
+
+<p><strong>Level map:</strong> connect to port 5842 on <code class="language-plaintext highlighter-rouge">vortex.labs.overthewire.org</code> to obtain the credentials for the next account.</p>
+
+<h3 id="what-this-level-teaches">What this level teaches</h3>
+
+<p>Basic network programming and the realities of 32-bit little-endian data.</p>
+
+<h3 id="key-ideas">Key ideas</h3>
+
+<ul>
+  <li><strong>Sockets.</strong> Create a TCP socket, connect, read and write. The page links Beej’s network programming guide.</li>
+  <li><strong>Byte order.</strong> The server sends four 32-bit unsigned integers in host byte order. The page notes the machine is 32-bit x86, so little-endian.</li>
+  <li><strong>Fixed-width arithmetic.</strong> Think about what a 32-bit unsigned integer can hold and what happens when a sum is too big; the value you send must fit the same format.</li>
+  <li><strong>Parsing binary data.</strong> In Python, the <code class="language-plaintext highlighter-rouge">struct</code> module reads and writes binary integers.</li>
+</ul>
+
+<h3 id="how-to-approach-it">How to approach it</h3>
+
+<ol>
+  <li>Connect with a small script and read exactly the bytes you expect.</li>
+  <li>Convert them to numbers, add them correctly for the width involved, and send the result in the same format.</li>
+</ol>
+
+<h3 id="why-it-matters">Why it matters</h3>
+
+<p>Binary protocols and integer width mistakes are the foundation of countless exploits.</p>
+
+<!-- study-guide:end -->
 
         </div>
       </div>
@@ -3544,7 +3571,7 @@ password for vortex1. This infor...</p>
     </div>
   </div>
 </aside>
-<script src="/wargames/assets/js/obsidian-local-graph.js?v=1792009165" defer></script>
+<script src="/wargames/assets/js/obsidian-local-graph.js?v=1792188318" defer></script>
 
 
 
@@ -3898,7 +3925,7 @@ password for vortex1. This infor...</p>
 <script src="/wargames/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 
-<script type="module" src="/wargames/assets/js/modules/navigation/index.js?v=1792009165"></script>
+<script type="module" src="/wargames/assets/js/modules/navigation/index.js?v=1792188318"></script>
 
 
 <script defer src="/wargames/assets/js/ui-helpers.js"></script>
@@ -3925,7 +3952,7 @@ password for vortex1. This infor...</p>
   window.OBSIDIAN_CONFIG.attachmentsPath = "/wargames/assets/images/notes";
   window.OBSIDIAN_CONFIG.tagBase = "/wargames/tags/";
   window.OBSIDIAN_CONFIG.cytoscapeUrl = "/wargames/assets/vendor/cytoscape/cytoscape.min.js";
-</script><script defer src="/wargames/assets/js/obsidian-wiki-links.js?v=1792009165"></script>
+</script><script defer src="/wargames/assets/js/obsidian-wiki-links.js?v=1792188318"></script>
 
 
         </div>

@@ -259,8 +259,8 @@
 <meta property="og:title" content="Blacksun1" />
 <meta name="author" content="Amr Abdel-Motaleb" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Level1 is a trivial stack buffer overflow. Note that you’ll probably find it easier to use the compiled version than compiling it from source." />
-<meta name="twitter:description" property="og:description" content="Level1 is a trivial stack buffer overflow. Note that you’ll probably find it easier to use the compiled version than compiling it from source." />
+<meta name="description" content="Blacksun Level 1 — a trivial stack overflow in a binary with ASLR but no PIE and no stack protector, so fixed program addresses can be used." />
+<meta name="twitter:description" property="og:description" content="Blacksun Level 1 — a trivial stack overflow in a binary with ASLR but no PIE and no stack protector, so fixed program addresses can be used." />
 <link rel="canonical" href="https://bamr87.github.io/wargames/docs/wargames/blacksun/blacksun1/" />
 <meta property="og:url" content="https://bamr87.github.io/wargames/docs/wargames/blacksun/blacksun1/" />
 <meta property="og:site_name" content="Wargames" />
@@ -270,7 +270,7 @@
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="Blacksun1" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Amr Abdel-Motaleb"},"dateModified":"2026-04-07T01:41:09+00:00","datePublished":"2026-04-07T01:41:09+00:00","description":"Level1 is a trivial stack buffer overflow. Note that you’ll probably find it easier to use the compiled version than compiling it from source.","headline":"Blacksun1","mainEntityOfPage":{"@type":"WebPage","@id":"https://bamr87.github.io/wargames/docs/wargames/blacksun/blacksun1/"},"url":"https://bamr87.github.io/wargames/docs/wargames/blacksun/blacksun1/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Amr Abdel-Motaleb"},"dateModified":"2026-04-07T01:41:09+00:00","datePublished":"2026-04-07T01:41:09+00:00","description":"Blacksun Level 1 — a trivial stack overflow in a binary with ASLR but no PIE and no stack protector, so fixed program addresses can be used.","headline":"Blacksun1","mainEntityOfPage":{"@type":"WebPage","@id":"https://bamr87.github.io/wargames/docs/wargames/blacksun/blacksun1/"},"url":"https://bamr87.github.io/wargames/docs/wargames/blacksun/blacksun1/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -1223,7 +1223,7 @@ document.addEventListener("DOMContentLoaded", function () {
     </div>
     <div class="col-6">
       <div class="p-2 bg-body-tertiary rounded text-center">
-        <small class="text-body-secondary d-block">Last Build</small><code class="small" data-testid="theme-build-stamp">Oct 14, 20:19</code>
+        <small class="text-body-secondary d-block">Last Build</small><code class="small" data-testid="theme-build-stamp">Oct 16, 22:05</code>
       </div>
     </div>
 
@@ -3018,9 +3018,7 @@ function zer0CopyFeedback(btn, success) {
       <h1 class="bd-intro-title">Blacksun1</h1>
       
       
-      <p class="bd-intro-description">Level1 is a trivial stack buffer overflow. Note that you'll probably
-find it easier to use the compiled version than compiling it from
-source.</p>
+      <p class="bd-intro-description">Blacksun Level 1 — a trivial stack overflow in a binary with ASLR but no PIE and no stack protector, so fixed program addresses can be used.</p>
       
     </div>
 
@@ -3112,7 +3110,7 @@ source.</p>
              title="Copies a cleaned article summary to your clipboard, then opens LinkedIn sharing"
              data-share-url="https://bamr87.github.io/wargames/docs/wargames/blacksun/blacksun1/"
              data-share-title="Blacksun1"
-             data-share-description="Level1 is a trivial stack buffer overflow. Note that you&#39;ll probablyfind it easier to use the compiled version than compiling it fromsource.">
+             data-share-description="Blacksun Level 1 — a trivial stack overflow in a binary with ASLR but no PIE and no stack protector, so fixed program addresses can be used.">
             <i class="bi bi-linkedin me-2"></i>Share on LinkedIn
           </a>
         </li>
@@ -3205,7 +3203,7 @@ source.</p>
       
       
         
-<ul class="list-group-flush"><li class="list-group-item"><a href="#binary-information" class="">Binary information</a></li></ul>
+<ul class="list-group-flush"><li class="list-group-item"><a href="#binary-information" class="">Binary information</a></li><li class="list-group-item"><a href="#what-this-level-teaches" class="">What this level teaches</a></li><li class="list-group-item"><a href="#key-ideas" class="">Key ideas</a></li><li class="list-group-item"><a href="#how-to-approach-it" class="">How to approach it</a></li><li class="list-group-item"><a href="#why-it-matters" class="">Why it matters</a></li></ul>
 
       
     </nav>
@@ -3257,6 +3255,38 @@ source.</p>
   </tbody>
 </table>
 
+<!-- study-guide:start -->
+
+<h2 id="study-guide">Study guide</h2>
+
+<p><strong>Level map:</strong> the vulnerable program is <code class="language-plaintext highlighter-rouge">/levels/level1</code> on the Blacksun host.</p>
+
+<h3 id="what-this-level-teaches">What this level teaches</h3>
+
+<p>How to reason about which parts of an address space are randomised and which are not.</p>
+
+<h3 id="key-ideas">Key ideas</h3>
+
+<ul>
+  <li><strong>ASLR without PIE.</strong> The stack and libraries move, but the main program’s code and data stay at fixed addresses, so you can still reference them.</li>
+  <li><strong>No stack protector.</strong> There is no canary to detect an overwritten return address.</li>
+  <li><strong>Use the compiled binary.</strong> The page notes that it is easier to analyse the compiled version than to compile the source yourself.</li>
+  <li><strong>Non-executable pages are off,</strong> so classic shellcode is possible, but you must find a reliable way to reach it.</li>
+</ul>
+
+<h3 id="how-to-approach-it">How to approach it</h3>
+
+<ol>
+  <li>Check the protections with the table on the page and with tools such as <code class="language-plaintext highlighter-rouge">checksec</code>.</li>
+  <li>Find the offset to the return address in <code class="language-plaintext highlighter-rouge">gdb</code>.</li>
+  <li>Choose a return target that is stable despite randomisation.</li>
+</ol>
+
+<h3 id="why-it-matters">Why it matters</h3>
+
+<p>Understanding what each mitigation does and does not randomise is the heart of exploit development.</p>
+
+<!-- study-guide:end -->
 
         </div>
       </div>
@@ -3559,7 +3589,7 @@ source.</p>
     </div>
   </div>
 </aside>
-<script src="/wargames/assets/js/obsidian-local-graph.js?v=1792009165" defer></script>
+<script src="/wargames/assets/js/obsidian-local-graph.js?v=1792188318" defer></script>
 
 
 
@@ -3913,7 +3943,7 @@ source.</p>
 <script src="/wargames/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 
-<script type="module" src="/wargames/assets/js/modules/navigation/index.js?v=1792009165"></script>
+<script type="module" src="/wargames/assets/js/modules/navigation/index.js?v=1792188318"></script>
 
 
 <script defer src="/wargames/assets/js/ui-helpers.js"></script>
@@ -3940,7 +3970,7 @@ source.</p>
   window.OBSIDIAN_CONFIG.attachmentsPath = "/wargames/assets/images/notes";
   window.OBSIDIAN_CONFIG.tagBase = "/wargames/tags/";
   window.OBSIDIAN_CONFIG.cytoscapeUrl = "/wargames/assets/vendor/cytoscape/cytoscape.min.js";
-</script><script defer src="/wargames/assets/js/obsidian-wiki-links.js?v=1792009165"></script>
+</script><script defer src="/wargames/assets/js/obsidian-wiki-links.js?v=1792188318"></script>
 
 
         </div>

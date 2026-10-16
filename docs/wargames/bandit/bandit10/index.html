@@ -259,8 +259,8 @@
 <meta property="og:title" content="Bandit10" />
 <meta name="author" content="Amr Abdel-Motaleb" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Level Goal The password for the next level is stored in the file data.txt in one of the few human-readable strings, preceded by several ‘=’ characters." />
-<meta name="twitter:description" property="og:description" content="Level Goal The password for the next level is stored in the file data.txt in one of the few human-readable strings, preceded by several ‘=’ characters." />
+<meta name="description" content="Bandit Level 10 — extract readable text from a binary file with strings and filter it with grep." />
+<meta name="twitter:description" property="og:description" content="Bandit Level 10 — extract readable text from a binary file with strings and filter it with grep." />
 <link rel="canonical" href="https://bamr87.github.io/wargames/docs/wargames/bandit/bandit10/" />
 <meta property="og:url" content="https://bamr87.github.io/wargames/docs/wargames/bandit/bandit10/" />
 <meta property="og:site_name" content="Wargames" />
@@ -270,7 +270,7 @@
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="Bandit10" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Amr Abdel-Motaleb"},"dateModified":"2026-04-07T01:41:08+00:00","datePublished":"2026-04-07T01:41:08+00:00","description":"Level Goal The password for the next level is stored in the file data.txt in one of the few human-readable strings, preceded by several ‘=’ characters.","headline":"Bandit10","mainEntityOfPage":{"@type":"WebPage","@id":"https://bamr87.github.io/wargames/docs/wargames/bandit/bandit10/"},"url":"https://bamr87.github.io/wargames/docs/wargames/bandit/bandit10/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Amr Abdel-Motaleb"},"dateModified":"2026-04-07T01:41:08+00:00","datePublished":"2026-04-07T01:41:08+00:00","description":"Bandit Level 10 — extract readable text from a binary file with strings and filter it with grep.","headline":"Bandit10","mainEntityOfPage":{"@type":"WebPage","@id":"https://bamr87.github.io/wargames/docs/wargames/bandit/bandit10/"},"url":"https://bamr87.github.io/wargames/docs/wargames/bandit/bandit10/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -1223,7 +1223,7 @@ document.addEventListener("DOMContentLoaded", function () {
     </div>
     <div class="col-6">
       <div class="p-2 bg-body-tertiary rounded text-center">
-        <small class="text-body-secondary d-block">Last Build</small><code class="small" data-testid="theme-build-stamp">Oct 14, 20:19</code>
+        <small class="text-body-secondary d-block">Last Build</small><code class="small" data-testid="theme-build-stamp">Oct 16, 22:05</code>
       </div>
     </div>
 
@@ -3018,11 +3018,7 @@ function zer0CopyFeedback(btn, success) {
       <h1 class="bd-intro-title">Bandit10</h1>
       
       
-      <p class="bd-intro-description">Level Goal
-----------
-The password for the next level is stored in the file data.txt
-in one of the few human-readable strings, preceded by several '='
-characters.</p>
+      <p class="bd-intro-description">Bandit Level 10 — extract readable text from a binary file with strings and filter it with grep.</p>
       
     </div>
 
@@ -3114,7 +3110,7 @@ characters.</p>
              title="Copies a cleaned article summary to your clipboard, then opens LinkedIn sharing"
              data-share-url="https://bamr87.github.io/wargames/docs/wargames/bandit/bandit10/"
              data-share-title="Bandit10"
-             data-share-description="Level Goal----------The password for the next level is stored in the file data.txtin one of the few human-readable strings, preceded by several &#39;=&#39;characters.">
+             data-share-description="Bandit Level 10 — extract readable text from a binary file with strings and filter it with grep.">
             <i class="bi bi-linkedin me-2"></i>Share on LinkedIn
           </a>
         </li>
@@ -3207,7 +3203,7 @@ characters.</p>
       
       
         
-<ul class="list-group-flush"><li class="list-group-item"><a href="#level-goal" class="">Level Goal</a></li><li class="list-group-item"><a href="#commands-you-may-need-to-solve-this-level" class="">Commands you may need to solve this level</a></li></ul>
+<ul class="list-group-flush"><li class="list-group-item"><a href="#level-goal" class="">Level Goal</a></li><li class="list-group-item"><a href="#commands-you-may-need-to-solve-this-level" class="">Commands you may need to solve this level</a></li><li class="list-group-item"><a href="#study-guide" class="">Study guide</a><ul><li class="list-group-item"><a href="#what-this-level-teaches" class="">What this level teaches</a></li><li class="list-group-item"><a href="#key-ideas" class="">Key ideas</a></li><li class="list-group-item"><a href="#how-to-approach-it" class="">How to approach it</a></li><li class="list-group-item"><a href="#why-it-matters" class="">Why it matters</a></li></ul></li></ul>
 
       
     </nav>
@@ -3234,6 +3230,36 @@ characters.</p>
 <h2 id="commands-you-may-need-to-solve-this-level">Commands you may need to solve this level</h2>
 <p>grep, sort, uniq, strings, base64, tr, tar, gzip, bzip2, xxd</p>
 
+<!-- study-guide:start -->
+
+<h2 id="study-guide">Study guide</h2>
+
+<p><strong>Level map:</strong> logged in as <code class="language-plaintext highlighter-rouge">bandit9</code>, find the password for <code class="language-plaintext highlighter-rouge">bandit10</code>.</p>
+
+<h3 id="what-this-level-teaches">What this level teaches</h3>
+
+<p>Finding human-readable fragments inside data that is mostly binary.</p>
+
+<h3 id="key-ideas">Key ideas</h3>
+
+<ul>
+  <li><strong><code class="language-plaintext highlighter-rouge">strings</code></strong> scans a file and prints runs of printable characters. It is a first-look tool for reverse engineers and malware analysts.</li>
+  <li><strong>Binary vs text.</strong> Most of the file is non-printable bytes; the interesting part is a handful of text fragments.</li>
+  <li><strong>Combining tools.</strong> <code class="language-plaintext highlighter-rouge">strings</code> produces many lines, and <code class="language-plaintext highlighter-rouge">grep</code> narrows them to those matching the clue (several <code class="language-plaintext highlighter-rouge">=</code> characters).</li>
+</ul>
+
+<h3 id="how-to-approach-it">How to approach it</h3>
+
+<ol>
+  <li>Try <code class="language-plaintext highlighter-rouge">cat</code> on the file and note how unhelpful it is (use <code class="language-plaintext highlighter-rouge">reset</code> afterwards if your terminal is garbled).</li>
+  <li>Pipe <code class="language-plaintext highlighter-rouge">strings</code> into <code class="language-plaintext highlighter-rouge">grep</code> using the pattern described in the Level Goal.</li>
+</ol>
+
+<h3 id="why-it-matters">Why it matters</h3>
+
+<p><code class="language-plaintext highlighter-rouge">strings</code> is often the very first command run on an unknown executable. You will use it again in Leviathan and other binary games.</p>
+
+<!-- study-guide:end -->
 
         </div>
       </div>
@@ -3536,7 +3562,7 @@ characters.</p>
     </div>
   </div>
 </aside>
-<script src="/wargames/assets/js/obsidian-local-graph.js?v=1792009165" defer></script>
+<script src="/wargames/assets/js/obsidian-local-graph.js?v=1792188318" defer></script>
 
 
 
@@ -3890,7 +3916,7 @@ characters.</p>
 <script src="/wargames/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 
-<script type="module" src="/wargames/assets/js/modules/navigation/index.js?v=1792009165"></script>
+<script type="module" src="/wargames/assets/js/modules/navigation/index.js?v=1792188318"></script>
 
 
 <script defer src="/wargames/assets/js/ui-helpers.js"></script>
@@ -3917,7 +3943,7 @@ characters.</p>
   window.OBSIDIAN_CONFIG.attachmentsPath = "/wargames/assets/images/notes";
   window.OBSIDIAN_CONFIG.tagBase = "/wargames/tags/";
   window.OBSIDIAN_CONFIG.cytoscapeUrl = "/wargames/assets/vendor/cytoscape/cytoscape.min.js";
-</script><script defer src="/wargames/assets/js/obsidian-wiki-links.js?v=1792009165"></script>
+</script><script defer src="/wargames/assets/js/obsidian-wiki-links.js?v=1792188318"></script>
 
 
         </div>

@@ -259,8 +259,8 @@
 <meta property="og:title" content="Vortex5" />
 <meta name="author" content="Amr Abdel-Motaleb" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="MD5 Brute Force A password is required for the next level. vortex5.c and md5.h. a-z,A-Z,0-9 is the search space. The password length is 5 chars long, it was originally 7 chars long." />
-<meta name="twitter:description" property="og:description" content="MD5 Brute Force A password is required for the next level. vortex5.c and md5.h. a-z,A-Z,0-9 is the search space. The password length is 5 chars long, it was originally 7 chars long." />
+<meta name="description" content="Vortex Level 5 — brute-force an MD5 search space, and learn why shortening a password makes the attack feasible." />
+<meta name="twitter:description" property="og:description" content="Vortex Level 5 — brute-force an MD5 search space, and learn why shortening a password makes the attack feasible." />
 <link rel="canonical" href="https://bamr87.github.io/wargames/docs/wargames/vortex/vortex5/" />
 <meta property="og:url" content="https://bamr87.github.io/wargames/docs/wargames/vortex/vortex5/" />
 <meta property="og:site_name" content="Wargames" />
@@ -270,7 +270,7 @@
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="Vortex5" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Amr Abdel-Motaleb"},"dateModified":"2026-04-07T01:41:09+00:00","datePublished":"2026-04-07T01:41:09+00:00","description":"MD5 Brute Force A password is required for the next level. vortex5.c and md5.h. a-z,A-Z,0-9 is the search space. The password length is 5 chars long, it was originally 7 chars long.","headline":"Vortex5","mainEntityOfPage":{"@type":"WebPage","@id":"https://bamr87.github.io/wargames/docs/wargames/vortex/vortex5/"},"url":"https://bamr87.github.io/wargames/docs/wargames/vortex/vortex5/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Amr Abdel-Motaleb"},"dateModified":"2026-04-07T01:41:09+00:00","datePublished":"2026-04-07T01:41:09+00:00","description":"Vortex Level 5 — brute-force an MD5 search space, and learn why shortening a password makes the attack feasible.","headline":"Vortex5","mainEntityOfPage":{"@type":"WebPage","@id":"https://bamr87.github.io/wargames/docs/wargames/vortex/vortex5/"},"url":"https://bamr87.github.io/wargames/docs/wargames/vortex/vortex5/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -1223,7 +1223,7 @@ document.addEventListener("DOMContentLoaded", function () {
     </div>
     <div class="col-6">
       <div class="p-2 bg-body-tertiary rounded text-center">
-        <small class="text-body-secondary d-block">Last Build</small><code class="small" data-testid="theme-build-stamp">Oct 14, 20:19</code>
+        <small class="text-body-secondary d-block">Last Build</small><code class="small" data-testid="theme-build-stamp">Oct 16, 22:05</code>
       </div>
     </div>
 
@@ -3018,11 +3018,7 @@ function zer0CopyFeedback(btn, success) {
       <h1 class="bd-intro-title">Vortex5</h1>
       
       
-      <p class="bd-intro-description">MD5 Brute Force
----------------
-A password is required for the next level. vortex5.c and md5.h.
-a-z,A-Z,0-9 is the search space. The password length is 5 chars
-long, it was originally 7 chars long.</p>
+      <p class="bd-intro-description">Vortex Level 5 — brute-force an MD5 search space, and learn why shortening a password makes the attack feasible.</p>
       
     </div>
 
@@ -3114,7 +3110,7 @@ long, it was originally 7 chars long.</p>
              title="Copies a cleaned article summary to your clipboard, then opens LinkedIn sharing"
              data-share-url="https://bamr87.github.io/wargames/docs/wargames/vortex/vortex5/"
              data-share-title="Vortex5"
-             data-share-description="MD5 Brute Force---------------A password is required for the next level. vortex5.c and md5.h.a-z,A-Z,0-9 is the search space. The password length is 5 charslong, it was originally 7 chars long.">
+             data-share-description="Vortex Level 5 — brute-force an MD5 search space, and learn why shortening a password makes the attack feasible.">
             <i class="bi bi-linkedin me-2"></i>Share on LinkedIn
           </a>
         </li>
@@ -3207,7 +3203,7 @@ long, it was originally 7 chars long.</p>
       
       
         
-<ul class="list-group-flush"><li class="list-group-item"><a href="#md5-brute-force" class="">MD5 Brute Force</a></li></ul>
+<ul class="list-group-flush"><li class="list-group-item"><a href="#md5-brute-force" class="">MD5 Brute Force</a></li><li class="list-group-item"><a href="#study-guide" class="">Study guide</a><ul><li class="list-group-item"><a href="#what-this-level-teaches" class="">What this level teaches</a></li><li class="list-group-item"><a href="#key-ideas" class="">Key ideas</a></li><li class="list-group-item"><a href="#how-to-approach-it" class="">How to approach it</a></li><li class="list-group-item"><a href="#why-it-matters" class="">Why it matters</a></li></ul></li></ul>
 
       
     </nav>
@@ -3235,6 +3231,38 @@ long, it was originally 7 chars long.</p>
 Average of 2250932.1 hashes/sec.
 </code></pre></div></div>
 
+<!-- study-guide:start -->
+
+<h2 id="study-guide">Study guide</h2>
+
+<p><strong>Level map:</strong> logged in as <code class="language-plaintext highlighter-rouge">vortex5</code>, obtain access to <code class="language-plaintext highlighter-rouge">vortex6</code>.</p>
+
+<h3 id="what-this-level-teaches">What this level teaches</h3>
+
+<p>How big search spaces are, and how speed (hashes per second) decides what is feasible.</p>
+
+<h3 id="key-ideas">Key ideas</h3>
+
+<ul>
+  <li><strong>Search space.</strong> Letters and digits (a–z, A–Z, 0–9) give 62 choices per position. A five-character password has 62 to the power 5, about 916 million possibilities.</li>
+  <li><strong>Throughput.</strong> The page records a run of roughly 2.25 million hashes per second. At that speed five characters take a few minutes, while the original seven characters (about 3.5 trillion possibilities) would take weeks on that hardware.</li>
+  <li><strong>Provided source.</strong> The code and <code class="language-plaintext highlighter-rouge">md5.h</code> are available; you are expected to write or adapt a search.</li>
+  <li><strong>Optimise.</strong> Fast hashing loops in C, multiple cores or GPUs, and early rejection all change the arithmetic.</li>
+</ul>
+
+<h3 id="how-to-approach-it">How to approach it</h3>
+
+<ol>
+  <li>Read the source to learn exactly what is hashed and what you must match.</li>
+  <li>Write an efficient search in C, and test it on a small known case first.</li>
+  <li>Estimate the time before launching the full run.</li>
+</ol>
+
+<h3 id="why-it-matters">Why it matters</h3>
+
+<p>It explains why password length and slow hashes (bcrypt, scrypt, Argon2) matter, and why fast hashes such as MD5 are poor for storing passwords.</p>
+
+<!-- study-guide:end -->
 
         </div>
       </div>
@@ -3537,7 +3565,7 @@ Average of 2250932.1 hashes/sec.
     </div>
   </div>
 </aside>
-<script src="/wargames/assets/js/obsidian-local-graph.js?v=1792009165" defer></script>
+<script src="/wargames/assets/js/obsidian-local-graph.js?v=1792188318" defer></script>
 
 
 
@@ -3891,7 +3919,7 @@ Average of 2250932.1 hashes/sec.
 <script src="/wargames/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 
-<script type="module" src="/wargames/assets/js/modules/navigation/index.js?v=1792009165"></script>
+<script type="module" src="/wargames/assets/js/modules/navigation/index.js?v=1792188318"></script>
 
 
 <script defer src="/wargames/assets/js/ui-helpers.js"></script>
@@ -3918,7 +3946,7 @@ Average of 2250932.1 hashes/sec.
   window.OBSIDIAN_CONFIG.attachmentsPath = "/wargames/assets/images/notes";
   window.OBSIDIAN_CONFIG.tagBase = "/wargames/tags/";
   window.OBSIDIAN_CONFIG.cytoscapeUrl = "/wargames/assets/vendor/cytoscape/cytoscape.min.js";
-</script><script defer src="/wargames/assets/js/obsidian-wiki-links.js?v=1792009165"></script>
+</script><script defer src="/wargames/assets/js/obsidian-wiki-links.js?v=1792188318"></script>
 
 
         </div>

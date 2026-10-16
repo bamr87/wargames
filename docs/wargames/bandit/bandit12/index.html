@@ -259,8 +259,8 @@
 <meta property="og:title" content="Bandit12" />
 <meta name="author" content="Amr Abdel-Motaleb" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Level Goal The password for the next level is stored in the file data.txt, where all lowercase (a-z) and uppercase (A-Z) letters have been rotated by 13 positions" />
-<meta name="twitter:description" property="og:description" content="Level Goal The password for the next level is stored in the file data.txt, where all lowercase (a-z) and uppercase (A-Z) letters have been rotated by 13 positions" />
+<meta name="description" content="Bandit Level 12 — undo a ROT13 substitution cipher with the tr command." />
+<meta name="twitter:description" property="og:description" content="Bandit Level 12 — undo a ROT13 substitution cipher with the tr command." />
 <link rel="canonical" href="https://bamr87.github.io/wargames/docs/wargames/bandit/bandit12/" />
 <meta property="og:url" content="https://bamr87.github.io/wargames/docs/wargames/bandit/bandit12/" />
 <meta property="og:site_name" content="Wargames" />
@@ -270,7 +270,7 @@
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="Bandit12" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Amr Abdel-Motaleb"},"dateModified":"2026-04-07T01:41:08+00:00","datePublished":"2026-04-07T01:41:08+00:00","description":"Level Goal The password for the next level is stored in the file data.txt, where all lowercase (a-z) and uppercase (A-Z) letters have been rotated by 13 positions","headline":"Bandit12","mainEntityOfPage":{"@type":"WebPage","@id":"https://bamr87.github.io/wargames/docs/wargames/bandit/bandit12/"},"url":"https://bamr87.github.io/wargames/docs/wargames/bandit/bandit12/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Amr Abdel-Motaleb"},"dateModified":"2026-04-07T01:41:08+00:00","datePublished":"2026-04-07T01:41:08+00:00","description":"Bandit Level 12 — undo a ROT13 substitution cipher with the tr command.","headline":"Bandit12","mainEntityOfPage":{"@type":"WebPage","@id":"https://bamr87.github.io/wargames/docs/wargames/bandit/bandit12/"},"url":"https://bamr87.github.io/wargames/docs/wargames/bandit/bandit12/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -1223,7 +1223,7 @@ document.addEventListener("DOMContentLoaded", function () {
     </div>
     <div class="col-6">
       <div class="p-2 bg-body-tertiary rounded text-center">
-        <small class="text-body-secondary d-block">Last Build</small><code class="small" data-testid="theme-build-stamp">Oct 14, 20:19</code>
+        <small class="text-body-secondary d-block">Last Build</small><code class="small" data-testid="theme-build-stamp">Oct 16, 22:05</code>
       </div>
     </div>
 
@@ -3018,11 +3018,7 @@ function zer0CopyFeedback(btn, success) {
       <h1 class="bd-intro-title">Bandit12</h1>
       
       
-      <p class="bd-intro-description">Level Goal
-----------
-The password for the next level is stored in the file data.txt,
-where all lowercase (a-z) and uppercase (A-Z) letters have been
-rotated by 13 positions</p>
+      <p class="bd-intro-description">Bandit Level 12 — undo a ROT13 substitution cipher with the tr command.</p>
       
     </div>
 
@@ -3114,7 +3110,7 @@ rotated by 13 positions</p>
              title="Copies a cleaned article summary to your clipboard, then opens LinkedIn sharing"
              data-share-url="https://bamr87.github.io/wargames/docs/wargames/bandit/bandit12/"
              data-share-title="Bandit12"
-             data-share-description="Level Goal----------The password for the next level is stored in the file data.txt,where all lowercase (a-z) and uppercase (A-Z) letters have beenrotated by 13 positions">
+             data-share-description="Bandit Level 12 — undo a ROT13 substitution cipher with the tr command.">
             <i class="bi bi-linkedin me-2"></i>Share on LinkedIn
           </a>
         </li>
@@ -3207,7 +3203,7 @@ rotated by 13 positions</p>
       
       
         
-<ul class="list-group-flush"><li class="list-group-item"><a href="#level-goal" class="">Level Goal</a></li><li class="list-group-item"><a href="#commands-you-may-need-to-solve-this-level" class="">Commands you may need to solve this level</a></li><li class="list-group-item"><a href="#helpful-reading-material" class="">Helpful Reading Material</a></li></ul>
+<ul class="list-group-flush"><li class="list-group-item"><a href="#level-goal" class="">Level Goal</a></li><li class="list-group-item"><a href="#commands-you-may-need-to-solve-this-level" class="">Commands you may need to solve this level</a></li><li class="list-group-item"><a href="#helpful-reading-material" class="">Helpful Reading Material</a></li><li class="list-group-item"><a href="#study-guide" class="">Study guide</a><ul><li class="list-group-item"><a href="#what-this-level-teaches" class="">What this level teaches</a></li><li class="list-group-item"><a href="#key-ideas" class="">Key ideas</a></li><li class="list-group-item"><a href="#how-to-approach-it" class="">How to approach it</a></li><li class="list-group-item"><a href="#why-it-matters" class="">Why it matters</a></li></ul></li></ul>
 
       
     </nav>
@@ -3239,6 +3235,37 @@ rotated by 13 positions</p>
   <li><a href="https://en.wikipedia.org/wiki/ROT13">Rot13 on Wikipedia</a></li>
 </ul>
 
+<!-- study-guide:start -->
+
+<h2 id="study-guide">Study guide</h2>
+
+<p><strong>Level map:</strong> logged in as <code class="language-plaintext highlighter-rouge">bandit11</code>, find the password for <code class="language-plaintext highlighter-rouge">bandit12</code>.</p>
+
+<h3 id="what-this-level-teaches">What this level teaches</h3>
+
+<p>Substitution ciphers, and character translation with <code class="language-plaintext highlighter-rouge">tr</code>.</p>
+
+<h3 id="key-ideas">Key ideas</h3>
+
+<ul>
+  <li><strong>ROT13</strong> replaces each letter by the one 13 places later in the alphabet, wrapping around. Because the alphabet has 26 letters, applying ROT13 twice returns the original, so the same operation encrypts and decrypts.</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">tr SET1 SET2</code></strong> replaces each character of the first set with the corresponding character of the second. Ranges such as <code class="language-plaintext highlighter-rouge">a-e</code> are allowed, so <code class="language-plaintext highlighter-rouge">tr 'a-e' 'A-E'</code> upper-cases only those five letters.</li>
+  <li>ROT13 is trivially reversible and provides obfuscation, not security.</li>
+</ul>
+
+<h3 id="how-to-approach-it">How to approach it</h3>
+
+<ol>
+  <li>Work out by hand where <code class="language-plaintext highlighter-rouge">A</code> and <code class="language-plaintext highlighter-rouge">a</code> land after a 13-place shift, and write the two sets so every letter is covered.</li>
+  <li>Remember upper and lower case need their own ranges.</li>
+  <li>Test your <code class="language-plaintext highlighter-rouge">tr</code> command on a word you encode yourself before applying it to the real file.</li>
+</ol>
+
+<h3 id="why-it-matters">Why it matters</h3>
+
+<p>This is the first step of Krypton, where simple ciphers like this are attacked systematically with frequency analysis.</p>
+
+<!-- study-guide:end -->
 
         </div>
       </div>
@@ -3541,7 +3568,7 @@ rotated by 13 positions</p>
     </div>
   </div>
 </aside>
-<script src="/wargames/assets/js/obsidian-local-graph.js?v=1792009165" defer></script>
+<script src="/wargames/assets/js/obsidian-local-graph.js?v=1792188318" defer></script>
 
 
 
@@ -3895,7 +3922,7 @@ rotated by 13 positions</p>
 <script src="/wargames/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 
-<script type="module" src="/wargames/assets/js/modules/navigation/index.js?v=1792009165"></script>
+<script type="module" src="/wargames/assets/js/modules/navigation/index.js?v=1792188318"></script>
 
 
 <script defer src="/wargames/assets/js/ui-helpers.js"></script>
@@ -3922,7 +3949,7 @@ rotated by 13 positions</p>
   window.OBSIDIAN_CONFIG.attachmentsPath = "/wargames/assets/images/notes";
   window.OBSIDIAN_CONFIG.tagBase = "/wargames/tags/";
   window.OBSIDIAN_CONFIG.cytoscapeUrl = "/wargames/assets/vendor/cytoscape/cytoscape.min.js";
-</script><script defer src="/wargames/assets/js/obsidian-wiki-links.js?v=1792009165"></script>
+</script><script defer src="/wargames/assets/js/obsidian-wiki-links.js?v=1792188318"></script>
 
 
         </div>

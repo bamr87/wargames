@@ -259,8 +259,8 @@
 <meta property="og:title" content="Bandit14" />
 <meta name="author" content="Amr Abdel-Motaleb" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Level Goal The password for the next level is stored in /etc/bandit\pass/bandit14 and can only be read by user bandit14. For this level, you don’t get the next password, but you get a private SSH key that can be used to log into the next l…" />
-<meta name="twitter:description" property="og:description" content="Level Goal The password for the next level is stored in /etc/bandit\pass/bandit14 and can only be read by user bandit14. For this level, you don’t get the next password, but you get a private SSH key that can be used to log into the next l…" />
+<meta name="description" content="Bandit Level 14 — authenticate to SSH with a private key instead of a password." />
+<meta name="twitter:description" property="og:description" content="Bandit Level 14 — authenticate to SSH with a private key instead of a password." />
 <link rel="canonical" href="https://bamr87.github.io/wargames/docs/wargames/bandit/bandit14/" />
 <meta property="og:url" content="https://bamr87.github.io/wargames/docs/wargames/bandit/bandit14/" />
 <meta property="og:site_name" content="Wargames" />
@@ -270,7 +270,7 @@
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="Bandit14" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Amr Abdel-Motaleb"},"dateModified":"2026-04-07T01:41:08+00:00","datePublished":"2026-04-07T01:41:08+00:00","description":"Level Goal The password for the next level is stored in /etc/bandit\\pass/bandit14 and can only be read by user bandit14. For this level, you don’t get the next password, but you get a private SSH key that can be used to log into the next l…","headline":"Bandit14","mainEntityOfPage":{"@type":"WebPage","@id":"https://bamr87.github.io/wargames/docs/wargames/bandit/bandit14/"},"url":"https://bamr87.github.io/wargames/docs/wargames/bandit/bandit14/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Amr Abdel-Motaleb"},"dateModified":"2026-04-07T01:41:08+00:00","datePublished":"2026-04-07T01:41:08+00:00","description":"Bandit Level 14 — authenticate to SSH with a private key instead of a password.","headline":"Bandit14","mainEntityOfPage":{"@type":"WebPage","@id":"https://bamr87.github.io/wargames/docs/wargames/bandit/bandit14/"},"url":"https://bamr87.github.io/wargames/docs/wargames/bandit/bandit14/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -1223,7 +1223,7 @@ document.addEventListener("DOMContentLoaded", function () {
     </div>
     <div class="col-6">
       <div class="p-2 bg-body-tertiary rounded text-center">
-        <small class="text-body-secondary d-block">Last Build</small><code class="small" data-testid="theme-build-stamp">Oct 14, 20:19</code>
+        <small class="text-body-secondary d-block">Last Build</small><code class="small" data-testid="theme-build-stamp">Oct 16, 22:05</code>
       </div>
     </div>
 
@@ -3018,12 +3018,7 @@ function zer0CopyFeedback(btn, success) {
       <h1 class="bd-intro-title">Bandit14</h1>
       
       
-      <p class="bd-intro-description">Level Goal
-----------
-The password for the next level is stored in
-/etc/bandit\pass/bandit14 and can only be read by user
-bandit14. For this level, you don't get the next password, but you
-get a private SSH key that can be used to log into the next l...</p>
+      <p class="bd-intro-description">Bandit Level 14 — authenticate to SSH with a private key instead of a password.</p>
       
     </div>
 
@@ -3115,7 +3110,7 @@ get a private SSH key that can be used to log into the next l...</p>
              title="Copies a cleaned article summary to your clipboard, then opens LinkedIn sharing"
              data-share-url="https://bamr87.github.io/wargames/docs/wargames/bandit/bandit14/"
              data-share-title="Bandit14"
-             data-share-description="Level Goal----------The password for the next level is stored in/etc/bandit\pass/bandit14 and can only be read by userbandit14. For this level, you don&#39;t get the next password, but youget a private SSH key that can be used to log into the next l...">
+             data-share-description="Bandit Level 14 — authenticate to SSH with a private key instead of a password.">
             <i class="bi bi-linkedin me-2"></i>Share on LinkedIn
           </a>
         </li>
@@ -3208,7 +3203,7 @@ get a private SSH key that can be used to log into the next l...</p>
       
       
         
-<ul class="list-group-flush"><li class="list-group-item"><a href="#level-goal" class="">Level Goal</a></li><li class="list-group-item"><a href="#commands-you-may-need-to-solve-this-level" class="">Commands you may need to solve this level</a></li><li class="list-group-item"><a href="#helpful-reading-material" class="">Helpful Reading Material</a></li></ul>
+<ul class="list-group-flush"><li class="list-group-item"><a href="#level-goal" class="">Level Goal</a></li><li class="list-group-item"><a href="#commands-you-may-need-to-solve-this-level" class="">Commands you may need to solve this level</a></li><li class="list-group-item"><a href="#helpful-reading-material" class="">Helpful Reading Material</a></li><li class="list-group-item"><a href="#study-guide" class="">Study guide</a><ul><li class="list-group-item"><a href="#what-this-level-teaches" class="">What this level teaches</a></li><li class="list-group-item"><a href="#key-ideas" class="">Key ideas</a></li><li class="list-group-item"><a href="#how-to-approach-it" class="">How to approach it</a></li><li class="list-group-item"><a href="#why-it-matters" class="">Why it matters</a></li></ul></li></ul>
 
       
     </nav>
@@ -3240,6 +3235,38 @@ get a private SSH key that can be used to log into the next l...</p>
   <li><a href="https://help.ubuntu.com/community/SSH/OpenSSH/Keys">SSH/OpenSSH/Keys</a></li>
 </ul>
 
+<!-- study-guide:start -->
+
+<h2 id="study-guide">Study guide</h2>
+
+<p><strong>Level map:</strong> logged in as <code class="language-plaintext highlighter-rouge">bandit13</code>, gain access to <code class="language-plaintext highlighter-rouge">bandit14</code>.</p>
+
+<h3 id="what-this-level-teaches">What this level teaches</h3>
+
+<p>Public-key authentication, the way professionals actually log in to servers.</p>
+
+<h3 id="key-ideas">Key ideas</h3>
+
+<ul>
+  <li><strong>Key pairs.</strong> A private key stays secret with you; the matching public key sits on the server. The server proves you hold the private key without the key ever crossing the network.</li>
+  <li><strong>Strict permissions.</strong> <code class="language-plaintext highlighter-rouge">ssh</code> refuses to use a private key that other users can read, printing “UNPROTECTED PRIVATE KEY FILE”. Keys need mode <code class="language-plaintext highlighter-rouge">600</code>.</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">ssh -i FILE</code></strong> names the identity (private key) to use.</li>
+  <li><strong>Copying files.</strong> <code class="language-plaintext highlighter-rouge">scp</code> copies files over SSH, and the same server can also connect back to itself.</li>
+</ul>
+
+<h3 id="how-to-approach-it">How to approach it</h3>
+
+<ol>
+  <li>Find the key in your home directory and look at its permissions.</li>
+  <li>Decide whether you will use the key from your own machine or from the server, and make the file permissions correct wherever it lives.</li>
+  <li>Log in as the next user, then read that user’s password from the location the Level Goal gives. You will need that password for the next level.</li>
+</ol>
+
+<h3 id="why-it-matters">Why it matters</h3>
+
+<p>Passwords get guessed and phished; keys are far harder to steal remotely. Almost every cloud server and Git host uses SSH keys.</p>
+
+<!-- study-guide:end -->
 
         </div>
       </div>
@@ -3542,7 +3569,7 @@ get a private SSH key that can be used to log into the next l...</p>
     </div>
   </div>
 </aside>
-<script src="/wargames/assets/js/obsidian-local-graph.js?v=1792009165" defer></script>
+<script src="/wargames/assets/js/obsidian-local-graph.js?v=1792188318" defer></script>
 
 
 
@@ -3896,7 +3923,7 @@ get a private SSH key that can be used to log into the next l...</p>
 <script src="/wargames/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 
-<script type="module" src="/wargames/assets/js/modules/navigation/index.js?v=1792009165"></script>
+<script type="module" src="/wargames/assets/js/modules/navigation/index.js?v=1792188318"></script>
 
 
 <script defer src="/wargames/assets/js/ui-helpers.js"></script>
@@ -3923,7 +3950,7 @@ get a private SSH key that can be used to log into the next l...</p>
   window.OBSIDIAN_CONFIG.attachmentsPath = "/wargames/assets/images/notes";
   window.OBSIDIAN_CONFIG.tagBase = "/wargames/tags/";
   window.OBSIDIAN_CONFIG.cytoscapeUrl = "/wargames/assets/vendor/cytoscape/cytoscape.min.js";
-</script><script defer src="/wargames/assets/js/obsidian-wiki-links.js?v=1792009165"></script>
+</script><script defer src="/wargames/assets/js/obsidian-wiki-links.js?v=1792188318"></script>
 
 
         </div>

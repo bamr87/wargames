@@ -259,8 +259,8 @@
 <meta property="og:title" content="Drifter10" />
 <meta name="author" content="Amr Abdel-Motaleb" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="If you’re not a pro at this stuff yet, here’s some additional practice. Beware of the nonexec stack. Go go power reverser." />
-<meta name="twitter:description" property="og:description" content="If you’re not a pro at this stuff yet, here’s some additional practice. Beware of the nonexec stack. Go go power reverser." />
+<meta name="description" content="Drifter Level 10 — additional practice with a non-executable stack, relying on careful reverse engineering." />
+<meta name="twitter:description" property="og:description" content="Drifter Level 10 — additional practice with a non-executable stack, relying on careful reverse engineering." />
 <link rel="canonical" href="https://bamr87.github.io/wargames/docs/wargames/drifter/drifter10/" />
 <meta property="og:url" content="https://bamr87.github.io/wargames/docs/wargames/drifter/drifter10/" />
 <meta property="og:site_name" content="Wargames" />
@@ -270,7 +270,7 @@
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="Drifter10" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Amr Abdel-Motaleb"},"dateModified":"2026-04-07T01:41:09+00:00","datePublished":"2026-04-07T01:41:09+00:00","description":"If you’re not a pro at this stuff yet, here’s some additional practice. Beware of the nonexec stack. Go go power reverser.","headline":"Drifter10","mainEntityOfPage":{"@type":"WebPage","@id":"https://bamr87.github.io/wargames/docs/wargames/drifter/drifter10/"},"url":"https://bamr87.github.io/wargames/docs/wargames/drifter/drifter10/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Amr Abdel-Motaleb"},"dateModified":"2026-04-07T01:41:09+00:00","datePublished":"2026-04-07T01:41:09+00:00","description":"Drifter Level 10 — additional practice with a non-executable stack, relying on careful reverse engineering.","headline":"Drifter10","mainEntityOfPage":{"@type":"WebPage","@id":"https://bamr87.github.io/wargames/docs/wargames/drifter/drifter10/"},"url":"https://bamr87.github.io/wargames/docs/wargames/drifter/drifter10/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -1223,7 +1223,7 @@ document.addEventListener("DOMContentLoaded", function () {
     </div>
     <div class="col-6">
       <div class="p-2 bg-body-tertiary rounded text-center">
-        <small class="text-body-secondary d-block">Last Build</small><code class="small" data-testid="theme-build-stamp">Oct 14, 20:19</code>
+        <small class="text-body-secondary d-block">Last Build</small><code class="small" data-testid="theme-build-stamp">Oct 16, 22:05</code>
       </div>
     </div>
 
@@ -3018,8 +3018,7 @@ function zer0CopyFeedback(btn, success) {
       <h1 class="bd-intro-title">Drifter10</h1>
       
       
-      <p class="bd-intro-description">If you're not a pro at this stuff yet, here's some additional practice.
-Beware of the nonexec stack. Go go power reverser.</p>
+      <p class="bd-intro-description">Drifter Level 10 — additional practice with a non-executable stack, relying on careful reverse engineering.</p>
       
     </div>
 
@@ -3111,7 +3110,7 @@ Beware of the nonexec stack. Go go power reverser.</p>
              title="Copies a cleaned article summary to your clipboard, then opens LinkedIn sharing"
              data-share-url="https://bamr87.github.io/wargames/docs/wargames/drifter/drifter10/"
              data-share-title="Drifter10"
-             data-share-description="If you&#39;re not a pro at this stuff yet, here&#39;s some additional practice.Beware of the nonexec stack. Go go power reverser.">
+             data-share-description="Drifter Level 10 — additional practice with a non-executable stack, relying on careful reverse engineering.">
             <i class="bi bi-linkedin me-2"></i>Share on LinkedIn
           </a>
         </li>
@@ -3203,7 +3202,9 @@ Beware of the nonexec stack. Go go power reverser.</p>
 
       
       
-        <p class="text-body-secondary small fst-italic">No sections on this page.</p>
+        
+<ul class="list-group-flush"><li class="list-group-item"><a href="#study-guide" class="">Study guide</a><ul><li class="list-group-item"><a href="#what-this-level-teaches" class="">What this level teaches</a></li><li class="list-group-item"><a href="#key-ideas" class="">Key ideas</a></li><li class="list-group-item"><a href="#how-to-approach-it" class="">How to approach it</a></li><li class="list-group-item"><a href="#why-it-matters" class="">Why it matters</a></li></ul></li></ul>
+
       
     </nav>
   </div>
@@ -3224,6 +3225,38 @@ Beware of the nonexec stack. Go go power reverser.</p>
 </blockquote>
 
 <p>If you’re not a pro at this stuff yet, here’s some additional practice. Beware of the nonexec stack. Go go power reverser.</p>
+
+<!-- study-guide:start -->
+
+<h2 id="study-guide">Study guide</h2>
+
+<p><strong>Where it fits:</strong> Drifter level 10 of 0–15, in the privileges and practice stage of the game. The page does not say which account you start as, so check with <code class="language-plaintext highlighter-rouge">id</code> after connecting.</p>
+
+<h3 id="what-this-level-teaches">What this level teaches</h3>
+
+<p>Exploiting a program when the stack is non-executable.</p>
+
+<h3 id="key-ideas">Key ideas</h3>
+
+<ul>
+  <li><strong>NX stack.</strong> Injected shellcode on the stack will not run.</li>
+  <li><strong>Reuse existing code.</strong> Return-to-libc or ROP chains replace shellcode.</li>
+  <li><strong>Power reversing.</strong> The page urges you to reverse the program thoroughly to find what you can reuse.</li>
+</ul>
+
+<h3 id="how-to-approach-it">How to approach it</h3>
+
+<ol>
+  <li>Confirm the stack protection and locate the vulnerability.</li>
+  <li>Identify useful functions and gadgets.</li>
+  <li>Build and test the chain in <code class="language-plaintext highlighter-rouge">gdb</code>.</li>
+</ol>
+
+<h3 id="why-it-matters">Why it matters</h3>
+
+<p>Practice with non-executable memory is practice with the modern default.</p>
+
+<!-- study-guide:end -->
 
         </div>
       </div>
@@ -3526,7 +3559,7 @@ Beware of the nonexec stack. Go go power reverser.</p>
     </div>
   </div>
 </aside>
-<script src="/wargames/assets/js/obsidian-local-graph.js?v=1792009165" defer></script>
+<script src="/wargames/assets/js/obsidian-local-graph.js?v=1792188318" defer></script>
 
 
 
@@ -3880,7 +3913,7 @@ Beware of the nonexec stack. Go go power reverser.</p>
 <script src="/wargames/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 
-<script type="module" src="/wargames/assets/js/modules/navigation/index.js?v=1792009165"></script>
+<script type="module" src="/wargames/assets/js/modules/navigation/index.js?v=1792188318"></script>
 
 
 <script defer src="/wargames/assets/js/ui-helpers.js"></script>
@@ -3907,7 +3940,7 @@ Beware of the nonexec stack. Go go power reverser.</p>
   window.OBSIDIAN_CONFIG.attachmentsPath = "/wargames/assets/images/notes";
   window.OBSIDIAN_CONFIG.tagBase = "/wargames/tags/";
   window.OBSIDIAN_CONFIG.cytoscapeUrl = "/wargames/assets/vendor/cytoscape/cytoscape.min.js";
-</script><script defer src="/wargames/assets/js/obsidian-wiki-links.js?v=1792009165"></script>
+</script><script defer src="/wargames/assets/js/obsidian-wiki-links.js?v=1792188318"></script>
 
 
         </div>

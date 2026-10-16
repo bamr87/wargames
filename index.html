@@ -1212,7 +1212,7 @@ document.addEventListener("DOMContentLoaded", function () {
     </div>
     <div class="col-6">
       <div class="p-2 bg-body-tertiary rounded text-center">
-        <small class="text-body-secondary d-block">Last Build</small><code class="small" data-testid="theme-build-stamp">Oct 14, 20:19</code>
+        <small class="text-body-secondary d-block">Last Build</small><code class="small" data-testid="theme-build-stamp">Oct 16, 22:05</code>
       </div>
     </div>
 
@@ -1405,9 +1405,21 @@ function zer0CopyFeedback(btn, success) {
 
 <h2 id="what-are-wargames">What Are Wargames?</h2>
 
-<p>Wargames are a series of security-focused challenges offered by the <a href="https://overthewire.org/">OverTheWire</a> community. They teach security concepts in a gamified, progressive format — starting from basic Unix/Linux commands and building up to advanced exploitation techniques.</p>
+<p>Wargames are security-focused challenges offered by the <a href="https://overthewire.org/">OverTheWire</a> community. They teach security concepts in a gamified, progressive format, starting from basic Unix/Linux commands and building up to advanced exploitation techniques.</p>
 
-<p>Each wargame consists of levels that must be completed in order. You connect via SSH to a server and use your skills to find the password for the next level.</p>
+<p>Each wargame is a series of levels that must be completed in order. In most games you connect to a server over SSH and use what you know to find the password for the next level. The password is the reward, but the real prize is the skill you build while finding it.</p>
+
+<h2 id="how-this-site-helps-you-learn">How This Site Helps You Learn</h2>
+
+<p>The challenge pages are a mirror of the upstream OverTheWire pages, and many of them are deliberately sparse: some levels say only that there is “no information for this level, intentionally”. To make the collection useful for self-study, every page also carries a <strong>Study guide</strong> section that:</p>
+
+<ul>
+  <li>explains the concepts the level is about, in plain language;</li>
+  <li>suggests how to approach it, with hints rather than answers;</li>
+  <li>says why the skill matters in real security and IT work.</li>
+</ul>
+
+<p>The guides are <strong>spoiler-free</strong>. They never contain passwords or finished solutions, so you can read them without ruining the game. Where upstream withholds details about a level and the guide cannot say more, it says so instead of guessing.</p>
 
 <h2 id="available-games">Available Games</h2>
 
@@ -1418,24 +1430,29 @@ function zer0CopyFeedback(btn, success) {
     <tr>
       <th>Game</th>
       <th>Focus</th>
-      <th>Description</th>
+      <th>What you will practise</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td><strong>Bandit</strong></td>
-      <td>Linux Basics</td>
-      <td>Learn basic Unix commands, SSH, and file manipulation</td>
+      <td><a href="docs/wargames/bandit/"><strong>Bandit</strong></a></td>
+      <td>Linux basics</td>
+      <td>the command line, SSH, text tools, permissions, cron, git</td>
     </tr>
     <tr>
-      <td><strong>Leviathan</strong></td>
-      <td>Basic Exploitation</td>
-      <td>Simple setuid binaries and reverse engineering</td>
+      <td><a href="docs/wargames/natas/"><strong>Natas</strong></a></td>
+      <td>Web security</td>
+      <td>server-side web flaws from page source to SQL injection, played in a browser</td>
     </tr>
     <tr>
-      <td><strong>Krypton</strong></td>
+      <td><a href="docs/wargames/krypton/"><strong>Krypton</strong></a></td>
       <td>Cryptography</td>
-      <td>Classical ciphers (Caesar, Vigenere, frequency analysis)</td>
+      <td>classical ciphers, frequency analysis, Vigenère, a weak stream cipher</td>
+    </tr>
+    <tr>
+      <td><a href="docs/wargames/leviathan/"><strong>Leviathan</strong></a></td>
+      <td>Reverse engineering</td>
+      <td>tracing small setuid programs, with no programming required</td>
     </tr>
   </tbody>
 </table>
@@ -1447,24 +1464,24 @@ function zer0CopyFeedback(btn, success) {
     <tr>
       <th>Game</th>
       <th>Focus</th>
-      <th>Description</th>
+      <th>What you will practise</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td><strong>Natas</strong></td>
-      <td>Web Security</td>
-      <td>Server-side web vulnerabilities (injection, auth bypass)</td>
+      <td><a href="docs/wargames/narnia/"><strong>Narnia</strong></a></td>
+      <td>Binary exploitation</td>
+      <td>buffer overflows and format strings, with source code provided</td>
     </tr>
     <tr>
-      <td><strong>Narnia</strong></td>
-      <td>Buffer Overflows</td>
-      <td>Stack-based buffer overflow exploitation</td>
+      <td><a href="docs/wargames/behemoth/"><strong>Behemoth</strong></a></td>
+      <td>Binary exploitation</td>
+      <td>overflows, format strings and race conditions without source</td>
     </tr>
     <tr>
-      <td><strong>Behemoth</strong></td>
-      <td>Binary Analysis</td>
-      <td>More advanced binary exploitation</td>
+      <td><a href="docs/wargames/utumno/"><strong>Utumno</strong></a></td>
+      <td>Binary exploitation</td>
+      <td>harder binaries, a step above Behemoth</td>
     </tr>
   </tbody>
 </table>
@@ -1476,52 +1493,93 @@ function zer0CopyFeedback(btn, success) {
     <tr>
       <th>Game</th>
       <th>Focus</th>
-      <th>Description</th>
+      <th>What you will practise</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td><strong>Utumno</strong></td>
-      <td>Advanced Exploitation</td>
-      <td>Complex binary challenges</td>
+      <td><a href="docs/wargames/maze/"><strong>Maze</strong></a></td>
+      <td>Exploitation and reversing</td>
+      <td>tricky, unconventional levels that call for <code class="language-plaintext highlighter-rouge">gdb</code></td>
     </tr>
     <tr>
-      <td><strong>Maze</strong></td>
-      <td>Advanced Topics</td>
-      <td>Maze-like binary challenges</td>
+      <td><a href="docs/wargames/manpage/"><strong>Manpage</strong></a></td>
+      <td>Code auditing</td>
+      <td>finding bugs by reading manual pages for C pitfalls</td>
     </tr>
     <tr>
-      <td><strong>Vortex</strong></td>
-      <td>Systems Programming</td>
-      <td>Low-level systems and exploitation</td>
+      <td><a href="docs/wargames/vortex/"><strong>Vortex</strong></a></td>
+      <td>Mixed advanced topics</td>
+      <td>network programming, heap bugs, weak crypto, reverse engineering</td>
     </tr>
     <tr>
-      <td><strong>Manpage</strong></td>
-      <td>Documentation Skills</td>
-      <td>Reading and understanding man pages</td>
+      <td><a href="docs/wargames/drifter/"><strong>Drifter</strong></a></td>
+      <td>Mixed advanced topics</td>
+      <td>remote services, C++ and heap corruption, ASLR</td>
+    </tr>
+    <tr>
+      <td><a href="docs/wargames/formulaone/"><strong>FormulaOne</strong></a></td>
+      <td>Exploitation</td>
+      <td>a game rescued from intruded.net</td>
     </tr>
   </tbody>
 </table>
 
+<h3 id="archived-and-downloadable">Archived and downloadable</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Game</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="docs/wargames/semtex/"><strong>Semtex</strong></a></td>
+      <td>offline; network programming and reverse engineering</td>
+    </tr>
+    <tr>
+      <td><a href="docs/wargames/blacksun/"><strong>Blacksun</strong></a></td>
+      <td>currently down; exploiting hardened hosts</td>
+    </tr>
+    <tr>
+      <td><a href="docs/wargames/abraxas/"><strong>Abraxas</strong></a>, <a href="docs/wargames/hes2010/"><strong>HES2010</strong></a>, <a href="docs/wargames/monxla/"><strong>Monxla</strong></a>, <a href="docs/wargames/kishi/"><strong>Kishi</strong></a></td>
+      <td>released conference games you run locally as virtual machines</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The <a href="docs/wargames/">full games index</a> compares all of them, including levels, SSH ports and difficulty.</p>
+
 <h2 id="how-to-get-started">How to Get Started</h2>
 
 <ol>
-  <li><strong>Start with Bandit</strong> — It teaches the basics you’ll need for every other game</li>
-  <li><strong>Connect via SSH</strong>: <code class="language-plaintext highlighter-rouge">ssh bandit0@bandit.labs.overthewire.org -p 2220</code> (password: <code class="language-plaintext highlighter-rouge">bandit0</code>)</li>
-  <li><strong>Progress through levels</strong> — Each level’s password unlocks the next</li>
-  <li><strong>Take notes</strong> — Document your approach for each level as a learning exercise</li>
+  <li><strong>Start with Bandit.</strong> It teaches the basics you will need for every other game.</li>
+  <li><strong>Connect via SSH:</strong> <code class="language-plaintext highlighter-rouge">ssh bandit0@bandit.labs.overthewire.org -p 2220</code> (password: <code class="language-plaintext highlighter-rouge">bandit0</code>). Every game uses its own port.</li>
+  <li><strong>Progress through the levels.</strong> Each level’s password unlocks the next.</li>
+  <li><strong>Take notes.</strong> Record the password, the command that worked, and why it worked. Passwords are not saved for you.</li>
+  <li><strong>Pick your next game</strong> from the suggested order: Bandit, then one of Natas, Krypton or Leviathan, then Narnia, Behemoth, Utumno and Maze.</li>
 </ol>
+
+<h2 id="ground-rules">Ground Rules</h2>
+
+<ul>
+  <li>Only attack the wargame servers and the accounts the games provide. Never use these techniques against systems you do not own or have written permission to test.</li>
+  <li>Do not disrupt other players, and clean up after yourself in <code class="language-plaintext highlighter-rouge">/tmp</code>.</li>
+  <li>Do not publish passwords or step-by-step solutions. Write about the concepts instead.</li>
+</ul>
 
 <h2 id="about-this-content">About This Content</h2>
 
-<p>This documentation is automatically aggregated from the <a href="https://github.com/OverTheWireOrg/OverTheWire-website">OverTheWire-website repository</a> using the docs aggregation pipeline in <code class="language-plaintext highlighter-rouge">scripts/docs-aggregator/</code>. The content is transformed to fit the zer0-mistakes theme while preserving the original educational material.</p>
+<p>This documentation is aggregated from the <a href="https://github.com/OverTheWireOrg/OverTheWire-website">OverTheWire-website repository</a> using the docs aggregation pipeline in <code class="language-plaintext highlighter-rouge">scripts/docs-aggregator/</code>. The content is transformed to fit the zer0-mistakes theme while preserving the original educational material. The <strong>Study guide</strong> sections are additions made by this site and sit after the upstream text, between <code class="language-plaintext highlighter-rouge">study-guide</code> marker comments, so they can be told apart from vendored content.</p>
 
-<p>To update this content, run:</p>
+<p>To update the upstream content, run:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bash scripts/docs-aggregator/aggregate_docs.sh
 </code></pre></div></div>
 
-<p>See the <a href="https://github.com/bamr87/wargames/blob/main/scripts/docs-aggregator/README.md">aggregator documentation</a> for details.</p>
+<p>See the <a href="https://github.com/bamr87/wargames/blob/main/scripts/docs-aggregator/README.md">aggregator documentation</a> for details, including how to carry the study guides over when you re-sync.</p>
 
 
     
@@ -2107,7 +2165,7 @@ function zer0CopyFeedback(btn, success) {
 <script src="/wargames/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 
-<script type="module" src="/wargames/assets/js/modules/navigation/index.js?v=1792009165"></script>
+<script type="module" src="/wargames/assets/js/modules/navigation/index.js?v=1792188318"></script>
 
 
 <script defer src="/wargames/assets/js/ui-helpers.js"></script>
@@ -2134,7 +2192,7 @@ function zer0CopyFeedback(btn, success) {
   window.OBSIDIAN_CONFIG.attachmentsPath = "/wargames/assets/images/notes";
   window.OBSIDIAN_CONFIG.tagBase = "/wargames/tags/";
   window.OBSIDIAN_CONFIG.cytoscapeUrl = "/wargames/assets/vendor/cytoscape/cytoscape.min.js";
-</script><script defer src="/wargames/assets/js/obsidian-wiki-links.js?v=1792009165"></script>
+</script><script defer src="/wargames/assets/js/obsidian-wiki-links.js?v=1792188318"></script>
 
 
         </div>

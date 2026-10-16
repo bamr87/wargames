@@ -259,8 +259,8 @@
 <meta property="og:title" content="Bandit21" />
 <meta name="author" content="Amr Abdel-Motaleb" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Level Goal There is a setuid binary in the homedirectory that does the following: it makes a connection to localhost on the port you specify as a commandline argument. It then reads a line of text from the connection and compares it to the…" />
-<meta name="twitter:description" property="og:description" content="Level Goal There is a setuid binary in the homedirectory that does the following: it makes a connection to localhost on the port you specify as a commandline argument. It then reads a line of text from the connection and compares it to the…" />
+<meta name="description" content="Bandit Level 21 — run your own network listener in the background so a setuid program can connect to it." />
+<meta name="twitter:description" property="og:description" content="Bandit Level 21 — run your own network listener in the background so a setuid program can connect to it." />
 <link rel="canonical" href="https://bamr87.github.io/wargames/docs/wargames/bandit/bandit21/" />
 <meta property="og:url" content="https://bamr87.github.io/wargames/docs/wargames/bandit/bandit21/" />
 <meta property="og:site_name" content="Wargames" />
@@ -270,7 +270,7 @@
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="Bandit21" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Amr Abdel-Motaleb"},"dateModified":"2026-04-07T01:41:08+00:00","datePublished":"2026-04-07T01:41:08+00:00","description":"Level Goal There is a setuid binary in the homedirectory that does the following: it makes a connection to localhost on the port you specify as a commandline argument. It then reads a line of text from the connection and compares it to the…","headline":"Bandit21","mainEntityOfPage":{"@type":"WebPage","@id":"https://bamr87.github.io/wargames/docs/wargames/bandit/bandit21/"},"url":"https://bamr87.github.io/wargames/docs/wargames/bandit/bandit21/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Amr Abdel-Motaleb"},"dateModified":"2026-04-07T01:41:08+00:00","datePublished":"2026-04-07T01:41:08+00:00","description":"Bandit Level 21 — run your own network listener in the background so a setuid program can connect to it.","headline":"Bandit21","mainEntityOfPage":{"@type":"WebPage","@id":"https://bamr87.github.io/wargames/docs/wargames/bandit/bandit21/"},"url":"https://bamr87.github.io/wargames/docs/wargames/bandit/bandit21/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -1223,7 +1223,7 @@ document.addEventListener("DOMContentLoaded", function () {
     </div>
     <div class="col-6">
       <div class="p-2 bg-body-tertiary rounded text-center">
-        <small class="text-body-secondary d-block">Last Build</small><code class="small" data-testid="theme-build-stamp">Oct 14, 20:19</code>
+        <small class="text-body-secondary d-block">Last Build</small><code class="small" data-testid="theme-build-stamp">Oct 16, 22:05</code>
       </div>
     </div>
 
@@ -3018,12 +3018,7 @@ function zer0CopyFeedback(btn, success) {
       <h1 class="bd-intro-title">Bandit21</h1>
       
       
-      <p class="bd-intro-description">Level Goal
-----------
-There is a setuid binary in the homedirectory that does the
-following: it makes a connection to localhost on the port you
-specify as a commandline argument. It then reads a line of text from
-the connection and compares it to the...</p>
+      <p class="bd-intro-description">Bandit Level 21 — run your own network listener in the background so a setuid program can connect to it.</p>
       
     </div>
 
@@ -3115,7 +3110,7 @@ the connection and compares it to the...</p>
              title="Copies a cleaned article summary to your clipboard, then opens LinkedIn sharing"
              data-share-url="https://bamr87.github.io/wargames/docs/wargames/bandit/bandit21/"
              data-share-title="Bandit21"
-             data-share-description="Level Goal----------There is a setuid binary in the homedirectory that does thefollowing: it makes a connection to localhost on the port youspecify as a commandline argument. It then reads a line of text fromthe connection and compares it to the...">
+             data-share-description="Bandit Level 21 — run your own network listener in the background so a setuid program can connect to it.">
             <i class="bi bi-linkedin me-2"></i>Share on LinkedIn
           </a>
         </li>
@@ -3208,7 +3203,7 @@ the connection and compares it to the...</p>
       
       
         
-<ul class="list-group-flush"><li class="list-group-item"><a href="#level-goal" class="">Level Goal</a></li><li class="list-group-item"><a href="#commands-you-may-need-to-solve-this-level" class="">Commands you may need to solve this level</a></li></ul>
+<ul class="list-group-flush"><li class="list-group-item"><a href="#level-goal" class="">Level Goal</a></li><li class="list-group-item"><a href="#commands-you-may-need-to-solve-this-level" class="">Commands you may need to solve this level</a></li><li class="list-group-item"><a href="#study-guide" class="">Study guide</a><ul><li class="list-group-item"><a href="#what-this-level-teaches" class="">What this level teaches</a></li><li class="list-group-item"><a href="#key-ideas" class="">Key ideas</a></li><li class="list-group-item"><a href="#how-to-approach-it" class="">How to approach it</a></li><li class="list-group-item"><a href="#why-it-matters" class="">Why it matters</a></li></ul></li></ul>
 
       
     </nav>
@@ -3237,6 +3232,38 @@ the connection and compares it to the...</p>
 <h2 id="commands-you-may-need-to-solve-this-level">Commands you may need to solve this level</h2>
 <p>ssh, nc, cat, bash, screen, tmux, Unix ‘job control’ (bg, fg, jobs, &amp;, CTRL-Z, …)</p>
 
+<!-- study-guide:start -->
+
+<h2 id="study-guide">Study guide</h2>
+
+<p><strong>Level map:</strong> logged in as <code class="language-plaintext highlighter-rouge">bandit20</code>, find the password for <code class="language-plaintext highlighter-rouge">bandit21</code>.</p>
+
+<h3 id="what-this-level-teaches">What this level teaches</h3>
+
+<p>Reversing the client and server roles, and juggling several things at once in one terminal.</p>
+
+<h3 id="key-ideas">Key ideas</h3>
+
+<ul>
+  <li><strong>Listening.</strong> <code class="language-plaintext highlighter-rouge">nc -l PORT</code> waits for someone to connect (the exact syntax varies between netcat versions, so check <code class="language-plaintext highlighter-rouge">man nc</code>). Think of it as building a tiny server by hand.</li>
+  <li><strong>The role flip.</strong> This time the setuid program is the client; you provide the server.</li>
+  <li><strong>Job control.</strong> Press Ctrl-Z to suspend a command, <code class="language-plaintext highlighter-rouge">bg</code> to continue it in the background, <code class="language-plaintext highlighter-rouge">fg</code> to bring it back, <code class="language-plaintext highlighter-rouge">jobs</code> to list. Adding <code class="language-plaintext highlighter-rouge">&amp;</code> at the end of a command starts it in the background.</li>
+  <li><strong>Alternatives.</strong> A second SSH session, <code class="language-plaintext highlighter-rouge">tmux</code> or <code class="language-plaintext highlighter-rouge">screen</code> solve the same problem by giving you multiple terminals.</li>
+</ul>
+
+<h3 id="how-to-approach-it">How to approach it</h3>
+
+<ol>
+  <li>Start a listener that will send the current password to whatever connects.</li>
+  <li>Launch the setuid program pointing at your listener’s port.</li>
+  <li>Read what the program sends back; as the Level Goal says, test your listener on its own first to be sure it behaves as you expect.</li>
+</ol>
+
+<h3 id="why-it-matters">Why it matters</h3>
+
+<p>Reverse connections, callbacks and test servers are everyday techniques for debugging networks and, in security, for understanding how malware communicates.</p>
+
+<!-- study-guide:end -->
 
         </div>
       </div>
@@ -3539,7 +3566,7 @@ the connection and compares it to the...</p>
     </div>
   </div>
 </aside>
-<script src="/wargames/assets/js/obsidian-local-graph.js?v=1792009165" defer></script>
+<script src="/wargames/assets/js/obsidian-local-graph.js?v=1792188318" defer></script>
 
 
 
@@ -3893,7 +3920,7 @@ the connection and compares it to the...</p>
 <script src="/wargames/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 
-<script type="module" src="/wargames/assets/js/modules/navigation/index.js?v=1792009165"></script>
+<script type="module" src="/wargames/assets/js/modules/navigation/index.js?v=1792188318"></script>
 
 
 <script defer src="/wargames/assets/js/ui-helpers.js"></script>
@@ -3920,7 +3947,7 @@ the connection and compares it to the...</p>
   window.OBSIDIAN_CONFIG.attachmentsPath = "/wargames/assets/images/notes";
   window.OBSIDIAN_CONFIG.tagBase = "/wargames/tags/";
   window.OBSIDIAN_CONFIG.cytoscapeUrl = "/wargames/assets/vendor/cytoscape/cytoscape.min.js";
-</script><script defer src="/wargames/assets/js/obsidian-wiki-links.js?v=1792009165"></script>
+</script><script defer src="/wargames/assets/js/obsidian-wiki-links.js?v=1792188318"></script>
 
 
         </div>

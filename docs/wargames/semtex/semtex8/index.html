@@ -259,8 +259,8 @@
 <meta property="og:title" content="Semtex8" />
 <meta name="author" content="Amr Abdel-Motaleb" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Non-sniffable data This level is about some very simple covert channel, about transferring information that cannot possibly be sniffed. There is a socket file in /rdx/nature. It is a local Unix socket. Receive data from it until EO…" />
-<meta name="twitter:description" property="og:description" content="Non-sniffable data This level is about some very simple covert channel, about transferring information that cannot possibly be sniffed. There is a socket file in /rdx/nature. It is a local Unix socket. Receive data from it until EO…" />
+<meta name="description" content="Semtex Level 8 — receive a file through a timing covert channel where delays between bytes stand for bytes that were never sent." />
+<meta name="twitter:description" property="og:description" content="Semtex Level 8 — receive a file through a timing covert channel where delays between bytes stand for bytes that were never sent." />
 <link rel="canonical" href="https://bamr87.github.io/wargames/docs/wargames/semtex/semtex8/" />
 <meta property="og:url" content="https://bamr87.github.io/wargames/docs/wargames/semtex/semtex8/" />
 <meta property="og:site_name" content="Wargames" />
@@ -270,7 +270,7 @@
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="Semtex8" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Amr Abdel-Motaleb"},"dateModified":"2026-04-07T01:41:09+00:00","datePublished":"2026-04-07T01:41:09+00:00","description":"Non-sniffable data This level is about some very simple covert channel, about transferring information that cannot possibly be sniffed. There is a socket file in /rdx/nature. It is a local Unix socket. Receive data from it until EO…","headline":"Semtex8","mainEntityOfPage":{"@type":"WebPage","@id":"https://bamr87.github.io/wargames/docs/wargames/semtex/semtex8/"},"url":"https://bamr87.github.io/wargames/docs/wargames/semtex/semtex8/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Amr Abdel-Motaleb"},"dateModified":"2026-04-07T01:41:09+00:00","datePublished":"2026-04-07T01:41:09+00:00","description":"Semtex Level 8 — receive a file through a timing covert channel where delays between bytes stand for bytes that were never sent.","headline":"Semtex8","mainEntityOfPage":{"@type":"WebPage","@id":"https://bamr87.github.io/wargames/docs/wargames/semtex/semtex8/"},"url":"https://bamr87.github.io/wargames/docs/wargames/semtex/semtex8/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -1223,7 +1223,7 @@ document.addEventListener("DOMContentLoaded", function () {
     </div>
     <div class="col-6">
       <div class="p-2 bg-body-tertiary rounded text-center">
-        <small class="text-body-secondary d-block">Last Build</small><code class="small" data-testid="theme-build-stamp">Oct 14, 20:19</code>
+        <small class="text-body-secondary d-block">Last Build</small><code class="small" data-testid="theme-build-stamp">Oct 16, 22:05</code>
       </div>
     </div>
 
@@ -3018,12 +3018,7 @@ function zer0CopyFeedback(btn, success) {
       <h1 class="bd-intro-title">Semtex8</h1>
       
       
-      <p class="bd-intro-description">Non-sniffable data
-------------------
-This level is about some very simple covert channel, about
-transferring information that cannot possibly be sniffed.
-There is a socket file in /rdx/nature. It is a local Unix socket.
-Receive data from it until EO...</p>
+      <p class="bd-intro-description">Semtex Level 8 — receive a file through a timing covert channel where delays between bytes stand for bytes that were never sent.</p>
       
     </div>
 
@@ -3115,7 +3110,7 @@ Receive data from it until EO...</p>
              title="Copies a cleaned article summary to your clipboard, then opens LinkedIn sharing"
              data-share-url="https://bamr87.github.io/wargames/docs/wargames/semtex/semtex8/"
              data-share-title="Semtex8"
-             data-share-description="Non-sniffable data------------------This level is about some very simple covert channel, abouttransferring information that cannot possibly be sniffed.There is a socket file in /rdx/nature. It is a local Unix socket.Receive data from it until EO...">
+             data-share-description="Semtex Level 8 — receive a file through a timing covert channel where delays between bytes stand for bytes that were never sent.">
             <i class="bi bi-linkedin me-2"></i>Share on LinkedIn
           </a>
         </li>
@@ -3208,7 +3203,7 @@ Receive data from it until EO...</p>
       
       
         
-<ul class="list-group-flush"><li class="list-group-item"><a href="#non-sniffable-data" class="">Non-sniffable data</a></li></ul>
+<ul class="list-group-flush"><li class="list-group-item"><a href="#non-sniffable-data" class="">Non-sniffable data</a></li><li class="list-group-item"><a href="#study-guide" class="">Study guide</a><ul><li class="list-group-item"><a href="#what-this-level-teaches" class="">What this level teaches</a></li><li class="list-group-item"><a href="#key-ideas" class="">Key ideas</a></li><li class="list-group-item"><a href="#how-to-approach-it" class="">How to approach it</a></li><li class="list-group-item"><a href="#why-it-matters" class="">Why it matters</a></li></ul></li></ul>
 
       
     </nav>
@@ -3247,6 +3242,38 @@ Receive data from it until EO...</p>
 
 <p>The output file is a .jpg image :)</p>
 
+<!-- study-guide:start -->
+
+<h2 id="study-guide">Study guide</h2>
+
+<p><strong>Level map:</strong> read from the Unix socket <code class="language-plaintext highlighter-rouge">/rdx/nature</code> until end of file and save the result.</p>
+
+<h3 id="what-this-level-teaches">What this level teaches</h3>
+
+<p>Covert channels: hiding data in timing so it cannot be sniffed as content.</p>
+
+<h3 id="key-ideas">Key ideas</h3>
+
+<ul>
+  <li><strong>Timing channel.</strong> The delay before each received byte encodes extra data: a pause in the 1–2 second range stands for one letter, 2–3 seconds another, and so on, as the page’s table shows.</li>
+  <li><strong>Reconstruct the data.</strong> Insert the omitted characters exactly where the delays occurred.</li>
+  <li><strong>The result.</strong> The completed file is a JPEG image.</li>
+  <li><strong>Local Unix socket.</strong> A file-like endpoint for local inter-process communication.</li>
+</ul>
+
+<h3 id="how-to-approach-it">How to approach it</h3>
+
+<ol>
+  <li>Write a reader that records the time between bytes.</li>
+  <li>Apply the table to insert the hidden bytes.</li>
+  <li>Verify the output with <code class="language-plaintext highlighter-rouge">file</code> and open the picture.</li>
+</ol>
+
+<h3 id="why-it-matters">Why it matters</h3>
+
+<p>Covert timing channels exist in real malware and in side-channel attacks.</p>
+
+<!-- study-guide:end -->
 
         </div>
       </div>
@@ -3549,7 +3576,7 @@ Receive data from it until EO...</p>
     </div>
   </div>
 </aside>
-<script src="/wargames/assets/js/obsidian-local-graph.js?v=1792009165" defer></script>
+<script src="/wargames/assets/js/obsidian-local-graph.js?v=1792188318" defer></script>
 
 
 
@@ -3903,7 +3930,7 @@ Receive data from it until EO...</p>
 <script src="/wargames/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 
-<script type="module" src="/wargames/assets/js/modules/navigation/index.js?v=1792009165"></script>
+<script type="module" src="/wargames/assets/js/modules/navigation/index.js?v=1792188318"></script>
 
 
 <script defer src="/wargames/assets/js/ui-helpers.js"></script>
@@ -3930,7 +3957,7 @@ Receive data from it until EO...</p>
   window.OBSIDIAN_CONFIG.attachmentsPath = "/wargames/assets/images/notes";
   window.OBSIDIAN_CONFIG.tagBase = "/wargames/tags/";
   window.OBSIDIAN_CONFIG.cytoscapeUrl = "/wargames/assets/vendor/cytoscape/cytoscape.min.js";
-</script><script defer src="/wargames/assets/js/obsidian-wiki-links.js?v=1792009165"></script>
+</script><script defer src="/wargames/assets/js/obsidian-wiki-links.js?v=1792188318"></script>
 
 
         </div>

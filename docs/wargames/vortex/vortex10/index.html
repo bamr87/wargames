@@ -259,8 +259,8 @@
 <meta property="og:title" content="Vortex10" />
 <meta name="author" content="Amr Abdel-Motaleb" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Random? Read in 20 integers and write the seed used to generate those numbers in unsigned little endian format. You have a time limit of 30 seconds to do this. You must login to [vortex.labs.overthewire.org][]" />
-<meta name="twitter:description" property="og:description" content="Random? Read in 20 integers and write the seed used to generate those numbers in unsigned little endian format. You have a time limit of 30 seconds to do this. You must login to [vortex.labs.overthewire.org][]" />
+<meta name="description" content="Vortex Level 10 — recover the seed that produced 20 random-looking integers within a 30-second time limit." />
+<meta name="twitter:description" property="og:description" content="Vortex Level 10 — recover the seed that produced 20 random-looking integers within a 30-second time limit." />
 <link rel="canonical" href="https://bamr87.github.io/wargames/docs/wargames/vortex/vortex10/" />
 <meta property="og:url" content="https://bamr87.github.io/wargames/docs/wargames/vortex/vortex10/" />
 <meta property="og:site_name" content="Wargames" />
@@ -270,7 +270,7 @@
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="Vortex10" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Amr Abdel-Motaleb"},"dateModified":"2026-04-07T01:41:09+00:00","datePublished":"2026-04-07T01:41:09+00:00","description":"Random? Read in 20 integers and write the seed used to generate those numbers in unsigned little endian format. You have a time limit of 30 seconds to do this. You must login to [vortex.labs.overthewire.org][]","headline":"Vortex10","mainEntityOfPage":{"@type":"WebPage","@id":"https://bamr87.github.io/wargames/docs/wargames/vortex/vortex10/"},"url":"https://bamr87.github.io/wargames/docs/wargames/vortex/vortex10/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Amr Abdel-Motaleb"},"dateModified":"2026-04-07T01:41:09+00:00","datePublished":"2026-04-07T01:41:09+00:00","description":"Vortex Level 10 — recover the seed that produced 20 random-looking integers within a 30-second time limit.","headline":"Vortex10","mainEntityOfPage":{"@type":"WebPage","@id":"https://bamr87.github.io/wargames/docs/wargames/vortex/vortex10/"},"url":"https://bamr87.github.io/wargames/docs/wargames/vortex/vortex10/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -1223,7 +1223,7 @@ document.addEventListener("DOMContentLoaded", function () {
     </div>
     <div class="col-6">
       <div class="p-2 bg-body-tertiary rounded text-center">
-        <small class="text-body-secondary d-block">Last Build</small><code class="small" data-testid="theme-build-stamp">Oct 14, 20:19</code>
+        <small class="text-body-secondary d-block">Last Build</small><code class="small" data-testid="theme-build-stamp">Oct 16, 22:05</code>
       </div>
     </div>
 
@@ -3018,12 +3018,7 @@ function zer0CopyFeedback(btn, success) {
       <h1 class="bd-intro-title">Vortex10</h1>
       
       
-      <p class="bd-intro-description">Random?
--------
-Read in 20 integers and write the seed used to generate those
-numbers in unsigned little endian format. You have a time limit of
-30 seconds to do this. You must login to
-[vortex.labs.overthewire.org][]</p>
+      <p class="bd-intro-description">Vortex Level 10 — recover the seed that produced 20 random-looking integers within a 30-second time limit.</p>
       
     </div>
 
@@ -3115,7 +3110,7 @@ numbers in unsigned little endian format. You have a time limit of
              title="Copies a cleaned article summary to your clipboard, then opens LinkedIn sharing"
              data-share-url="https://bamr87.github.io/wargames/docs/wargames/vortex/vortex10/"
              data-share-title="Vortex10"
-             data-share-description="Random?-------Read in 20 integers and write the seed used to generate thosenumbers in unsigned little endian format. You have a time limit of30 seconds to do this. You must login to[vortex.labs.overthewire.org][]">
+             data-share-description="Vortex Level 10 — recover the seed that produced 20 random-looking integers within a 30-second time limit.">
             <i class="bi bi-linkedin me-2"></i>Share on LinkedIn
           </a>
         </li>
@@ -3208,7 +3203,7 @@ numbers in unsigned little endian format. You have a time limit of
       
       
         
-<ul class="list-group-flush"><li class="list-group-item"><a href="#random" class="">Random?</a></li></ul>
+<ul class="list-group-flush"><li class="list-group-item"><a href="#random" class="">Random?</a></li><li class="list-group-item"><a href="#study-guide" class="">Study guide</a><ul><li class="list-group-item"><a href="#what-this-level-teaches" class="">What this level teaches</a></li><li class="list-group-item"><a href="#key-ideas" class="">Key ideas</a></li><li class="list-group-item"><a href="#how-to-approach-it" class="">How to approach it</a></li><li class="list-group-item"><a href="#why-it-matters" class="">Why it matters</a></li></ul></li></ul>
 
       
     </nav>
@@ -3232,6 +3227,38 @@ numbers in unsigned little endian format. You have a time limit of
 <h2 id="random">Random?</h2>
 <p>Read in 20 integers and write the seed used to generate those numbers in unsigned little endian format. You have a time limit of 30 seconds to do this. You must login to <a href="ssh://vortex.labs.overthewire.org:2228">vortex.labs.overthewire.org</a></p>
 
+<!-- study-guide:start -->
+
+<h2 id="study-guide">Study guide</h2>
+
+<p><strong>Level map:</strong> logged in as <code class="language-plaintext highlighter-rouge">vortex10</code>, obtain access to <code class="language-plaintext highlighter-rouge">vortex11</code>.</p>
+
+<h3 id="what-this-level-teaches">What this level teaches</h3>
+
+<p>Why pseudo-random number generators are predictable if you know how they work.</p>
+
+<h3 id="key-ideas">Key ideas</h3>
+
+<ul>
+  <li><strong>PRNG state.</strong> A generator’s output is entirely determined by its seed and algorithm.</li>
+  <li><strong>The task.</strong> Read 20 integers and write back the seed that generated them, in unsigned little-endian format, within 30 seconds.</li>
+  <li><strong>Search or invert.</strong> Either search the seed space efficiently or invert the generator’s algorithm.</li>
+  <li><strong>Time pressure.</strong> A script is essential; manual work will not meet the limit.</li>
+</ul>
+
+<h3 id="how-to-approach-it">How to approach it</h3>
+
+<ol>
+  <li>Identify the generator and how it was seeded from the level’s behaviour.</li>
+  <li>Write a program that reproduces its output for a candidate seed.</li>
+  <li>Automate the exchange end to end and test timing.</li>
+</ol>
+
+<h3 id="why-it-matters">Why it matters</h3>
+
+<p>Predictable seeds have broken real systems, from session tokens to game servers and cryptographic keys.</p>
+
+<!-- study-guide:end -->
 
         </div>
       </div>
@@ -3534,7 +3561,7 @@ numbers in unsigned little endian format. You have a time limit of
     </div>
   </div>
 </aside>
-<script src="/wargames/assets/js/obsidian-local-graph.js?v=1792009165" defer></script>
+<script src="/wargames/assets/js/obsidian-local-graph.js?v=1792188318" defer></script>
 
 
 
@@ -3888,7 +3915,7 @@ numbers in unsigned little endian format. You have a time limit of
 <script src="/wargames/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 
-<script type="module" src="/wargames/assets/js/modules/navigation/index.js?v=1792009165"></script>
+<script type="module" src="/wargames/assets/js/modules/navigation/index.js?v=1792188318"></script>
 
 
 <script defer src="/wargames/assets/js/ui-helpers.js"></script>
@@ -3915,7 +3942,7 @@ numbers in unsigned little endian format. You have a time limit of
   window.OBSIDIAN_CONFIG.attachmentsPath = "/wargames/assets/images/notes";
   window.OBSIDIAN_CONFIG.tagBase = "/wargames/tags/";
   window.OBSIDIAN_CONFIG.cytoscapeUrl = "/wargames/assets/vendor/cytoscape/cytoscape.min.js";
-</script><script defer src="/wargames/assets/js/obsidian-wiki-links.js?v=1792009165"></script>
+</script><script defer src="/wargames/assets/js/obsidian-wiki-links.js?v=1792188318"></script>
 
 
         </div>

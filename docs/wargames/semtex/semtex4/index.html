@@ -259,8 +259,8 @@
 <meta property="og:title" content="Semtex4" />
 <meta name="author" content="Amr Abdel-Motaleb" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Ptrace your way" />
-<meta name="twitter:description" property="og:description" content="Ptrace your way" />
+<meta name="description" content="Semtex Level 4 — make a stripped, statically linked program print the next level’s password, using ptrace." />
+<meta name="twitter:description" property="og:description" content="Semtex Level 4 — make a stripped, statically linked program print the next level’s password, using ptrace." />
 <link rel="canonical" href="https://bamr87.github.io/wargames/docs/wargames/semtex/semtex4/" />
 <meta property="og:url" content="https://bamr87.github.io/wargames/docs/wargames/semtex/semtex4/" />
 <meta property="og:site_name" content="Wargames" />
@@ -270,7 +270,7 @@
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="Semtex4" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Amr Abdel-Motaleb"},"dateModified":"2026-04-07T01:41:09+00:00","datePublished":"2026-04-07T01:41:09+00:00","description":"Ptrace your way","headline":"Semtex4","mainEntityOfPage":{"@type":"WebPage","@id":"https://bamr87.github.io/wargames/docs/wargames/semtex/semtex4/"},"url":"https://bamr87.github.io/wargames/docs/wargames/semtex/semtex4/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Amr Abdel-Motaleb"},"dateModified":"2026-04-07T01:41:09+00:00","datePublished":"2026-04-07T01:41:09+00:00","description":"Semtex Level 4 — make a stripped, statically linked program print the next level’s password, using ptrace.","headline":"Semtex4","mainEntityOfPage":{"@type":"WebPage","@id":"https://bamr87.github.io/wargames/docs/wargames/semtex/semtex4/"},"url":"https://bamr87.github.io/wargames/docs/wargames/semtex/semtex4/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -1223,7 +1223,7 @@ document.addEventListener("DOMContentLoaded", function () {
     </div>
     <div class="col-6">
       <div class="p-2 bg-body-tertiary rounded text-center">
-        <small class="text-body-secondary d-block">Last Build</small><code class="small" data-testid="theme-build-stamp">Oct 14, 20:19</code>
+        <small class="text-body-secondary d-block">Last Build</small><code class="small" data-testid="theme-build-stamp">Oct 16, 22:05</code>
       </div>
     </div>
 
@@ -3018,8 +3018,7 @@ function zer0CopyFeedback(btn, success) {
       <h1 class="bd-intro-title">Semtex4</h1>
       
       
-      <p class="bd-intro-description">Ptrace your way
----------------</p>
+      <p class="bd-intro-description">Semtex Level 4 — make a stripped, statically linked program print the next level's password, using ptrace.</p>
       
     </div>
 
@@ -3111,7 +3110,7 @@ function zer0CopyFeedback(btn, success) {
              title="Copies a cleaned article summary to your clipboard, then opens LinkedIn sharing"
              data-share-url="https://bamr87.github.io/wargames/docs/wargames/semtex/semtex4/"
              data-share-title="Semtex4"
-             data-share-description="Ptrace your way---------------">
+             data-share-description="Semtex Level 4 — make a stripped, statically linked program print the next level&#39;s password, using ptrace.">
             <i class="bi bi-linkedin me-2"></i>Share on LinkedIn
           </a>
         </li>
@@ -3204,7 +3203,7 @@ function zer0CopyFeedback(btn, success) {
       
       
         
-<ul class="list-group-flush"><li class="list-group-item"><a href="#ptrace-your-way" class="">Ptrace your way</a></li></ul>
+<ul class="list-group-flush"><li class="list-group-item"><a href="#ptrace-your-way" class="">Ptrace your way</a></li><li class="list-group-item"><a href="#study-guide" class="">Study guide</a><ul><li class="list-group-item"><a href="#what-this-level-teaches" class="">What this level teaches</a></li><li class="list-group-item"><a href="#key-ideas" class="">Key ideas</a></li><li class="list-group-item"><a href="#how-to-approach-it" class="">How to approach it</a></li><li class="list-group-item"><a href="#why-it-matters" class="">Why it matters</a></li></ul></li></ul>
 
       
     </nav>
@@ -3238,6 +3237,38 @@ function zer0CopyFeedback(btn, success) {
   <li>Read man ptrace</li>
 </ul>
 
+<!-- study-guide:start -->
+
+<h2 id="study-guide">Study guide</h2>
+
+<p><strong>Level map:</strong> the <code class="language-plaintext highlighter-rouge">pass</code> program prints your own level’s password; you must make it print the next one.</p>
+
+<h3 id="what-this-level-teaches">What this level teaches</h3>
+
+<p>Using <code class="language-plaintext highlighter-rouge">ptrace</code>, the system call behind debuggers, to alter another process.</p>
+
+<h3 id="key-ideas">Key ideas</h3>
+
+<ul>
+  <li><strong>Stripped, static binary.</strong> The page shows the file is 32-bit, statically linked and stripped, so there are no symbols and no dynamic library calls to intercept.</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">geteuid()</code>.</strong> The program decides what to print from the effective user ID.</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">ptrace</code>.</strong> A tracing parent can read and change a child’s registers and memory, so you can alter the value the child sees.</li>
+  <li><strong>Reading.</strong> <code class="language-plaintext highlighter-rouge">man ptrace</code>, as the page advises.</li>
+</ul>
+
+<h3 id="how-to-approach-it">How to approach it</h3>
+
+<ol>
+  <li>Find where the program calls <code class="language-plaintext highlighter-rouge">geteuid</code> (by tracing system calls).</li>
+  <li>Write a launcher that traces the program and changes the result.</li>
+  <li>Run it and read the output.</li>
+</ol>
+
+<h3 id="why-it-matters">Why it matters</h3>
+
+<p>This is how debuggers, sandboxes and many anti-debugging tricks work.</p>
+
+<!-- study-guide:end -->
 
         </div>
       </div>
@@ -3540,7 +3571,7 @@ function zer0CopyFeedback(btn, success) {
     </div>
   </div>
 </aside>
-<script src="/wargames/assets/js/obsidian-local-graph.js?v=1792009165" defer></script>
+<script src="/wargames/assets/js/obsidian-local-graph.js?v=1792188318" defer></script>
 
 
 
@@ -3894,7 +3925,7 @@ function zer0CopyFeedback(btn, success) {
 <script src="/wargames/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 
-<script type="module" src="/wargames/assets/js/modules/navigation/index.js?v=1792009165"></script>
+<script type="module" src="/wargames/assets/js/modules/navigation/index.js?v=1792188318"></script>
 
 
 <script defer src="/wargames/assets/js/ui-helpers.js"></script>
@@ -3921,7 +3952,7 @@ function zer0CopyFeedback(btn, success) {
   window.OBSIDIAN_CONFIG.attachmentsPath = "/wargames/assets/images/notes";
   window.OBSIDIAN_CONFIG.tagBase = "/wargames/tags/";
   window.OBSIDIAN_CONFIG.cytoscapeUrl = "/wargames/assets/vendor/cytoscape/cytoscape.min.js";
-</script><script defer src="/wargames/assets/js/obsidian-wiki-links.js?v=1792009165"></script>
+</script><script defer src="/wargames/assets/js/obsidian-wiki-links.js?v=1792188318"></script>
 
 
         </div>

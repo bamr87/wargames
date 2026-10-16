@@ -259,8 +259,8 @@
 <meta property="og:title" content="Narnia9" />
 <meta name="author" content="Amr Abdel-Motaleb" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="There is no information for this level, intentionally." />
-<meta name="twitter:description" property="og:description" content="There is no information for this level, intentionally." />
+<meta name="description" content="Narnia Level 9 — the final Narnia page in this mirror; apply everything from Levels 0–8 and consolidate your exploitation skills." />
+<meta name="twitter:description" property="og:description" content="Narnia Level 9 — the final Narnia page in this mirror; apply everything from Levels 0–8 and consolidate your exploitation skills." />
 <link rel="canonical" href="https://bamr87.github.io/wargames/docs/wargames/narnia/narnia9/" />
 <meta property="og:url" content="https://bamr87.github.io/wargames/docs/wargames/narnia/narnia9/" />
 <meta property="og:site_name" content="Wargames" />
@@ -270,7 +270,7 @@
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="Narnia9" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Amr Abdel-Motaleb"},"dateModified":"2026-04-07T01:41:09+00:00","datePublished":"2026-04-07T01:41:09+00:00","description":"There is no information for this level, intentionally.","headline":"Narnia9","mainEntityOfPage":{"@type":"WebPage","@id":"https://bamr87.github.io/wargames/docs/wargames/narnia/narnia9/"},"url":"https://bamr87.github.io/wargames/docs/wargames/narnia/narnia9/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Amr Abdel-Motaleb"},"dateModified":"2026-04-07T01:41:09+00:00","datePublished":"2026-04-07T01:41:09+00:00","description":"Narnia Level 9 — the final Narnia page in this mirror; apply everything from Levels 0–8 and consolidate your exploitation skills.","headline":"Narnia9","mainEntityOfPage":{"@type":"WebPage","@id":"https://bamr87.github.io/wargames/docs/wargames/narnia/narnia9/"},"url":"https://bamr87.github.io/wargames/docs/wargames/narnia/narnia9/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -1223,7 +1223,7 @@ document.addEventListener("DOMContentLoaded", function () {
     </div>
     <div class="col-6">
       <div class="p-2 bg-body-tertiary rounded text-center">
-        <small class="text-body-secondary d-block">Last Build</small><code class="small" data-testid="theme-build-stamp">Oct 14, 20:19</code>
+        <small class="text-body-secondary d-block">Last Build</small><code class="small" data-testid="theme-build-stamp">Oct 16, 22:05</code>
       </div>
     </div>
 
@@ -3018,7 +3018,7 @@ function zer0CopyFeedback(btn, success) {
       <h1 class="bd-intro-title">Narnia9</h1>
       
       
-      <p class="bd-intro-description">There is no information for this level, intentionally.</p>
+      <p class="bd-intro-description">Narnia Level 9 — the final Narnia page in this mirror; apply everything from Levels 0–8 and consolidate your exploitation skills.</p>
       
     </div>
 
@@ -3110,7 +3110,7 @@ function zer0CopyFeedback(btn, success) {
              title="Copies a cleaned article summary to your clipboard, then opens LinkedIn sharing"
              data-share-url="https://bamr87.github.io/wargames/docs/wargames/narnia/narnia9/"
              data-share-title="Narnia9"
-             data-share-description="There is no information for this level, intentionally.">
+             data-share-description="Narnia Level 9 — the final Narnia page in this mirror; apply everything from Levels 0–8 and consolidate your exploitation skills.">
             <i class="bi bi-linkedin me-2"></i>Share on LinkedIn
           </a>
         </li>
@@ -3202,7 +3202,9 @@ function zer0CopyFeedback(btn, success) {
 
       
       
-        <p class="text-body-secondary small fst-italic">No sections on this page.</p>
+        
+<ul class="list-group-flush"><li class="list-group-item"><a href="#study-guide" class="">Study guide</a><ul><li class="list-group-item"><a href="#what-this-level-teaches" class="">What this level teaches</a></li><li class="list-group-item"><a href="#key-ideas" class="">Key ideas</a></li><li class="list-group-item"><a href="#how-to-approach-it" class="">How to approach it</a></li><li class="list-group-item"><a href="#what-to-do-next" class="">What to do next</a></li></ul></li></ul>
+
       
     </nav>
   </div>
@@ -3223,6 +3225,42 @@ function zer0CopyFeedback(btn, success) {
 </blockquote>
 
 <p>There is no information for this level, intentionally.</p>
+
+<!-- study-guide:start -->
+
+<h2 id="study-guide">Study guide</h2>
+
+<p><strong>Level map:</strong> logged in as <code class="language-plaintext highlighter-rouge">narnia9</code>. This is the highest-numbered Narnia page; the upstream index counts ten levels, <code class="language-plaintext highlighter-rouge">narnia0</code> to <code class="language-plaintext highlighter-rouge">narnia9</code>.</p>
+
+<h3 id="what-this-level-teaches">What this level teaches</h3>
+
+<p>Putting the whole Narnia toolbox together without a hint about which technique to use.</p>
+
+<h3 id="key-ideas">Key ideas</h3>
+
+<ul>
+  <li><strong>Diagnose before attacking.</strong> Read the source, identify the unsafe operation, and decide whether you are looking at an overflow, a format string, a pointer problem or something else.</li>
+  <li><strong>Use all your tools.</strong> <code class="language-plaintext highlighter-rouge">gdb</code> for layout, <code class="language-plaintext highlighter-rouge">objdump</code> or <code class="language-plaintext highlighter-rouge">ghidra</code> for the compiled view, and a short script for building payloads.</li>
+  <li><strong>Check what the goal is.</strong> As in earlier levels, the program is setuid to another user; reading that user’s file under <code class="language-plaintext highlighter-rouge">/etc/narnia_pass/</code> is the objective.</li>
+</ul>
+
+<h3 id="how-to-approach-it">How to approach it</h3>
+
+<ol>
+  <li>Read the source carefully and annotate it.</li>
+  <li>Reproduce a crash or unexpected behaviour before writing any exploit.</li>
+  <li>Build the payload in small, tested steps.</li>
+</ol>
+
+<h3 id="what-to-do-next">What to do next</h3>
+
+<ul>
+  <li><strong>Re-derive one earlier exploit from scratch</strong> using only the source and <code class="language-plaintext highlighter-rouge">gdb</code>.</li>
+  <li><strong>Move on to Behemoth.</strong> From the <a href="../../">games index</a>, Behemoth is the next step; it does not hand you source code.</li>
+  <li><strong>Learn the defences.</strong> Read about stack canaries, non-executable memory and address randomisation to see why today’s exploits are harder.</li>
+</ul>
+
+<!-- study-guide:end -->
 
         </div>
       </div>
@@ -3525,7 +3563,7 @@ function zer0CopyFeedback(btn, success) {
     </div>
   </div>
 </aside>
-<script src="/wargames/assets/js/obsidian-local-graph.js?v=1792009165" defer></script>
+<script src="/wargames/assets/js/obsidian-local-graph.js?v=1792188318" defer></script>
 
 
 
@@ -3879,7 +3917,7 @@ function zer0CopyFeedback(btn, success) {
 <script src="/wargames/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 
-<script type="module" src="/wargames/assets/js/modules/navigation/index.js?v=1792009165"></script>
+<script type="module" src="/wargames/assets/js/modules/navigation/index.js?v=1792188318"></script>
 
 
 <script defer src="/wargames/assets/js/ui-helpers.js"></script>
@@ -3906,7 +3944,7 @@ function zer0CopyFeedback(btn, success) {
   window.OBSIDIAN_CONFIG.attachmentsPath = "/wargames/assets/images/notes";
   window.OBSIDIAN_CONFIG.tagBase = "/wargames/tags/";
   window.OBSIDIAN_CONFIG.cytoscapeUrl = "/wargames/assets/vendor/cytoscape/cytoscape.min.js";
-</script><script defer src="/wargames/assets/js/obsidian-wiki-links.js?v=1792009165"></script>
+</script><script defer src="/wargames/assets/js/obsidian-wiki-links.js?v=1792188318"></script>
 
 
         </div>

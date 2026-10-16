@@ -259,8 +259,8 @@
 <meta property="og:title" content="Semtex12" />
 <meta name="author" content="Amr Abdel-Motaleb" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Authentication Daemon There is an authentication daemon waiting on brebera port 24012. You connect to it, supply your password and get authenticated. The semtex 12 password will give you user access, the admin password will give…" />
-<meta name="twitter:description" property="og:description" content="Authentication Daemon There is an authentication daemon waiting on brebera port 24012. You connect to it, supply your password and get authenticated. The semtex 12 password will give you user access, the admin password will give…" />
+<meta name="description" content="Semtex Level 12 — an authentication daemon and a remote file reader, where speed matters because the server is fast." />
+<meta name="twitter:description" property="og:description" content="Semtex Level 12 — an authentication daemon and a remote file reader, where speed matters because the server is fast." />
 <link rel="canonical" href="https://bamr87.github.io/wargames/docs/wargames/semtex/semtex12/" />
 <meta property="og:url" content="https://bamr87.github.io/wargames/docs/wargames/semtex/semtex12/" />
 <meta property="og:site_name" content="Wargames" />
@@ -270,7 +270,7 @@
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="Semtex12" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Amr Abdel-Motaleb"},"dateModified":"2026-04-07T01:41:09+00:00","datePublished":"2026-04-07T01:41:09+00:00","description":"Authentication Daemon There is an authentication daemon waiting on brebera port 24012. You connect to it, supply your password and get authenticated. The semtex 12 password will give you user access, the admin password will give…","headline":"Semtex12","mainEntityOfPage":{"@type":"WebPage","@id":"https://bamr87.github.io/wargames/docs/wargames/semtex/semtex12/"},"url":"https://bamr87.github.io/wargames/docs/wargames/semtex/semtex12/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Amr Abdel-Motaleb"},"dateModified":"2026-04-07T01:41:09+00:00","datePublished":"2026-04-07T01:41:09+00:00","description":"Semtex Level 12 — an authentication daemon and a remote file reader, where speed matters because the server is fast.","headline":"Semtex12","mainEntityOfPage":{"@type":"WebPage","@id":"https://bamr87.github.io/wargames/docs/wargames/semtex/semtex12/"},"url":"https://bamr87.github.io/wargames/docs/wargames/semtex/semtex12/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -1223,7 +1223,7 @@ document.addEventListener("DOMContentLoaded", function () {
     </div>
     <div class="col-6">
       <div class="p-2 bg-body-tertiary rounded text-center">
-        <small class="text-body-secondary d-block">Last Build</small><code class="small" data-testid="theme-build-stamp">Oct 14, 20:19</code>
+        <small class="text-body-secondary d-block">Last Build</small><code class="small" data-testid="theme-build-stamp">Oct 16, 22:05</code>
       </div>
     </div>
 
@@ -3018,12 +3018,7 @@ function zer0CopyFeedback(btn, success) {
       <h1 class="bd-intro-title">Semtex12</h1>
       
       
-      <p class="bd-intro-description">Authentication Daemon
----------------------
-There is an authentication daemon waiting on brebera port 24012. You
-connect to it, supply your password and get authenticated. The
-semtex 12 password will give you user access, the admin password
-will give...</p>
+      <p class="bd-intro-description">Semtex Level 12 — an authentication daemon and a remote file reader, where speed matters because the server is fast.</p>
       
     </div>
 
@@ -3115,7 +3110,7 @@ will give...</p>
              title="Copies a cleaned article summary to your clipboard, then opens LinkedIn sharing"
              data-share-url="https://bamr87.github.io/wargames/docs/wargames/semtex/semtex12/"
              data-share-title="Semtex12"
-             data-share-description="Authentication Daemon---------------------There is an authentication daemon waiting on brebera port 24012. Youconnect to it, supply your password and get authenticated. Thesemtex 12 password will give you user access, the admin passwordwill give...">
+             data-share-description="Semtex Level 12 — an authentication daemon and a remote file reader, where speed matters because the server is fast.">
             <i class="bi bi-linkedin me-2"></i>Share on LinkedIn
           </a>
         </li>
@@ -3208,7 +3203,7 @@ will give...</p>
       
       
         
-<ul class="list-group-flush"><li class="list-group-item"><a href="#authentication-daemon" class="">Authentication Daemon</a></li></ul>
+<ul class="list-group-flush"><li class="list-group-item"><a href="#authentication-daemon" class="">Authentication Daemon</a></li><li class="list-group-item"><a href="#study-guide" class="">Study guide</a><ul><li class="list-group-item"><a href="#what-this-level-teaches" class="">What this level teaches</a></li><li class="list-group-item"><a href="#key-ideas" class="">Key ideas</a></li><li class="list-group-item"><a href="#how-to-approach-it" class="">How to approach it</a></li><li class="list-group-item"><a href="#why-it-matters" class="">Why it matters</a></li></ul></li></ul>
 
       
     </nav>
@@ -3236,6 +3231,38 @@ will give...</p>
 
 <p>Thanks to bk for this level!</p>
 
+<!-- study-guide:start -->
+
+<h2 id="study-guide">Study guide</h2>
+
+<p><strong>Level map:</strong> the authentication daemon is on port 24012 and the file reader on port 24013 of the Semtex network host.</p>
+
+<h3 id="what-this-level-teaches">What this level teaches</h3>
+
+<p>Multi-step network protocols and timing-sensitive attacks.</p>
+
+<h3 id="key-ideas">Key ideas</h3>
+
+<ul>
+  <li><strong>Two services.</strong> You authenticate on one port, then use the other to list and read files, with the privilege level depending on your credentials.</li>
+  <li><strong>Passwords by level.</strong> The Semtex 12 password gives user access, while an admin password gives more.</li>
+  <li><strong>A fast server.</strong> The page asks whether you can be faster, which suggests a timing-dependent weakness.</li>
+  <li><strong>Where the target is.</strong> The Semtex 13 password is in one of the files on the remote file system.</li>
+</ul>
+
+<h3 id="how-to-approach-it">How to approach it</h3>
+
+<ol>
+  <li>Explore both services manually with netcat.</li>
+  <li>Look for a gap in time or sequence between authentication and authorisation.</li>
+  <li>Script the sequence and run it quickly.</li>
+</ol>
+
+<h3 id="why-it-matters">Why it matters</h3>
+
+<p>Race conditions between check and use are a persistent class of real vulnerability.</p>
+
+<!-- study-guide:end -->
 
         </div>
       </div>
@@ -3538,7 +3565,7 @@ will give...</p>
     </div>
   </div>
 </aside>
-<script src="/wargames/assets/js/obsidian-local-graph.js?v=1792009165" defer></script>
+<script src="/wargames/assets/js/obsidian-local-graph.js?v=1792188318" defer></script>
 
 
 
@@ -3892,7 +3919,7 @@ will give...</p>
 <script src="/wargames/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 
-<script type="module" src="/wargames/assets/js/modules/navigation/index.js?v=1792009165"></script>
+<script type="module" src="/wargames/assets/js/modules/navigation/index.js?v=1792188318"></script>
 
 
 <script defer src="/wargames/assets/js/ui-helpers.js"></script>
@@ -3919,7 +3946,7 @@ will give...</p>
   window.OBSIDIAN_CONFIG.attachmentsPath = "/wargames/assets/images/notes";
   window.OBSIDIAN_CONFIG.tagBase = "/wargames/tags/";
   window.OBSIDIAN_CONFIG.cytoscapeUrl = "/wargames/assets/vendor/cytoscape/cytoscape.min.js";
-</script><script defer src="/wargames/assets/js/obsidian-wiki-links.js?v=1792009165"></script>
+</script><script defer src="/wargames/assets/js/obsidian-wiki-links.js?v=1792188318"></script>
 
 
         </div>

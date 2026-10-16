@@ -259,8 +259,8 @@
 <meta property="og:title" content="Vortex" />
 <meta name="author" content="Amr Abdel-Motaleb" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="The Vortex wargame is currently composed of 27 levels. Most files you need are in /vortex/. Special thanks to the many people who have helped setup and maintain this wargame." />
-<meta name="twitter:description" property="og:description" content="The Vortex wargame is currently composed of 27 levels. Most files you need are in /vortex/. Special thanks to the many people who have helped setup and maintain this wargame." />
+<meta name="description" content="Vortex is an advanced 27-level wargame covering network programming, binary exploitation, heap bugs, weak randomness, cryptanalysis and reverse engineering." />
+<meta name="twitter:description" property="og:description" content="Vortex is an advanced 27-level wargame covering network programming, binary exploitation, heap bugs, weak randomness, cryptanalysis and reverse engineering." />
 <link rel="canonical" href="https://bamr87.github.io/wargames/docs/wargames/vortex/" />
 <meta property="og:url" content="https://bamr87.github.io/wargames/docs/wargames/vortex/" />
 <meta property="og:site_name" content="Wargames" />
@@ -270,7 +270,7 @@
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="Vortex" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Amr Abdel-Motaleb"},"dateModified":"2026-04-07T01:41:09+00:00","datePublished":"2026-04-07T01:41:09+00:00","description":"The Vortex wargame is currently composed of 27 levels. Most files you need are in /vortex/. Special thanks to the many people who have helped setup and maintain this wargame.","headline":"Vortex","mainEntityOfPage":{"@type":"WebPage","@id":"https://bamr87.github.io/wargames/docs/wargames/vortex/"},"url":"https://bamr87.github.io/wargames/docs/wargames/vortex/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Amr Abdel-Motaleb"},"dateModified":"2026-04-07T01:41:09+00:00","datePublished":"2026-04-07T01:41:09+00:00","description":"Vortex is an advanced 27-level wargame covering network programming, binary exploitation, heap bugs, weak randomness, cryptanalysis and reverse engineering.","headline":"Vortex","mainEntityOfPage":{"@type":"WebPage","@id":"https://bamr87.github.io/wargames/docs/wargames/vortex/"},"url":"https://bamr87.github.io/wargames/docs/wargames/vortex/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -1223,7 +1223,7 @@ document.addEventListener("DOMContentLoaded", function () {
     </div>
     <div class="col-6">
       <div class="p-2 bg-body-tertiary rounded text-center">
-        <small class="text-body-secondary d-block">Last Build</small><code class="small" data-testid="theme-build-stamp">Oct 14, 20:19</code>
+        <small class="text-body-secondary d-block">Last Build</small><code class="small" data-testid="theme-build-stamp">Oct 16, 22:05</code>
       </div>
     </div>
 
@@ -3018,9 +3018,7 @@ function zer0CopyFeedback(btn, success) {
       <h1 class="bd-intro-title">Vortex</h1>
       
       
-      <p class="bd-intro-description">The Vortex wargame is currently composed of 27 levels. Most files you
-need are in /vortex/. Special thanks to the many people who have helped
-setup and maintain this wargame.</p>
+      <p class="bd-intro-description">Vortex is an advanced 27-level wargame covering network programming, binary exploitation, heap bugs, weak randomness, cryptanalysis and reverse engineering.</p>
       
     </div>
 
@@ -3087,7 +3085,7 @@ setup and maintain this wargame.</p>
         <p class="bd-intro-meta">
           <i class="bi bi-clock me-1" aria-hidden="true"></i>
           
-          Estimated reading time: 1 minute
+          Estimated reading time: 2 minutes
           
         </p>
 
@@ -3112,7 +3110,7 @@ setup and maintain this wargame.</p>
              title="Copies a cleaned article summary to your clipboard, then opens LinkedIn sharing"
              data-share-url="https://bamr87.github.io/wargames/docs/wargames/vortex/"
              data-share-title="Vortex"
-             data-share-description="The Vortex wargame is currently composed of 27 levels. Most files youneed are in /vortex/. Special thanks to the many people who have helpedsetup and maintain this wargame.">
+             data-share-description="Vortex is an advanced 27-level wargame covering network programming, binary exploitation, heap bugs, weak randomness, cryptanalysis and reverse engineering.">
             <i class="bi bi-linkedin me-2"></i>Share on LinkedIn
           </a>
         </li>
@@ -3204,7 +3202,9 @@ setup and maintain this wargame.</p>
 
       
       
-        <p class="text-body-secondary small fst-italic">No sections on this page.</p>
+        
+<ul class="list-group-flush"><li class="list-group-item"><a href="#vortex" class="">Vortex</a><ul><li class="list-group-item"><a href="#study-guide" class="">Study guide</a><ul><li class="list-group-item"><a href="#what-vortex-teaches" class="">What Vortex teaches</a></li><li class="list-group-item"><a href="#status-of-the-game" class="">Status of the game</a></li><li class="list-group-item"><a href="#prerequisites" class="">Prerequisites</a></li><li class="list-group-item"><a href="#how-the-levels-are-numbered" class="">How the levels are numbered</a></li><li class="list-group-item"><a href="#the-skills-ladder" class="">The skills ladder</a></li><li class="list-group-item"><a href="#tools" class="">Tools</a></li><li class="list-group-item"><a href="#habits-that-help" class="">Habits that help</a></li></ul></li></ul></li></ul>
+
       
     </nav>
   </div>
@@ -3229,6 +3229,96 @@ setup and maintain this wargame.</p>
 <p>The Vortex wargame is currently composed of 27 levels. Most files you need are in /vortex/. Special thanks to the many people who have helped setup and maintain this wargame.</p>
 
 <p>Many thanks to those who have made sure all levels can be played</p>
+
+<!-- study-guide:start -->
+
+<h2 id="study-guide">Study guide</h2>
+
+<p>This guide is spoiler-free: it explains the skills each Vortex level asks for, using only what the level pages say, and never lists passwords or solutions.</p>
+
+<h3 id="what-vortex-teaches">What Vortex teaches</h3>
+
+<p>Vortex is a long, varied course in low-level security. It begins with a small network programming task, passes through stack overflows, format strings, heap corruption and non-executable stacks, then turns to reverse engineering, weak cryptography and predictable random numbers. Many of its levels run on an old 32-bit x86 machine, so values are little-endian and addresses are 32 bits. The index notes that most files you need are in <code class="language-plaintext highlighter-rouge">/vortex/</code>.</p>
+
+<h3 id="status-of-the-game">Status of the game</h3>
+
+<p>The maintainers state the game is composed of 27 levels (0 to 26) and is no longer being expanded. Level 25 is described as lost (kept for history) and Level 26 asks players to create their own level, which is no longer active.</p>
+
+<h3 id="prerequisites">Prerequisites</h3>
+
+<p>Finish Bandit, then Narnia and Behemoth. You should be able to read C, use <code class="language-plaintext highlighter-rouge">gdb</code>, write simple networked programs and understand the stack. Beej’s guides to C and to network programming, which Level 0 links, are the recommended starting point.</p>
+
+<h3 id="how-the-levels-are-numbered">How the levels are numbered</h3>
+
+<p>The page for Level N describes the challenge that gives you credentials for the next Vortex account. Some levels are solved over the network and some by logging in to <code class="language-plaintext highlighter-rouge">vortex.labs.overthewire.org</code>, as individual pages note.</p>
+
+<h3 id="the-skills-ladder">The skills ladder</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Levels</th>
+      <th>Theme</th>
+      <th>Core skills</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0</td>
+      <td>Network programming</td>
+      <td>sockets, byte order, 32-bit arithmetic</td>
+    </tr>
+    <tr>
+      <td>1–4</td>
+      <td>Classic memory bugs</td>
+      <td>overflows, relocation sections, format strings, archive formats</td>
+    </tr>
+    <tr>
+      <td>5–8</td>
+      <td>Brute force and reversing</td>
+      <td>MD5 search, binary exploitation, CRC, disassembly</td>
+    </tr>
+    <tr>
+      <td>9–13</td>
+      <td>Black boxes and mitigations</td>
+      <td>randomness, heap corruption, non-executable stacks, small shellcode</td>
+    </tr>
+    <tr>
+      <td>14–16</td>
+      <td>Cryptography in practice</td>
+      <td>weak protocols, weak file encryption, partial hash search</td>
+    </tr>
+    <tr>
+      <td>17–19</td>
+      <td>Randomness and keygens</td>
+      <td>working backwards, <code class="language-plaintext highlighter-rouge">urandom</code> seeds, key generation</td>
+    </tr>
+    <tr>
+      <td>20–24</td>
+      <td>Reverse engineering and research</td>
+      <td>integer bugs, reversing, object files, PRNG internals</td>
+    </tr>
+    <tr>
+      <td>25–26</td>
+      <td>Historical</td>
+      <td>lost level and community contribution</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="tools">Tools</h3>
+
+<p><code class="language-plaintext highlighter-rouge">gdb</code>, <code class="language-plaintext highlighter-rouge">objdump</code>, <code class="language-plaintext highlighter-rouge">ltrace</code>/<code class="language-plaintext highlighter-rouge">strace</code>, <code class="language-plaintext highlighter-rouge">gcc</code>, Python or C for networking and brute force, a hex editor, and a disassembler such as Ghidra or IDA Free.</p>
+
+<h3 id="habits-that-help">Habits that help</h3>
+
+<ul>
+  <li>Write a script for every exploit; you will rerun it often.</li>
+  <li>Keep notes on memory layouts and addresses.</li>
+  <li>Read the reading list at the bottom of each page before you start; many levels are direct applications of those papers.</li>
+</ul>
+
+<!-- study-guide:end -->
 
         </div>
       </div>
@@ -3531,7 +3621,7 @@ setup and maintain this wargame.</p>
     </div>
   </div>
 </aside>
-<script src="/wargames/assets/js/obsidian-local-graph.js?v=1792009165" defer></script>
+<script src="/wargames/assets/js/obsidian-local-graph.js?v=1792188318" defer></script>
 
 
 
@@ -3885,7 +3975,7 @@ setup and maintain this wargame.</p>
 <script src="/wargames/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 
-<script type="module" src="/wargames/assets/js/modules/navigation/index.js?v=1792009165"></script>
+<script type="module" src="/wargames/assets/js/modules/navigation/index.js?v=1792188318"></script>
 
 
 <script defer src="/wargames/assets/js/ui-helpers.js"></script>
@@ -3912,7 +4002,7 @@ setup and maintain this wargame.</p>
   window.OBSIDIAN_CONFIG.attachmentsPath = "/wargames/assets/images/notes";
   window.OBSIDIAN_CONFIG.tagBase = "/wargames/tags/";
   window.OBSIDIAN_CONFIG.cytoscapeUrl = "/wargames/assets/vendor/cytoscape/cytoscape.min.js";
-</script><script defer src="/wargames/assets/js/obsidian-wiki-links.js?v=1792009165"></script>
+</script><script defer src="/wargames/assets/js/obsidian-wiki-links.js?v=1792188318"></script>
 
 
         </div>

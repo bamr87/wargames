@@ -259,8 +259,8 @@
 <meta property="og:title" content="Bandit13" />
 <meta name="author" content="Amr Abdel-Motaleb" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="The password for the next level is stored in the file data.txt, which is a hexdump of a file that has been repeatedly compressed. For this level it may be useful to create a directory under /tmp in which you can work. Use mkdir with a hard to guess d…" />
-<meta name="twitter:description" property="og:description" content="The password for the next level is stored in the file data.txt, which is a hexdump of a file that has been repeatedly compressed. For this level it may be useful to create a directory under /tmp in which you can work. Use mkdir with a hard to guess d…" />
+<meta name="description" content="Bandit Level 13 — peel back layers of a hexdump, gzip, bzip2 and tar by repeatedly identifying and unpacking the file." />
+<meta name="twitter:description" property="og:description" content="Bandit Level 13 — peel back layers of a hexdump, gzip, bzip2 and tar by repeatedly identifying and unpacking the file." />
 <link rel="canonical" href="https://bamr87.github.io/wargames/docs/wargames/bandit/bandit13/" />
 <meta property="og:url" content="https://bamr87.github.io/wargames/docs/wargames/bandit/bandit13/" />
 <meta property="og:site_name" content="Wargames" />
@@ -270,7 +270,7 @@
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="Bandit13" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Amr Abdel-Motaleb"},"dateModified":"2026-04-07T01:41:08+00:00","datePublished":"2026-04-07T01:41:08+00:00","description":"The password for the next level is stored in the file data.txt, which is a hexdump of a file that has been repeatedly compressed. For this level it may be useful to create a directory under /tmp in which you can work. Use mkdir with a hard to guess d…","headline":"Bandit13","mainEntityOfPage":{"@type":"WebPage","@id":"https://bamr87.github.io/wargames/docs/wargames/bandit/bandit13/"},"url":"https://bamr87.github.io/wargames/docs/wargames/bandit/bandit13/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Amr Abdel-Motaleb"},"dateModified":"2026-04-07T01:41:08+00:00","datePublished":"2026-04-07T01:41:08+00:00","description":"Bandit Level 13 — peel back layers of a hexdump, gzip, bzip2 and tar by repeatedly identifying and unpacking the file.","headline":"Bandit13","mainEntityOfPage":{"@type":"WebPage","@id":"https://bamr87.github.io/wargames/docs/wargames/bandit/bandit13/"},"url":"https://bamr87.github.io/wargames/docs/wargames/bandit/bandit13/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -1223,7 +1223,7 @@ document.addEventListener("DOMContentLoaded", function () {
     </div>
     <div class="col-6">
       <div class="p-2 bg-body-tertiary rounded text-center">
-        <small class="text-body-secondary d-block">Last Build</small><code class="small" data-testid="theme-build-stamp">Oct 14, 20:19</code>
+        <small class="text-body-secondary d-block">Last Build</small><code class="small" data-testid="theme-build-stamp">Oct 16, 22:05</code>
       </div>
     </div>
 
@@ -3018,10 +3018,7 @@ function zer0CopyFeedback(btn, success) {
       <h1 class="bd-intro-title">Bandit13</h1>
       
       
-      <p class="bd-intro-description">The password for the next level is stored in the file data.txt,
-which is a hexdump of a file that has been repeatedly compressed.
-For this level it may be useful to create a directory under /tmp in
-which you can work. Use mkdir with a hard to guess d...</p>
+      <p class="bd-intro-description">Bandit Level 13 — peel back layers of a hexdump, gzip, bzip2 and tar by repeatedly identifying and unpacking the file.</p>
       
     </div>
 
@@ -3113,7 +3110,7 @@ which you can work. Use mkdir with a hard to guess d...</p>
              title="Copies a cleaned article summary to your clipboard, then opens LinkedIn sharing"
              data-share-url="https://bamr87.github.io/wargames/docs/wargames/bandit/bandit13/"
              data-share-title="Bandit13"
-             data-share-description="The password for the next level is stored in the file data.txt,which is a hexdump of a file that has been repeatedly compressed.For this level it may be useful to create a directory under /tmp inwhich you can work. Use mkdir with a hard to guess d...">
+             data-share-description="Bandit Level 13 — peel back layers of a hexdump, gzip, bzip2 and tar by repeatedly identifying and unpacking the file.">
             <i class="bi bi-linkedin me-2"></i>Share on LinkedIn
           </a>
         </li>
@@ -3206,7 +3203,7 @@ which you can work. Use mkdir with a hard to guess d...</p>
       
       
         
-<ul class="list-group-flush"><li class="list-group-item"><a href="#level-goal" class="">Level Goal</a></li><li class="list-group-item"><a href="#commands-you-may-need-to-solve-this-level" class="">Commands you may need to solve this level</a></li><li class="list-group-item"><a href="#helpful-reading-material" class="">Helpful Reading Material</a></li></ul>
+<ul class="list-group-flush"><li class="list-group-item"><a href="#level-goal" class="">Level Goal</a></li><li class="list-group-item"><a href="#commands-you-may-need-to-solve-this-level" class="">Commands you may need to solve this level</a></li><li class="list-group-item"><a href="#helpful-reading-material" class="">Helpful Reading Material</a></li><li class="list-group-item"><a href="#study-guide" class="">Study guide</a><ul><li class="list-group-item"><a href="#what-this-level-teaches" class="">What this level teaches</a></li><li class="list-group-item"><a href="#key-ideas" class="">Key ideas</a></li><li class="list-group-item"><a href="#how-to-approach-it" class="">How to approach it</a></li><li class="list-group-item"><a href="#why-it-matters" class="">Why it matters</a></li></ul></li></ul>
 
       
     </nav>
@@ -3241,6 +3238,38 @@ which you can work. Use mkdir with a hard to guess d...</p>
   <li><a href="https://en.wikipedia.org/wiki/Hex_dump">Hex dump on Wikipedia</a></li>
 </ul>
 
+<!-- study-guide:start -->
+
+<h2 id="study-guide">Study guide</h2>
+
+<p><strong>Level map:</strong> logged in as <code class="language-plaintext highlighter-rouge">bandit12</code>, find the password for <code class="language-plaintext highlighter-rouge">bandit13</code>.</p>
+
+<h3 id="what-this-level-teaches">What this level teaches</h3>
+
+<p>A repeatable loop for dealing with unknown, nested data: identify, unpack, repeat.</p>
+
+<h3 id="key-ideas">Key ideas</h3>
+
+<ul>
+  <li><strong>Hexdump.</strong> <code class="language-plaintext highlighter-rouge">xxd</code> shows bytes as hexadecimal; <code class="language-plaintext highlighter-rouge">xxd -r</code> reverses a dump back into the original binary.</li>
+  <li><strong>Compression formats.</strong> gzip, bzip2 and tar archives each begin with a recognisable signature, so <code class="language-plaintext highlighter-rouge">file</code> can name them at every layer.</li>
+  <li><strong>Extension expectations.</strong> <code class="language-plaintext highlighter-rouge">gzip -d</code> and <code class="language-plaintext highlighter-rouge">bzip2 -d</code> expect matching filename suffixes, so you will rename files with <code class="language-plaintext highlighter-rouge">mv</code> between steps.</li>
+  <li><strong>A private working directory.</strong> You cannot normally create files in your home directory. Make a new one under <code class="language-plaintext highlighter-rouge">/tmp</code> with <code class="language-plaintext highlighter-rouge">mktemp -d</code>, which picks a name nobody can guess, and copy the data file into it with <code class="language-plaintext highlighter-rouge">cp</code>.</li>
+</ul>
+
+<h3 id="how-to-approach-it">How to approach it</h3>
+
+<ol>
+  <li>Reverse the hexdump into a file.</li>
+  <li>Run <code class="language-plaintext highlighter-rouge">file</code> on it, apply the matching tool, and run <code class="language-plaintext highlighter-rouge">file</code> on the result. Repeat until you see plain text.</li>
+  <li>Keep notes of the chain you followed; it is easy to lose your place.</li>
+</ol>
+
+<h3 id="why-it-matters">Why it matters</h3>
+
+<p>Malware droppers, CTF challenges and forensic images are frequently layered. A calm identify-and-unpack loop beats guessing.</p>
+
+<!-- study-guide:end -->
 
         </div>
       </div>
@@ -3543,7 +3572,7 @@ which you can work. Use mkdir with a hard to guess d...</p>
     </div>
   </div>
 </aside>
-<script src="/wargames/assets/js/obsidian-local-graph.js?v=1792009165" defer></script>
+<script src="/wargames/assets/js/obsidian-local-graph.js?v=1792188318" defer></script>
 
 
 
@@ -3897,7 +3926,7 @@ which you can work. Use mkdir with a hard to guess d...</p>
 <script src="/wargames/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 
-<script type="module" src="/wargames/assets/js/modules/navigation/index.js?v=1792009165"></script>
+<script type="module" src="/wargames/assets/js/modules/navigation/index.js?v=1792188318"></script>
 
 
 <script defer src="/wargames/assets/js/ui-helpers.js"></script>
@@ -3924,7 +3953,7 @@ which you can work. Use mkdir with a hard to guess d...</p>
   window.OBSIDIAN_CONFIG.attachmentsPath = "/wargames/assets/images/notes";
   window.OBSIDIAN_CONFIG.tagBase = "/wargames/tags/";
   window.OBSIDIAN_CONFIG.cytoscapeUrl = "/wargames/assets/vendor/cytoscape/cytoscape.min.js";
-</script><script defer src="/wargames/assets/js/obsidian-wiki-links.js?v=1792009165"></script>
+</script><script defer src="/wargames/assets/js/obsidian-wiki-links.js?v=1792188318"></script>
 
 
         </div>

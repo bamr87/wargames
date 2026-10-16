@@ -259,8 +259,8 @@
 <meta property="og:title" content="Drifter9" />
 <meta name="author" content="Amr Abdel-Motaleb" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Get ready to escalate those privileges. You’ll have to work out a secret file format and attack some security oversights." />
-<meta name="twitter:description" property="og:description" content="Get ready to escalate those privileges. You’ll have to work out a secret file format and attack some security oversights." />
+<meta name="description" content="Drifter Level 9 — escalate privileges by working out a secret file format and exploiting security oversights." />
+<meta name="twitter:description" property="og:description" content="Drifter Level 9 — escalate privileges by working out a secret file format and exploiting security oversights." />
 <link rel="canonical" href="https://bamr87.github.io/wargames/docs/wargames/drifter/drifter9/" />
 <meta property="og:url" content="https://bamr87.github.io/wargames/docs/wargames/drifter/drifter9/" />
 <meta property="og:site_name" content="Wargames" />
@@ -270,7 +270,7 @@
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="Drifter9" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Amr Abdel-Motaleb"},"dateModified":"2026-04-07T01:41:09+00:00","datePublished":"2026-04-07T01:41:09+00:00","description":"Get ready to escalate those privileges. You’ll have to work out a secret file format and attack some security oversights.","headline":"Drifter9","mainEntityOfPage":{"@type":"WebPage","@id":"https://bamr87.github.io/wargames/docs/wargames/drifter/drifter9/"},"url":"https://bamr87.github.io/wargames/docs/wargames/drifter/drifter9/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Amr Abdel-Motaleb"},"dateModified":"2026-04-07T01:41:09+00:00","datePublished":"2026-04-07T01:41:09+00:00","description":"Drifter Level 9 — escalate privileges by working out a secret file format and exploiting security oversights.","headline":"Drifter9","mainEntityOfPage":{"@type":"WebPage","@id":"https://bamr87.github.io/wargames/docs/wargames/drifter/drifter9/"},"url":"https://bamr87.github.io/wargames/docs/wargames/drifter/drifter9/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -1223,7 +1223,7 @@ document.addEventListener("DOMContentLoaded", function () {
     </div>
     <div class="col-6">
       <div class="p-2 bg-body-tertiary rounded text-center">
-        <small class="text-body-secondary d-block">Last Build</small><code class="small" data-testid="theme-build-stamp">Oct 14, 20:19</code>
+        <small class="text-body-secondary d-block">Last Build</small><code class="small" data-testid="theme-build-stamp">Oct 16, 22:05</code>
       </div>
     </div>
 
@@ -3018,8 +3018,7 @@ function zer0CopyFeedback(btn, success) {
       <h1 class="bd-intro-title">Drifter9</h1>
       
       
-      <p class="bd-intro-description">Get ready to escalate those privileges. You'll have to work out a secret
-file format and attack some security oversights.</p>
+      <p class="bd-intro-description">Drifter Level 9 — escalate privileges by working out a secret file format and exploiting security oversights.</p>
       
     </div>
 
@@ -3111,7 +3110,7 @@ file format and attack some security oversights.</p>
              title="Copies a cleaned article summary to your clipboard, then opens LinkedIn sharing"
              data-share-url="https://bamr87.github.io/wargames/docs/wargames/drifter/drifter9/"
              data-share-title="Drifter9"
-             data-share-description="Get ready to escalate those privileges. You&#39;ll have to work out a secretfile format and attack some security oversights.">
+             data-share-description="Drifter Level 9 — escalate privileges by working out a secret file format and exploiting security oversights.">
             <i class="bi bi-linkedin me-2"></i>Share on LinkedIn
           </a>
         </li>
@@ -3203,7 +3202,9 @@ file format and attack some security oversights.</p>
 
       
       
-        <p class="text-body-secondary small fst-italic">No sections on this page.</p>
+        
+<ul class="list-group-flush"><li class="list-group-item"><a href="#study-guide" class="">Study guide</a><ul><li class="list-group-item"><a href="#what-this-level-teaches" class="">What this level teaches</a></li><li class="list-group-item"><a href="#key-ideas" class="">Key ideas</a></li><li class="list-group-item"><a href="#how-to-approach-it" class="">How to approach it</a></li><li class="list-group-item"><a href="#why-it-matters" class="">Why it matters</a></li></ul></li></ul>
+
       
     </nav>
   </div>
@@ -3224,6 +3225,38 @@ file format and attack some security oversights.</p>
 </blockquote>
 
 <p>Get ready to escalate those privileges. You’ll have to work out a secret file format and attack some security oversights.</p>
+
+<!-- study-guide:start -->
+
+<h2 id="study-guide">Study guide</h2>
+
+<p><strong>Where it fits:</strong> Drifter level 9 of 0–15, in the privileges and practice stage of the game. The page does not say which account you start as, so check with <code class="language-plaintext highlighter-rouge">id</code> after connecting.</p>
+
+<h3 id="what-this-level-teaches">What this level teaches</h3>
+
+<p>Local privilege escalation by combining format knowledge and configuration mistakes.</p>
+
+<h3 id="key-ideas">Key ideas</h3>
+
+<ul>
+  <li><strong>Reverse the format.</strong> The program uses a file format that is not documented; you derive it from the code and examples.</li>
+  <li><strong>Security oversights.</strong> The weakness is not a single memory bug but mistakes in how the program trusts files and permissions.</li>
+  <li><strong>Enumerate.</strong> Look at permissions, ownership and what the program reads and writes.</li>
+</ul>
+
+<h3 id="how-to-approach-it">How to approach it</h3>
+
+<ol>
+  <li>Trace the program to see which files it opens.</li>
+  <li>Work out the format from the parsing code.</li>
+  <li>Build a file that makes the program do something it should not.</li>
+</ol>
+
+<h3 id="why-it-matters">Why it matters</h3>
+
+<p>Most real privilege escalations come from trust mistakes rather than exotic bugs.</p>
+
+<!-- study-guide:end -->
 
         </div>
       </div>
@@ -3526,7 +3559,7 @@ file format and attack some security oversights.</p>
     </div>
   </div>
 </aside>
-<script src="/wargames/assets/js/obsidian-local-graph.js?v=1792009165" defer></script>
+<script src="/wargames/assets/js/obsidian-local-graph.js?v=1792188318" defer></script>
 
 
 
@@ -3880,7 +3913,7 @@ file format and attack some security oversights.</p>
 <script src="/wargames/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 
-<script type="module" src="/wargames/assets/js/modules/navigation/index.js?v=1792009165"></script>
+<script type="module" src="/wargames/assets/js/modules/navigation/index.js?v=1792188318"></script>
 
 
 <script defer src="/wargames/assets/js/ui-helpers.js"></script>
@@ -3907,7 +3940,7 @@ file format and attack some security oversights.</p>
   window.OBSIDIAN_CONFIG.attachmentsPath = "/wargames/assets/images/notes";
   window.OBSIDIAN_CONFIG.tagBase = "/wargames/tags/";
   window.OBSIDIAN_CONFIG.cytoscapeUrl = "/wargames/assets/vendor/cytoscape/cytoscape.min.js";
-</script><script defer src="/wargames/assets/js/obsidian-wiki-links.js?v=1792009165"></script>
+</script><script defer src="/wargames/assets/js/obsidian-wiki-links.js?v=1792188318"></script>
 
 
         </div>

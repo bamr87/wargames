@@ -259,8 +259,8 @@
 <meta property="og:title" content="Leviathan5" />
 <meta name="author" content="Amr Abdel-Motaleb" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="There is no information for this level, intentionally." />
-<meta name="twitter:description" property="og:description" content="There is no information for this level, intentionally." />
+<meta name="description" content="Leviathan Level 5 — a setuid program reads a file from a fixed path; learn how symbolic links redirect it." />
+<meta name="twitter:description" property="og:description" content="Leviathan Level 5 — a setuid program reads a file from a fixed path; learn how symbolic links redirect it." />
 <link rel="canonical" href="https://bamr87.github.io/wargames/docs/wargames/leviathan/leviathan5/" />
 <meta property="og:url" content="https://bamr87.github.io/wargames/docs/wargames/leviathan/leviathan5/" />
 <meta property="og:site_name" content="Wargames" />
@@ -270,7 +270,7 @@
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="Leviathan5" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Amr Abdel-Motaleb"},"dateModified":"2026-04-07T01:41:09+00:00","datePublished":"2026-04-07T01:41:09+00:00","description":"There is no information for this level, intentionally.","headline":"Leviathan5","mainEntityOfPage":{"@type":"WebPage","@id":"https://bamr87.github.io/wargames/docs/wargames/leviathan/leviathan5/"},"url":"https://bamr87.github.io/wargames/docs/wargames/leviathan/leviathan5/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Amr Abdel-Motaleb"},"dateModified":"2026-04-07T01:41:09+00:00","datePublished":"2026-04-07T01:41:09+00:00","description":"Leviathan Level 5 — a setuid program reads a file from a fixed path; learn how symbolic links redirect it.","headline":"Leviathan5","mainEntityOfPage":{"@type":"WebPage","@id":"https://bamr87.github.io/wargames/docs/wargames/leviathan/leviathan5/"},"url":"https://bamr87.github.io/wargames/docs/wargames/leviathan/leviathan5/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -1223,7 +1223,7 @@ document.addEventListener("DOMContentLoaded", function () {
     </div>
     <div class="col-6">
       <div class="p-2 bg-body-tertiary rounded text-center">
-        <small class="text-body-secondary d-block">Last Build</small><code class="small" data-testid="theme-build-stamp">Oct 14, 20:19</code>
+        <small class="text-body-secondary d-block">Last Build</small><code class="small" data-testid="theme-build-stamp">Oct 16, 22:05</code>
       </div>
     </div>
 
@@ -3018,7 +3018,7 @@ function zer0CopyFeedback(btn, success) {
       <h1 class="bd-intro-title">Leviathan5</h1>
       
       
-      <p class="bd-intro-description">There is no information for this level, intentionally.</p>
+      <p class="bd-intro-description">Leviathan Level 5 — a setuid program reads a file from a fixed path; learn how symbolic links redirect it.</p>
       
     </div>
 
@@ -3110,7 +3110,7 @@ function zer0CopyFeedback(btn, success) {
              title="Copies a cleaned article summary to your clipboard, then opens LinkedIn sharing"
              data-share-url="https://bamr87.github.io/wargames/docs/wargames/leviathan/leviathan5/"
              data-share-title="Leviathan5"
-             data-share-description="There is no information for this level, intentionally.">
+             data-share-description="Leviathan Level 5 — a setuid program reads a file from a fixed path; learn how symbolic links redirect it.">
             <i class="bi bi-linkedin me-2"></i>Share on LinkedIn
           </a>
         </li>
@@ -3202,7 +3202,9 @@ function zer0CopyFeedback(btn, success) {
 
       
       
-        <p class="text-body-secondary small fst-italic">No sections on this page.</p>
+        
+<ul class="list-group-flush"><li class="list-group-item"><a href="#study-guide" class="">Study guide</a><ul><li class="list-group-item"><a href="#what-this-level-teaches" class="">What this level teaches</a></li><li class="list-group-item"><a href="#key-ideas" class="">Key ideas</a></li><li class="list-group-item"><a href="#how-to-approach-it" class="">How to approach it</a></li><li class="list-group-item"><a href="#why-it-matters" class="">Why it matters</a></li></ul></li></ul>
+
       
     </nav>
   </div>
@@ -3223,6 +3225,38 @@ function zer0CopyFeedback(btn, success) {
 </blockquote>
 
 <p>There is no information for this level, intentionally.</p>
+
+<!-- study-guide:start -->
+
+<h2 id="study-guide">Study guide</h2>
+
+<p><strong>Level map:</strong> logged in as <code class="language-plaintext highlighter-rouge">leviathan5</code>, find the password for <code class="language-plaintext highlighter-rouge">leviathan6</code>.</p>
+
+<h3 id="what-this-level-teaches">What this level teaches</h3>
+
+<p>How symbolic links (“symlinks”) can trick a privileged program that trusts a predictable path.</p>
+
+<h3 id="key-ideas">Key ideas</h3>
+
+<ul>
+  <li><strong>Symlinks.</strong> A symlink is a small file that points at another path; <code class="language-plaintext highlighter-rouge">ln -s TARGET LINKNAME</code> creates one.</li>
+  <li><strong>Following links.</strong> When a privileged program opens a file, the operating system follows a symlink transparently, using the program’s privileges, not yours.</li>
+  <li><strong>Predictable paths.</strong> Programs that use fixed names in shared directories like <code class="language-plaintext highlighter-rouge">/tmp</code> are open to this.</li>
+  <li><strong>Trace to learn.</strong> <code class="language-plaintext highlighter-rouge">ltrace</code> reveals the path the program opens.</li>
+</ul>
+
+<h3 id="how-to-approach-it">How to approach it</h3>
+
+<ol>
+  <li>Run the program and under <code class="language-plaintext highlighter-rouge">ltrace</code> to find which file it tries to open.</li>
+  <li>Think about what that name could point at instead.</li>
+</ol>
+
+<h3 id="why-it-matters">Why it matters</h3>
+
+<p>Insecure use of temporary files is a classic source of local privilege escalation, which is why <code class="language-plaintext highlighter-rouge">mktemp</code> and unpredictable names exist.</p>
+
+<!-- study-guide:end -->
 
         </div>
       </div>
@@ -3525,7 +3559,7 @@ function zer0CopyFeedback(btn, success) {
     </div>
   </div>
 </aside>
-<script src="/wargames/assets/js/obsidian-local-graph.js?v=1792009165" defer></script>
+<script src="/wargames/assets/js/obsidian-local-graph.js?v=1792188318" defer></script>
 
 
 
@@ -3879,7 +3913,7 @@ function zer0CopyFeedback(btn, success) {
 <script src="/wargames/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 
-<script type="module" src="/wargames/assets/js/modules/navigation/index.js?v=1792009165"></script>
+<script type="module" src="/wargames/assets/js/modules/navigation/index.js?v=1792188318"></script>
 
 
 <script defer src="/wargames/assets/js/ui-helpers.js"></script>
@@ -3906,7 +3940,7 @@ function zer0CopyFeedback(btn, success) {
   window.OBSIDIAN_CONFIG.attachmentsPath = "/wargames/assets/images/notes";
   window.OBSIDIAN_CONFIG.tagBase = "/wargames/tags/";
   window.OBSIDIAN_CONFIG.cytoscapeUrl = "/wargames/assets/vendor/cytoscape/cytoscape.min.js";
-</script><script defer src="/wargames/assets/js/obsidian-wiki-links.js?v=1792009165"></script>
+</script><script defer src="/wargames/assets/js/obsidian-wiki-links.js?v=1792188318"></script>
 
 
         </div>

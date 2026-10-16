@@ -259,8 +259,8 @@
 <meta property="og:title" content="Bandit17" />
 <meta name="author" content="Amr Abdel-Motaleb" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Level Goal The credentials for the next level can be retrieved by submitting the password of the current level to a port on localhost in the range 31000 to 32000. First find out which of these ports have a server listening on them. Then fi…" />
-<meta name="twitter:description" property="og:description" content="Level Goal The credentials for the next level can be retrieved by submitting the password of the current level to a port on localhost in the range 31000 to 32000. First find out which of these ports have a server listening on them. Then fi…" />
+<meta name="description" content="Bandit Level 17 — scan a range of ports with nmap, tell TLS from plain services, and find the one that returns credentials." />
+<meta name="twitter:description" property="og:description" content="Bandit Level 17 — scan a range of ports with nmap, tell TLS from plain services, and find the one that returns credentials." />
 <link rel="canonical" href="https://bamr87.github.io/wargames/docs/wargames/bandit/bandit17/" />
 <meta property="og:url" content="https://bamr87.github.io/wargames/docs/wargames/bandit/bandit17/" />
 <meta property="og:site_name" content="Wargames" />
@@ -270,7 +270,7 @@
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="Bandit17" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Amr Abdel-Motaleb"},"dateModified":"2026-04-07T01:41:08+00:00","datePublished":"2026-04-07T01:41:08+00:00","description":"Level Goal The credentials for the next level can be retrieved by submitting the password of the current level to a port on localhost in the range 31000 to 32000. First find out which of these ports have a server listening on them. Then fi…","headline":"Bandit17","mainEntityOfPage":{"@type":"WebPage","@id":"https://bamr87.github.io/wargames/docs/wargames/bandit/bandit17/"},"url":"https://bamr87.github.io/wargames/docs/wargames/bandit/bandit17/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Amr Abdel-Motaleb"},"dateModified":"2026-04-07T01:41:08+00:00","datePublished":"2026-04-07T01:41:08+00:00","description":"Bandit Level 17 — scan a range of ports with nmap, tell TLS from plain services, and find the one that returns credentials.","headline":"Bandit17","mainEntityOfPage":{"@type":"WebPage","@id":"https://bamr87.github.io/wargames/docs/wargames/bandit/bandit17/"},"url":"https://bamr87.github.io/wargames/docs/wargames/bandit/bandit17/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -1223,7 +1223,7 @@ document.addEventListener("DOMContentLoaded", function () {
     </div>
     <div class="col-6">
       <div class="p-2 bg-body-tertiary rounded text-center">
-        <small class="text-body-secondary d-block">Last Build</small><code class="small" data-testid="theme-build-stamp">Oct 14, 20:19</code>
+        <small class="text-body-secondary d-block">Last Build</small><code class="small" data-testid="theme-build-stamp">Oct 16, 22:05</code>
       </div>
     </div>
 
@@ -3018,12 +3018,7 @@ function zer0CopyFeedback(btn, success) {
       <h1 class="bd-intro-title">Bandit17</h1>
       
       
-      <p class="bd-intro-description">Level Goal
-----------
-The credentials for the next level can be retrieved by submitting the
-password of the current level to a port on localhost in the range
-31000 to 32000. First find out which of these ports have a server
-listening on them. Then fi...</p>
+      <p class="bd-intro-description">Bandit Level 17 — scan a range of ports with nmap, tell TLS from plain services, and find the one that returns credentials.</p>
       
     </div>
 
@@ -3115,7 +3110,7 @@ listening on them. Then fi...</p>
              title="Copies a cleaned article summary to your clipboard, then opens LinkedIn sharing"
              data-share-url="https://bamr87.github.io/wargames/docs/wargames/bandit/bandit17/"
              data-share-title="Bandit17"
-             data-share-description="Level Goal----------The credentials for the next level can be retrieved by submitting thepassword of the current level to a port on localhost in the range31000 to 32000. First find out which of these ports have a serverlistening on them. Then fi...">
+             data-share-description="Bandit Level 17 — scan a range of ports with nmap, tell TLS from plain services, and find the one that returns credentials.">
             <i class="bi bi-linkedin me-2"></i>Share on LinkedIn
           </a>
         </li>
@@ -3208,7 +3203,7 @@ listening on them. Then fi...</p>
       
       
         
-<ul class="list-group-flush"><li class="list-group-item"><a href="#level-goal" class="">Level Goal</a></li><li class="list-group-item"><a href="#commands-you-may-need-to-solve-this-level" class="">Commands you may need to solve this level</a></li><li class="list-group-item"><a href="#helpful-reading-material" class="">Helpful Reading Material</a></li></ul>
+<ul class="list-group-flush"><li class="list-group-item"><a href="#level-goal" class="">Level Goal</a></li><li class="list-group-item"><a href="#commands-you-may-need-to-solve-this-level" class="">Commands you may need to solve this level</a></li><li class="list-group-item"><a href="#helpful-reading-material" class="">Helpful Reading Material</a></li><li class="list-group-item"><a href="#study-guide" class="">Study guide</a><ul><li class="list-group-item"><a href="#what-this-level-teaches" class="">What this level teaches</a></li><li class="list-group-item"><a href="#key-ideas" class="">Key ideas</a></li><li class="list-group-item"><a href="#how-to-approach-it" class="">How to approach it</a></li><li class="list-group-item"><a href="#why-it-matters" class="">Why it matters</a></li></ul></li></ul>
 
       
     </nav>
@@ -3242,6 +3237,38 @@ listening on them. Then fi...</p>
   <li><a href="https://en.wikipedia.org/wiki/Port_scanner">Port scanner on Wikipedia</a></li>
 </ul>
 
+<!-- study-guide:start -->
+
+<h2 id="study-guide">Study guide</h2>
+
+<p><strong>Level map:</strong> logged in as <code class="language-plaintext highlighter-rouge">bandit16</code>, find the credentials for <code class="language-plaintext highlighter-rouge">bandit17</code>.</p>
+
+<h3 id="what-this-level-teaches">What this level teaches</h3>
+
+<p>Reconnaissance: finding which services are running and what they speak.</p>
+
+<h3 id="key-ideas">Key ideas</h3>
+
+<ul>
+  <li><strong>Port scanning.</strong> <code class="language-plaintext highlighter-rouge">nmap -p 31000-32000 localhost</code> tests each port in a range to see which are open.</li>
+  <li><strong>Service detection.</strong> Nmap’s version-detection options probe open ports to guess whether they speak TLS or plain text.</li>
+  <li><strong>Elimination.</strong> Of the open ports, some are echo servers that repeat what you send; only one returns real credentials.</li>
+  <li><strong>Credentials are not always passwords.</strong> Here the reward is a private key. Save it to a new directory you create under <code class="language-plaintext highlighter-rouge">/tmp</code> and set strict permissions before using it.</li>
+</ul>
+
+<h3 id="how-to-approach-it">How to approach it</h3>
+
+<ol>
+  <li>Scan only the range given and only <code class="language-plaintext highlighter-rouge">localhost</code>.</li>
+  <li>For each open port, try TLS first, then plain text, and watch the responses.</li>
+  <li>Write down which port did what; it helps you avoid repeating work.</li>
+</ol>
+
+<h3 id="why-it-matters">Why it matters</h3>
+
+<p>Mapping a target’s attack surface is step one of every penetration test. The ethics rule applies: <strong>scan only systems you own or have written permission to test.</strong></p>
+
+<!-- study-guide:end -->
 
         </div>
       </div>
@@ -3544,7 +3571,7 @@ listening on them. Then fi...</p>
     </div>
   </div>
 </aside>
-<script src="/wargames/assets/js/obsidian-local-graph.js?v=1792009165" defer></script>
+<script src="/wargames/assets/js/obsidian-local-graph.js?v=1792188318" defer></script>
 
 
 
@@ -3898,7 +3925,7 @@ listening on them. Then fi...</p>
 <script src="/wargames/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 
-<script type="module" src="/wargames/assets/js/modules/navigation/index.js?v=1792009165"></script>
+<script type="module" src="/wargames/assets/js/modules/navigation/index.js?v=1792188318"></script>
 
 
 <script defer src="/wargames/assets/js/ui-helpers.js"></script>
@@ -3925,7 +3952,7 @@ listening on them. Then fi...</p>
   window.OBSIDIAN_CONFIG.attachmentsPath = "/wargames/assets/images/notes";
   window.OBSIDIAN_CONFIG.tagBase = "/wargames/tags/";
   window.OBSIDIAN_CONFIG.cytoscapeUrl = "/wargames/assets/vendor/cytoscape/cytoscape.min.js";
-</script><script defer src="/wargames/assets/js/obsidian-wiki-links.js?v=1792009165"></script>
+</script><script defer src="/wargames/assets/js/obsidian-wiki-links.js?v=1792188318"></script>
 
 
         </div>

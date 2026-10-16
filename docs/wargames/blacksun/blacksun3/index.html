@@ -259,8 +259,8 @@
 <meta property="og:title" content="Blacksun3" />
 <meta name="author" content="Amr Abdel-Motaleb" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Level3 is a blast from the past, with not much details and a sstriped binary!" />
-<meta name="twitter:description" property="og:description" content="Level3 is a blast from the past, with not much details and a sstriped binary!" />
+<meta name="description" content="Blacksun Level 3 — analyse a stripped binary with little documentation, work out what it expects, and exploit it, with some brute force." />
+<meta name="twitter:description" property="og:description" content="Blacksun Level 3 — analyse a stripped binary with little documentation, work out what it expects, and exploit it, with some brute force." />
 <link rel="canonical" href="https://bamr87.github.io/wargames/docs/wargames/blacksun/blacksun3/" />
 <meta property="og:url" content="https://bamr87.github.io/wargames/docs/wargames/blacksun/blacksun3/" />
 <meta property="og:site_name" content="Wargames" />
@@ -270,7 +270,7 @@
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="Blacksun3" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Amr Abdel-Motaleb"},"dateModified":"2026-04-07T01:41:09+00:00","datePublished":"2026-04-07T01:41:09+00:00","description":"Level3 is a blast from the past, with not much details and a sstriped binary!","headline":"Blacksun3","mainEntityOfPage":{"@type":"WebPage","@id":"https://bamr87.github.io/wargames/docs/wargames/blacksun/blacksun3/"},"url":"https://bamr87.github.io/wargames/docs/wargames/blacksun/blacksun3/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Amr Abdel-Motaleb"},"dateModified":"2026-04-07T01:41:09+00:00","datePublished":"2026-04-07T01:41:09+00:00","description":"Blacksun Level 3 — analyse a stripped binary with little documentation, work out what it expects, and exploit it, with some brute force.","headline":"Blacksun3","mainEntityOfPage":{"@type":"WebPage","@id":"https://bamr87.github.io/wargames/docs/wargames/blacksun/blacksun3/"},"url":"https://bamr87.github.io/wargames/docs/wargames/blacksun/blacksun3/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -1223,7 +1223,7 @@ document.addEventListener("DOMContentLoaded", function () {
     </div>
     <div class="col-6">
       <div class="p-2 bg-body-tertiary rounded text-center">
-        <small class="text-body-secondary d-block">Last Build</small><code class="small" data-testid="theme-build-stamp">Oct 14, 20:19</code>
+        <small class="text-body-secondary d-block">Last Build</small><code class="small" data-testid="theme-build-stamp">Oct 16, 22:05</code>
       </div>
     </div>
 
@@ -3018,8 +3018,7 @@ function zer0CopyFeedback(btn, success) {
       <h1 class="bd-intro-title">Blacksun3</h1>
       
       
-      <p class="bd-intro-description">Level3 is a blast from the past, with not much details and a sstriped
-binary!</p>
+      <p class="bd-intro-description">Blacksun Level 3 — analyse a stripped binary with little documentation, work out what it expects, and exploit it, with some brute force.</p>
       
     </div>
 
@@ -3111,7 +3110,7 @@ binary!</p>
              title="Copies a cleaned article summary to your clipboard, then opens LinkedIn sharing"
              data-share-url="https://bamr87.github.io/wargames/docs/wargames/blacksun/blacksun3/"
              data-share-title="Blacksun3"
-             data-share-description="Level3 is a blast from the past, with not much details and a sstripedbinary!">
+             data-share-description="Blacksun Level 3 — analyse a stripped binary with little documentation, work out what it expects, and exploit it, with some brute force.">
             <i class="bi bi-linkedin me-2"></i>Share on LinkedIn
           </a>
         </li>
@@ -3204,7 +3203,7 @@ binary!</p>
       
       
         
-<ul class="list-group-flush"><li class="list-group-item"><a href="#binary-information" class="">Binary information</a></li></ul>
+<ul class="list-group-flush"><li class="list-group-item"><a href="#binary-information" class="">Binary information</a></li><li class="list-group-item"><a href="#what-this-level-teaches" class="">What this level teaches</a></li><li class="list-group-item"><a href="#key-ideas" class="">Key ideas</a></li><li class="list-group-item"><a href="#how-to-approach-it" class="">How to approach it</a></li><li class="list-group-item"><a href="#why-it-matters" class="">Why it matters</a></li></ul>
 
       
     </nav>
@@ -3258,6 +3257,38 @@ binary!</p>
   </tbody>
 </table>
 
+<!-- study-guide:start -->
+
+<h2 id="study-guide">Study guide</h2>
+
+<p><strong>Level map:</strong> the target is <code class="language-plaintext highlighter-rouge">/levels/level3</code>; it is a stripped binary with stack protection and ASLR on and PIE off.</p>
+
+<h3 id="what-this-level-teaches">What this level teaches</h3>
+
+<p>Reverse engineering with no symbols and no source.</p>
+
+<h3 id="key-ideas">Key ideas</h3>
+
+<ul>
+  <li><strong>Stripped binaries.</strong> Function names are gone, so you identify functions by behaviour and by the library calls they make.</li>
+  <li><strong>Partial disassembly.</strong> The page encourages experimenting and disassembling only the interesting parts.</li>
+  <li><strong>Stack protector.</strong> With SSP enabled, overwriting the return address crudely will abort the program, so you need a way around or an information leak.</li>
+  <li><strong>Brute force.</strong> If a protection value has few possibilities per attempt, repeated attempts can defeat it.</li>
+</ul>
+
+<h3 id="how-to-approach-it">How to approach it</h3>
+
+<ol>
+  <li>Run the program, observe its behaviour and input format, and trace its system calls.</li>
+  <li>Disassemble the input-handling path in <code class="language-plaintext highlighter-rouge">objdump</code> or Ghidra.</li>
+  <li>Identify the weakness and decide whether a leak or brute force is the practical bypass.</li>
+</ol>
+
+<h3 id="why-it-matters">Why it matters</h3>
+
+<p>Most real targets have no source. Learning to find the bug from the binary is a core skill.</p>
+
+<!-- study-guide:end -->
 
         </div>
       </div>
@@ -3560,7 +3591,7 @@ binary!</p>
     </div>
   </div>
 </aside>
-<script src="/wargames/assets/js/obsidian-local-graph.js?v=1792009165" defer></script>
+<script src="/wargames/assets/js/obsidian-local-graph.js?v=1792188318" defer></script>
 
 
 
@@ -3914,7 +3945,7 @@ binary!</p>
 <script src="/wargames/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 
-<script type="module" src="/wargames/assets/js/modules/navigation/index.js?v=1792009165"></script>
+<script type="module" src="/wargames/assets/js/modules/navigation/index.js?v=1792188318"></script>
 
 
 <script defer src="/wargames/assets/js/ui-helpers.js"></script>
@@ -3941,7 +3972,7 @@ binary!</p>
   window.OBSIDIAN_CONFIG.attachmentsPath = "/wargames/assets/images/notes";
   window.OBSIDIAN_CONFIG.tagBase = "/wargames/tags/";
   window.OBSIDIAN_CONFIG.cytoscapeUrl = "/wargames/assets/vendor/cytoscape/cytoscape.min.js";
-</script><script defer src="/wargames/assets/js/obsidian-wiki-links.js?v=1792009165"></script>
+</script><script defer src="/wargames/assets/js/obsidian-wiki-links.js?v=1792188318"></script>
 
 
         </div>

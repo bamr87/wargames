@@ -259,8 +259,8 @@
 <meta property="og:title" content="Drifter5" />
 <meta name="author" content="Amr Abdel-Motaleb" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Level 5 is a series of relatively simple logic/math games." />
-<meta name="twitter:description" property="og:description" content="Level 5 is a series of relatively simple logic/math games." />
+<meta name="description" content="Drifter Level 5 — a series of logic and mathematics games, one of which is always solvable and can be understood by reverse engineering." />
+<meta name="twitter:description" property="og:description" content="Drifter Level 5 — a series of logic and mathematics games, one of which is always solvable and can be understood by reverse engineering." />
 <link rel="canonical" href="https://bamr87.github.io/wargames/docs/wargames/drifter/drifter5/" />
 <meta property="og:url" content="https://bamr87.github.io/wargames/docs/wargames/drifter/drifter5/" />
 <meta property="og:site_name" content="Wargames" />
@@ -270,7 +270,7 @@
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="Drifter5" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Amr Abdel-Motaleb"},"dateModified":"2026-04-07T01:41:09+00:00","datePublished":"2026-04-07T01:41:09+00:00","description":"Level 5 is a series of relatively simple logic/math games.","headline":"Drifter5","mainEntityOfPage":{"@type":"WebPage","@id":"https://bamr87.github.io/wargames/docs/wargames/drifter/drifter5/"},"url":"https://bamr87.github.io/wargames/docs/wargames/drifter/drifter5/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Amr Abdel-Motaleb"},"dateModified":"2026-04-07T01:41:09+00:00","datePublished":"2026-04-07T01:41:09+00:00","description":"Drifter Level 5 — a series of logic and mathematics games, one of which is always solvable and can be understood by reverse engineering.","headline":"Drifter5","mainEntityOfPage":{"@type":"WebPage","@id":"https://bamr87.github.io/wargames/docs/wargames/drifter/drifter5/"},"url":"https://bamr87.github.io/wargames/docs/wargames/drifter/drifter5/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -1223,7 +1223,7 @@ document.addEventListener("DOMContentLoaded", function () {
     </div>
     <div class="col-6">
       <div class="p-2 bg-body-tertiary rounded text-center">
-        <small class="text-body-secondary d-block">Last Build</small><code class="small" data-testid="theme-build-stamp">Oct 14, 20:19</code>
+        <small class="text-body-secondary d-block">Last Build</small><code class="small" data-testid="theme-build-stamp">Oct 16, 22:05</code>
       </div>
     </div>
 
@@ -3018,7 +3018,7 @@ function zer0CopyFeedback(btn, success) {
       <h1 class="bd-intro-title">Drifter5</h1>
       
       
-      <p class="bd-intro-description">Level 5 is a series of relatively simple logic/math games.</p>
+      <p class="bd-intro-description">Drifter Level 5 — a series of logic and mathematics games, one of which is always solvable and can be understood by reverse engineering.</p>
       
     </div>
 
@@ -3110,7 +3110,7 @@ function zer0CopyFeedback(btn, success) {
              title="Copies a cleaned article summary to your clipboard, then opens LinkedIn sharing"
              data-share-url="https://bamr87.github.io/wargames/docs/wargames/drifter/drifter5/"
              data-share-title="Drifter5"
-             data-share-description="Level 5 is a series of relatively simple logic/math games.">
+             data-share-description="Drifter Level 5 — a series of logic and mathematics games, one of which is always solvable and can be understood by reverse engineering.">
             <i class="bi bi-linkedin me-2"></i>Share on LinkedIn
           </a>
         </li>
@@ -3202,7 +3202,9 @@ function zer0CopyFeedback(btn, success) {
 
       
       
-        <p class="text-body-secondary small fst-italic">No sections on this page.</p>
+        
+<ul class="list-group-flush"><li class="list-group-item"><a href="#study-guide" class="">Study guide</a><ul><li class="list-group-item"><a href="#what-this-level-teaches" class="">What this level teaches</a></li><li class="list-group-item"><a href="#key-ideas" class="">Key ideas</a></li><li class="list-group-item"><a href="#how-to-approach-it" class="">How to approach it</a></li><li class="list-group-item"><a href="#why-it-matters" class="">Why it matters</a></li></ul></li></ul>
+
       
     </nav>
   </div>
@@ -3225,6 +3227,38 @@ function zer0CopyFeedback(btn, success) {
 <p>Level 5 is a series of relatively simple logic/math games.</p>
 
 <p>The game 3 is always solvable - if you are stuck on it you may wish to reverse engineer the applicable part of the binary ;) Granted, the coding for that was horrible, but it’d give you a way to solve it.</p>
+
+<!-- study-guide:start -->
+
+<h2 id="study-guide">Study guide</h2>
+
+<p><strong>Where it fits:</strong> Drifter level 5 of 0–15, in the analysis and logic stage of the game. The page does not say which account you start as, so check with <code class="language-plaintext highlighter-rouge">id</code> after connecting.</p>
+
+<h3 id="what-this-level-teaches">What this level teaches</h3>
+
+<p>Solving puzzle-style challenges by reading the code behind them.</p>
+
+<h3 id="key-ideas">Key ideas</h3>
+
+<ul>
+  <li><strong>Several mini-games.</strong> Each tests logic or arithmetic.</li>
+  <li><strong>Game 3 is always solvable.</strong> If you are stuck on it, the page suggests reverse engineering the relevant part of the binary; it also warns that the code is badly written, which makes reading it a good exercise in its own right.</li>
+  <li><strong>Programmatic solutions.</strong> Write a solver rather than playing by hand.</li>
+</ul>
+
+<h3 id="how-to-approach-it">How to approach it</h3>
+
+<ol>
+  <li>Play each game manually to understand its rules.</li>
+  <li>Where it helps, read the corresponding binary function.</li>
+  <li>Write a script to solve them quickly.</li>
+</ol>
+
+<h3 id="why-it-matters">Why it matters</h3>
+
+<p>Reading poor-quality code is routine in security work.</p>
+
+<!-- study-guide:end -->
 
         </div>
       </div>
@@ -3527,7 +3561,7 @@ function zer0CopyFeedback(btn, success) {
     </div>
   </div>
 </aside>
-<script src="/wargames/assets/js/obsidian-local-graph.js?v=1792009165" defer></script>
+<script src="/wargames/assets/js/obsidian-local-graph.js?v=1792188318" defer></script>
 
 
 
@@ -3881,7 +3915,7 @@ function zer0CopyFeedback(btn, success) {
 <script src="/wargames/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 
-<script type="module" src="/wargames/assets/js/modules/navigation/index.js?v=1792009165"></script>
+<script type="module" src="/wargames/assets/js/modules/navigation/index.js?v=1792188318"></script>
 
 
 <script defer src="/wargames/assets/js/ui-helpers.js"></script>
@@ -3908,7 +3942,7 @@ function zer0CopyFeedback(btn, success) {
   window.OBSIDIAN_CONFIG.attachmentsPath = "/wargames/assets/images/notes";
   window.OBSIDIAN_CONFIG.tagBase = "/wargames/tags/";
   window.OBSIDIAN_CONFIG.cytoscapeUrl = "/wargames/assets/vendor/cytoscape/cytoscape.min.js";
-</script><script defer src="/wargames/assets/js/obsidian-wiki-links.js?v=1792009165"></script>
+</script><script defer src="/wargames/assets/js/obsidian-wiki-links.js?v=1792188318"></script>
 
 
         </div>

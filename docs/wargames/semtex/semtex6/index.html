@@ -259,8 +259,8 @@
 <meta property="og:title" content="Semtex6" />
 <meta name="author" content="Amr Abdel-Motaleb" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="ICMP forging Send a special ICMP packet to an unknown host. Add the correct payload to it, to make sure you can receive the password. Spoof your origin address and make semtex believe, the packet is really coming from some government ser…" />
-<meta name="twitter:description" property="og:description" content="ICMP forging Send a special ICMP packet to an unknown host. Add the correct payload to it, to make sure you can receive the password. Spoof your origin address and make semtex believe, the packet is really coming from some government ser…" />
+<meta name="description" content="Semtex Level 6 — forge an ICMP packet with a spoofed source address using a raw socket helper." />
+<meta name="twitter:description" property="og:description" content="Semtex Level 6 — forge an ICMP packet with a spoofed source address using a raw socket helper." />
 <link rel="canonical" href="https://bamr87.github.io/wargames/docs/wargames/semtex/semtex6/" />
 <meta property="og:url" content="https://bamr87.github.io/wargames/docs/wargames/semtex/semtex6/" />
 <meta property="og:site_name" content="Wargames" />
@@ -270,7 +270,7 @@
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="Semtex6" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Amr Abdel-Motaleb"},"dateModified":"2026-04-07T01:41:09+00:00","datePublished":"2026-04-07T01:41:09+00:00","description":"ICMP forging Send a special ICMP packet to an unknown host. Add the correct payload to it, to make sure you can receive the password. Spoof your origin address and make semtex believe, the packet is really coming from some government ser…","headline":"Semtex6","mainEntityOfPage":{"@type":"WebPage","@id":"https://bamr87.github.io/wargames/docs/wargames/semtex/semtex6/"},"url":"https://bamr87.github.io/wargames/docs/wargames/semtex/semtex6/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Amr Abdel-Motaleb"},"dateModified":"2026-04-07T01:41:09+00:00","datePublished":"2026-04-07T01:41:09+00:00","description":"Semtex Level 6 — forge an ICMP packet with a spoofed source address using a raw socket helper.","headline":"Semtex6","mainEntityOfPage":{"@type":"WebPage","@id":"https://bamr87.github.io/wargames/docs/wargames/semtex/semtex6/"},"url":"https://bamr87.github.io/wargames/docs/wargames/semtex/semtex6/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -1223,7 +1223,7 @@ document.addEventListener("DOMContentLoaded", function () {
     </div>
     <div class="col-6">
       <div class="p-2 bg-body-tertiary rounded text-center">
-        <small class="text-body-secondary d-block">Last Build</small><code class="small" data-testid="theme-build-stamp">Oct 14, 20:19</code>
+        <small class="text-body-secondary d-block">Last Build</small><code class="small" data-testid="theme-build-stamp">Oct 16, 22:05</code>
       </div>
     </div>
 
@@ -3018,12 +3018,7 @@ function zer0CopyFeedback(btn, success) {
       <h1 class="bd-intro-title">Semtex6</h1>
       
       
-      <p class="bd-intro-description">ICMP forging
-------------
-Send a special ICMP packet to an unknown host. Add the correct
-payload to it, to make sure you can receive the password. Spoof your
-origin address and make semtex believe, the packet is really coming
-from some government ser...</p>
+      <p class="bd-intro-description">Semtex Level 6 — forge an ICMP packet with a spoofed source address using a raw socket helper.</p>
       
     </div>
 
@@ -3115,7 +3110,7 @@ from some government ser...</p>
              title="Copies a cleaned article summary to your clipboard, then opens LinkedIn sharing"
              data-share-url="https://bamr87.github.io/wargames/docs/wargames/semtex/semtex6/"
              data-share-title="Semtex6"
-             data-share-description="ICMP forging------------Send a special ICMP packet to an unknown host. Add the correctpayload to it, to make sure you can receive the password. Spoof yourorigin address and make semtex believe, the packet is really comingfrom some government ser...">
+             data-share-description="Semtex Level 6 — forge an ICMP packet with a spoofed source address using a raw socket helper.">
             <i class="bi bi-linkedin me-2"></i>Share on LinkedIn
           </a>
         </li>
@@ -3208,7 +3203,7 @@ from some government ser...</p>
       
       
         
-<ul class="list-group-flush"><li class="list-group-item"><a href="#icmp-forging" class="">ICMP forging</a></li><li class="list-group-item"><a href="#reading-material" class="">Reading Material</a></li></ul>
+<ul class="list-group-flush"><li class="list-group-item"><a href="#icmp-forging" class="">ICMP forging</a></li><li class="list-group-item"><a href="#reading-material" class="">Reading Material</a></li><li class="list-group-item"><a href="#study-guide" class="">Study guide</a><ul><li class="list-group-item"><a href="#what-this-level-teaches" class="">What this level teaches</a></li><li class="list-group-item"><a href="#key-ideas" class="">Key ideas</a></li><li class="list-group-item"><a href="#how-to-approach-it" class="">How to approach it</a></li><li class="list-group-item"><a href="#why-it-matters" class="">Why it matters</a></li></ul></li></ul>
 
       
     </nav>
@@ -3240,6 +3235,38 @@ from some government ser...</p>
   <li><a href="http://mixter.void.ru/rawip.html">Mixter’s raw socket tutorial</a></li>
 </ul>
 
+<!-- study-guide:start -->
+
+<h2 id="study-guide">Study guide</h2>
+
+<p><strong>Level map:</strong> the helper is <code class="language-plaintext highlighter-rouge">/semtex/semtexraw</code>; more instructions are in your home directory.</p>
+
+<h3 id="what-this-level-teaches">What this level teaches</h3>
+
+<p>Raw sockets, ICMP and source-address spoofing.</p>
+
+<h3 id="key-ideas">Key ideas</h3>
+
+<ul>
+  <li><strong>ICMP.</strong> The protocol behind <code class="language-plaintext highlighter-rouge">ping</code>, used for network control messages.</li>
+  <li><strong>Raw sockets.</strong> They let a program craft packets, including headers; this normally requires special privilege, which is why a helper is provided.</li>
+  <li><strong>Spoofing.</strong> The page asks you to make the packet appear to come from a <code class="language-plaintext highlighter-rouge">.gov</code> server and notes that your sending host needs a reverse DNS entry.</li>
+  <li><strong>Reading.</strong> The ICMP RFC and a raw socket tutorial are linked.</li>
+</ul>
+
+<h3 id="how-to-approach-it">How to approach it</h3>
+
+<ol>
+  <li>Read the helper’s source and the instructions in your home directory.</li>
+  <li>Build the ICMP message with the required payload.</li>
+  <li>Send it and listen for the reply.</li>
+</ol>
+
+<h3 id="why-it-matters">Why it matters</h3>
+
+<p>Spoofing is the basis of reflection attacks, and source address validation is the defence.</p>
+
+<!-- study-guide:end -->
 
         </div>
       </div>
@@ -3542,7 +3569,7 @@ from some government ser...</p>
     </div>
   </div>
 </aside>
-<script src="/wargames/assets/js/obsidian-local-graph.js?v=1792009165" defer></script>
+<script src="/wargames/assets/js/obsidian-local-graph.js?v=1792188318" defer></script>
 
 
 
@@ -3896,7 +3923,7 @@ from some government ser...</p>
 <script src="/wargames/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 
-<script type="module" src="/wargames/assets/js/modules/navigation/index.js?v=1792009165"></script>
+<script type="module" src="/wargames/assets/js/modules/navigation/index.js?v=1792188318"></script>
 
 
 <script defer src="/wargames/assets/js/ui-helpers.js"></script>
@@ -3923,7 +3950,7 @@ from some government ser...</p>
   window.OBSIDIAN_CONFIG.attachmentsPath = "/wargames/assets/images/notes";
   window.OBSIDIAN_CONFIG.tagBase = "/wargames/tags/";
   window.OBSIDIAN_CONFIG.cytoscapeUrl = "/wargames/assets/vendor/cytoscape/cytoscape.min.js";
-</script><script defer src="/wargames/assets/js/obsidian-wiki-links.js?v=1792009165"></script>
+</script><script defer src="/wargames/assets/js/obsidian-wiki-links.js?v=1792188318"></script>
 
 
         </div>

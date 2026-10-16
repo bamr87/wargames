@@ -259,8 +259,8 @@
 <meta property="og:title" content="Bandit23" />
 <meta name="author" content="Amr Abdel-Motaleb" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Level Goal A program is running automatically at regular intervals from cron, the time-based job scheduler. Look in /etc/cron.d/ for the configuration and see what command is being executed." />
-<meta name="twitter:description" property="og:description" content="Level Goal A program is running automatically at regular intervals from cron, the time-based job scheduler. Look in /etc/cron.d/ for the configuration and see what command is being executed." />
+<meta name="description" content="Bandit Level 23 — read a shell script run by cron and work out what it computes and for whom." />
+<meta name="twitter:description" property="og:description" content="Bandit Level 23 — read a shell script run by cron and work out what it computes and for whom." />
 <link rel="canonical" href="https://bamr87.github.io/wargames/docs/wargames/bandit/bandit23/" />
 <meta property="og:url" content="https://bamr87.github.io/wargames/docs/wargames/bandit/bandit23/" />
 <meta property="og:site_name" content="Wargames" />
@@ -270,7 +270,7 @@
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="Bandit23" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Amr Abdel-Motaleb"},"dateModified":"2026-04-07T01:41:08+00:00","datePublished":"2026-04-07T01:41:08+00:00","description":"Level Goal A program is running automatically at regular intervals from cron, the time-based job scheduler. Look in /etc/cron.d/ for the configuration and see what command is being executed.","headline":"Bandit23","mainEntityOfPage":{"@type":"WebPage","@id":"https://bamr87.github.io/wargames/docs/wargames/bandit/bandit23/"},"url":"https://bamr87.github.io/wargames/docs/wargames/bandit/bandit23/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Amr Abdel-Motaleb"},"dateModified":"2026-04-07T01:41:08+00:00","datePublished":"2026-04-07T01:41:08+00:00","description":"Bandit Level 23 — read a shell script run by cron and work out what it computes and for whom.","headline":"Bandit23","mainEntityOfPage":{"@type":"WebPage","@id":"https://bamr87.github.io/wargames/docs/wargames/bandit/bandit23/"},"url":"https://bamr87.github.io/wargames/docs/wargames/bandit/bandit23/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -1223,7 +1223,7 @@ document.addEventListener("DOMContentLoaded", function () {
     </div>
     <div class="col-6">
       <div class="p-2 bg-body-tertiary rounded text-center">
-        <small class="text-body-secondary d-block">Last Build</small><code class="small" data-testid="theme-build-stamp">Oct 14, 20:19</code>
+        <small class="text-body-secondary d-block">Last Build</small><code class="small" data-testid="theme-build-stamp">Oct 16, 22:05</code>
       </div>
     </div>
 
@@ -3018,11 +3018,7 @@ function zer0CopyFeedback(btn, success) {
       <h1 class="bd-intro-title">Bandit23</h1>
       
       
-      <p class="bd-intro-description">Level Goal
-----------
-A program is running automatically at regular intervals from
-cron, the time-based job scheduler. Look in /etc/cron.d/ for
-the configuration and see what command is being executed.</p>
+      <p class="bd-intro-description">Bandit Level 23 — read a shell script run by cron and work out what it computes and for whom.</p>
       
     </div>
 
@@ -3114,7 +3110,7 @@ the configuration and see what command is being executed.</p>
              title="Copies a cleaned article summary to your clipboard, then opens LinkedIn sharing"
              data-share-url="https://bamr87.github.io/wargames/docs/wargames/bandit/bandit23/"
              data-share-title="Bandit23"
-             data-share-description="Level Goal----------A program is running automatically at regular intervals fromcron, the time-based job scheduler. Look in /etc/cron.d/ forthe configuration and see what command is being executed.">
+             data-share-description="Bandit Level 23 — read a shell script run by cron and work out what it computes and for whom.">
             <i class="bi bi-linkedin me-2"></i>Share on LinkedIn
           </a>
         </li>
@@ -3207,7 +3203,7 @@ the configuration and see what command is being executed.</p>
       
       
         
-<ul class="list-group-flush"><li class="list-group-item"><a href="#level-goal" class="">Level Goal</a></li><li class="list-group-item"><a href="#commands-you-may-need-to-solve-this-level" class="">Commands you may need to solve this level</a></li></ul>
+<ul class="list-group-flush"><li class="list-group-item"><a href="#level-goal" class="">Level Goal</a></li><li class="list-group-item"><a href="#commands-you-may-need-to-solve-this-level" class="">Commands you may need to solve this level</a></li><li class="list-group-item"><a href="#study-guide" class="">Study guide</a><ul><li class="list-group-item"><a href="#what-this-level-teaches" class="">What this level teaches</a></li><li class="list-group-item"><a href="#key-ideas" class="">Key ideas</a></li><li class="list-group-item"><a href="#how-to-approach-it" class="">How to approach it</a></li><li class="list-group-item"><a href="#why-it-matters" class="">Why it matters</a></li></ul></li></ul>
 
       
     </nav>
@@ -3236,6 +3232,38 @@ the configuration and see what command is being executed.</p>
 <h2 id="commands-you-may-need-to-solve-this-level">Commands you may need to solve this level</h2>
 <p>cron, crontab, crontab(5) (use “man 5 crontab” to access this)</p>
 
+<!-- study-guide:start -->
+
+<h2 id="study-guide">Study guide</h2>
+
+<p><strong>Level map:</strong> logged in as <code class="language-plaintext highlighter-rouge">bandit22</code>, find the password for <code class="language-plaintext highlighter-rouge">bandit23</code>.</p>
+
+<h3 id="what-this-level-teaches">What this level teaches</h3>
+
+<p>Reading shell scripts critically, including who a script runs as.</p>
+
+<h3 id="key-ideas">Key ideas</h3>
+
+<ul>
+  <li><strong>Command substitution.</strong> <code class="language-plaintext highlighter-rouge">$(command)</code> replaces itself with that command’s output, so scripts can build names or values on the fly.</li>
+  <li><strong>Identity.</strong> <code class="language-plaintext highlighter-rouge">whoami</code> prints the current user. A script run by cron reports the cron entry’s user, not yours.</li>
+  <li><strong>Hashing.</strong> <code class="language-plaintext highlighter-rouge">md5sum</code> turns any text into a fixed-length fingerprint. A script can use it to derive an unguessable-looking filename from a known string.</li>
+  <li><strong>Debugging.</strong> The Level Goal suggests running the script to see its debug output; try each piece in the terminal individually.</li>
+</ul>
+
+<h3 id="how-to-approach-it">How to approach it</h3>
+
+<ol>
+  <li>Read the script slowly and write in your notes what each line does.</li>
+  <li>Ask: what value does <code class="language-plaintext highlighter-rouge">whoami</code> return when cron runs it, and what string gets hashed?</li>
+  <li>Reproduce that computation yourself, then look where the script saved its result.</li>
+</ol>
+
+<h3 id="why-it-matters">Why it matters</h3>
+
+<p>“Security through an obscure filename” fails once the algorithm is visible. Auditing scripts and spotting such patterns is routine code-review work.</p>
+
+<!-- study-guide:end -->
 
         </div>
       </div>
@@ -3538,7 +3566,7 @@ the configuration and see what command is being executed.</p>
     </div>
   </div>
 </aside>
-<script src="/wargames/assets/js/obsidian-local-graph.js?v=1792009165" defer></script>
+<script src="/wargames/assets/js/obsidian-local-graph.js?v=1792188318" defer></script>
 
 
 
@@ -3892,7 +3920,7 @@ the configuration and see what command is being executed.</p>
 <script src="/wargames/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 
-<script type="module" src="/wargames/assets/js/modules/navigation/index.js?v=1792009165"></script>
+<script type="module" src="/wargames/assets/js/modules/navigation/index.js?v=1792188318"></script>
 
 
 <script defer src="/wargames/assets/js/ui-helpers.js"></script>
@@ -3919,7 +3947,7 @@ the configuration and see what command is being executed.</p>
   window.OBSIDIAN_CONFIG.attachmentsPath = "/wargames/assets/images/notes";
   window.OBSIDIAN_CONFIG.tagBase = "/wargames/tags/";
   window.OBSIDIAN_CONFIG.cytoscapeUrl = "/wargames/assets/vendor/cytoscape/cytoscape.min.js";
-</script><script defer src="/wargames/assets/js/obsidian-wiki-links.js?v=1792009165"></script>
+</script><script defer src="/wargames/assets/js/obsidian-wiki-links.js?v=1792188318"></script>
 
 
         </div>

@@ -259,8 +259,8 @@
 <meta property="og:title" content="Bandit2" />
 <meta name="author" content="Amr Abdel-Motaleb" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Level Goal The password for the next level is stored in a file called - located in the home directory" />
-<meta name="twitter:description" property="og:description" content="Level Goal The password for the next level is stored in a file called - located in the home directory" />
+<meta name="description" content="Bandit Level 2 — read a file literally named “-“ and learn why commands treat a leading dash as an option." />
+<meta name="twitter:description" property="og:description" content="Bandit Level 2 — read a file literally named “-“ and learn why commands treat a leading dash as an option." />
 <link rel="canonical" href="https://bamr87.github.io/wargames/docs/wargames/bandit/bandit2/" />
 <meta property="og:url" content="https://bamr87.github.io/wargames/docs/wargames/bandit/bandit2/" />
 <meta property="og:site_name" content="Wargames" />
@@ -270,7 +270,7 @@
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="Bandit2" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Amr Abdel-Motaleb"},"dateModified":"2026-04-07T01:41:08+00:00","datePublished":"2026-04-07T01:41:08+00:00","description":"Level Goal The password for the next level is stored in a file called - located in the home directory","headline":"Bandit2","mainEntityOfPage":{"@type":"WebPage","@id":"https://bamr87.github.io/wargames/docs/wargames/bandit/bandit2/"},"url":"https://bamr87.github.io/wargames/docs/wargames/bandit/bandit2/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Amr Abdel-Motaleb"},"dateModified":"2026-04-07T01:41:08+00:00","datePublished":"2026-04-07T01:41:08+00:00","description":"Bandit Level 2 — read a file literally named “-“ and learn why commands treat a leading dash as an option.","headline":"Bandit2","mainEntityOfPage":{"@type":"WebPage","@id":"https://bamr87.github.io/wargames/docs/wargames/bandit/bandit2/"},"url":"https://bamr87.github.io/wargames/docs/wargames/bandit/bandit2/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -1223,7 +1223,7 @@ document.addEventListener("DOMContentLoaded", function () {
     </div>
     <div class="col-6">
       <div class="p-2 bg-body-tertiary rounded text-center">
-        <small class="text-body-secondary d-block">Last Build</small><code class="small" data-testid="theme-build-stamp">Oct 14, 20:19</code>
+        <small class="text-body-secondary d-block">Last Build</small><code class="small" data-testid="theme-build-stamp">Oct 16, 22:05</code>
       </div>
     </div>
 
@@ -3018,10 +3018,7 @@ function zer0CopyFeedback(btn, success) {
       <h1 class="bd-intro-title">Bandit2</h1>
       
       
-      <p class="bd-intro-description">Level Goal
-----------
-The password for the next level is stored in a file called -
-located in the home directory</p>
+      <p class="bd-intro-description">Bandit Level 2 — read a file literally named "-" and learn why commands treat a leading dash as an option.</p>
       
     </div>
 
@@ -3113,7 +3110,7 @@ located in the home directory</p>
              title="Copies a cleaned article summary to your clipboard, then opens LinkedIn sharing"
              data-share-url="https://bamr87.github.io/wargames/docs/wargames/bandit/bandit2/"
              data-share-title="Bandit2"
-             data-share-description="Level Goal----------The password for the next level is stored in a file called -located in the home directory">
+             data-share-description="Bandit Level 2 — read a file literally named &quot;-&quot; and learn why commands treat a leading dash as an option.">
             <i class="bi bi-linkedin me-2"></i>Share on LinkedIn
           </a>
         </li>
@@ -3206,7 +3203,7 @@ located in the home directory</p>
       
       
         
-<ul class="list-group-flush"><li class="list-group-item"><a href="#level-goal" class="">Level Goal</a></li><li class="list-group-item"><a href="#commands-you-may-need-to-solve-this-level" class="">Commands you may need to solve this level</a></li><li class="list-group-item"><a href="#helpful-reading-material" class="">Helpful Reading Material</a></li></ul>
+<ul class="list-group-flush"><li class="list-group-item"><a href="#level-goal" class="">Level Goal</a></li><li class="list-group-item"><a href="#commands-you-may-need-to-solve-this-level" class="">Commands you may need to solve this level</a></li><li class="list-group-item"><a href="#helpful-reading-material" class="">Helpful Reading Material</a></li><li class="list-group-item"><a href="#study-guide" class="">Study guide</a><ul><li class="list-group-item"><a href="#what-this-level-teaches" class="">What this level teaches</a></li><li class="list-group-item"><a href="#key-ideas" class="">Key ideas</a></li><li class="list-group-item"><a href="#how-to-approach-it" class="">How to approach it</a></li><li class="list-group-item"><a href="#why-it-matters" class="">Why it matters</a></li></ul></li></ul>
 
       
     </nav>
@@ -3239,6 +3236,37 @@ located in the home directory</p>
   <li><a href="https://linux.die.net/abs-guide/special-chars.html">Advanced Bash-scripting Guide - Chapter 3 - Special Characters</a></li>
 </ul>
 
+<!-- study-guide:start -->
+
+<h2 id="study-guide">Study guide</h2>
+
+<p><strong>Level map:</strong> logged in as <code class="language-plaintext highlighter-rouge">bandit1</code>, find the password for <code class="language-plaintext highlighter-rouge">bandit2</code>.</p>
+
+<h3 id="what-this-level-teaches">What this level teaches</h3>
+
+<p>Why some filenames break commands, and how to talk to a command about a file that looks like an option.</p>
+
+<h3 id="key-ideas">Key ideas</h3>
+
+<ul>
+  <li><strong>Options start with a dash.</strong> <code class="language-plaintext highlighter-rouge">cat -n file</code> means “number the lines”. A bare <code class="language-plaintext highlighter-rouge">-</code> is conventionally “standard input”, so a command that receives only <code class="language-plaintext highlighter-rouge">-</code> does not see a file at all.</li>
+  <li><strong>The shell passes arguments through unchanged.</strong> It is the program, not the shell, that decides <code class="language-plaintext highlighter-rouge">-</code> is special.</li>
+  <li><strong>Two standard remedies exist:</strong> make the argument unmistakably a path, or tell the program that options have ended. Both are described in the man pages of nearly every command.</li>
+</ul>
+
+<h3 id="how-to-approach-it">How to approach it</h3>
+
+<ol>
+  <li>Run <code class="language-plaintext highlighter-rouge">ls</code> and notice the odd filename. Try <code class="language-plaintext highlighter-rouge">cat</code> on it and observe what happens; failing on purpose is a good way to learn.</li>
+  <li>Think about how to write a path that does not begin with a dash. The current directory has a short name you already know.</li>
+  <li>Search <code class="language-plaintext highlighter-rouge">man cat</code> or <code class="language-plaintext highlighter-rouge">man bash</code> for the “end of options” convention, which is useful for every command you will ever use.</li>
+</ol>
+
+<h3 id="why-it-matters">Why it matters</h3>
+
+<p>Attackers deliberately create files whose names look like command-line flags, which can trick scripts that run <code class="language-plaintext highlighter-rouge">rm *</code> or <code class="language-plaintext highlighter-rouge">tar *</code> into executing options. Knowing the mechanism is how you defend against it.</p>
+
+<!-- study-guide:end -->
 
         </div>
       </div>
@@ -3541,7 +3569,7 @@ located in the home directory</p>
     </div>
   </div>
 </aside>
-<script src="/wargames/assets/js/obsidian-local-graph.js?v=1792009165" defer></script>
+<script src="/wargames/assets/js/obsidian-local-graph.js?v=1792188318" defer></script>
 
 
 
@@ -3895,7 +3923,7 @@ located in the home directory</p>
 <script src="/wargames/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 
-<script type="module" src="/wargames/assets/js/modules/navigation/index.js?v=1792009165"></script>
+<script type="module" src="/wargames/assets/js/modules/navigation/index.js?v=1792188318"></script>
 
 
 <script defer src="/wargames/assets/js/ui-helpers.js"></script>
@@ -3922,7 +3950,7 @@ located in the home directory</p>
   window.OBSIDIAN_CONFIG.attachmentsPath = "/wargames/assets/images/notes";
   window.OBSIDIAN_CONFIG.tagBase = "/wargames/tags/";
   window.OBSIDIAN_CONFIG.cytoscapeUrl = "/wargames/assets/vendor/cytoscape/cytoscape.min.js";
-</script><script defer src="/wargames/assets/js/obsidian-wiki-links.js?v=1792009165"></script>
+</script><script defer src="/wargames/assets/js/obsidian-wiki-links.js?v=1792188318"></script>
 
 
         </div>

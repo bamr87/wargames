@@ -259,8 +259,8 @@
 <meta property="og:title" content="Blacksun2" />
 <meta name="author" content="Amr Abdel-Motaleb" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Level2 is a test application from a [pop3 library][] that’s pretty buggy. The idea is to write a pop3 server to trigger a vulnerability (pick any you like :p) in the code and get a shell." />
-<meta name="twitter:description" property="og:description" content="Level2 is a test application from a [pop3 library][] that’s pretty buggy. The idea is to write a pop3 server to trigger a vulnerability (pick any you like :p) in the code and get a shell." />
+<meta name="description" content="Blacksun Level 2 — write a malicious POP3 server that triggers a vulnerability in a buggy mail-client library and gets a shell despite ASLR." />
+<meta name="twitter:description" property="og:description" content="Blacksun Level 2 — write a malicious POP3 server that triggers a vulnerability in a buggy mail-client library and gets a shell despite ASLR." />
 <link rel="canonical" href="https://bamr87.github.io/wargames/docs/wargames/blacksun/blacksun2/" />
 <meta property="og:url" content="https://bamr87.github.io/wargames/docs/wargames/blacksun/blacksun2/" />
 <meta property="og:site_name" content="Wargames" />
@@ -270,7 +270,7 @@
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="Blacksun2" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Amr Abdel-Motaleb"},"dateModified":"2026-04-07T01:41:09+00:00","datePublished":"2026-04-07T01:41:09+00:00","description":"Level2 is a test application from a [pop3 library][] that’s pretty buggy. The idea is to write a pop3 server to trigger a vulnerability (pick any you like :p) in the code and get a shell.","headline":"Blacksun2","mainEntityOfPage":{"@type":"WebPage","@id":"https://bamr87.github.io/wargames/docs/wargames/blacksun/blacksun2/"},"url":"https://bamr87.github.io/wargames/docs/wargames/blacksun/blacksun2/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Amr Abdel-Motaleb"},"dateModified":"2026-04-07T01:41:09+00:00","datePublished":"2026-04-07T01:41:09+00:00","description":"Blacksun Level 2 — write a malicious POP3 server that triggers a vulnerability in a buggy mail-client library and gets a shell despite ASLR.","headline":"Blacksun2","mainEntityOfPage":{"@type":"WebPage","@id":"https://bamr87.github.io/wargames/docs/wargames/blacksun/blacksun2/"},"url":"https://bamr87.github.io/wargames/docs/wargames/blacksun/blacksun2/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -1223,7 +1223,7 @@ document.addEventListener("DOMContentLoaded", function () {
     </div>
     <div class="col-6">
       <div class="p-2 bg-body-tertiary rounded text-center">
-        <small class="text-body-secondary d-block">Last Build</small><code class="small" data-testid="theme-build-stamp">Oct 14, 20:19</code>
+        <small class="text-body-secondary d-block">Last Build</small><code class="small" data-testid="theme-build-stamp">Oct 16, 22:05</code>
       </div>
     </div>
 
@@ -3018,9 +3018,7 @@ function zer0CopyFeedback(btn, success) {
       <h1 class="bd-intro-title">Blacksun2</h1>
       
       
-      <p class="bd-intro-description">Level2 is a test application from a [pop3 library][] that's pretty
-buggy. The idea is to write a pop3 server to trigger a vulnerability
-(pick any you like :p) in the code and get a shell.</p>
+      <p class="bd-intro-description">Blacksun Level 2 — write a malicious POP3 server that triggers a vulnerability in a buggy mail-client library and gets a shell despite ASLR.</p>
       
     </div>
 
@@ -3112,7 +3110,7 @@ buggy. The idea is to write a pop3 server to trigger a vulnerability
              title="Copies a cleaned article summary to your clipboard, then opens LinkedIn sharing"
              data-share-url="https://bamr87.github.io/wargames/docs/wargames/blacksun/blacksun2/"
              data-share-title="Blacksun2"
-             data-share-description="Level2 is a test application from a [pop3 library][] that&#39;s prettybuggy. The idea is to write a pop3 server to trigger a vulnerability(pick any you like :p) in the code and get a shell.">
+             data-share-description="Blacksun Level 2 — write a malicious POP3 server that triggers a vulnerability in a buggy mail-client library and gets a shell despite ASLR.">
             <i class="bi bi-linkedin me-2"></i>Share on LinkedIn
           </a>
         </li>
@@ -3205,7 +3203,7 @@ buggy. The idea is to write a pop3 server to trigger a vulnerability
       
       
         
-<ul class="list-group-flush"><li class="list-group-item"><a href="#binary-information" class="">Binary information</a></li></ul>
+<ul class="list-group-flush"><li class="list-group-item"><a href="#binary-information" class="">Binary information</a></li><li class="list-group-item"><a href="#what-this-level-teaches" class="">What this level teaches</a></li><li class="list-group-item"><a href="#key-ideas" class="">Key ideas</a></li><li class="list-group-item"><a href="#how-to-approach-it" class="">How to approach it</a></li><li class="list-group-item"><a href="#why-it-matters" class="">Why it matters</a></li></ul>
 
       
     </nav>
@@ -3275,6 +3273,39 @@ bugs you find so that future versions of the library can be fixed.</li>
   </tbody>
 </table>
 
+<!-- study-guide:start -->
+
+<h2 id="study-guide">Study guide</h2>
+
+<p><strong>Level map:</strong> the test client is <code class="language-plaintext highlighter-rouge">/levels/level2</code>, built from the libspopc 0.7 sources in <code class="language-plaintext highlighter-rouge">/levels/2/</code>.</p>
+
+<h3 id="what-this-level-teaches">What this level teaches</h3>
+
+<p>Attacking a client by controlling the server it talks to.</p>
+
+<h3 id="key-ideas">Key ideas</h3>
+
+<ul>
+  <li><strong>The server is the attacker.</strong> The test application connects to a POP3 server; you write that server and craft responses that trigger a bug in the parsing code.</li>
+  <li><strong>Code auditing.</strong> The challenge says to pick any vulnerability you like, so finding one comes first. Read the library source for unchecked lengths and copies.</li>
+  <li><strong>Position-independent code.</strong> The note about compile options means libraries use relocatable code, so addresses are randomised.</li>
+  <li><strong>Remote and ASLR.</strong> You must work out addresses without being able to attach a debugger to the live run.</li>
+  <li><strong>Be generous.</strong> The page suggests telling the library’s author about any real bugs you find.</li>
+</ul>
+
+<h3 id="how-to-approach-it">How to approach it</h3>
+
+<ol>
+  <li>Read the POP3 protocol basics and the library’s response-handling code.</li>
+  <li>Build a minimal fake server that produces ordinary responses, then alter one field at a time.</li>
+  <li>Turn a crash into control of execution.</li>
+</ol>
+
+<h3 id="why-it-matters">Why it matters</h3>
+
+<p>Malicious servers attacking vulnerable clients (mail clients, browsers, update tools) are a major real-world attack class.</p>
+
+<!-- study-guide:end -->
 
         </div>
       </div>
@@ -3577,7 +3608,7 @@ bugs you find so that future versions of the library can be fixed.</li>
     </div>
   </div>
 </aside>
-<script src="/wargames/assets/js/obsidian-local-graph.js?v=1792009165" defer></script>
+<script src="/wargames/assets/js/obsidian-local-graph.js?v=1792188318" defer></script>
 
 
 
@@ -3931,7 +3962,7 @@ bugs you find so that future versions of the library can be fixed.</li>
 <script src="/wargames/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 
-<script type="module" src="/wargames/assets/js/modules/navigation/index.js?v=1792009165"></script>
+<script type="module" src="/wargames/assets/js/modules/navigation/index.js?v=1792188318"></script>
 
 
 <script defer src="/wargames/assets/js/ui-helpers.js"></script>
@@ -3958,7 +3989,7 @@ bugs you find so that future versions of the library can be fixed.</li>
   window.OBSIDIAN_CONFIG.attachmentsPath = "/wargames/assets/images/notes";
   window.OBSIDIAN_CONFIG.tagBase = "/wargames/tags/";
   window.OBSIDIAN_CONFIG.cytoscapeUrl = "/wargames/assets/vendor/cytoscape/cytoscape.min.js";
-</script><script defer src="/wargames/assets/js/obsidian-wiki-links.js?v=1792009165"></script>
+</script><script defer src="/wargames/assets/js/obsidian-wiki-links.js?v=1792188318"></script>
 
 
         </div>

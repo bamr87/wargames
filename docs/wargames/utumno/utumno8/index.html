@@ -259,8 +259,8 @@
 <meta property="og:title" content="Utumno8" />
 <meta name="author" content="Amr Abdel-Motaleb" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="There is no information for this level, intentionally." />
-<meta name="twitter:description" property="og:description" content="There is no information for this level, intentionally." />
+<meta name="description" content="Utumno Level 8 — an intentionally undocumented final level, with a method for investigating it." />
+<meta name="twitter:description" property="og:description" content="Utumno Level 8 — an intentionally undocumented final level, with a method for investigating it." />
 <link rel="canonical" href="https://bamr87.github.io/wargames/docs/wargames/utumno/utumno8/" />
 <meta property="og:url" content="https://bamr87.github.io/wargames/docs/wargames/utumno/utumno8/" />
 <meta property="og:site_name" content="Wargames" />
@@ -270,7 +270,7 @@
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="Utumno8" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Amr Abdel-Motaleb"},"dateModified":"2026-04-07T01:41:09+00:00","datePublished":"2026-04-07T01:41:09+00:00","description":"There is no information for this level, intentionally.","headline":"Utumno8","mainEntityOfPage":{"@type":"WebPage","@id":"https://bamr87.github.io/wargames/docs/wargames/utumno/utumno8/"},"url":"https://bamr87.github.io/wargames/docs/wargames/utumno/utumno8/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Amr Abdel-Motaleb"},"dateModified":"2026-04-07T01:41:09+00:00","datePublished":"2026-04-07T01:41:09+00:00","description":"Utumno Level 8 — an intentionally undocumented final level, with a method for investigating it.","headline":"Utumno8","mainEntityOfPage":{"@type":"WebPage","@id":"https://bamr87.github.io/wargames/docs/wargames/utumno/utumno8/"},"url":"https://bamr87.github.io/wargames/docs/wargames/utumno/utumno8/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -1223,7 +1223,7 @@ document.addEventListener("DOMContentLoaded", function () {
     </div>
     <div class="col-6">
       <div class="p-2 bg-body-tertiary rounded text-center">
-        <small class="text-body-secondary d-block">Last Build</small><code class="small" data-testid="theme-build-stamp">Oct 14, 20:19</code>
+        <small class="text-body-secondary d-block">Last Build</small><code class="small" data-testid="theme-build-stamp">Oct 16, 22:05</code>
       </div>
     </div>
 
@@ -3018,7 +3018,7 @@ function zer0CopyFeedback(btn, success) {
       <h1 class="bd-intro-title">Utumno8</h1>
       
       
-      <p class="bd-intro-description">There is no information for this level, intentionally.</p>
+      <p class="bd-intro-description">Utumno Level 8 — an intentionally undocumented final level, with a method for investigating it.</p>
       
     </div>
 
@@ -3110,7 +3110,7 @@ function zer0CopyFeedback(btn, success) {
              title="Copies a cleaned article summary to your clipboard, then opens LinkedIn sharing"
              data-share-url="https://bamr87.github.io/wargames/docs/wargames/utumno/utumno8/"
              data-share-title="Utumno8"
-             data-share-description="There is no information for this level, intentionally.">
+             data-share-description="Utumno Level 8 — an intentionally undocumented final level, with a method for investigating it.">
             <i class="bi bi-linkedin me-2"></i>Share on LinkedIn
           </a>
         </li>
@@ -3202,7 +3202,9 @@ function zer0CopyFeedback(btn, success) {
 
       
       
-        <p class="text-body-secondary small fst-italic">No sections on this page.</p>
+        
+<ul class="list-group-flush"><li class="list-group-item"><a href="#study-guide" class="">Study guide</a><ul><li class="list-group-item"><a href="#what-to-expect" class="">What to expect</a></li><li class="list-group-item"><a href="#where-it-fits" class="">Where it fits</a></li><li class="list-group-item"><a href="#how-to-approach-it" class="">How to approach it</a></li><li class="list-group-item"><a href="#why-it-matters" class="">Why it matters</a></li><li class="list-group-item"><a href="#what-to-do-next" class="">What to do next</a></li></ul></li></ul>
+
       
     </nav>
   </div>
@@ -3223,6 +3225,43 @@ function zer0CopyFeedback(btn, success) {
 </blockquote>
 
 <p>There is no information for this level, intentionally.</p>
+
+<!-- study-guide:start -->
+
+<h2 id="study-guide">Study guide</h2>
+
+<p><strong>Level map:</strong> logged in as <code class="language-plaintext highlighter-rouge">utumno8</code>. The upstream index counts ten levels, but this mirror documents <code class="language-plaintext highlighter-rouge">utumno0</code> to <code class="language-plaintext highlighter-rouge">utumno8</code>.</p>
+
+<h3 id="what-to-expect">What to expect</h3>
+
+<p>Upstream states “There is no information for this level, intentionally.” That is part of the game: you discover what the level does by investigating it. Utumno is a regular binary-exploitation wargame rescued from intruded.net. Its authors call it slightly harder than Behemoth and a lot harder than Leviathan.</p>
+
+<h3 id="where-it-fits">Where it fits</h3>
+
+<p>Utumno is rated 4/10 by its original authors, and lives under <code class="language-plaintext highlighter-rouge">/utumno/</code> on the game server (SSH port 2227). This is page 9 of 9 in this mirror. Final levels reward patience: break the problem into steps and test each one before chaining them.</p>
+
+<h3 id="how-to-approach-it">How to approach it</h3>
+
+<ol>
+  <li>Start with <code class="language-plaintext highlighter-rouge">file</code> and <code class="language-plaintext highlighter-rouge">strings</code> on the level’s program to learn what it is and what text it contains.</li>
+  <li>Check permissions with <code class="language-plaintext highlighter-rouge">ls -l</code>: a setuid or setgid bit tells you whose privileges the program runs with.</li>
+  <li>If you get stuck repeatedly, finish Behemoth first; the authors explicitly recommend it.</li>
+  <li>Write down the one thing the program assumes about its input, then test what happens when that assumption is false.</li>
+</ol>
+
+<h3 id="why-it-matters">Why it matters</h3>
+
+<p>Each level is a miniature version of a real bug class. Working it out yourself without hints builds the investigative habits that no walkthrough can give you.</p>
+
+<h3 id="what-to-do-next">What to do next</h3>
+
+<ul>
+  <li><strong>Consolidate.</strong> For each level, record the bug class, the tool that found it and the technique that worked.</li>
+  <li><strong>Continue.</strong> From the <a href="../../">games index</a>, Maze is a natural next step.</li>
+  <li><strong>Read about defences.</strong> Stack canaries, non-executable memory, ASLR and RELRO each map to attacks you have practised.</li>
+</ul>
+
+<!-- study-guide:end -->
 
         </div>
       </div>
@@ -3525,7 +3564,7 @@ function zer0CopyFeedback(btn, success) {
     </div>
   </div>
 </aside>
-<script src="/wargames/assets/js/obsidian-local-graph.js?v=1792009165" defer></script>
+<script src="/wargames/assets/js/obsidian-local-graph.js?v=1792188318" defer></script>
 
 
 
@@ -3879,7 +3918,7 @@ function zer0CopyFeedback(btn, success) {
 <script src="/wargames/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 
-<script type="module" src="/wargames/assets/js/modules/navigation/index.js?v=1792009165"></script>
+<script type="module" src="/wargames/assets/js/modules/navigation/index.js?v=1792188318"></script>
 
 
 <script defer src="/wargames/assets/js/ui-helpers.js"></script>
@@ -3906,7 +3945,7 @@ function zer0CopyFeedback(btn, success) {
   window.OBSIDIAN_CONFIG.attachmentsPath = "/wargames/assets/images/notes";
   window.OBSIDIAN_CONFIG.tagBase = "/wargames/tags/";
   window.OBSIDIAN_CONFIG.cytoscapeUrl = "/wargames/assets/vendor/cytoscape/cytoscape.min.js";
-</script><script defer src="/wargames/assets/js/obsidian-wiki-links.js?v=1792009165"></script>
+</script><script defer src="/wargames/assets/js/obsidian-wiki-links.js?v=1792188318"></script>
 
 
         </div>

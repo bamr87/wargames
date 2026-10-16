@@ -259,8 +259,8 @@
 <meta property="og:title" content="Semtex10" />
 <meta name="author" content="Amr Abdel-Motaleb" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Hacking szene Thanks to zaphod and Mush for finding a bugs in this level" />
-<meta name="twitter:description" property="og:description" content="Hacking szene Thanks to zaphod and Mush for finding a bugs in this level" />
+<meta name="description" content="Semtex Level 10 — exploit a weakness in how an authentication daemon checks passwords, in the style of old Windows 95/98 network shares." />
+<meta name="twitter:description" property="og:description" content="Semtex Level 10 — exploit a weakness in how an authentication daemon checks passwords, in the style of old Windows 95/98 network shares." />
 <link rel="canonical" href="https://bamr87.github.io/wargames/docs/wargames/semtex/semtex10/" />
 <meta property="og:url" content="https://bamr87.github.io/wargames/docs/wargames/semtex/semtex10/" />
 <meta property="og:site_name" content="Wargames" />
@@ -270,7 +270,7 @@
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="Semtex10" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Amr Abdel-Motaleb"},"dateModified":"2026-04-07T01:41:09+00:00","datePublished":"2026-04-07T01:41:09+00:00","description":"Hacking szene Thanks to zaphod and Mush for finding a bugs in this level","headline":"Semtex10","mainEntityOfPage":{"@type":"WebPage","@id":"https://bamr87.github.io/wargames/docs/wargames/semtex/semtex10/"},"url":"https://bamr87.github.io/wargames/docs/wargames/semtex/semtex10/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Amr Abdel-Motaleb"},"dateModified":"2026-04-07T01:41:09+00:00","datePublished":"2026-04-07T01:41:09+00:00","description":"Semtex Level 10 — exploit a weakness in how an authentication daemon checks passwords, in the style of old Windows 95/98 network shares.","headline":"Semtex10","mainEntityOfPage":{"@type":"WebPage","@id":"https://bamr87.github.io/wargames/docs/wargames/semtex/semtex10/"},"url":"https://bamr87.github.io/wargames/docs/wargames/semtex/semtex10/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -1223,7 +1223,7 @@ document.addEventListener("DOMContentLoaded", function () {
     </div>
     <div class="col-6">
       <div class="p-2 bg-body-tertiary rounded text-center">
-        <small class="text-body-secondary d-block">Last Build</small><code class="small" data-testid="theme-build-stamp">Oct 14, 20:19</code>
+        <small class="text-body-secondary d-block">Last Build</small><code class="small" data-testid="theme-build-stamp">Oct 16, 22:05</code>
       </div>
     </div>
 
@@ -3018,9 +3018,7 @@ function zer0CopyFeedback(btn, success) {
       <h1 class="bd-intro-title">Semtex10</h1>
       
       
-      <p class="bd-intro-description">Hacking szene
--------------
-Thanks to zaphod and Mush for finding a bugs in this level</p>
+      <p class="bd-intro-description">Semtex Level 10 — exploit a weakness in how an authentication daemon checks passwords, in the style of old Windows 95/98 network shares.</p>
       
     </div>
 
@@ -3112,7 +3110,7 @@ Thanks to zaphod and Mush for finding a bugs in this level</p>
              title="Copies a cleaned article summary to your clipboard, then opens LinkedIn sharing"
              data-share-url="https://bamr87.github.io/wargames/docs/wargames/semtex/semtex10/"
              data-share-title="Semtex10"
-             data-share-description="Hacking szene-------------Thanks to zaphod and Mush for finding a bugs in this level">
+             data-share-description="Semtex Level 10 — exploit a weakness in how an authentication daemon checks passwords, in the style of old Windows 95/98 network shares.">
             <i class="bi bi-linkedin me-2"></i>Share on LinkedIn
           </a>
         </li>
@@ -3205,7 +3203,7 @@ Thanks to zaphod and Mush for finding a bugs in this level</p>
       
       
         
-<ul class="list-group-flush"><li class="list-group-item"><a href="#hacking-szene" class="">Hacking szene</a></li></ul>
+<ul class="list-group-flush"><li class="list-group-item"><a href="#hacking-szene" class="">Hacking szene</a></li><li class="list-group-item"><a href="#study-guide" class="">Study guide</a><ul><li class="list-group-item"><a href="#what-this-level-teaches" class="">What this level teaches</a></li><li class="list-group-item"><a href="#key-ideas" class="">Key ideas</a></li><li class="list-group-item"><a href="#how-to-approach-it" class="">How to approach it</a></li><li class="list-group-item"><a href="#why-it-matters" class="">Why it matters</a></li></ul></li></ul>
 
       
     </nav>
@@ -3241,6 +3239,38 @@ password cracked!
 
 <p>There is a TCP daemon on brebera port 24019. It authenticates your password. Once you send the correct password, it echoes it back. Well, let the source speak for itself. As far as brute force may take you, a little brain is never bad :P Perhaps you have heard of pqwak?</p>
 
+<!-- study-guide:start -->
+
+<h2 id="study-guide">Study guide</h2>
+
+<p><strong>Level map:</strong> the daemon listens on port 24019 of the Semtex network host; its source is provided.</p>
+
+<h3 id="what-this-level-teaches">What this level teaches</h3>
+
+<p>How a flawed authentication scheme lets you recover a password far faster than brute force.</p>
+
+<h3 id="key-ideas">Key ideas</h3>
+
+<ul>
+  <li><strong>Movie hacking.</strong> The page jokes about the progress-bar password crackers from films.</li>
+  <li><strong>The weakness.</strong> It mirrors a real flaw in Windows 95 and 98 network shares, where a password could be verified in pieces, so each part can be guessed separately.</li>
+  <li><strong>Source provided.</strong> Study how the daemon compares your input and what it reveals.</li>
+  <li><strong>Brain over brawn.</strong> The page notes brute force goes only so far, then mentions a tool called pqwak.</li>
+</ul>
+
+<h3 id="how-to-approach-it">How to approach it</h3>
+
+<ol>
+  <li>Read the source and note how the comparison is done and what feedback you get.</li>
+  <li>Design an attack that learns the password one part at a time.</li>
+  <li>Script it and watch the answer appear.</li>
+</ol>
+
+<h3 id="why-it-matters">Why it matters</h3>
+
+<p>Comparison functions that reveal how much of a guess was right are a real weakness; use constant-time comparison and rate limiting.</p>
+
+<!-- study-guide:end -->
 
         </div>
       </div>
@@ -3543,7 +3573,7 @@ password cracked!
     </div>
   </div>
 </aside>
-<script src="/wargames/assets/js/obsidian-local-graph.js?v=1792009165" defer></script>
+<script src="/wargames/assets/js/obsidian-local-graph.js?v=1792188318" defer></script>
 
 
 
@@ -3897,7 +3927,7 @@ password cracked!
 <script src="/wargames/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 
-<script type="module" src="/wargames/assets/js/modules/navigation/index.js?v=1792009165"></script>
+<script type="module" src="/wargames/assets/js/modules/navigation/index.js?v=1792188318"></script>
 
 
 <script defer src="/wargames/assets/js/ui-helpers.js"></script>
@@ -3924,7 +3954,7 @@ password cracked!
   window.OBSIDIAN_CONFIG.attachmentsPath = "/wargames/assets/images/notes";
   window.OBSIDIAN_CONFIG.tagBase = "/wargames/tags/";
   window.OBSIDIAN_CONFIG.cytoscapeUrl = "/wargames/assets/vendor/cytoscape/cytoscape.min.js";
-</script><script defer src="/wargames/assets/js/obsidian-wiki-links.js?v=1792009165"></script>
+</script><script defer src="/wargames/assets/js/obsidian-wiki-links.js?v=1792188318"></script>
 
 
         </div>

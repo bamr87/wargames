@@ -259,8 +259,8 @@
 <meta property="og:title" content="Vortex18" />
 <meta name="author" content="Amr Abdel-Motaleb" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="urandom seeds Take advantage of the application’s urandom dependency." />
-<meta name="twitter:description" property="og:description" content="urandom seeds Take advantage of the application’s urandom dependency." />
+<meta name="description" content="Vortex Level 18 — take advantage of how the program depends on /dev/urandom for its seeds." />
+<meta name="twitter:description" property="og:description" content="Vortex Level 18 — take advantage of how the program depends on /dev/urandom for its seeds." />
 <link rel="canonical" href="https://bamr87.github.io/wargames/docs/wargames/vortex/vortex18/" />
 <meta property="og:url" content="https://bamr87.github.io/wargames/docs/wargames/vortex/vortex18/" />
 <meta property="og:site_name" content="Wargames" />
@@ -270,7 +270,7 @@
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="Vortex18" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Amr Abdel-Motaleb"},"dateModified":"2026-04-07T01:41:09+00:00","datePublished":"2026-04-07T01:41:09+00:00","description":"urandom seeds Take advantage of the application’s urandom dependency.","headline":"Vortex18","mainEntityOfPage":{"@type":"WebPage","@id":"https://bamr87.github.io/wargames/docs/wargames/vortex/vortex18/"},"url":"https://bamr87.github.io/wargames/docs/wargames/vortex/vortex18/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Amr Abdel-Motaleb"},"dateModified":"2026-04-07T01:41:09+00:00","datePublished":"2026-04-07T01:41:09+00:00","description":"Vortex Level 18 — take advantage of how the program depends on /dev/urandom for its seeds.","headline":"Vortex18","mainEntityOfPage":{"@type":"WebPage","@id":"https://bamr87.github.io/wargames/docs/wargames/vortex/vortex18/"},"url":"https://bamr87.github.io/wargames/docs/wargames/vortex/vortex18/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -1223,7 +1223,7 @@ document.addEventListener("DOMContentLoaded", function () {
     </div>
     <div class="col-6">
       <div class="p-2 bg-body-tertiary rounded text-center">
-        <small class="text-body-secondary d-block">Last Build</small><code class="small" data-testid="theme-build-stamp">Oct 14, 20:19</code>
+        <small class="text-body-secondary d-block">Last Build</small><code class="small" data-testid="theme-build-stamp">Oct 16, 22:05</code>
       </div>
     </div>
 
@@ -3018,9 +3018,7 @@ function zer0CopyFeedback(btn, success) {
       <h1 class="bd-intro-title">Vortex18</h1>
       
       
-      <p class="bd-intro-description">urandom seeds
--------------
-Take advantage of the application's urandom dependency.</p>
+      <p class="bd-intro-description">Vortex Level 18 — take advantage of how the program depends on /dev/urandom for its seeds.</p>
       
     </div>
 
@@ -3112,7 +3110,7 @@ Take advantage of the application's urandom dependency.</p>
              title="Copies a cleaned article summary to your clipboard, then opens LinkedIn sharing"
              data-share-url="https://bamr87.github.io/wargames/docs/wargames/vortex/vortex18/"
              data-share-title="Vortex18"
-             data-share-description="urandom seeds-------------Take advantage of the application&#39;s urandom dependency.">
+             data-share-description="Vortex Level 18 — take advantage of how the program depends on /dev/urandom for its seeds.">
             <i class="bi bi-linkedin me-2"></i>Share on LinkedIn
           </a>
         </li>
@@ -3205,7 +3203,7 @@ Take advantage of the application's urandom dependency.</p>
       
       
         
-<ul class="list-group-flush"><li class="list-group-item"><a href="#urandom-seeds" class="">urandom seeds</a></li></ul>
+<ul class="list-group-flush"><li class="list-group-item"><a href="#urandom-seeds" class="">urandom seeds</a></li><li class="list-group-item"><a href="#study-guide" class="">Study guide</a><ul><li class="list-group-item"><a href="#what-this-level-teaches" class="">What this level teaches</a></li><li class="list-group-item"><a href="#key-ideas" class="">Key ideas</a></li><li class="list-group-item"><a href="#how-to-approach-it" class="">How to approach it</a></li><li class="list-group-item"><a href="#why-it-matters" class="">Why it matters</a></li></ul></li></ul>
 
       
     </nav>
@@ -3229,6 +3227,37 @@ Take advantage of the application's urandom dependency.</p>
 <h2 id="urandom-seeds">urandom seeds</h2>
 <p>Take advantage of the application’s urandom dependency.</p>
 
+<!-- study-guide:start -->
+
+<h2 id="study-guide">Study guide</h2>
+
+<p><strong>Level map:</strong> logged in as <code class="language-plaintext highlighter-rouge">vortex18</code>, obtain access to <code class="language-plaintext highlighter-rouge">vortex19</code>.</p>
+
+<h3 id="what-this-level-teaches">What this level teaches</h3>
+
+<p>How randomness sources are used, and what happens when a program uses them badly.</p>
+
+<h3 id="key-ideas">Key ideas</h3>
+
+<ul>
+  <li><strong><code class="language-plaintext highlighter-rouge">/dev/urandom</code>.</strong> A cryptographically strong source of random bytes; it is only as good as how the program uses it.</li>
+  <li><strong>Dependence.</strong> The program relies on it in a way you can influence or predict.</li>
+  <li><strong>Environment control.</strong> Think about what the program does if the random source behaves differently, is exhausted, or is read in an unexpected way.</li>
+</ul>
+
+<h3 id="how-to-approach-it">How to approach it</h3>
+
+<ol>
+  <li>Trace the program’s file and system calls with <code class="language-plaintext highlighter-rouge">strace</code>.</li>
+  <li>See exactly how many bytes it reads and what it does with them.</li>
+  <li>Find the assumption that fails.</li>
+</ol>
+
+<h3 id="why-it-matters">Why it matters</h3>
+
+<p>Seeding mistakes are a recurring cause of weak keys and tokens.</p>
+
+<!-- study-guide:end -->
 
         </div>
       </div>
@@ -3531,7 +3560,7 @@ Take advantage of the application's urandom dependency.</p>
     </div>
   </div>
 </aside>
-<script src="/wargames/assets/js/obsidian-local-graph.js?v=1792009165" defer></script>
+<script src="/wargames/assets/js/obsidian-local-graph.js?v=1792188318" defer></script>
 
 
 
@@ -3885,7 +3914,7 @@ Take advantage of the application's urandom dependency.</p>
 <script src="/wargames/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 
-<script type="module" src="/wargames/assets/js/modules/navigation/index.js?v=1792009165"></script>
+<script type="module" src="/wargames/assets/js/modules/navigation/index.js?v=1792188318"></script>
 
 
 <script defer src="/wargames/assets/js/ui-helpers.js"></script>
@@ -3912,7 +3941,7 @@ Take advantage of the application's urandom dependency.</p>
   window.OBSIDIAN_CONFIG.attachmentsPath = "/wargames/assets/images/notes";
   window.OBSIDIAN_CONFIG.tagBase = "/wargames/tags/";
   window.OBSIDIAN_CONFIG.cytoscapeUrl = "/wargames/assets/vendor/cytoscape/cytoscape.min.js";
-</script><script defer src="/wargames/assets/js/obsidian-wiki-links.js?v=1792009165"></script>
+</script><script defer src="/wargames/assets/js/obsidian-wiki-links.js?v=1792188318"></script>
 
 
         </div>

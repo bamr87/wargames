@@ -259,8 +259,8 @@
 <meta property="og:title" content="Vortex7" />
 <meta name="author" content="Amr Abdel-Motaleb" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Checksum Fun This level requires CRC\32(argv[1], strlen(argv[1])) to be 0xe1ca95ee. You might need to extract the crc tables from the program." />
-<meta name="twitter:description" property="og:description" content="Checksum Fun This level requires CRC\32(argv[1], strlen(argv[1])) to be 0xe1ca95ee. You might need to extract the crc tables from the program." />
+<meta name="description" content="Vortex Level 7 — find input whose CRC-32 checksum equals a given value, learning that CRCs are not cryptographic hashes." />
+<meta name="twitter:description" property="og:description" content="Vortex Level 7 — find input whose CRC-32 checksum equals a given value, learning that CRCs are not cryptographic hashes." />
 <link rel="canonical" href="https://bamr87.github.io/wargames/docs/wargames/vortex/vortex7/" />
 <meta property="og:url" content="https://bamr87.github.io/wargames/docs/wargames/vortex/vortex7/" />
 <meta property="og:site_name" content="Wargames" />
@@ -270,7 +270,7 @@
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="Vortex7" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Amr Abdel-Motaleb"},"dateModified":"2026-04-07T01:41:09+00:00","datePublished":"2026-04-07T01:41:09+00:00","description":"Checksum Fun This level requires CRC\\32(argv[1], strlen(argv[1])) to be 0xe1ca95ee. You might need to extract the crc tables from the program.","headline":"Vortex7","mainEntityOfPage":{"@type":"WebPage","@id":"https://bamr87.github.io/wargames/docs/wargames/vortex/vortex7/"},"url":"https://bamr87.github.io/wargames/docs/wargames/vortex/vortex7/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Amr Abdel-Motaleb"},"dateModified":"2026-04-07T01:41:09+00:00","datePublished":"2026-04-07T01:41:09+00:00","description":"Vortex Level 7 — find input whose CRC-32 checksum equals a given value, learning that CRCs are not cryptographic hashes.","headline":"Vortex7","mainEntityOfPage":{"@type":"WebPage","@id":"https://bamr87.github.io/wargames/docs/wargames/vortex/vortex7/"},"url":"https://bamr87.github.io/wargames/docs/wargames/vortex/vortex7/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -1223,7 +1223,7 @@ document.addEventListener("DOMContentLoaded", function () {
     </div>
     <div class="col-6">
       <div class="p-2 bg-body-tertiary rounded text-center">
-        <small class="text-body-secondary d-block">Last Build</small><code class="small" data-testid="theme-build-stamp">Oct 14, 20:19</code>
+        <small class="text-body-secondary d-block">Last Build</small><code class="small" data-testid="theme-build-stamp">Oct 16, 22:05</code>
       </div>
     </div>
 
@@ -3018,11 +3018,7 @@ function zer0CopyFeedback(btn, success) {
       <h1 class="bd-intro-title">Vortex7</h1>
       
       
-      <p class="bd-intro-description">Checksum Fun
-------------
-This level requires CRC\32(argv[1], strlen(argv[1])) to be
-0xe1ca95ee. You might need to extract the crc tables from the
-program.</p>
+      <p class="bd-intro-description">Vortex Level 7 — find input whose CRC-32 checksum equals a given value, learning that CRCs are not cryptographic hashes.</p>
       
     </div>
 
@@ -3114,7 +3110,7 @@ program.</p>
              title="Copies a cleaned article summary to your clipboard, then opens LinkedIn sharing"
              data-share-url="https://bamr87.github.io/wargames/docs/wargames/vortex/vortex7/"
              data-share-title="Vortex7"
-             data-share-description="Checksum Fun------------This level requires CRC\32(argv[1], strlen(argv[1])) to be0xe1ca95ee. You might need to extract the crc tables from theprogram.">
+             data-share-description="Vortex Level 7 — find input whose CRC-32 checksum equals a given value, learning that CRCs are not cryptographic hashes.">
             <i class="bi bi-linkedin me-2"></i>Share on LinkedIn
           </a>
         </li>
@@ -3207,7 +3203,7 @@ program.</p>
       
       
         
-<ul class="list-group-flush"><li class="list-group-item"><a href="#checksum-fun" class="">Checksum Fun</a></li><li class="list-group-item"><a href="#reading-material" class="">Reading Material</a></li></ul>
+<ul class="list-group-flush"><li class="list-group-item"><a href="#checksum-fun" class="">Checksum Fun</a></li><li class="list-group-item"><a href="#reading-material" class="">Reading Material</a></li><li class="list-group-item"><a href="#study-guide" class="">Study guide</a><ul><li class="list-group-item"><a href="#what-this-level-teaches" class="">What this level teaches</a></li><li class="list-group-item"><a href="#key-ideas" class="">Key ideas</a></li><li class="list-group-item"><a href="#how-to-approach-it" class="">How to approach it</a></li><li class="list-group-item"><a href="#why-it-matters" class="">Why it matters</a></li></ul></li></ul>
 
       
     </nav>
@@ -3237,6 +3233,38 @@ program.</p>
   <li><a href="http://taz.newffr.com/TAZ/Reverse_Engineering/CRC.html">CRC and How to Reverse It (mirror)</a></li>
 </ul>
 
+<!-- study-guide:start -->
+
+<h2 id="study-guide">Study guide</h2>
+
+<p><strong>Level map:</strong> logged in as <code class="language-plaintext highlighter-rouge">vortex7</code>, obtain access to <code class="language-plaintext highlighter-rouge">vortex8</code>.</p>
+
+<h3 id="what-this-level-teaches">What this level teaches</h3>
+
+<p>How CRC checksums work and why they can be forged.</p>
+
+<h3 id="key-ideas">Key ideas</h3>
+
+<ul>
+  <li><strong>The requirement.</strong> The CRC-32 of the program’s first argument must equal a specific 32-bit value shown on the page.</li>
+  <li><strong>CRC tables.</strong> The program uses a lookup table you may need to extract from the binary.</li>
+  <li><strong>Linearity.</strong> CRCs are linear over a finite field, so you can compute bytes that force any result, which is impossible with a proper cryptographic hash.</li>
+  <li><strong>Reading.</strong> “CRC and How to Reverse It” is linked.</li>
+</ul>
+
+<h3 id="how-to-approach-it">How to approach it</h3>
+
+<ol>
+  <li>Learn how a table-driven CRC-32 is computed.</li>
+  <li>Choose how many free bytes you will append or choose and solve for them.</li>
+  <li>Verify your answer with an independent CRC implementation.</li>
+</ol>
+
+<h3 id="why-it-matters">Why it matters</h3>
+
+<p>CRCs detect accidental errors, not tampering. Never use them for integrity against an attacker.</p>
+
+<!-- study-guide:end -->
 
         </div>
       </div>
@@ -3539,7 +3567,7 @@ program.</p>
     </div>
   </div>
 </aside>
-<script src="/wargames/assets/js/obsidian-local-graph.js?v=1792009165" defer></script>
+<script src="/wargames/assets/js/obsidian-local-graph.js?v=1792188318" defer></script>
 
 
 
@@ -3893,7 +3921,7 @@ program.</p>
 <script src="/wargames/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 
-<script type="module" src="/wargames/assets/js/modules/navigation/index.js?v=1792009165"></script>
+<script type="module" src="/wargames/assets/js/modules/navigation/index.js?v=1792188318"></script>
 
 
 <script defer src="/wargames/assets/js/ui-helpers.js"></script>
@@ -3920,7 +3948,7 @@ program.</p>
   window.OBSIDIAN_CONFIG.attachmentsPath = "/wargames/assets/images/notes";
   window.OBSIDIAN_CONFIG.tagBase = "/wargames/tags/";
   window.OBSIDIAN_CONFIG.cytoscapeUrl = "/wargames/assets/vendor/cytoscape/cytoscape.min.js";
-</script><script defer src="/wargames/assets/js/obsidian-wiki-links.js?v=1792009165"></script>
+</script><script defer src="/wargames/assets/js/obsidian-wiki-links.js?v=1792188318"></script>
 
 
         </div>

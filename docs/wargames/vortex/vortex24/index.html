@@ -259,8 +259,8 @@
 <meta property="og:title" content="Vortex24" />
 <meta name="author" content="Amr Abdel-Motaleb" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Guess the seed You might want to analyze “random\r.c” from the GLIBC source code." />
-<meta name="twitter:description" property="og:description" content="Guess the seed You might want to analyze “random\r.c” from the GLIBC source code." />
+<meta name="description" content="Vortex Level 24 — guess the seed of a generator using the GNU C library’s random_r implementation as a reference." />
+<meta name="twitter:description" property="og:description" content="Vortex Level 24 — guess the seed of a generator using the GNU C library’s random_r implementation as a reference." />
 <link rel="canonical" href="https://bamr87.github.io/wargames/docs/wargames/vortex/vortex24/" />
 <meta property="og:url" content="https://bamr87.github.io/wargames/docs/wargames/vortex/vortex24/" />
 <meta property="og:site_name" content="Wargames" />
@@ -270,7 +270,7 @@
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="Vortex24" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Amr Abdel-Motaleb"},"dateModified":"2026-04-07T01:41:09+00:00","datePublished":"2026-04-07T01:41:09+00:00","description":"Guess the seed You might want to analyze “random\\r.c” from the GLIBC source code.","headline":"Vortex24","mainEntityOfPage":{"@type":"WebPage","@id":"https://bamr87.github.io/wargames/docs/wargames/vortex/vortex24/"},"url":"https://bamr87.github.io/wargames/docs/wargames/vortex/vortex24/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Amr Abdel-Motaleb"},"dateModified":"2026-04-07T01:41:09+00:00","datePublished":"2026-04-07T01:41:09+00:00","description":"Vortex Level 24 — guess the seed of a generator using the GNU C library’s random_r implementation as a reference.","headline":"Vortex24","mainEntityOfPage":{"@type":"WebPage","@id":"https://bamr87.github.io/wargames/docs/wargames/vortex/vortex24/"},"url":"https://bamr87.github.io/wargames/docs/wargames/vortex/vortex24/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -1223,7 +1223,7 @@ document.addEventListener("DOMContentLoaded", function () {
     </div>
     <div class="col-6">
       <div class="p-2 bg-body-tertiary rounded text-center">
-        <small class="text-body-secondary d-block">Last Build</small><code class="small" data-testid="theme-build-stamp">Oct 14, 20:19</code>
+        <small class="text-body-secondary d-block">Last Build</small><code class="small" data-testid="theme-build-stamp">Oct 16, 22:05</code>
       </div>
     </div>
 
@@ -3018,9 +3018,7 @@ function zer0CopyFeedback(btn, success) {
       <h1 class="bd-intro-title">Vortex24</h1>
       
       
-      <p class="bd-intro-description">Guess the seed
---------------
-You might want to analyze "random\r.c" from the GLIBC source code.</p>
+      <p class="bd-intro-description">Vortex Level 24 — guess the seed of a generator using the GNU C library's random_r implementation as a reference.</p>
       
     </div>
 
@@ -3112,7 +3110,7 @@ You might want to analyze "random\r.c" from the GLIBC source code.</p>
              title="Copies a cleaned article summary to your clipboard, then opens LinkedIn sharing"
              data-share-url="https://bamr87.github.io/wargames/docs/wargames/vortex/vortex24/"
              data-share-title="Vortex24"
-             data-share-description="Guess the seed--------------You might want to analyze &quot;random\r.c&quot; from the GLIBC source code.">
+             data-share-description="Vortex Level 24 — guess the seed of a generator using the GNU C library&#39;s random_r implementation as a reference.">
             <i class="bi bi-linkedin me-2"></i>Share on LinkedIn
           </a>
         </li>
@@ -3205,7 +3203,7 @@ You might want to analyze "random\r.c" from the GLIBC source code.</p>
       
       
         
-<ul class="list-group-flush"><li class="list-group-item"><a href="#guess-the-seed" class="">Guess the seed</a></li></ul>
+<ul class="list-group-flush"><li class="list-group-item"><a href="#guess-the-seed" class="">Guess the seed</a></li><li class="list-group-item"><a href="#study-guide" class="">Study guide</a><ul><li class="list-group-item"><a href="#what-this-level-teaches" class="">What this level teaches</a></li><li class="list-group-item"><a href="#key-ideas" class="">Key ideas</a></li><li class="list-group-item"><a href="#how-to-approach-it" class="">How to approach it</a></li><li class="list-group-item"><a href="#why-it-matters" class="">Why it matters</a></li></ul></li></ul>
 
       
     </nav>
@@ -3229,6 +3227,37 @@ You might want to analyze "random\r.c" from the GLIBC source code.</p>
 <h2 id="guess-the-seed">Guess the seed</h2>
 <p>You might want to analyze “random_r.c” from the GLIBC source code.</p>
 
+<!-- study-guide:start -->
+
+<h2 id="study-guide">Study guide</h2>
+
+<p><strong>Level map:</strong> logged in as <code class="language-plaintext highlighter-rouge">vortex24</code>, obtain access to <code class="language-plaintext highlighter-rouge">vortex25</code>.</p>
+
+<h3 id="what-this-level-teaches">What this level teaches</h3>
+
+<p>How <code class="language-plaintext highlighter-rouge">rand</code>/<code class="language-plaintext highlighter-rouge">random</code> work internally and how to predict them.</p>
+
+<h3 id="key-ideas">Key ideas</h3>
+
+<ul>
+  <li><strong>glibc source.</strong> The page suggests reading <code class="language-plaintext highlighter-rouge">random_r.c</code> from glibc.</li>
+  <li><strong>State.</strong> The generator keeps a small internal state that is updated by a simple recurrence, so a modest number of outputs can reveal the rest.</li>
+  <li><strong>Seed guessing.</strong> If the seed has limited entropy (for example a timestamp), you can try all candidates.</li>
+</ul>
+
+<h3 id="how-to-approach-it">How to approach it</h3>
+
+<ol>
+  <li>Read <code class="language-plaintext highlighter-rouge">random_r.c</code> and implement or reuse the generator.</li>
+  <li>Compare candidate seeds against observed outputs.</li>
+  <li>Predict the next values and use them.</li>
+</ol>
+
+<h3 id="why-it-matters">Why it matters</h3>
+
+<p><code class="language-plaintext highlighter-rouge">rand()</code> is not suitable for security; this level shows exactly why.</p>
+
+<!-- study-guide:end -->
 
         </div>
       </div>
@@ -3531,7 +3560,7 @@ You might want to analyze "random\r.c" from the GLIBC source code.</p>
     </div>
   </div>
 </aside>
-<script src="/wargames/assets/js/obsidian-local-graph.js?v=1792009165" defer></script>
+<script src="/wargames/assets/js/obsidian-local-graph.js?v=1792188318" defer></script>
 
 
 
@@ -3885,7 +3914,7 @@ You might want to analyze "random\r.c" from the GLIBC source code.</p>
 <script src="/wargames/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 
-<script type="module" src="/wargames/assets/js/modules/navigation/index.js?v=1792009165"></script>
+<script type="module" src="/wargames/assets/js/modules/navigation/index.js?v=1792188318"></script>
 
 
 <script defer src="/wargames/assets/js/ui-helpers.js"></script>
@@ -3912,7 +3941,7 @@ You might want to analyze "random\r.c" from the GLIBC source code.</p>
   window.OBSIDIAN_CONFIG.attachmentsPath = "/wargames/assets/images/notes";
   window.OBSIDIAN_CONFIG.tagBase = "/wargames/tags/";
   window.OBSIDIAN_CONFIG.cytoscapeUrl = "/wargames/assets/vendor/cytoscape/cytoscape.min.js";
-</script><script defer src="/wargames/assets/js/obsidian-wiki-links.js?v=1792009165"></script>
+</script><script defer src="/wargames/assets/js/obsidian-wiki-links.js?v=1792188318"></script>
 
 
         </div>

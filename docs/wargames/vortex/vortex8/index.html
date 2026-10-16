@@ -259,8 +259,8 @@
 <meta property="og:title" content="Vortex8" />
 <meta name="author" content="Amr Abdel-Motaleb" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Some simple reverse engineering Disassemble this dynamically linked executable." />
-<meta name="twitter:description" property="og:description" content="Some simple reverse engineering Disassemble this dynamically linked executable." />
+<meta name="description" content="Vortex Level 8 — a simple reverse-engineering task: disassemble a dynamically linked executable and work out what it wants." />
+<meta name="twitter:description" property="og:description" content="Vortex Level 8 — a simple reverse-engineering task: disassemble a dynamically linked executable and work out what it wants." />
 <link rel="canonical" href="https://bamr87.github.io/wargames/docs/wargames/vortex/vortex8/" />
 <meta property="og:url" content="https://bamr87.github.io/wargames/docs/wargames/vortex/vortex8/" />
 <meta property="og:site_name" content="Wargames" />
@@ -270,7 +270,7 @@
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="Vortex8" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Amr Abdel-Motaleb"},"dateModified":"2026-04-07T01:41:09+00:00","datePublished":"2026-04-07T01:41:09+00:00","description":"Some simple reverse engineering Disassemble this dynamically linked executable.","headline":"Vortex8","mainEntityOfPage":{"@type":"WebPage","@id":"https://bamr87.github.io/wargames/docs/wargames/vortex/vortex8/"},"url":"https://bamr87.github.io/wargames/docs/wargames/vortex/vortex8/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Amr Abdel-Motaleb"},"dateModified":"2026-04-07T01:41:09+00:00","datePublished":"2026-04-07T01:41:09+00:00","description":"Vortex Level 8 — a simple reverse-engineering task: disassemble a dynamically linked executable and work out what it wants.","headline":"Vortex8","mainEntityOfPage":{"@type":"WebPage","@id":"https://bamr87.github.io/wargames/docs/wargames/vortex/vortex8/"},"url":"https://bamr87.github.io/wargames/docs/wargames/vortex/vortex8/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -1223,7 +1223,7 @@ document.addEventListener("DOMContentLoaded", function () {
     </div>
     <div class="col-6">
       <div class="p-2 bg-body-tertiary rounded text-center">
-        <small class="text-body-secondary d-block">Last Build</small><code class="small" data-testid="theme-build-stamp">Oct 14, 20:19</code>
+        <small class="text-body-secondary d-block">Last Build</small><code class="small" data-testid="theme-build-stamp">Oct 16, 22:05</code>
       </div>
     </div>
 
@@ -3018,9 +3018,7 @@ function zer0CopyFeedback(btn, success) {
       <h1 class="bd-intro-title">Vortex8</h1>
       
       
-      <p class="bd-intro-description">Some simple reverse engineering
--------------------------------
-Disassemble this dynamically linked executable.</p>
+      <p class="bd-intro-description">Vortex Level 8 — a simple reverse-engineering task: disassemble a dynamically linked executable and work out what it wants.</p>
       
     </div>
 
@@ -3112,7 +3110,7 @@ Disassemble this dynamically linked executable.</p>
              title="Copies a cleaned article summary to your clipboard, then opens LinkedIn sharing"
              data-share-url="https://bamr87.github.io/wargames/docs/wargames/vortex/vortex8/"
              data-share-title="Vortex8"
-             data-share-description="Some simple reverse engineering-------------------------------Disassemble this dynamically linked executable.">
+             data-share-description="Vortex Level 8 — a simple reverse-engineering task: disassemble a dynamically linked executable and work out what it wants.">
             <i class="bi bi-linkedin me-2"></i>Share on LinkedIn
           </a>
         </li>
@@ -3205,7 +3203,7 @@ Disassemble this dynamically linked executable.</p>
       
       
         
-<ul class="list-group-flush"><li class="list-group-item"><a href="#some-simple-reverse-engineering" class="">Some simple reverse engineering</a></li><li class="list-group-item"><a href="#reading-material" class="">Reading Material</a></li></ul>
+<ul class="list-group-flush"><li class="list-group-item"><a href="#some-simple-reverse-engineering" class="">Some simple reverse engineering</a></li><li class="list-group-item"><a href="#reading-material" class="">Reading Material</a></li><li class="list-group-item"><a href="#study-guide" class="">Study guide</a><ul><li class="list-group-item"><a href="#what-this-level-teaches" class="">What this level teaches</a></li><li class="list-group-item"><a href="#key-ideas" class="">Key ideas</a></li><li class="list-group-item"><a href="#how-to-approach-it" class="">How to approach it</a></li><li class="list-group-item"><a href="#why-it-matters" class="">Why it matters</a></li></ul></li></ul>
 
       
     </nav>
@@ -3234,6 +3232,37 @@ Disassemble this dynamically linked executable.</p>
   <li><a href="https://web.archive.org/web/20160315083251/http://althing.cs.dartmouth.edu/local/www.acm.uiuc.edu/sigmil/RevEng/">Reverse Engineering</a></li>
 </ul>
 
+<!-- study-guide:start -->
+
+<h2 id="study-guide">Study guide</h2>
+
+<p><strong>Level map:</strong> logged in as <code class="language-plaintext highlighter-rouge">vortex8</code>, obtain access to <code class="language-plaintext highlighter-rouge">vortex9</code>.</p>
+
+<h3 id="what-this-level-teaches">What this level teaches</h3>
+
+<p>Static analysis of a small dynamically linked program.</p>
+
+<h3 id="key-ideas">Key ideas</h3>
+
+<ul>
+  <li><strong>Dynamic linking.</strong> Library calls go through the procedure linkage table; tools like <code class="language-plaintext highlighter-rouge">ltrace</code> show them at run time.</li>
+  <li><strong>Static plus dynamic.</strong> Read the disassembly and confirm your reading by running the program under a tracer or debugger.</li>
+  <li><strong>Reading.</strong> The page links a reverse-engineering primer.</li>
+</ul>
+
+<h3 id="how-to-approach-it">How to approach it</h3>
+
+<ol>
+  <li>Run <code class="language-plaintext highlighter-rouge">file</code>, <code class="language-plaintext highlighter-rouge">strings</code> and <code class="language-plaintext highlighter-rouge">ltrace</code> to form a first impression.</li>
+  <li>Disassemble <code class="language-plaintext highlighter-rouge">main</code> and follow the control flow to the success path.</li>
+  <li>Work out the input that reaches it.</li>
+</ol>
+
+<h3 id="why-it-matters">Why it matters</h3>
+
+<p>Small reversing tasks build the pattern recognition used for every larger binary you will face.</p>
+
+<!-- study-guide:end -->
 
         </div>
       </div>
@@ -3536,7 +3565,7 @@ Disassemble this dynamically linked executable.</p>
     </div>
   </div>
 </aside>
-<script src="/wargames/assets/js/obsidian-local-graph.js?v=1792009165" defer></script>
+<script src="/wargames/assets/js/obsidian-local-graph.js?v=1792188318" defer></script>
 
 
 
@@ -3890,7 +3919,7 @@ Disassemble this dynamically linked executable.</p>
 <script src="/wargames/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 
-<script type="module" src="/wargames/assets/js/modules/navigation/index.js?v=1792009165"></script>
+<script type="module" src="/wargames/assets/js/modules/navigation/index.js?v=1792188318"></script>
 
 
 <script defer src="/wargames/assets/js/ui-helpers.js"></script>
@@ -3917,7 +3946,7 @@ Disassemble this dynamically linked executable.</p>
   window.OBSIDIAN_CONFIG.attachmentsPath = "/wargames/assets/images/notes";
   window.OBSIDIAN_CONFIG.tagBase = "/wargames/tags/";
   window.OBSIDIAN_CONFIG.cytoscapeUrl = "/wargames/assets/vendor/cytoscape/cytoscape.min.js";
-</script><script defer src="/wargames/assets/js/obsidian-wiki-links.js?v=1792009165"></script>
+</script><script defer src="/wargames/assets/js/obsidian-wiki-links.js?v=1792188318"></script>
 
 
         </div>

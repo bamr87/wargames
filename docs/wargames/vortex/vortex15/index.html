@@ -259,8 +259,8 @@
 <meta property="og:title" content="Vortex15" />
 <meta name="author" content="Amr Abdel-Motaleb" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Weak Encryption You have found an encrypted file, decrypt it (some reversing, crypt and general analysis needed, and if you’re lazy, the password is 8-bytes long and contains values between A and Z). You must login to [vortex.labs.ove…" />
-<meta name="twitter:description" property="og:description" content="Weak Encryption You have found an encrypted file, decrypt it (some reversing, crypt and general analysis needed, and if you’re lazy, the password is 8-bytes long and contains values between A and Z). You must login to [vortex.labs.ove…" />
+<meta name="description" content="Vortex Level 15 — decrypt an encrypted file using reverse engineering and cryptanalysis, helped by the fact the password is eight uppercase letters." />
+<meta name="twitter:description" property="og:description" content="Vortex Level 15 — decrypt an encrypted file using reverse engineering and cryptanalysis, helped by the fact the password is eight uppercase letters." />
 <link rel="canonical" href="https://bamr87.github.io/wargames/docs/wargames/vortex/vortex15/" />
 <meta property="og:url" content="https://bamr87.github.io/wargames/docs/wargames/vortex/vortex15/" />
 <meta property="og:site_name" content="Wargames" />
@@ -270,7 +270,7 @@
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="Vortex15" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Amr Abdel-Motaleb"},"dateModified":"2026-04-07T01:41:09+00:00","datePublished":"2026-04-07T01:41:09+00:00","description":"Weak Encryption You have found an encrypted file, decrypt it (some reversing, crypt and general analysis needed, and if you’re lazy, the password is 8-bytes long and contains values between A and Z). You must login to [vortex.labs.ove…","headline":"Vortex15","mainEntityOfPage":{"@type":"WebPage","@id":"https://bamr87.github.io/wargames/docs/wargames/vortex/vortex15/"},"url":"https://bamr87.github.io/wargames/docs/wargames/vortex/vortex15/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Amr Abdel-Motaleb"},"dateModified":"2026-04-07T01:41:09+00:00","datePublished":"2026-04-07T01:41:09+00:00","description":"Vortex Level 15 — decrypt an encrypted file using reverse engineering and cryptanalysis, helped by the fact the password is eight uppercase letters.","headline":"Vortex15","mainEntityOfPage":{"@type":"WebPage","@id":"https://bamr87.github.io/wargames/docs/wargames/vortex/vortex15/"},"url":"https://bamr87.github.io/wargames/docs/wargames/vortex/vortex15/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -1223,7 +1223,7 @@ document.addEventListener("DOMContentLoaded", function () {
     </div>
     <div class="col-6">
       <div class="p-2 bg-body-tertiary rounded text-center">
-        <small class="text-body-secondary d-block">Last Build</small><code class="small" data-testid="theme-build-stamp">Oct 14, 20:19</code>
+        <small class="text-body-secondary d-block">Last Build</small><code class="small" data-testid="theme-build-stamp">Oct 16, 22:05</code>
       </div>
     </div>
 
@@ -3018,12 +3018,7 @@ function zer0CopyFeedback(btn, success) {
       <h1 class="bd-intro-title">Vortex15</h1>
       
       
-      <p class="bd-intro-description">Weak Encryption
----------------
-You have found an encrypted file, decrypt it (some reversing, crypt
-and general analysis needed, and if you're lazy, the password is
-8-bytes long and contains values between A and Z). You must login to
-[vortex.labs.ove...</p>
+      <p class="bd-intro-description">Vortex Level 15 — decrypt an encrypted file using reverse engineering and cryptanalysis, helped by the fact the password is eight uppercase letters.</p>
       
     </div>
 
@@ -3115,7 +3110,7 @@ and general analysis needed, and if you're lazy, the password is
              title="Copies a cleaned article summary to your clipboard, then opens LinkedIn sharing"
              data-share-url="https://bamr87.github.io/wargames/docs/wargames/vortex/vortex15/"
              data-share-title="Vortex15"
-             data-share-description="Weak Encryption---------------You have found an encrypted file, decrypt it (some reversing, cryptand general analysis needed, and if you&#39;re lazy, the password is8-bytes long and contains values between A and Z). You must login to[vortex.labs.ove...">
+             data-share-description="Vortex Level 15 — decrypt an encrypted file using reverse engineering and cryptanalysis, helped by the fact the password is eight uppercase letters.">
             <i class="bi bi-linkedin me-2"></i>Share on LinkedIn
           </a>
         </li>
@@ -3208,7 +3203,7 @@ and general analysis needed, and if you're lazy, the password is
       
       
         
-<ul class="list-group-flush"><li class="list-group-item"><a href="#weak-encryption" class="">Weak Encryption</a></li></ul>
+<ul class="list-group-flush"><li class="list-group-item"><a href="#weak-encryption" class="">Weak Encryption</a></li><li class="list-group-item"><a href="#study-guide" class="">Study guide</a><ul><li class="list-group-item"><a href="#what-this-level-teaches" class="">What this level teaches</a></li><li class="list-group-item"><a href="#key-ideas" class="">Key ideas</a></li><li class="list-group-item"><a href="#how-to-approach-it" class="">How to approach it</a></li><li class="list-group-item"><a href="#why-it-matters" class="">Why it matters</a></li></ul></li></ul>
 
       
     </nav>
@@ -3232,6 +3227,37 @@ and general analysis needed, and if you're lazy, the password is
 <h2 id="weak-encryption">Weak Encryption</h2>
 <p>You have found an encrypted file, decrypt it (some reversing, crypt and general analysis needed, and if you’re lazy, the password is 8-bytes long and contains values between A and Z). You must login to <a href="ssh://vortex.labs.overthewire.org:2228">vortex.labs.overthewire.org</a> to complete this level.</p>
 
+<!-- study-guide:start -->
+
+<h2 id="study-guide">Study guide</h2>
+
+<p><strong>Level map:</strong> logged in as <code class="language-plaintext highlighter-rouge">vortex15</code>, obtain access to <code class="language-plaintext highlighter-rouge">vortex16</code>.</p>
+
+<h3 id="what-this-level-teaches">What this level teaches</h3>
+
+<p>Combining reverse engineering with cryptanalysis.</p>
+
+<h3 id="key-ideas">Key ideas</h3>
+
+<ul>
+  <li><strong>Know the key space.</strong> If the password is 8 bytes between A and Z, there are 26 to the power 8 (about 209 billion) possibilities, large but structured.</li>
+  <li><strong>Find the algorithm.</strong> Reverse the program that encrypted the file to see how the key is used.</li>
+  <li><strong>Exploit structure.</strong> Weak ciphers leak information, so you may recover the key piece by piece rather than guess all of it.</li>
+</ul>
+
+<h3 id="how-to-approach-it">How to approach it</h3>
+
+<ol>
+  <li>Reverse the encryption routine.</li>
+  <li>Look for weaknesses in how the key is applied.</li>
+  <li>Recover the key and decrypt the file.</li>
+</ol>
+
+<h3 id="why-it-matters">Why it matters</h3>
+
+<p>Many proprietary file protections are weak. Knowing how to analyse them shows why standard, reviewed algorithms are essential.</p>
+
+<!-- study-guide:end -->
 
         </div>
       </div>
@@ -3534,7 +3560,7 @@ and general analysis needed, and if you're lazy, the password is
     </div>
   </div>
 </aside>
-<script src="/wargames/assets/js/obsidian-local-graph.js?v=1792009165" defer></script>
+<script src="/wargames/assets/js/obsidian-local-graph.js?v=1792188318" defer></script>
 
 
 
@@ -3888,7 +3914,7 @@ and general analysis needed, and if you're lazy, the password is
 <script src="/wargames/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 
-<script type="module" src="/wargames/assets/js/modules/navigation/index.js?v=1792009165"></script>
+<script type="module" src="/wargames/assets/js/modules/navigation/index.js?v=1792188318"></script>
 
 
 <script defer src="/wargames/assets/js/ui-helpers.js"></script>
@@ -3915,7 +3941,7 @@ and general analysis needed, and if you're lazy, the password is
   window.OBSIDIAN_CONFIG.attachmentsPath = "/wargames/assets/images/notes";
   window.OBSIDIAN_CONFIG.tagBase = "/wargames/tags/";
   window.OBSIDIAN_CONFIG.cytoscapeUrl = "/wargames/assets/vendor/cytoscape/cytoscape.min.js";
-</script><script defer src="/wargames/assets/js/obsidian-wiki-links.js?v=1792009165"></script>
+</script><script defer src="/wargames/assets/js/obsidian-wiki-links.js?v=1792188318"></script>
 
 
         </div>

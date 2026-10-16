@@ -259,8 +259,8 @@
 <meta property="og:title" content="Vortex11" />
 <meta name="author" content="Amr Abdel-Motaleb" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Chunk Corruption You must corrupt the heap in order to gain arbitrary control of this program. Do recall, the application is using phkmalloc." />
-<meta name="twitter:description" property="og:description" content="Chunk Corruption You must corrupt the heap in order to gain arbitrary control of this program. Do recall, the application is using phkmalloc." />
+<meta name="description" content="Vortex Level 11 — corrupt the heap to gain arbitrary control of a program that uses the phkmalloc allocator." />
+<meta name="twitter:description" property="og:description" content="Vortex Level 11 — corrupt the heap to gain arbitrary control of a program that uses the phkmalloc allocator." />
 <link rel="canonical" href="https://bamr87.github.io/wargames/docs/wargames/vortex/vortex11/" />
 <meta property="og:url" content="https://bamr87.github.io/wargames/docs/wargames/vortex/vortex11/" />
 <meta property="og:site_name" content="Wargames" />
@@ -270,7 +270,7 @@
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="Vortex11" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Amr Abdel-Motaleb"},"dateModified":"2026-04-07T01:41:09+00:00","datePublished":"2026-04-07T01:41:09+00:00","description":"Chunk Corruption You must corrupt the heap in order to gain arbitrary control of this program. Do recall, the application is using phkmalloc.","headline":"Vortex11","mainEntityOfPage":{"@type":"WebPage","@id":"https://bamr87.github.io/wargames/docs/wargames/vortex/vortex11/"},"url":"https://bamr87.github.io/wargames/docs/wargames/vortex/vortex11/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Amr Abdel-Motaleb"},"dateModified":"2026-04-07T01:41:09+00:00","datePublished":"2026-04-07T01:41:09+00:00","description":"Vortex Level 11 — corrupt the heap to gain arbitrary control of a program that uses the phkmalloc allocator.","headline":"Vortex11","mainEntityOfPage":{"@type":"WebPage","@id":"https://bamr87.github.io/wargames/docs/wargames/vortex/vortex11/"},"url":"https://bamr87.github.io/wargames/docs/wargames/vortex/vortex11/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -1223,7 +1223,7 @@ document.addEventListener("DOMContentLoaded", function () {
     </div>
     <div class="col-6">
       <div class="p-2 bg-body-tertiary rounded text-center">
-        <small class="text-body-secondary d-block">Last Build</small><code class="small" data-testid="theme-build-stamp">Oct 14, 20:19</code>
+        <small class="text-body-secondary d-block">Last Build</small><code class="small" data-testid="theme-build-stamp">Oct 16, 22:05</code>
       </div>
     </div>
 
@@ -3018,10 +3018,7 @@ function zer0CopyFeedback(btn, success) {
       <h1 class="bd-intro-title">Vortex11</h1>
       
       
-      <p class="bd-intro-description">Chunk Corruption
-----------------
-You must corrupt the heap in order to gain arbitrary control of this
-program. Do recall, the application is using phkmalloc.</p>
+      <p class="bd-intro-description">Vortex Level 11 — corrupt the heap to gain arbitrary control of a program that uses the phkmalloc allocator.</p>
       
     </div>
 
@@ -3113,7 +3110,7 @@ program. Do recall, the application is using phkmalloc.</p>
              title="Copies a cleaned article summary to your clipboard, then opens LinkedIn sharing"
              data-share-url="https://bamr87.github.io/wargames/docs/wargames/vortex/vortex11/"
              data-share-title="Vortex11"
-             data-share-description="Chunk Corruption----------------You must corrupt the heap in order to gain arbitrary control of thisprogram. Do recall, the application is using phkmalloc.">
+             data-share-description="Vortex Level 11 — corrupt the heap to gain arbitrary control of a program that uses the phkmalloc allocator.">
             <i class="bi bi-linkedin me-2"></i>Share on LinkedIn
           </a>
         </li>
@@ -3206,7 +3203,7 @@ program. Do recall, the application is using phkmalloc.</p>
       
       
         
-<ul class="list-group-flush"><li class="list-group-item"><a href="#chunk-corruption" class="">Chunk Corruption</a></li><li class="list-group-item"><a href="#reading-material" class="">Reading Material</a></li></ul>
+<ul class="list-group-flush"><li class="list-group-item"><a href="#chunk-corruption" class="">Chunk Corruption</a></li><li class="list-group-item"><a href="#reading-material" class="">Reading Material</a></li><li class="list-group-item"><a href="#study-guide" class="">Study guide</a><ul><li class="list-group-item"><a href="#what-this-level-teaches" class="">What this level teaches</a></li><li class="list-group-item"><a href="#key-ideas" class="">Key ideas</a></li><li class="list-group-item"><a href="#how-to-approach-it" class="">How to approach it</a></li><li class="list-group-item"><a href="#why-it-matters" class="">Why it matters</a></li></ul></li></ul>
 
       
     </nav>
@@ -3238,6 +3235,38 @@ program. Do recall, the application is using phkmalloc.</p>
   <li><a href="http://archive.cert.uni-stuttgart.de/vuln-dev/2004/02/msg00025.html">Exploiting the Wilderness</a></li>
 </ul>
 
+<!-- study-guide:start -->
+
+<h2 id="study-guide">Study guide</h2>
+
+<p><strong>Level map:</strong> logged in as <code class="language-plaintext highlighter-rouge">vortex11</code>, obtain access to <code class="language-plaintext highlighter-rouge">vortex12</code>.</p>
+
+<h3 id="what-this-level-teaches">What this level teaches</h3>
+
+<p>Heap exploitation against a specific allocator.</p>
+
+<h3 id="key-ideas">Key ideas</h3>
+
+<ul>
+  <li><strong>The heap.</strong> Dynamically allocated memory managed by an allocator that keeps its own metadata.</li>
+  <li><strong>phkmalloc.</strong> The BSD allocator named in the level; its structure determines which corruptions are useful.</li>
+  <li><strong>Chunk corruption.</strong> Overflowing one allocation into a neighbour’s metadata can turn later allocator operations into controlled writes.</li>
+  <li><strong>Reading.</strong> The page lists BSD heap smashing, “Once upon a free()”, Doug Lea malloc exploits and “Exploiting the Wilderness”.</li>
+</ul>
+
+<h3 id="how-to-approach-it">How to approach it</h3>
+
+<ol>
+  <li>Read the papers and then the allocator’s behaviour in this program.</li>
+  <li>Map how allocations are laid out for a given input.</li>
+  <li>Craft the overflow and confirm its effect in a debugger.</li>
+</ol>
+
+<h3 id="why-it-matters">Why it matters</h3>
+
+<p>Heap bugs dominate modern vulnerability reports, and the techniques follow the same ideas.</p>
+
+<!-- study-guide:end -->
 
         </div>
       </div>
@@ -3540,7 +3569,7 @@ program. Do recall, the application is using phkmalloc.</p>
     </div>
   </div>
 </aside>
-<script src="/wargames/assets/js/obsidian-local-graph.js?v=1792009165" defer></script>
+<script src="/wargames/assets/js/obsidian-local-graph.js?v=1792188318" defer></script>
 
 
 
@@ -3894,7 +3923,7 @@ program. Do recall, the application is using phkmalloc.</p>
 <script src="/wargames/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 
-<script type="module" src="/wargames/assets/js/modules/navigation/index.js?v=1792009165"></script>
+<script type="module" src="/wargames/assets/js/modules/navigation/index.js?v=1792188318"></script>
 
 
 <script defer src="/wargames/assets/js/ui-helpers.js"></script>
@@ -3921,7 +3950,7 @@ program. Do recall, the application is using phkmalloc.</p>
   window.OBSIDIAN_CONFIG.attachmentsPath = "/wargames/assets/images/notes";
   window.OBSIDIAN_CONFIG.tagBase = "/wargames/tags/";
   window.OBSIDIAN_CONFIG.cytoscapeUrl = "/wargames/assets/vendor/cytoscape/cytoscape.min.js";
-</script><script defer src="/wargames/assets/js/obsidian-wiki-links.js?v=1792009165"></script>
+</script><script defer src="/wargames/assets/js/obsidian-wiki-links.js?v=1792188318"></script>
 
 
         </div>

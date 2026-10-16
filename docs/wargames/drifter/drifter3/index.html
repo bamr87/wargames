@@ -259,8 +259,8 @@
 <meta property="og:title" content="Drifter3" />
 <meta name="author" content="Amr Abdel-Motaleb" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Level 3 is a remote heap corruption issue. Source code can be found in /drifter/drifter3src/. It is linked against an ancient malloc implementation so it should be easily exploitable :)" />
-<meta name="twitter:description" property="og:description" content="Level 3 is a remote heap corruption issue. Source code can be found in /drifter/drifter3src/. It is linked against an ancient malloc implementation so it should be easily exploitable :)" />
+<meta name="description" content="Drifter Level 3 — a remote heap corruption bug in a program linked against an old malloc implementation, with source supplied." />
+<meta name="twitter:description" property="og:description" content="Drifter Level 3 — a remote heap corruption bug in a program linked against an old malloc implementation, with source supplied." />
 <link rel="canonical" href="https://bamr87.github.io/wargames/docs/wargames/drifter/drifter3/" />
 <meta property="og:url" content="https://bamr87.github.io/wargames/docs/wargames/drifter/drifter3/" />
 <meta property="og:site_name" content="Wargames" />
@@ -270,7 +270,7 @@
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="Drifter3" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Amr Abdel-Motaleb"},"dateModified":"2026-04-07T01:41:09+00:00","datePublished":"2026-04-07T01:41:09+00:00","description":"Level 3 is a remote heap corruption issue. Source code can be found in /drifter/drifter3src/. It is linked against an ancient malloc implementation so it should be easily exploitable :)","headline":"Drifter3","mainEntityOfPage":{"@type":"WebPage","@id":"https://bamr87.github.io/wargames/docs/wargames/drifter/drifter3/"},"url":"https://bamr87.github.io/wargames/docs/wargames/drifter/drifter3/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Amr Abdel-Motaleb"},"dateModified":"2026-04-07T01:41:09+00:00","datePublished":"2026-04-07T01:41:09+00:00","description":"Drifter Level 3 — a remote heap corruption bug in a program linked against an old malloc implementation, with source supplied.","headline":"Drifter3","mainEntityOfPage":{"@type":"WebPage","@id":"https://bamr87.github.io/wargames/docs/wargames/drifter/drifter3/"},"url":"https://bamr87.github.io/wargames/docs/wargames/drifter/drifter3/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -1223,7 +1223,7 @@ document.addEventListener("DOMContentLoaded", function () {
     </div>
     <div class="col-6">
       <div class="p-2 bg-body-tertiary rounded text-center">
-        <small class="text-body-secondary d-block">Last Build</small><code class="small" data-testid="theme-build-stamp">Oct 14, 20:19</code>
+        <small class="text-body-secondary d-block">Last Build</small><code class="small" data-testid="theme-build-stamp">Oct 16, 22:05</code>
       </div>
     </div>
 
@@ -3018,9 +3018,7 @@ function zer0CopyFeedback(btn, success) {
       <h1 class="bd-intro-title">Drifter3</h1>
       
       
-      <p class="bd-intro-description">Level 3 is a remote heap corruption issue. Source code can be found in
-/drifter/drifter3src/. It is linked against an ancient malloc
-implementation so it should be easily exploitable :)</p>
+      <p class="bd-intro-description">Drifter Level 3 — a remote heap corruption bug in a program linked against an old malloc implementation, with source supplied.</p>
       
     </div>
 
@@ -3112,7 +3110,7 @@ implementation so it should be easily exploitable :)</p>
              title="Copies a cleaned article summary to your clipboard, then opens LinkedIn sharing"
              data-share-url="https://bamr87.github.io/wargames/docs/wargames/drifter/drifter3/"
              data-share-title="Drifter3"
-             data-share-description="Level 3 is a remote heap corruption issue. Source code can be found in/drifter/drifter3src/. It is linked against an ancient mallocimplementation so it should be easily exploitable :)">
+             data-share-description="Drifter Level 3 — a remote heap corruption bug in a program linked against an old malloc implementation, with source supplied.">
             <i class="bi bi-linkedin me-2"></i>Share on LinkedIn
           </a>
         </li>
@@ -3204,7 +3202,9 @@ implementation so it should be easily exploitable :)</p>
 
       
       
-        <p class="text-body-secondary small fst-italic">No sections on this page.</p>
+        
+<ul class="list-group-flush"><li class="list-group-item"><a href="#study-guide" class="">Study guide</a><ul><li class="list-group-item"><a href="#what-this-level-teaches" class="">What this level teaches</a></li><li class="list-group-item"><a href="#key-ideas" class="">Key ideas</a></li><li class="list-group-item"><a href="#how-to-approach-it" class="">How to approach it</a></li><li class="list-group-item"><a href="#why-it-matters" class="">Why it matters</a></li></ul></li></ul>
+
       
     </nav>
   </div>
@@ -3228,6 +3228,38 @@ implementation so it should be easily exploitable :)</p>
 
 <p><a href="http://phrack.org/archives/issues/57/9.txt">Once upon a free()…</a> - suitable reading material, amongst others.</p>
 
+<!-- study-guide:start -->
+
+<h2 id="study-guide">Study guide</h2>
+
+<p><strong>Where it fits:</strong> Drifter level 3 of 0–15, in the memory corruption stage of the game. The page does not say which account you start as, so check with <code class="language-plaintext highlighter-rouge">id</code> after connecting. The source is in <code class="language-plaintext highlighter-rouge">/drifter/drifter3_src/</code>.</p>
+
+<h3 id="what-this-level-teaches">What this level teaches</h3>
+
+<p>Classic heap-metadata attacks against an allocator without modern checks.</p>
+
+<h3 id="key-ideas">Key ideas</h3>
+
+<ul>
+  <li><strong>Ancient malloc.</strong> The program uses an old allocator that does not validate its internal metadata, which the page says should make it easily exploitable.</li>
+  <li><strong>Unlink-style attacks.</strong> Corrupting a chunk’s links so that a later free writes where you choose.</li>
+  <li><strong>Remote.</strong> You deliver the corruption over the network, so build a reliable client.</li>
+  <li><strong>Reading.</strong> “Once upon a free()…” is the suggested paper.</li>
+</ul>
+
+<h3 id="how-to-approach-it">How to approach it</h3>
+
+<ol>
+  <li>Read the allocator behaviour and the program’s use of it.</li>
+  <li>Find the overflow and what chunk it reaches.</li>
+  <li>Turn the corrupted metadata into a controlled write, then into code execution.</li>
+</ol>
+
+<h3 id="why-it-matters">Why it matters</h3>
+
+<p>Modern allocators add many checks because of exactly this class of attack.</p>
+
+<!-- study-guide:end -->
 
         </div>
       </div>
@@ -3530,7 +3562,7 @@ implementation so it should be easily exploitable :)</p>
     </div>
   </div>
 </aside>
-<script src="/wargames/assets/js/obsidian-local-graph.js?v=1792009165" defer></script>
+<script src="/wargames/assets/js/obsidian-local-graph.js?v=1792188318" defer></script>
 
 
 
@@ -3884,7 +3916,7 @@ implementation so it should be easily exploitable :)</p>
 <script src="/wargames/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 
-<script type="module" src="/wargames/assets/js/modules/navigation/index.js?v=1792009165"></script>
+<script type="module" src="/wargames/assets/js/modules/navigation/index.js?v=1792188318"></script>
 
 
 <script defer src="/wargames/assets/js/ui-helpers.js"></script>
@@ -3911,7 +3943,7 @@ implementation so it should be easily exploitable :)</p>
   window.OBSIDIAN_CONFIG.attachmentsPath = "/wargames/assets/images/notes";
   window.OBSIDIAN_CONFIG.tagBase = "/wargames/tags/";
   window.OBSIDIAN_CONFIG.cytoscapeUrl = "/wargames/assets/vendor/cytoscape/cytoscape.min.js";
-</script><script defer src="/wargames/assets/js/obsidian-wiki-links.js?v=1792009165"></script>
+</script><script defer src="/wargames/assets/js/obsidian-wiki-links.js?v=1792188318"></script>
 
 
         </div>

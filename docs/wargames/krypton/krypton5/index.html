@@ -259,8 +259,8 @@
 <meta property="og:title" content="Krypton5" />
 <meta name="author" content="Amr Abdel-Motaleb" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Level Info" />
-<meta name="twitter:description" property="og:description" content="Level Info" />
+<meta name="description" content="Krypton Level 5 — break a Vigenère cipher when the key length is unknown, by first discovering the length from patterns in the ciphertext." />
+<meta name="twitter:description" property="og:description" content="Krypton Level 5 — break a Vigenère cipher when the key length is unknown, by first discovering the length from patterns in the ciphertext." />
 <link rel="canonical" href="https://bamr87.github.io/wargames/docs/wargames/krypton/krypton5/" />
 <meta property="og:url" content="https://bamr87.github.io/wargames/docs/wargames/krypton/krypton5/" />
 <meta property="og:site_name" content="Wargames" />
@@ -270,7 +270,7 @@
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="Krypton5" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Amr Abdel-Motaleb"},"dateModified":"2026-04-07T01:41:09+00:00","datePublished":"2026-04-07T01:41:09+00:00","description":"Level Info","headline":"Krypton5","mainEntityOfPage":{"@type":"WebPage","@id":"https://bamr87.github.io/wargames/docs/wargames/krypton/krypton5/"},"url":"https://bamr87.github.io/wargames/docs/wargames/krypton/krypton5/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Amr Abdel-Motaleb"},"dateModified":"2026-04-07T01:41:09+00:00","datePublished":"2026-04-07T01:41:09+00:00","description":"Krypton Level 5 — break a Vigenère cipher when the key length is unknown, by first discovering the length from patterns in the ciphertext.","headline":"Krypton5","mainEntityOfPage":{"@type":"WebPage","@id":"https://bamr87.github.io/wargames/docs/wargames/krypton/krypton5/"},"url":"https://bamr87.github.io/wargames/docs/wargames/krypton/krypton5/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -1223,7 +1223,7 @@ document.addEventListener("DOMContentLoaded", function () {
     </div>
     <div class="col-6">
       <div class="p-2 bg-body-tertiary rounded text-center">
-        <small class="text-body-secondary d-block">Last Build</small><code class="small" data-testid="theme-build-stamp">Oct 14, 20:19</code>
+        <small class="text-body-secondary d-block">Last Build</small><code class="small" data-testid="theme-build-stamp">Oct 16, 22:05</code>
       </div>
     </div>
 
@@ -3018,8 +3018,7 @@ function zer0CopyFeedback(btn, success) {
       <h1 class="bd-intro-title">Krypton5</h1>
       
       
-      <p class="bd-intro-description">Level Info
-----------</p>
+      <p class="bd-intro-description">Krypton Level 5 — break a Vigenère cipher when the key length is unknown, by first discovering the length from patterns in the ciphertext.</p>
       
     </div>
 
@@ -3111,7 +3110,7 @@ function zer0CopyFeedback(btn, success) {
              title="Copies a cleaned article summary to your clipboard, then opens LinkedIn sharing"
              data-share-url="https://bamr87.github.io/wargames/docs/wargames/krypton/krypton5/"
              data-share-title="Krypton5"
-             data-share-description="Level Info----------">
+             data-share-description="Krypton Level 5 — break a Vigenère cipher when the key length is unknown, by first discovering the length from patterns in the ciphertext.">
             <i class="bi bi-linkedin me-2"></i>Share on LinkedIn
           </a>
         </li>
@@ -3204,7 +3203,7 @@ function zer0CopyFeedback(btn, success) {
       
       
         
-<ul class="list-group-flush"><li class="list-group-item"><a href="#level-info" class="">Level Info</a></li></ul>
+<ul class="list-group-flush"><li class="list-group-item"><a href="#level-info" class="">Level Info</a></li><li class="list-group-item"><a href="#study-guide" class="">Study guide</a><ul><li class="list-group-item"><a href="#what-this-level-teaches" class="">What this level teaches</a></li><li class="list-group-item"><a href="#key-ideas" class="">Key ideas</a></li><li class="list-group-item"><a href="#how-to-approach-it" class="">How to approach it</a></li><li class="list-group-item"><a href="#why-it-matters" class="">Why it matters</a></li></ul></li></ul>
 
       
     </nav>
@@ -3231,6 +3230,38 @@ function zer0CopyFeedback(btn, success) {
 
 <p>Enjoy.</p>
 
+<!-- study-guide:start -->
+
+<h2 id="study-guide">Study guide</h2>
+
+<p><strong>Level map:</strong> logged in as <code class="language-plaintext highlighter-rouge">krypton5</code>, decrypt the file that holds the password for <code class="language-plaintext highlighter-rouge">krypton6</code>.</p>
+
+<h3 id="what-this-level-teaches">What this level teaches</h3>
+
+<p>How to find an unknown key length, then reuse the Level 4 method.</p>
+
+<h3 id="key-ideas">Key ideas</h3>
+
+<ul>
+  <li><strong>Repeated sequences (Kasiski examination).</strong> If the same plaintext fragment is encrypted at positions separated by a multiple of the key length, it produces the same ciphertext. Distances between repeats suggest the length.</li>
+  <li><strong>Index of coincidence.</strong> A statistic measuring how uneven the letter distribution is. When you split text by the correct key length, each group looks like English and the statistic jumps.</li>
+  <li><strong>Try lengths systematically.</strong> A short script that computes the statistic for lengths 1 to about 20 is quick to write.</li>
+  <li><strong>Then proceed as before</strong> with frequency analysis for each position.</li>
+</ul>
+
+<h3 id="how-to-approach-it">How to approach it</h3>
+
+<ol>
+  <li>Look for repeated sequences and note their spacing, or compute the coincidence statistic.</li>
+  <li>Pick the most plausible key length.</li>
+  <li>Apply the method from Level 4.</li>
+</ol>
+
+<h3 id="why-it-matters">Why it matters</h3>
+
+<p>Key-length discovery generalises to many attacks on reused keys, including repeating-key XOR, which you will meet again.</p>
+
+<!-- study-guide:end -->
 
         </div>
       </div>
@@ -3533,7 +3564,7 @@ function zer0CopyFeedback(btn, success) {
     </div>
   </div>
 </aside>
-<script src="/wargames/assets/js/obsidian-local-graph.js?v=1792009165" defer></script>
+<script src="/wargames/assets/js/obsidian-local-graph.js?v=1792188318" defer></script>
 
 
 
@@ -3887,7 +3918,7 @@ function zer0CopyFeedback(btn, success) {
 <script src="/wargames/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 
-<script type="module" src="/wargames/assets/js/modules/navigation/index.js?v=1792009165"></script>
+<script type="module" src="/wargames/assets/js/modules/navigation/index.js?v=1792188318"></script>
 
 
 <script defer src="/wargames/assets/js/ui-helpers.js"></script>
@@ -3914,7 +3945,7 @@ function zer0CopyFeedback(btn, success) {
   window.OBSIDIAN_CONFIG.attachmentsPath = "/wargames/assets/images/notes";
   window.OBSIDIAN_CONFIG.tagBase = "/wargames/tags/";
   window.OBSIDIAN_CONFIG.cytoscapeUrl = "/wargames/assets/vendor/cytoscape/cytoscape.min.js";
-</script><script defer src="/wargames/assets/js/obsidian-wiki-links.js?v=1792009165"></script>
+</script><script defer src="/wargames/assets/js/obsidian-wiki-links.js?v=1792188318"></script>
 
 
         </div>

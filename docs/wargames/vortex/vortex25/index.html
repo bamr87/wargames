@@ -259,8 +259,8 @@
 <meta property="og:title" content="Vortex25" />
 <meta name="author" content="Amr Abdel-Motaleb" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Crackploit {% include beginNote.html title=”Vortex 25 → 26 is missing” %} This level seems to have been lost, but we leave its description here for historical reasons. {% include endNote.html %}" />
-<meta name="twitter:description" property="og:description" content="Crackploit {% include beginNote.html title=”Vortex 25 → 26 is missing” %} This level seems to have been lost, but we leave its description here for historical reasons. {% include endNote.html %}" />
+<meta name="description" content="Vortex Level 25 — a lost level kept for history, which paired a password-cracking task with an exploit." />
+<meta name="twitter:description" property="og:description" content="Vortex Level 25 — a lost level kept for history, which paired a password-cracking task with an exploit." />
 <link rel="canonical" href="https://bamr87.github.io/wargames/docs/wargames/vortex/vortex25/" />
 <meta property="og:url" content="https://bamr87.github.io/wargames/docs/wargames/vortex/vortex25/" />
 <meta property="og:site_name" content="Wargames" />
@@ -270,7 +270,7 @@
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="Vortex25" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Amr Abdel-Motaleb"},"dateModified":"2026-04-07T01:41:09+00:00","datePublished":"2026-04-07T01:41:09+00:00","description":"Crackploit {% include beginNote.html title=”Vortex 25 → 26 is missing” %} This level seems to have been lost, but we leave its description here for historical reasons. {% include endNote.html %}","headline":"Vortex25","mainEntityOfPage":{"@type":"WebPage","@id":"https://bamr87.github.io/wargames/docs/wargames/vortex/vortex25/"},"url":"https://bamr87.github.io/wargames/docs/wargames/vortex/vortex25/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Amr Abdel-Motaleb"},"dateModified":"2026-04-07T01:41:09+00:00","datePublished":"2026-04-07T01:41:09+00:00","description":"Vortex Level 25 — a lost level kept for history, which paired a password-cracking task with an exploit.","headline":"Vortex25","mainEntityOfPage":{"@type":"WebPage","@id":"https://bamr87.github.io/wargames/docs/wargames/vortex/vortex25/"},"url":"https://bamr87.github.io/wargames/docs/wargames/vortex/vortex25/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -1223,7 +1223,7 @@ document.addEventListener("DOMContentLoaded", function () {
     </div>
     <div class="col-6">
       <div class="p-2 bg-body-tertiary rounded text-center">
-        <small class="text-body-secondary d-block">Last Build</small><code class="small" data-testid="theme-build-stamp">Oct 14, 20:19</code>
+        <small class="text-body-secondary d-block">Last Build</small><code class="small" data-testid="theme-build-stamp">Oct 16, 22:05</code>
       </div>
     </div>
 
@@ -3018,12 +3018,7 @@ function zer0CopyFeedback(btn, success) {
       <h1 class="bd-intro-title">Vortex25</h1>
       
       
-      <p class="bd-intro-description">Crackploit
-----------
-{% include beginNote.html title="Vortex 25 &rarr; 26 is missing" %}
-This level seems to have been lost, but we leave its description
-here for historical reasons.
-{% include endNote.html %}</p>
+      <p class="bd-intro-description">Vortex Level 25 — a lost level kept for history, which paired a password-cracking task with an exploit.</p>
       
     </div>
 
@@ -3115,7 +3110,7 @@ here for historical reasons.
              title="Copies a cleaned article summary to your clipboard, then opens LinkedIn sharing"
              data-share-url="https://bamr87.github.io/wargames/docs/wargames/vortex/vortex25/"
              data-share-title="Vortex25"
-             data-share-description="Crackploit----------{% include beginNote.html title=&quot;Vortex 25 &amp;rarr; 26 is missing&quot; %}This level seems to have been lost, but we leave its descriptionhere for historical reasons.{% include endNote.html %}">
+             data-share-description="Vortex Level 25 — a lost level kept for history, which paired a password-cracking task with an exploit.">
             <i class="bi bi-linkedin me-2"></i>Share on LinkedIn
           </a>
         </li>
@@ -3208,7 +3203,7 @@ here for historical reasons.
       
       
         
-<ul class="list-group-flush"><li class="list-group-item"><a href="#crackploit" class="">Crackploit</a></li></ul>
+<ul class="list-group-flush"><li class="list-group-item"><a href="#crackploit" class="">Crackploit</a></li><li class="list-group-item"><a href="#study-guide" class="">Study guide</a><ul><li class="list-group-item"><a href="#what-this-means" class="">What this means</a></li><li class="list-group-item"><a href="#what-you-can-learn-from-it" class="">What you can learn from it</a></li></ul></li></ul>
 
       
     </nav>
@@ -3235,6 +3230,25 @@ here for historical reasons.
 
 <p>There are two challenges for this level. One is to work out the password for the binary (a dictionary search should get it), and then work how you can exploit the level. A world readable binary is in /levels/decode. You must login to <a href="ssh://vortex.labs.overthewire.org:2228">vortex.labs.overthewire.org</a> to complete this level.</p>
 
+<!-- study-guide:start -->
+
+<h2 id="study-guide">Study guide</h2>
+
+<p><strong>Level map:</strong> this level is described as lost; there is nothing to solve on the server.</p>
+
+<h3 id="what-this-means">What this means</h3>
+
+<p>The page keeps its description for historical reasons. It describes two challenges: work out the password for a provided binary (a dictionary search should find it), then work out how to exploit the level.</p>
+
+<h3 id="what-you-can-learn-from-it">What you can learn from it</h3>
+
+<ul>
+  <li><strong>Dictionary attacks.</strong> Trying likely words before brute force is much more efficient.</li>
+  <li><strong>Two-stage challenges.</strong> Authentication to a program is one problem, exploiting it afterwards another.</li>
+  <li><strong>Practise elsewhere.</strong> Reproduce the idea with a program of your own and an exploit exercise from another game.</li>
+</ul>
+
+<!-- study-guide:end -->
 
         </div>
       </div>
@@ -3537,7 +3551,7 @@ here for historical reasons.
     </div>
   </div>
 </aside>
-<script src="/wargames/assets/js/obsidian-local-graph.js?v=1792009165" defer></script>
+<script src="/wargames/assets/js/obsidian-local-graph.js?v=1792188318" defer></script>
 
 
 
@@ -3891,7 +3905,7 @@ here for historical reasons.
 <script src="/wargames/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 
-<script type="module" src="/wargames/assets/js/modules/navigation/index.js?v=1792009165"></script>
+<script type="module" src="/wargames/assets/js/modules/navigation/index.js?v=1792188318"></script>
 
 
 <script defer src="/wargames/assets/js/ui-helpers.js"></script>
@@ -3918,7 +3932,7 @@ here for historical reasons.
   window.OBSIDIAN_CONFIG.attachmentsPath = "/wargames/assets/images/notes";
   window.OBSIDIAN_CONFIG.tagBase = "/wargames/tags/";
   window.OBSIDIAN_CONFIG.cytoscapeUrl = "/wargames/assets/vendor/cytoscape/cytoscape.min.js";
-</script><script defer src="/wargames/assets/js/obsidian-wiki-links.js?v=1792009165"></script>
+</script><script defer src="/wargames/assets/js/obsidian-wiki-links.js?v=1792188318"></script>
 
 
         </div>

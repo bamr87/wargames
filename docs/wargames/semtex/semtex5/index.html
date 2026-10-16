@@ -259,8 +259,8 @@
 <meta property="og:title" content="Semtex5" />
 <meta name="author" content="Amr Abdel-Motaleb" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Random Networking Make 10 connections to port 24027 from different IP’s. On each connection you will receive a string of 10 ASCII characters. XOR this string with the Semtex5 password, character by character. Then send back the 10 c…" />
-<meta name="twitter:description" property="og:description" content="Random Networking Make 10 connections to port 24027 from different IP’s. On each connection you will receive a string of 10 ASCII characters. XOR this string with the Semtex5 password, character by character. Then send back the 10 c…" />
+<meta name="description" content="Semtex Level 5 — connect from ten different IP addresses, answer a challenge on each, and receive the password on a randomly chosen connection." />
+<meta name="twitter:description" property="og:description" content="Semtex Level 5 — connect from ten different IP addresses, answer a challenge on each, and receive the password on a randomly chosen connection." />
 <link rel="canonical" href="https://bamr87.github.io/wargames/docs/wargames/semtex/semtex5/" />
 <meta property="og:url" content="https://bamr87.github.io/wargames/docs/wargames/semtex/semtex5/" />
 <meta property="og:site_name" content="Wargames" />
@@ -270,7 +270,7 @@
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="Semtex5" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Amr Abdel-Motaleb"},"dateModified":"2026-04-07T01:41:09+00:00","datePublished":"2026-04-07T01:41:09+00:00","description":"Random Networking Make 10 connections to port 24027 from different IP’s. On each connection you will receive a string of 10 ASCII characters. XOR this string with the Semtex5 password, character by character. Then send back the 10 c…","headline":"Semtex5","mainEntityOfPage":{"@type":"WebPage","@id":"https://bamr87.github.io/wargames/docs/wargames/semtex/semtex5/"},"url":"https://bamr87.github.io/wargames/docs/wargames/semtex/semtex5/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Amr Abdel-Motaleb"},"dateModified":"2026-04-07T01:41:09+00:00","datePublished":"2026-04-07T01:41:09+00:00","description":"Semtex Level 5 — connect from ten different IP addresses, answer a challenge on each, and receive the password on a randomly chosen connection.","headline":"Semtex5","mainEntityOfPage":{"@type":"WebPage","@id":"https://bamr87.github.io/wargames/docs/wargames/semtex/semtex5/"},"url":"https://bamr87.github.io/wargames/docs/wargames/semtex/semtex5/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -1223,7 +1223,7 @@ document.addEventListener("DOMContentLoaded", function () {
     </div>
     <div class="col-6">
       <div class="p-2 bg-body-tertiary rounded text-center">
-        <small class="text-body-secondary d-block">Last Build</small><code class="small" data-testid="theme-build-stamp">Oct 14, 20:19</code>
+        <small class="text-body-secondary d-block">Last Build</small><code class="small" data-testid="theme-build-stamp">Oct 16, 22:05</code>
       </div>
     </div>
 
@@ -3018,12 +3018,7 @@ function zer0CopyFeedback(btn, success) {
       <h1 class="bd-intro-title">Semtex5</h1>
       
       
-      <p class="bd-intro-description">Random Networking
------------------
-Make 10 connections to port 24027 from different IP's. On each
-connection you will receive a string of 10 ASCII characters. XOR
-this string with the Semtex5 password, character by character. Then
-send back the 10 c...</p>
+      <p class="bd-intro-description">Semtex Level 5 — connect from ten different IP addresses, answer a challenge on each, and receive the password on a randomly chosen connection.</p>
       
     </div>
 
@@ -3115,7 +3110,7 @@ send back the 10 c...</p>
              title="Copies a cleaned article summary to your clipboard, then opens LinkedIn sharing"
              data-share-url="https://bamr87.github.io/wargames/docs/wargames/semtex/semtex5/"
              data-share-title="Semtex5"
-             data-share-description="Random Networking-----------------Make 10 connections to port 24027 from different IP&#39;s. On eachconnection you will receive a string of 10 ASCII characters. XORthis string with the Semtex5 password, character by character. Thensend back the 10 c...">
+             data-share-description="Semtex Level 5 — connect from ten different IP addresses, answer a challenge on each, and receive the password on a randomly chosen connection.">
             <i class="bi bi-linkedin me-2"></i>Share on LinkedIn
           </a>
         </li>
@@ -3208,7 +3203,7 @@ send back the 10 c...</p>
       
       
         
-<ul class="list-group-flush"><li class="list-group-item"><a href="#random-networking" class="">Random Networking</a></li><li class="list-group-item"><a href="#reading-material" class="">Reading Material</a></li></ul>
+<ul class="list-group-flush"><li class="list-group-item"><a href="#random-networking" class="">Random Networking</a></li><li class="list-group-item"><a href="#reading-material" class="">Reading Material</a></li><li class="list-group-item"><a href="#study-guide" class="">Study guide</a><ul><li class="list-group-item"><a href="#what-this-level-teaches" class="">What this level teaches</a></li><li class="list-group-item"><a href="#key-ideas" class="">Key ideas</a></li><li class="list-group-item"><a href="#how-to-approach-it" class="">How to approach it</a></li><li class="list-group-item"><a href="#why-it-matters" class="">Why it matters</a></li></ul></li></ul>
 
       
     </nav>
@@ -3239,6 +3234,38 @@ send back the 10 c...</p>
   <li><a href="http://www.faqs.org/rfcs/rfc1928.html">Socks5 Request For Comment</a></li>
 </ul>
 
+<!-- study-guide:start -->
+
+<h2 id="study-guide">Study guide</h2>
+
+<p><strong>Level map:</strong> the challenge service is on port 24027.</p>
+
+<h3 id="what-this-level-teaches">What this level teaches</h3>
+
+<p>Working with multiple source addresses and a challenge-response protocol.</p>
+
+<h3 id="key-ideas">Key ideas</h3>
+
+<ul>
+  <li><strong>Challenge-response.</strong> Each connection sends ten ASCII characters that you must combine, character by character, with the Semtex 5 password using XOR, then send back along with your own identifier.</li>
+  <li><strong>Timing.</strong> You have five seconds to answer, and connections time out after two minutes.</li>
+  <li><strong>Different IPs.</strong> You cannot reuse an address that is still connected, so you need several exits, such as proxies.</li>
+  <li><strong>Reading.</strong> The SOCKS5 RFC is linked, as a way of routing connections through other hosts.</li>
+</ul>
+
+<h3 id="how-to-approach-it">How to approach it</h3>
+
+<ol>
+  <li>Write and test the challenge-response handling on a single connection.</li>
+  <li>Route ten connections through different addresses, using SOCKS or SSH tunnels.</li>
+  <li>Keep them open until the password arrives.</li>
+</ol>
+
+<h3 id="why-it-matters">Why it matters</h3>
+
+<p>It shows how defences based on source IP can be circumvented with proxies.</p>
+
+<!-- study-guide:end -->
 
         </div>
       </div>
@@ -3541,7 +3568,7 @@ send back the 10 c...</p>
     </div>
   </div>
 </aside>
-<script src="/wargames/assets/js/obsidian-local-graph.js?v=1792009165" defer></script>
+<script src="/wargames/assets/js/obsidian-local-graph.js?v=1792188318" defer></script>
 
 
 
@@ -3895,7 +3922,7 @@ send back the 10 c...</p>
 <script src="/wargames/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 
-<script type="module" src="/wargames/assets/js/modules/navigation/index.js?v=1792009165"></script>
+<script type="module" src="/wargames/assets/js/modules/navigation/index.js?v=1792188318"></script>
 
 
 <script defer src="/wargames/assets/js/ui-helpers.js"></script>
@@ -3922,7 +3949,7 @@ send back the 10 c...</p>
   window.OBSIDIAN_CONFIG.attachmentsPath = "/wargames/assets/images/notes";
   window.OBSIDIAN_CONFIG.tagBase = "/wargames/tags/";
   window.OBSIDIAN_CONFIG.cytoscapeUrl = "/wargames/assets/vendor/cytoscape/cytoscape.min.js";
-</script><script defer src="/wargames/assets/js/obsidian-wiki-links.js?v=1792009165"></script>
+</script><script defer src="/wargames/assets/js/obsidian-wiki-links.js?v=1792188318"></script>
 
 
         </div>

@@ -259,8 +259,8 @@
 <meta property="og:title" content="Natas2" />
 <meta name="author" content="Amr Abdel-Motaleb" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Username: natas2 URL: http://natas2.natas.labs.overthewire.org" />
-<meta name="twitter:description" property="og:description" content="Username: natas2 URL: http://natas2.natas.labs.overthewire.org" />
+<meta name="description" content="Natas Level 2 — notice that the page loads a resource you can follow, and discover what an exposed directory listing reveals." />
+<meta name="twitter:description" property="og:description" content="Natas Level 2 — notice that the page loads a resource you can follow, and discover what an exposed directory listing reveals." />
 <link rel="canonical" href="https://bamr87.github.io/wargames/docs/wargames/natas/natas2/" />
 <meta property="og:url" content="https://bamr87.github.io/wargames/docs/wargames/natas/natas2/" />
 <meta property="og:site_name" content="Wargames" />
@@ -270,7 +270,7 @@
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="Natas2" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Amr Abdel-Motaleb"},"dateModified":"2026-04-07T01:41:09+00:00","datePublished":"2026-04-07T01:41:09+00:00","description":"Username: natas2 URL: http://natas2.natas.labs.overthewire.org","headline":"Natas2","mainEntityOfPage":{"@type":"WebPage","@id":"https://bamr87.github.io/wargames/docs/wargames/natas/natas2/"},"url":"https://bamr87.github.io/wargames/docs/wargames/natas/natas2/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Amr Abdel-Motaleb"},"dateModified":"2026-04-07T01:41:09+00:00","datePublished":"2026-04-07T01:41:09+00:00","description":"Natas Level 2 — notice that the page loads a resource you can follow, and discover what an exposed directory listing reveals.","headline":"Natas2","mainEntityOfPage":{"@type":"WebPage","@id":"https://bamr87.github.io/wargames/docs/wargames/natas/natas2/"},"url":"https://bamr87.github.io/wargames/docs/wargames/natas/natas2/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -1223,7 +1223,7 @@ document.addEventListener("DOMContentLoaded", function () {
     </div>
     <div class="col-6">
       <div class="p-2 bg-body-tertiary rounded text-center">
-        <small class="text-body-secondary d-block">Last Build</small><code class="small" data-testid="theme-build-stamp">Oct 14, 20:19</code>
+        <small class="text-body-secondary d-block">Last Build</small><code class="small" data-testid="theme-build-stamp">Oct 16, 22:05</code>
       </div>
     </div>
 
@@ -3018,8 +3018,7 @@ function zer0CopyFeedback(btn, success) {
       <h1 class="bd-intro-title">Natas2</h1>
       
       
-      <p class="bd-intro-description">Username: natas2
-    URL:      http://natas2.natas.labs.overthewire.org</p>
+      <p class="bd-intro-description">Natas Level 2 — notice that the page loads a resource you can follow, and discover what an exposed directory listing reveals.</p>
       
     </div>
 
@@ -3111,7 +3110,7 @@ function zer0CopyFeedback(btn, success) {
              title="Copies a cleaned article summary to your clipboard, then opens LinkedIn sharing"
              data-share-url="https://bamr87.github.io/wargames/docs/wargames/natas/natas2/"
              data-share-title="Natas2"
-             data-share-description="Username: natas2    URL:      http://natas2.natas.labs.overthewire.org">
+             data-share-description="Natas Level 2 — notice that the page loads a resource you can follow, and discover what an exposed directory listing reveals.">
             <i class="bi bi-linkedin me-2"></i>Share on LinkedIn
           </a>
         </li>
@@ -3203,7 +3202,9 @@ function zer0CopyFeedback(btn, success) {
 
       
       
-        <p class="text-body-secondary small fst-italic">No sections on this page.</p>
+        
+<ul class="list-group-flush"><li class="list-group-item"><a href="#study-guide" class="">Study guide</a><ul><li class="list-group-item"><a href="#what-this-level-teaches" class="">What this level teaches</a></li><li class="list-group-item"><a href="#key-ideas" class="">Key ideas</a></li><li class="list-group-item"><a href="#how-to-approach-it" class="">How to approach it</a></li><li class="list-group-item"><a href="#how-developers-prevent-it" class="">How developers prevent it</a></li></ul></li></ul>
+
       
     </nav>
   </div>
@@ -3226,6 +3227,37 @@ function zer0CopyFeedback(btn, success) {
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Username: natas2
 URL:      http://natas2.natas.labs.overthewire.org
 </code></pre></div></div>
+
+<!-- study-guide:start -->
+
+<h2 id="study-guide">Study guide</h2>
+
+<p><strong>Level map:</strong> sign in as <code class="language-plaintext highlighter-rouge">natas2</code> and find the password for <code class="language-plaintext highlighter-rouge">natas3</code>.</p>
+
+<h3 id="what-this-level-teaches">What this level teaches</h3>
+
+<p>How to enumerate the resources a page loads and explore the directories they live in.</p>
+
+<h3 id="key-ideas">Key ideas</h3>
+
+<ul>
+  <li><strong>A page references other files.</strong> Images, scripts and stylesheets each have a URL, and those URLs reveal folder names.</li>
+  <li><strong>Directory listing.</strong> If a web server has “autoindex” enabled and a directory has no index page, visiting it lists every file inside.</li>
+  <li><strong>Walking up the path.</strong> Removing the last part of a URL moves you to the parent folder, a basic reconnaissance move.</li>
+</ul>
+
+<h3 id="how-to-approach-it">How to approach it</h3>
+
+<ol>
+  <li>Read the source and list every resource the page references.</li>
+  <li>Visit the folder that holds a resource and see what the server shows you.</li>
+</ol>
+
+<h3 id="how-developers-prevent-it">How developers prevent it</h3>
+
+<p>Disable directory listings, keep sensitive files out of the web root, and treat every file reachable by URL as public.</p>
+
+<!-- study-guide:end -->
 
         </div>
       </div>
@@ -3528,7 +3560,7 @@ URL:      http://natas2.natas.labs.overthewire.org
     </div>
   </div>
 </aside>
-<script src="/wargames/assets/js/obsidian-local-graph.js?v=1792009165" defer></script>
+<script src="/wargames/assets/js/obsidian-local-graph.js?v=1792188318" defer></script>
 
 
 
@@ -3882,7 +3914,7 @@ URL:      http://natas2.natas.labs.overthewire.org
 <script src="/wargames/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 
-<script type="module" src="/wargames/assets/js/modules/navigation/index.js?v=1792009165"></script>
+<script type="module" src="/wargames/assets/js/modules/navigation/index.js?v=1792188318"></script>
 
 
 <script defer src="/wargames/assets/js/ui-helpers.js"></script>
@@ -3909,7 +3941,7 @@ URL:      http://natas2.natas.labs.overthewire.org
   window.OBSIDIAN_CONFIG.attachmentsPath = "/wargames/assets/images/notes";
   window.OBSIDIAN_CONFIG.tagBase = "/wargames/tags/";
   window.OBSIDIAN_CONFIG.cytoscapeUrl = "/wargames/assets/vendor/cytoscape/cytoscape.min.js";
-</script><script defer src="/wargames/assets/js/obsidian-wiki-links.js?v=1792009165"></script>
+</script><script defer src="/wargames/assets/js/obsidian-wiki-links.js?v=1792188318"></script>
 
 
         </div>
